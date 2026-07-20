@@ -6,6 +6,7 @@ import { PopupProvider } from "./popup-context";
 import { Popups } from "./popups";
 import { Header } from "./sections-top";
 import { Footer, StickyMobile } from "./sections-bottom";
+import { ChatWidget } from "./sections-playbook";
 
 /** Единый каркас всех страниц: шапка, подвал, попапы и мобильная панель. */
 export function SiteShell({ children }: { children: ReactNode }) {
@@ -15,6 +16,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <main>{children}</main>
       <Footer />
       <StickyMobile />
+      <ChatWidget />
       <Popups />
     </PopupProvider>
   );

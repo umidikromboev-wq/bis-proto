@@ -105,6 +105,12 @@ export function LeadForm({ submitLabel, source, withIndustry = true, withCompany
         </label>
       )}
 
+      {/* CV-06 · Telegram — главный канал связи в Узбекистане */}
+      <label className="field">
+        <span>Telegram — ответим быстрее, чем по телефону</span>
+        <input className="input" name="telegram" placeholder="@username или тот же номер" />
+      </label>
+
       {withIndustry && (
         <label className="field">
           <span>Отрасль</span>
@@ -136,6 +142,11 @@ export function LeadForm({ submitLabel, source, withIndustry = true, withCompany
       <button type="submit" className="btn btn-solid btn-lg" style={{ width: "100%", marginTop: "0.5rem" }}>
         {submitLabel}
       </button>
+
+      {/* CV-03 · снятие риска прямо перед кликом */}
+      <p className="micro" style={{ marginTop: "0.8rem", textAlign: "center" }}>
+        Бесплатно · без обязательств · ответим в рабочий день
+      </p>
 
       <p className="micro" style={{ marginTop: "0.9rem" }}>
         Нажимая кнопку, вы соглашаетесь с{" "}

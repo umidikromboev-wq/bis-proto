@@ -166,3 +166,16 @@ body {
   backdrop-filter: blur(10px);
 }
 @media (max-width: 760px) { .sticky-mobile { display: flex; } body { padding-bottom: 4.5rem; } }
+
+/* — CV-08: чат-виджет Telegram-first — */
+.chat-widget {
+  position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 55;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.85rem 1.3rem; border-radius: 999px;
+  background: var(--panel-2); border: 1px solid var(--line); color: var(--text);
+  font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;
+  text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transition: transform 220ms var(--ease), border-color 220ms var(--ease);
+}
+.chat-widget:hover { transform: translateY(-2px); border-color: var(--dim); }
+@media (max-width: 760px) { .chat-widget { bottom: 5.2rem; padding: 0.75rem 1rem; } .chat-widget span { display: none; } }
