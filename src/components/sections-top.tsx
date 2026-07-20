@@ -147,7 +147,9 @@ export function Solution() {
 
       <h3 className="h3" style={{ marginBottom: "0.6rem" }}>{solution.compare.h3}</h3>
       <p className="dim" style={{ fontSize: "0.85rem", marginTop: 0, marginBottom: "1.25rem" }}>{solution.compare.note}</p>
-      <div className="panel" style={{ overflowX: "auto" }}>
+
+      {/* Десктоп — таблица. На мобильном её читают на одну строку, поэтому там — карточки. */}
+      <div className="panel cmp-desktop" style={{ overflowX: "auto" }}>
         <table className="cmp" style={{ minWidth: 720 }}>
           <thead>
             <tr>
@@ -166,6 +168,18 @@ export function Solution() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="cmp-mobile" style={{ gap: "0.9rem" }}>
+        {solution.compare.rows.map((r) => (
+          <article key={r.task} className="panel" style={{ padding: "1.25rem" }}>
+            <h4 className="h3" style={{ fontSize: "1.02rem" }}>{r.task}</h4>
+            <p className="dim" style={{ margin: "0.9rem 0 0", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>Excel и 1С</p>
+            <p className="muted" style={{ margin: "0.3rem 0 0", fontSize: "0.9rem" }}>{r.old}</p>
+            <p style={{ margin: "0.9rem 0 0", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)" }}>SAP Business One</p>
+            <p style={{ margin: "0.3rem 0 0", fontSize: "0.9rem" }}>{r.neu}</p>
+          </article>
+        ))}
       </div>
     </Section>
   );

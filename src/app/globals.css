@@ -111,6 +111,13 @@ body {
   .g2, .g3, .g4, .split { grid-template-columns: minmax(0, 1fr); }
 }
 
+/* — таблица сравнения: десктоп/мобайл — */
+.cmp-mobile { display: none; }
+@media (max-width: 700px) {
+  .cmp-desktop { display: none; }
+  .cmp-mobile { display: grid; }
+}
+
 /* — призрачная цифра — */
 .ghost {
   font-size: clamp(3rem, 2rem + 5vw, 6rem); line-height: 0.8; font-weight: 700;

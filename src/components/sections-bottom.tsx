@@ -307,8 +307,9 @@ export function StickyMobile() {
   const { show } = usePopup();
   return (
     <div className="sticky-mobile">
-      <a href={contacts.phoneHref} className="btn" style={{ flex: 1, padding: "0.85rem 1rem" }}>Позвонить</a>
-      <button className="btn btn-solid" style={{ flex: 2, padding: "0.85rem 1rem" }} onClick={() => show("lead")}>Получить расчёт</button>
+      <a href={contacts.phoneHref} className="btn" style={{ flex: 1, padding: "0.85rem 0.75rem" }}>Позвонить</a>
+      {/* Квиз-расчёт трижды цепляет аватара по ходу страницы, но на мобильном без sticky не нажимается */}
+      <button className="btn btn-solid" style={{ flex: 2, padding: "0.85rem 1rem" }} onClick={() => show("calc")}>Посчитать, сколько теряю</button>
     </div>
   );
 }

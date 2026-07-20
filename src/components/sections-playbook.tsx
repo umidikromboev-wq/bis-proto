@@ -147,6 +147,14 @@ export function LeadMagnet() {
             </button>
             {/* CV-03 · микрокопирайт снятия риска под кнопкой */}
             <p className="dim" style={{ fontSize: "0.82rem", marginTop: "0.9rem" }}>{leadMagnet.micro}</p>
+
+            {/* Zoom-четверг — «недо-коммит» для тех, кто не готов оставлять контакт */}
+            <div style={{ marginTop: "1.5rem", paddingTop: "1.25rem", borderTop: "1px solid var(--line)" }}>
+              <p className="muted" style={{ fontSize: "0.88rem", margin: 0 }}>{leadMagnet.zoom.text}</p>
+              <button className="btn" style={{ marginTop: "1rem" }} onClick={() => show("zoom")}>
+                {leadMagnet.zoom.cta} <Arrow dir="right" />
+              </button>
+            </div>
           </div>
 
           <div className="panel-2" style={{ padding: "1.5rem" }}>
