@@ -1,32 +1,29 @@
 "use client";
 
-import { Placeholder, Section, Stat, Arrow } from "./ui";
+import Link from "next/link";
+import { Placeholder, Section, Arrow } from "./ui";
 import { usePopup } from "./popup-context";
-import { bridge, contacts, cost, hero, nav, pain, solution, products } from "@/content/blocks";
+import { bridge, cost, hero, nav, pain, solution, products } from "@/content/blocks";
 
 export function Header() {
   const { show } = usePopup();
   return (
     <header style={{ position: "sticky", top: 0, zIndex: 50, background: "rgba(44,44,47,0.88)", backdropFilter: "blur(12px)", borderBottom: "1px solid var(--line)" }}>
       <div className="wrap" style={{ display: "flex", alignItems: "center", gap: "1.25rem", height: 72 }}>
-        <div className="panel" style={{ padding: "0.6rem 1.4rem", fontSize: "0.75rem", letterSpacing: "0.16em", color: "var(--dim)" }}>
+        <Link href="/" className="panel" style={{ padding: "0.6rem 1.4rem", fontSize: "0.75rem", letterSpacing: "0.16em", color: "var(--dim)", textDecoration: "none", flex: "none" }}>
           ЛОГО
-        </div>
-        <span className="dim" style={{ fontSize: "0.75rem", lineHeight: 1.3, maxWidth: 190 }}>
+        </Link>
+        <span className="dim nav-desktop" style={{ fontSize: "0.75rem", lineHeight: 1.3, maxWidth: 170 }}>
           Внедрение SAP<br />для производства и торговли
         </span>
 
-        <nav style={{ marginLeft: "auto", display: "flex", gap: "1.6rem" }} className="nav-desktop">
+        <nav style={{ marginLeft: "auto", display: "flex", gap: "1.35rem" }} className="nav-desktop">
           {nav.map((n) => (
-            <a key={n.href} href={n.href} style={{ color: "var(--muted)", textDecoration: "none", fontSize: "0.88rem" }}>
+            <Link key={n.href} href={n.href} style={{ color: "var(--muted)", textDecoration: "none", fontSize: "0.86rem", whiteSpace: "nowrap" }}>
               {n.label}
-            </a>
+            </Link>
           ))}
         </nav>
-
-        <a href={contacts.phoneHref} className="dim nav-desktop" style={{ textDecoration: "none", fontSize: "0.88rem" }}>
-          {contacts.phone}
-        </a>
         <button className="btn nav-desktop" onClick={() => show("lead")}>Получить расчёт</button>
         <button className="btn nav-mobile" onClick={() => show("menu")} style={{ marginLeft: "auto", padding: "0.7rem 1rem" }} aria-label="Открыть меню">
           Меню

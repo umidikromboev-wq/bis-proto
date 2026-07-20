@@ -28,6 +28,80 @@ export type Case = {
 
 export type Faq = { q: string; a: string };
 
+/** Страница продукта (SAP Business One, SAP S/4HANA) — один шаблон на оба. */
+export type ProductPage = {
+  slug: string;
+  /** Пункт «хлебных крошек» и title страницы */
+  title: string;
+  metaDescription: string;
+  hero: {
+    eyebrow: string;
+    h1: string;
+    lead: string;
+    cta: string;
+    ctaSecondary: string;
+    facts: Stat[];
+    img: Img;
+  };
+  /** Кому подходит / кому не подходит — честная отсечка */
+  fit: {
+    kicker: string;
+    h2: string;
+    lead: string;
+    yes: { title: string; text: string }[];
+    no: string[];
+  };
+  /** Функциональные блоки системы */
+  modules: {
+    kicker: string;
+    h2: string;
+    lead: string;
+    items: { name: string; text: string; marks: string[] }[];
+  };
+  /** Сценарий «день из жизни» — как выглядит работа в системе */
+  scenario: {
+    kicker: string;
+    h2: string;
+    lead: string;
+    steps: { time: string; title: string; text: string }[];
+    img: Img;
+  };
+  /** Сроки, состав проекта, бюджетная вилка */
+  project: {
+    kicker: string;
+    h2: string;
+    lead: string;
+    phases: { name: string; term: string; text: string }[];
+    budget: { label: string; value: string; note: string }[];
+    note?: string;
+  };
+  faq: Faq[];
+  /** Ссылки на релевантные кейсы */
+  caseSlugs: string[];
+};
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  /** Подзаголовок в списке и лид в статье */
+  excerpt: string;
+  date: string;
+  readingTime: string;
+  category: string;
+  author: string;
+  cover: Img;
+  /** Тело статьи: простые блоки, без markdown-парсера */
+  body: BlogBlock[];
+};
+
+export type BlogBlock =
+  | { type: "p"; text: string }
+  | { type: "h3"; text: string }
+  | { type: "list"; items: string[] }
+  | { type: "quote"; text: string; author?: string }
+  | { type: "callout"; title: string; text: string }
+  | { type: "img"; img: Img };
+
 export type Tariff = {
   id: string;
   name: string;

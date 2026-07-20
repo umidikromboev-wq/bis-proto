@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 import { usePopup } from "./popup-context";
 import { LeadForm } from "./lead-form";
 import { Placeholder } from "./ui";
-import { cases, contacts, nav, finalCta, readiness } from "@/content/blocks";
+import { cases, contacts, nav, navHome, finalCta, readiness } from "@/content/blocks";
 
 export function Popups() {
   const { open, close } = usePopup();
@@ -262,6 +262,14 @@ function MenuPopup({ onNavigate }: { onNavigate: () => void }) {
       <nav style={{ display: "grid", gap: "0.25rem" }}>
         {nav.map((n) => (
           <a key={n.href} href={n.href} onClick={onNavigate} style={{ padding: "0.9rem 0", borderBottom: "1px solid var(--line)", color: "var(--text)", textDecoration: "none", fontSize: "1.15rem" }}>
+            {n.label}
+          </a>
+        ))}
+      </nav>
+      <p className="dim" style={{ fontSize: "0.74rem", letterSpacing: "0.12em", textTransform: "uppercase", margin: "1.5rem 0 0.6rem" }}>Разделы главной</p>
+      <nav style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+        {navHome.map((n) => (
+          <a key={n.href} href={n.href} onClick={onNavigate} className="panel-2 muted" style={{ padding: "0.5rem 0.9rem", fontSize: "0.85rem", textDecoration: "none" }}>
             {n.label}
           </a>
         ))}

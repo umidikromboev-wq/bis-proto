@@ -16,11 +16,20 @@ export const contacts = {
 };
 
 export const nav = [
-  { label: "Проблемы", href: "#pain" },
-  { label: "Решение", href: "#solution" },
-  { label: "Кейсы", href: "#cases" },
-  { label: "Как внедряем", href: "#process" },
-  { label: "Стоимость", href: "#pricing" },
+  { label: "SAP Business One", href: "/sap-business-one" },
+  { label: "SAP S/4HANA", href: "/sap-s4hana" },
+  { label: "Кейсы", href: "/cases" },
+  { label: "Блог", href: "/blog" },
+  { label: "Контакты", href: "/contacts" },
+];
+
+/** Якоря главной — используются в подвале и в мобильном меню. */
+export const navHome = [
+  { label: "Проблемы", href: "/#pain" },
+  { label: "Решение", href: "/#solution" },
+  { label: "Как внедряем", href: "/#process" },
+  { label: "Стоимость", href: "/#pricing" },
+  { label: "Вопросы", href: "/#faq" },
 ];
 
 // ── 01. ОФФЕР ───────────────────────────────────────────────────────────────

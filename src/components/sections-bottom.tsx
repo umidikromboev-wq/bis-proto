@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { Placeholder, Section, Stat, Arrow } from "./ui";
 import { usePopup } from "./popup-context";
 import {
   cases, casesMeta, clients, contacts, faq, finalCta, footer,
-  industries, nav, pricing, process, readiness, team, why,
+  industries, nav, navHome, pricing, process, readiness, team, why,
 } from "@/content/blocks";
 
 export function Industries() {
@@ -30,7 +31,6 @@ export function Industries() {
 }
 
 export function Cases() {
-  const { show } = usePopup();
   return (
     <Section id="cases" kicker={casesMeta.kicker} h2={casesMeta.h2} lead={casesMeta.lead}>
       <div className="grid" style={{ gap: "1.5rem" }}>
@@ -42,9 +42,9 @@ export function Cases() {
                 <h3 className="h2" style={{ fontSize: "clamp(1.4rem, 1.1rem + 1.2vw, 2rem)", marginTop: "0.7rem" }}>{c.client}</h3>
                 <p className="dim" style={{ fontSize: "0.85rem", marginTop: "0.5rem" }}>{c.scale}</p>
                 <p className="muted" style={{ marginTop: "1.1rem", fontSize: "0.94rem" }}>{c.intro}</p>
-                <button className="btn" style={{ marginTop: "1.5rem" }} onClick={() => show(`case:${c.slug}` as never)}>
+                <Link className="btn" href={`/cases/${c.slug}`} style={{ marginTop: "1.5rem", textDecoration: "none" }}>
                   {casesMeta.cta} <Arrow dir="right" />
-                </button>
+                </Link>
               </div>
               <div className="grid g2" style={{ gap: "0.7rem" }}>
                 {c.after.map((a) => (
@@ -273,7 +273,12 @@ export function Footer() {
             <p className="dim" style={{ fontSize: "0.74rem", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: 0 }}>{footer.navTitle}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "0.9rem 0 0", display: "grid", gap: "0.5rem" }}>
               {nav.map((n) => (
-                <li key={n.href}><a href={n.href} className="muted" style={{ textDecoration: "none", fontSize: "0.9rem" }}>{n.label}</a></li>
+                <li key={n.href}><Link href={n.href} className="muted" style={{ textDecoration: "none", fontSize: "0.9rem" }}>{n.label}</Link></li>
+              ))}
+            </ul>
+            <ul style={{ listStyle: "none", padding: 0, margin: "0.9rem 0 0", display: "grid", gap: "0.4rem" }}>
+              {navHome.map((n) => (
+                <li key={n.href}><Link href={n.href} className="dim" style={{ textDecoration: "none", fontSize: "0.85rem" }}>{n.label}</Link></li>
               ))}
             </ul>
           </div>
