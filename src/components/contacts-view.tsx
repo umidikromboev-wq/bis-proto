@@ -116,6 +116,7 @@ export function ContactsView() {
           <div className="panel-2" style={{ padding: "1.75rem", alignSelf: "start" }}>
             <h3 className="h3">{vacancies.h2}</h3>
             <p className="muted" style={{ marginTop: "0.9rem", fontSize: "0.94rem" }}>{vacancies.text}</p>
+            <a href="/careers" className="btn" style={{ marginTop: "1.25rem", textDecoration: "none" }}>Открытые вакансии <Arrow dir="right" /></a>
             <p className="note" style={{ marginTop: "1.25rem" }}>{vacancies.note}</p>
           </div>
         </div>

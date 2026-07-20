@@ -5,7 +5,7 @@ import { Placeholder, Section, Stat, Arrow } from "./ui";
 import { usePopup } from "./popup-context";
 import {
   cases, casesMeta, clients, contacts, faq, finalCta, footer,
-  industries, nav, navHome, pricing, process, readiness, team, why,
+  industries, nav, navHome, navSecondary, pricing, process, readiness, team, why,
 } from "@/content/blocks";
 
 export function Industries() {
@@ -283,7 +283,13 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="dim" style={{ fontSize: "0.74rem", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: 0 }}>{footer.legalTitle}</p>
+            <p className="dim" style={{ fontSize: "0.74rem", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: 0 }}>Компания</p>
+            <ul style={{ listStyle: "none", padding: 0, margin: "0.9rem 0 0", display: "grid", gap: "0.5rem" }}>
+              {navSecondary.map((n) => (
+                <li key={n.href}><Link href={n.href} className="muted" style={{ textDecoration: "none", fontSize: "0.9rem" }}>{n.label}</Link></li>
+              ))}
+            </ul>
+            <p className="dim" style={{ fontSize: "0.74rem", letterSpacing: "0.12em", textTransform: "uppercase", margin: "1.5rem 0 0" }}>{footer.legalTitle}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "0.9rem 0 0", display: "grid", gap: "0.5rem" }}>
               {footer.legal.map((l) => (
                 <li key={l.href}><a href={l.href} className="muted" style={{ textDecoration: "none", fontSize: "0.9rem" }}>{l.label}</a></li>
