@@ -23,11 +23,15 @@
 
   position: relative;
   min-height: 100dvh;
-  /* фон страницы = точный цвет фона рендера завода (#f0f1f3), чтобы видео сливалось без шва.
-     синий бренд-блик только слева под контентом, справа под заводом — чистый нейтральный тон */
+  /* Фон — многослойный «световой» воздух, а не плоская заливка.
+     Завод накладывается режимом multiply (см. .dh-stage-media), поэтому фон
+     больше не обязан совпадать с цветом рендера — важно лишь держать все слои
+     светлыми (яркость ≥ ~0.90), иначе multiply затемнит саму 3D-модель. */
   background:
-    radial-gradient(48% 55% at 2% 24%, rgba(28, 134, 214, 0.09) 0%, transparent 62%),
-    var(--paper);
+    radial-gradient(58% 62% at 4% 8%, rgba(28, 134, 214, 0.16) 0%, transparent 62%),
+    radial-gradient(52% 58% at 96% 74%, rgba(51, 199, 234, 0.16) 0%, transparent 64%),
+    radial-gradient(80% 60% at 62% -8%, rgba(255, 255, 255, 0.95) 0%, transparent 62%),
+    linear-gradient(168deg, #f2f6fb 0%, #e8eff7 46%, #eef2f7 100%);
   color: var(--text);
   overflow: hidden;
   isolation: isolate;
@@ -37,21 +41,31 @@
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   background-image:
-    linear-gradient(var(--line-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask: radial-gradient(120% 90% at 80% 20%, #000 20%, transparent 72%);
-  mask: radial-gradient(120% 90% at 80% 20%, #000 20%, transparent 72%);
-  opacity: 0.7;
+    linear-gradient(rgba(28, 134, 214, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 134, 214, 0.07) 1px, transparent 1px);
+  background-size: 52px 52px;
+  -webkit-mask: radial-gradient(130% 110% at 78% 12%, #000 6%, rgba(0, 0, 0, 0.45) 42%, transparent 80%);
+  mask: radial-gradient(130% 110% at 78% 12%, #000 6%, rgba(0, 0, 0, 0.45) 42%, transparent 80%);
+  pointer-events: none;
+}
+/* зерно: снимает «пластиковую» гладкость градиента, читается только вблизи */
+.dh::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
-.dh-wrap { position: relative; z-index: 2; width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.75rem); }
+.dh-wrap { position: relative; width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.75rem); }
 
 /* — навигация — */
-.dh-nav { display: flex; align-items: center; gap: 1.25rem; height: 76px; }
+.dh-nav { position: relative; z-index: 5; display: flex; align-items: center; gap: 1.25rem; height: 76px; }
 .dh-logo { display: inline-flex; flex-direction: column; line-height: 1; text-decoration: none; }
 .dh-logo b {
   font-size: 1.55rem; font-weight: 800; letter-spacing: 0.01em;
@@ -66,7 +80,7 @@
 .dh-nav .dh-btn { white-space: nowrap; }
 
 /* — сетка героя — */
-.dh-hero { position: relative; display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr); gap: clamp(1rem, 3vw, 2.5rem); align-items: center; min-height: calc(100dvh - 76px); padding-block: clamp(1rem, 2vw, 2rem) clamp(3rem, 5vw, 4rem); }
+.dh-hero { position: relative; display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: clamp(0.5rem, 1.5vw, 1.25rem); align-items: center; min-height: calc(100dvh - 76px); padding-block: clamp(1rem, 2vw, 2rem) clamp(3rem, 5vw, 4rem); }
 
 /* левая колонка — контент */
 .dh-content { position: relative; z-index: 3; }
@@ -92,15 +106,26 @@
 .dh-btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
 
 /* — правая колонка: живой изо-завод — */
-.dh-stage { position: relative; align-self: stretch; min-height: 420px; }
-.dh-stage-media { position: absolute; inset: -6% -8% -6% -4%; z-index: 1; }
-.dh-stage-media video, .dh-stage-media img { width: 100%; height: 100%; object-fit: contain; }
-/* растворяем края видео в фоне страницы */
-.dh-stage-media::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background:
-    linear-gradient(90deg, var(--paper) 0%, transparent 14%, transparent 88%, var(--paper) 100%),
-    linear-gradient(180deg, var(--paper) 0%, transparent 12%, transparent 86%, var(--paper) 100%);
+.dh-stage {
+  position: relative; align-self: stretch; min-height: 540px;
+  /* выходим за правый паддинг контейнера — визуал живёт до края экрана */
+  margin-right: calc(-1 * clamp(1.25rem, 4vw, 2.75rem));
+}
+/* «подиум» — мягкий световой круг под заводом: гасит сетку прямо под моделью */
+.dh-stage::before {
+  content: ""; position: absolute; inset: -12% -10%; z-index: 0; pointer-events: none;
+  background: radial-gradient(52% 46% at 52% 54%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.55) 45%, transparent 72%);
+}
+.dh-stage-media { position: absolute; inset: -12% -14% -14% -12%; }
+.dh-stage-media video, .dh-stage-media img {
+  width: 100%; height: 100%; object-fit: contain;
+  /* Фон рендера — не белый, а #f0f1f3 (240). brightness(1.063) выводит его ровно
+     в 255, и только после этого multiply делает его полностью прозрачным.
+     Без осветления multiply оставлял бы видимый серый прямоугольник кадра. */
+  filter: brightness(1.063);
+  mix-blend-mode: multiply;
+  transform: scale(1.16);
+  transform-origin: 54% 52%;
 }
 
 /* плавающие карточки-метрики вокруг завода */
@@ -146,14 +171,19 @@
 @media (max-width: 960px) {
   .dh-hero { grid-template-columns: 1fr; gap: 1rem; min-height: 0; padding-top: 1rem; }
   .dh-navlinks, .dh-phone { display: none; }
-  .dh-stage { min-height: 340px; margin-top: 0.5rem; }
-  .dh-stage-media { inset: 0; }
+  .dh-nav .dh-btn { flex: none; }
+  .dh-stage { min-height: 380px; margin-top: 0.5rem; margin-right: 0; }
+  .dh-stage-media { inset: -8% -6%; }
+  .dh-stage-media video, .dh-stage-media img { transform: scale(1.08); }
   .dh-metric { min-width: 118px; padding: 0.6rem 0.8rem; }
   .dh-metric .m-val { font-size: 1.2rem; }
   .dh-metric.m1 { left: -1%; }
   .dh-metric.m4 { right: 0; }
 }
 @media (max-width: 540px) {
+  /* дескриптор логотипа задан nowrap и на узком экране выталкивал кнопку за вьюпорт */
+  .dh-logo span { display: none; }
+  .dh-nav .dh-btn { padding: 0.6rem 0.95rem; font-size: 0.82rem; }
   .dh-cta-row .dh-btn { flex: 1 1 100%; }
   .dh-metric.m2, .dh-metric.m3 { display: none; }
 }
