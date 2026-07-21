@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Onest } from "next/font/google";
 import { DesignHero } from "@/components/design/hero";
 
-/** Manrope — геометричный гротеск с полной кириллицей (критично для RU/UZ). */
-const manrope = Manrope({
+/** Onest — чистый премиальный гротеск с полной кириллицей (RU/UZ). */
+const onest = Onest({
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function DesignPage() {
   return (
-    <div className={manrope.className}>
+    <div className={onest.className}>
       <DesignHero />
     </div>
   );

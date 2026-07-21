@@ -54,14 +54,14 @@ export function DesignHero() {
               Одна система вместо <em>Excel, 1С и&nbsp;десяти чатов</em>
             </h1>
             <p className="dh-lead dh-rise dh-rise-3">
-              SAP связывает финансы, склад, закупки и продажи в одном месте. Данные вводятся один раз и видны всем.
+              Когда заказов и людей всё больше, таблицы перестают справляться. SAP связывает финансы, склад, закупки и продажи в одном месте. Данные вводятся один раз и видны всем. Вы держите бизнес под контролем и масштабируетесь спокойно.
             </p>
             <div className="dh-cta-row dh-rise dh-rise-4">
               <a href="#" className="dh-btn dh-btn-primary">
                 Получить расчёт за 1 день
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
               </a>
-              <Link href="/simulator" className="dh-btn dh-btn-ghost">Посчитать, сколько теряю</Link>
+              <Link href="/simulator" className="dh-btn dh-btn-ghost">Сначала посчитать, сколько теряю</Link>
             </div>
           </div>
 
@@ -84,7 +84,7 @@ export function DesignHero() {
         <div className="dh-stats">
           <div className="dh-stat"><b>35+</b><span>внедрений SAP в Узбекистане</span></div>
           <div className="dh-stat"><b>с 2016</b><span>на рынке автоматизации</span></div>
-          <div className="dh-stat"><b>10</b><span>сертифицированных SAP-специалистов</span></div>
+          <div className="dh-stat"><b>Партнёр SAP</b><span>лицензии и поддержка вендора напрямую</span></div>
         </div>
       </div>
     </header>
