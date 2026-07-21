@@ -89,9 +89,9 @@ export function ContactsView() {
                 </li>
               ))}
             </ul>
-            <button className="btn btn-solid" style={{ marginTop: "2rem" }} onClick={() => show("calc")}>
+            <a href="/simulator" className="btn btn-solid" style={{ marginTop: "2rem", textDecoration: "none" }}>
               Или сначала посчитать потери <Arrow dir="right" />
-            </button>
+            </a>
           </div>
         </div>
       </Section>

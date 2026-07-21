@@ -54,7 +54,7 @@ export function Hero() {
             <button className="btn btn-solid btn-lg" onClick={() => show("lead")}>
               {hero.cta} <Arrow dir="right" />
             </button>
-            <button className="btn btn-lg" onClick={() => show("calc")}>{hero.ctaSecondary}</button>
+            <Link href="/simulator" className="btn btn-lg" style={{ textDecoration: "none" }}>{hero.ctaSecondary}</Link>
           </div>
 
           <dl style={{ display: "flex", flexWrap: "wrap", gap: "2.5rem", marginTop: "3rem" }}>
@@ -111,7 +111,6 @@ export function Pain() {
 }
 
 export function Cost() {
-  const { show } = usePopup();
   return (
     <Section id="cost" kicker={cost.kicker} h2={cost.h2} lead={cost.lead}>
       <div className="grid g2">
@@ -126,8 +125,13 @@ export function Cost() {
           </article>
         ))}
       </div>
-      <div style={{ marginTop: "2.5rem" }}>
-        <button className="btn btn-solid btn-lg" onClick={() => show("calc")}>{cost.cta} <Arrow dir="right" /></button>
+      {/* Тизер симулятора — сам расчёт живёт на отдельной странице, чтобы не грузить лендинг */}
+      <div className="panel" style={{ marginTop: "2.5rem", padding: "1.75rem", display: "flex", flexWrap: "wrap", gap: "1.25rem", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ maxWidth: "46ch" }}>
+          <h3 className="h3">Посчитайте свою сумму — на ваших цифрах, без формы и звонка</h3>
+          <p className="dim" style={{ fontSize: "0.85rem", marginTop: "0.5rem" }}>Оборот, склад, скидки, ручной труд — каждая строка считается на ваших глазах. Результат можно отправить себе в Telegram.</p>
+        </div>
+        <Link href="/simulator" className="btn btn-solid btn-lg" style={{ textDecoration: "none" }}>{cost.cta} <Arrow dir="right" /></Link>
       </div>
     </Section>
   );

@@ -304,12 +304,11 @@ export function Footer() {
 }
 
 export function StickyMobile() {
-  const { show } = usePopup();
   return (
     <div className="sticky-mobile">
       <a href={contacts.phoneHref} className="btn" style={{ flex: 1, padding: "0.85rem 0.75rem" }}>Позвонить</a>
-      {/* Квиз-расчёт трижды цепляет аватара по ходу страницы, но на мобильном без sticky не нажимается */}
-      <button className="btn btn-solid" style={{ flex: 2, padding: "0.85rem 1rem" }} onClick={() => show("calc")}>Посчитать, сколько теряю</button>
+      {/* Симулятор потерь трижды цепляет аватара по ходу страницы, но на мобильном без sticky не нажимается */}
+      <Link href="/simulator" className="btn btn-solid" style={{ flex: 2, padding: "0.85rem 1rem", textDecoration: "none" }}>Посчитать, сколько теряю</Link>
     </div>
   );
 }
