@@ -41,7 +41,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
             {data.fit.yes.map((y, i) => (
               <Reveal key={y.title} delay={(i % 2) * 80} className="dp-fit-item">
                 <h3 className="d-h3">{y.title}</h3>
-                <p>{y.text}</p>
+                <p>{em(y.text)}</p>
               </Reveal>
             ))}
           </div>
@@ -177,7 +177,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
                   <span>{item.q}</span>
                   <i aria-hidden />
                 </summary>
-                <p>{item.a}</p>
+                <p>{em(item.a)}</p>
               </details>
             </Reveal>
           ))}

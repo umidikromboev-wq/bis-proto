@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { SapMark } from "./marks";
 import { SplitHeading } from "./split-text";
 import "./page-hero.css";
+import { em } from "./emphasis";
 
 type Crumb = { label: string; href?: string };
 
@@ -59,7 +60,7 @@ export function PageHero({
           />
         </h1>
 
-        {lead ? <p className="dp-lead">{lead}</p> : null}
+        {lead ? <p className="dp-lead">{em(lead)}</p> : null}
         {children}
 
         {facts?.length ? (

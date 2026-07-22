@@ -121,6 +121,16 @@ export function SiteHeader() {
         inert={!open}
       >
         <div className="dh-menu-inner">
+          {/* Языки стоят выше навигации: выбор языка предшествует выбору
+              раздела. Узбекская версия ещё не собрана, поэтому это не ссылка
+              — кнопка-заглушка честнее ссылки в никуда. */}
+          <div className="dh-menu-lang" style={{ ["--i" as string]: 0 }}>
+            <span className="dh-lang is-active" aria-current="true">Рус</span>
+            <span className="dh-lang-sep" aria-hidden />
+            {/* Латиница, а не «Ўзб»: официальная письменность узбекского. */}
+            <span className="dh-lang is-soon">O‘zb<i>скоро</i></span>
+          </div>
+
           <ul className="dh-menu-list">
             {PRIMARY.map((item, i) => (
               <li key={item.href} style={{ ["--i" as string]: i }}>

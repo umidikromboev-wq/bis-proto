@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { unifiedBase } from "@/content/playbook";
 import { GlassIcon, type IconName } from "../icon";
+import { em } from "../emphasis";
 
 /**
  * Схема сквозного потока — приём «Модель потока» из каталога смысловых приёмов
@@ -63,7 +64,7 @@ export function FlowScheme() {
               <h3 className="d-h3">{l.action}</h3>
               {/* Обе реплики всегда в разметке: они меняются местами, а не
                   подгружаются, поэтому переключение мгновенное и без сдвига. */}
-              <p className="sc-live">{l.effect}</p>
+              <p className="sc-live">{em(l.effect)}</p>
               <p className="sc-old">{l.old.replace(/^Раньше:\s*/, "")}</p>
             </div>
 
