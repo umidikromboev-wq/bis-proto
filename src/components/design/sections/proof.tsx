@@ -3,6 +3,7 @@ import { cases, casesMeta, process, readiness, team, why } from "@/content/block
 import { trust } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { GlassIcon, type IconName } from "../icon";
+import { ScrollText } from "../schemes/scroll-text";
 import { Btn, Section, SectionHead, TextLink } from "../ui";
 
 /** Инициалы вместо портрета: единых фотографий команды пока нет. */
@@ -159,9 +160,18 @@ export function Why() {
         <SectionHead kicker={why.kicker} h2={why.h2} />
       </Reveal>
 
-      <div className="d-why-stats">
+      <Reveal delay={80}>
+        <ScrollText
+          className="sc-read--tight"
+          text="За семь лет мы собрали не портфолио, а повторяемый результат: цифры ниже — это то, что стоит за каждым следующим проектом."
+        />
+      </Reveal>
+
+      {/* Цифры разделены волосяными вертикалями: так они читаются как один
+          набор показателей, а не как четыре независимые плашки. */}
+      <div className="sc-figures">
         {why.stats.map((s, i) => (
-          <Reveal key={s.label} delay={i * 70} className="d-why-stat">
+          <Reveal key={s.label} delay={i * 70} className="sc-figure">
             <b>{s.value}</b>
             <span>{s.label}</span>
           </Reveal>
@@ -189,15 +199,24 @@ export function Team() {
         <SectionHead kicker={team.kicker} h2={team.h2} />
       </Reveal>
 
-      <div className="d-team">
-        {team.people.map((p, i) => (
-          <Reveal key={p.name} delay={(i % 3) * 70} className="d-person">
-            <span className="d-person-avatar" aria-hidden>{initials(p.name)}</span>
-            <h3 className="d-h3">{p.name}</h3>
-            <p className="d-person-role">{p.role}</p>
-            <p className="d-person-note">{p.note}</p>
-          </Reveal>
-        ))}
+      {/* Лента едет сама и замирает на наведении: шесть человек в статичной
+          сетке занимают экран целиком, а движение показывает, что команда
+          больше одного ряда, не забирая высоту. */}
+      <div className="sc-marquee" aria-label="Команда BIS">
+        <div className="sc-marquee-track">
+          {[0, 1].map((copy) => (
+            <div className="sc-marquee-row" key={copy} aria-hidden={copy === 1}>
+              {team.people.map((p) => (
+                <article className="sc-person" key={`${copy}-${p.name}`}>
+                  <span className="sc-person-avatar" aria-hidden>{initials(p.name)}</span>
+                  <h3>{p.name}</h3>
+                  <p className="sc-person-role">{p.role}</p>
+                  <p className="sc-person-note">{p.note}</p>
+                </article>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </Section>
   );

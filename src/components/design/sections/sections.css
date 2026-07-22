@@ -305,3 +305,4 @@
 .d-icon { display: block; width: clamp(2.6rem, 3.4vw, 3.4rem); height: auto; margin-bottom: 1rem; }
 /* На тёмной секции стекло слишком светлое и спорит с фоном — гасим блик. */
 .d-section--ink .d-icon { opacity: 0.9; }
+.d-solution-tail { margin-top: clamp(1.5rem, 2.5vw, 2rem) !important; }

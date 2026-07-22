@@ -1,7 +1,8 @@
 import { faq, finalCta, pricing } from "@/content/blocks";
 import { leadMagnet } from "@/content/playbook";
 import { Reveal } from "../reveal";
-import { Btn, Section, SectionHead, TextLink } from "../ui";
+import { ScrollText } from "../schemes/scroll-text";
+import { Btn, Kicker, Section, SectionHead, TextLink } from "../ui";
 
 /**
  * Лид-магнит. Главный конверсионный блок страницы.
@@ -114,22 +115,29 @@ export function Pricing() {
 export function Faq() {
   return (
     <Section id="faq" tone="tint">
-      <Reveal>
-        <SectionHead kicker={faq.kicker} h2={faq.h2} />
-      </Reveal>
-
-      <div className="d-faq">
-        {faq.items.map((item, i) => (
-          <Reveal key={item.q} delay={Math.min(i, 4) * 50}>
-            <details className="d-faq-item">
-              <summary>
-                <span>{item.q}</span>
-                <i aria-hidden />
-              </summary>
-              <p>{item.a}</p>
-            </details>
+      {/* Заголовок залипает, пока справа прокручиваются вопросы: читатель не
+          теряет тему длинного списка, а левая половина перестаёт пустовать. */}
+      <div className="sc-split">
+        <div className="sc-split-side">
+          <Reveal>
+            <Kicker>{faq.kicker}</Kicker>
+            <ScrollText className="sc-read--tight" text={faq.h2} />
           </Reveal>
-        ))}
+        </div>
+
+        <div className="d-faq">
+          {faq.items.map((item, i) => (
+            <Reveal key={item.q} delay={Math.min(i, 4) * 50}>
+              <details className="d-faq-item">
+                <summary>
+                  <span>{item.q}</span>
+                  <i aria-hidden />
+                </summary>
+                <p>{item.a}</p>
+              </details>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </Section>
   );

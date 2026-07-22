@@ -1,5 +1,8 @@
 import { products, solution } from "@/content/blocks";
 import { Reveal } from "../reveal";
+import { ScrollText } from "../schemes/scroll-text";
+import { GlassIcon, type IconName } from "../icon";
+import { PixelArrow } from "../marks";
 import { Section, SectionHead } from "../ui";
 
 /**
@@ -17,9 +20,12 @@ export function Solution() {
           <SectionHead kicker={solution.kicker} h2={solution.h2} />
         </Reveal>
         <Reveal delay={110} className="d-solution-body">
-          {solution.body.map((p) => (
-            <p key={p}>{p}</p>
-          ))}
+          {/* Первый абзац — главный тезис страницы, поэтому он проявляется по
+              словам при прокрутке: читатель проходит фразу до конца, а не
+              проскакивает её глазами. Второй остаётся обычным текстом —
+              два «караоке» подряд превратили бы приём в трюк. */}
+          <ScrollText text={solution.body[0]} />
+          <p className="d-solution-tail">{solution.body[1]}</p>
         </Reveal>
       </div>
 
@@ -49,8 +55,11 @@ export function Solution() {
   );
 }
 
+/** Иконка на продукт: масштаб бизнеса, под который он сделан. */
+const PRODUCT_ICONS: IconName[] = ["production", "cloud", "integration"];
+
 /**
- * Продукты. Три решения подряд, а не три равные карточки.
+ * Продукты. Строка-витрина: превью, крупное имя, стрелка, чипы.
  *
  * Карточки уравняли бы их в весе, хотя 90% внедрений — это Business One.
  * Строка во всю ширину даёт место назвать, кому продукт подходит, и оставляет
@@ -63,22 +72,27 @@ export function Products() {
         <SectionHead kicker={products.kicker} h2={products.h2} lead={products.lead} />
       </Reveal>
 
-      <div className="d-products">
+      <div className="sc-rows">
         {products.items.map((item, i) => (
-          <Reveal key={item.name} delay={i * 90} className="d-product">
-            <span className="d-product-idx">{String(i + 1).padStart(2, "0")}</span>
-            <div className="d-product-name">
-              <h3 className="d-h3">{item.name}</h3>
-              <p className="d-product-for">{item.for}</p>
-            </div>
-            <div className="d-product-body">
-              <p>{item.text}</p>
-              <ul className="d-marks">
-                {item.marks.map((m) => (
-                  <li key={m}>{m}</li>
-                ))}
-              </ul>
-            </div>
+          <Reveal key={item.name} delay={i * 90}>
+            <article className="sc-row">
+              <div className="sc-row-art">
+                <GlassIcon name={PRODUCT_ICONS[i]} />
+              </div>
+              <div>
+                <div className="sc-row-title">
+                  <h3>{item.name}</h3>
+                  <span className="sc-row-arrow" aria-hidden><PixelArrow /></span>
+                </div>
+                <p className="sc-row-sub">{item.text}</p>
+                <ul className="sc-row-tags">
+                  <li>{item.for}</li>
+                  {item.marks.map((m) => (
+                    <li key={m}>{m}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
           </Reveal>
         ))}
       </div>
