@@ -1,6 +1,6 @@
 import { cost, pain } from "@/content/blocks";
+import { GlassIcon, type IconName } from "../icon";
 import { Reveal } from "../reveal";
-import { LossInvoice } from "../schemes/invoice";
 import { Btn, Section, SectionHead } from "../ui";
 
 /**
@@ -30,16 +30,21 @@ export function Pain() {
   );
 }
 
+/** Иконка на статью потерь — по её предмету. */
+const COST_ICONS: IconName[] = ["warehouse", "finance", "people", "partnership", "time", "growth"];
+
 /**
  * Цена бездействия. Единственная тёмная секция в верхней половине страницы.
  *
- * Заголовок говорит буквально: «счёт за это не приходит». Поэтому блок и
- * сделан этим счётом — приём «Артефакты» из каталога: вместо рассказа о
- * документе показывают сам документ.
+ * Здесь было две неудачные попытки — «дырявое ведро» и «счёт». Обе подменяли
+ * задачу поиском образа, хотя задача простая: показать шесть видов потерь
+ * так, чтобы их прочитали. Метафора отнимала место у самих потерь, а
+ * раскрывающиеся строки прятали половину текста.
  *
- * Смена среды делает работу, которую иначе пришлось бы делать красным цветом
- * и восклицательными знаками: читатель физически чувствует, что разговор
- * сменил тон, — а дальше страница возвращается на светлое, к решению.
+ * Поэтому секция говорит тем же языком, что и работающие блоки сайта: всё
+ * видно сразу, ничего не спрятано, вес держат иконка и крупный заголовок.
+ * Смена среды при этом остаётся: тёмный фон делает работу, которую иначе
+ * пришлось бы делать красным цветом и восклицательными знаками.
  */
 export function Cost() {
   return (
@@ -48,10 +53,27 @@ export function Cost() {
         <SectionHead kicker={cost.kicker} h2={cost.h2} lead={cost.lead} />
       </Reveal>
 
-      <Reveal>
-        <LossInvoice />
-      </Reveal>
+      <ul className="d-losses">
+        {cost.items.map((item, i) => (
+          <Reveal as="li" key={item.title} delay={(i % 3) * 70}>
+            <span className="d-loss-mark">
+              <GlassIcon name={COST_ICONS[i]} />
+              <span className="d-loss-n">{String(i + 1).padStart(2, "0")}</span>
+            </span>
+            <h3 className="d-h3">{item.title}</h3>
+            <p>{item.text}</p>
+            {item.source ? <span className="d-loss-src">{item.source}</span> : null}
+          </Reveal>
+        ))}
+      </ul>
 
+      <Reveal className="d-losses-cta">
+        <Btn href="/design/simulator" variant="light">{cost.cta}</Btn>
+        <span className="d-note">
+          Точную сумму заочно не назовёт никто: она зависит от оборота, отрасли и состояния
+          учёта. Симулятор покажет порядок за три минуты.
+        </span>
+      </Reveal>
     </Section>
   );
 }

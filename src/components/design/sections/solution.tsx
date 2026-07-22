@@ -1,5 +1,6 @@
 import { products, solution } from "@/content/blocks";
 import { Reveal } from "../reveal";
+import { ProcessChain } from "../schemes/chain";
 import { ScrollText } from "../schemes/scroll-text";
 import { GlassIcon, type IconName } from "../icon";
 import { PixelArrow } from "../marks";
@@ -28,6 +29,12 @@ export function Solution() {
           <p className="d-solution-tail">{solution.body[1]}</p>
         </Reveal>
       </div>
+
+      {/* Фраза «это один непрерывный процесс, а не шесть отдельных таблиц»
+          текстом не доказывается — её нужно увидеть. */}
+      <Reveal delay={80}>
+        <ProcessChain />
+      </Reveal>
 
       <Reveal className="d-compare">
         <div className="d-compare-head">

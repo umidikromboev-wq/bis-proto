@@ -266,6 +266,226 @@
   .rd-dot { display: none; }
 }
 
+/* ═══ Змея (Roadmap): фазы внедрения ═══ */
+.sc-road { position: relative; margin-top: clamp(2.5rem, 5vw, 4rem); }
+/* сплошная линия проходит через все шесть точек — маршрут виден целиком,
+   а не собирается читателем из шести отдельных карточек */
+.sc-road::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: linear-gradient(90deg, var(--line), var(--brand) 45%, var(--cyan)); }
+.sc-road ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
+.sc-road li { position: relative; padding-top: 2.6rem; }
+.sc-road-dot { position: absolute; top: 4px; left: 0; width: 16px; height: 16px; border-radius: 999px; background: #ffffff; border: 2px solid var(--brand); }
+.sc-road li:last-child .sc-road-dot { background: var(--brand); }
+.sc-road-n { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.6; margin-bottom: 0.5rem; }
+.sc-road-name { display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin-bottom: 0.7rem; }
+.sc-road h3 { font-size: 1rem; font-weight: 400; color: var(--ink); margin: 0; }
+.sc-road p { margin: 0.6rem 0 0; font-size: 0.86rem; color: var(--muted); }
+.sc-road-out { display: block; margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px dashed var(--line); font-size: 0.8rem; color: var(--text); }
+
+/* ═══ адаптив ═══ */
+@media (max-width: 1000px) {
+  .sc-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sc-chain li:nth-child(3n) .sc-link { display: block; }
+  .sc-chain li:nth-child(2n) .sc-link { display: none; }
+  .sc-road ol { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+  .sc-road::before { display: none; }
+  .sc-road li { padding-top: 2.2rem; }
+}
+@media (max-width: 640px) {
+  .sc-chain { grid-template-columns: 1fr; }
+  .sc-chain .sc-link { display: none !important; }
+  .sc-road ol { grid-template-columns: 1fr; }
+}
+
+/* ═══ Караоке: текст проявляется по словам при прокрутке ═══ */
+.sc-read {
+  --p: 0;
+  font-size: clamp(1.5rem, 1rem + 2.2vw, 3.1rem);
+  font-weight: 300; line-height: 1.24; letter-spacing: -0.022em;
+  margin: 0; max-width: 24ch;
+}
+.sc-read span {
+  /* Слово загорается, когда прогресс дошёл до его номера. Считает CSS, а не
+     JS: из скрипта приходит одно число на весь блок. */
+  --lit: clamp(0, calc(var(--p) * var(--n) - var(--i)), 1);
+  color: color-mix(in oklab, var(--ink) calc(var(--lit) * 100%), var(--dim));
+  transition: color 0.18s linear;
+}
+
+/* ═══ Строка-витрина: превью, крупное имя, стрелка, чипы ═══ */
+.sc-rows { margin-top: clamp(2.5rem, 5vw, 4rem); }
+.sc-row {
+  display: grid; grid-template-columns: minmax(0, 0.34fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem); align-items: center;
+  padding: clamp(1.8rem, 3.5vw, 3rem) 0; border-top: 1px solid var(--line);
+}
+.sc-rows > *:last-child .sc-row { border-bottom: 1px solid var(--line); }
+/* Плашка-превью: у продуктов нет фотографий, и вместо пустого места стоит
+   иконка набора на брендовой подложке — она же несёт смысл продукта. */
+.sc-row-art { display: grid; place-items: center; aspect-ratio: 4 / 3; border-radius: 18px; background: linear-gradient(150deg, #e6eff9, #f6fafd); border: 1px solid var(--line); }
+.sc-row-art .d-icon { width: clamp(5rem, 11vw, 9.5rem); margin: 0; }
+.sc-row-title { display: flex; align-items: center; gap: clamp(0.8rem, 2vw, 1.6rem); flex-wrap: wrap; }
+.sc-row-title h3 { font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem); font-weight: 300; letter-spacing: -0.028em; line-height: 1; color: var(--ink); margin: 0; }
+/* Плитка со стрелкой повторяет плитку кнопок — один язык действий на сайте */
+.sc-row-arrow { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 10px; background: var(--brand); color: #ffffff; flex: none; transition: background-color 0.25s var(--ease); }
+.sc-row-arrow svg { width: 0.9rem; height: 0.9rem; }
+.sc-row-sub { margin: 1rem 0 0; font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.1rem); color: var(--muted); max-width: 46ch; }
+.sc-row-tags { list-style: none; margin: 1.4rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.sc-row-tags li { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 8px; padding: 0.45rem 0.8rem; }
+@media (hover: hover) {
+  .sc-row:hover .sc-row-arrow { background: var(--brand-deep); }
+  .sc-row:hover .sc-row-art { border-color: var(--brand); }
+}
+
+@media (max-width: 760px) {
+  .sc-row { grid-template-columns: 1fr; gap: 1.2rem; }
+  .sc-row-art { aspect-ratio: 16 / 7; }
+}
+
+/* ═══ Самодвижущаяся лента карточек ═══ */
+.sc-marquee { margin-top: clamp(2.5rem, 5vw, 4rem); overflow: hidden; margin-inline: calc(-1 * var(--pad-x)); padding-inline: var(--pad-x); }
+.sc-marquee-track { display: flex; width: max-content; }
+.sc-marquee-row { display: flex; gap: clamp(1rem, 2vw, 1.75rem); padding-right: clamp(1rem, 2vw, 1.75rem); }
+@media (prefers-reduced-motion: no-preference) {
+  .sc-marquee-track { animation: sc-slide 46s linear infinite; }
+  .sc-marquee:hover .sc-marquee-track { animation-play-state: paused; }
+  @keyframes sc-slide { to { transform: translateX(-50%); } }
+}
+.sc-person {
+  flex: none; width: clamp(15rem, 22vw, 19rem);
+  padding: clamp(1.4rem, 2.2vw, 1.9rem); border: 1px solid var(--line); border-radius: 18px;
+  background: #ffffff; transition: border-color 0.3s var(--ease);
+}
+.sc-person:hover { border-color: var(--brand); }
+.sc-person-avatar { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); color: var(--brand); font-size: 0.85rem; letter-spacing: 0.04em; margin-bottom: 1.2rem; }
+.sc-person h3 { font-size: 1.05rem; font-weight: 400; color: var(--ink); margin: 0; }
+.sc-person-role { margin: 0.45rem 0 0; font-size: 0.82rem; color: var(--brand); }
+.sc-person-note { margin: 0.8rem 0 0; font-size: 0.85rem; color: var(--muted); }
+
+/* ═══ Крупные цифры с вертикальными разделителями ═══ */
+.sc-read--tight { max-width: 40ch; font-size: clamp(1.3rem, 0.95rem + 1.5vw, 2.2rem); }
+.sc-figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.sc-figure { position: relative; padding: clamp(1rem, 2vw, 1.6rem) clamp(1rem, 2.5vw, 2.4rem); }
+.sc-figure:first-child { padding-left: 0; }
+.sc-figure + .sc-figure::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--line); }
+.sc-figure b { display: block; font-size: clamp(2.4rem, 1.4rem + 3.4vw, 4.6rem); font-weight: 300; letter-spacing: -0.04em; color: var(--ink); line-height: 0.95; }
+.sc-figure span { display: block; margin-top: clamp(1.5rem, 3vw, 2.5rem); font-size: 0.88rem; color: var(--muted); max-width: 22ch; }
+
+@media (max-width: 900px) {
+  .sc-figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sc-figure:nth-child(3) { padding-left: 0; }
+  .sc-figure:nth-child(3)::before { display: none; }
+  .sc-figure span { margin-top: 1rem; }
+}
+@media (max-width: 560px) {
+  .sc-figures { grid-template-columns: 1fr; }
+  .sc-figure { padding-left: 0; }
+  .sc-figure::before { display: none !important; }
+  .sc-figure + .sc-figure { border-top: 1px solid var(--line); }
+}
+
+/* ═══ Разделённая секция: залипающий заголовок слева ═══ */
+.sc-split { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.sc-split-side { position: sticky; top: calc(var(--nav-h) + 2rem); }
+.sc-split .d-faq { margin-top: 0; }
+@media (max-width: 900px) {
+  .sc-split { grid-template-columns: 1fr; }
+  /* На узком экране липкий заголовок съедал бы пол-экрана над списком */
+  .sc-split-side { position: static; }
+}
+
+/* ═══ Инструмент «до / после» ═══ */
+.ba { margin-top: clamp(2rem, 4vw, 3rem); }
+.ba-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: clamp(2rem, 3vw, 2.6rem); }
+.ba-cap { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); margin-bottom: 0.9rem; }
+.ba-presets { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.ba-presets button {
+  border: 1px solid var(--line); background: var(--paper-2); border-radius: 999px;
+  padding: 0.5rem 1.1rem; font: inherit; font-size: 0.88rem; color: var(--muted); cursor: pointer;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+.ba-presets button.is-on { border-color: var(--brand); color: #ffffff; background: var(--brand); }
+.ba-presets button:focus-visible, .ba input:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+.ba input[type="range"] { width: 100%; accent-color: var(--brand); }
+.ba-switch { margin-bottom: clamp(1.5rem, 2.5vw, 2rem); }
+
+.ba-total { padding: clamp(1.4rem, 2.5vw, 2rem) 0 clamp(1.6rem, 3vw, 2.2rem); border-top: 1px solid var(--line); }
+.ba-total b { display: block; font-size: clamp(2.4rem, 1.4rem + 4vw, 4.4rem); font-weight: 300; letter-spacing: -0.04em; line-height: 1; color: var(--ink); transition: color 0.35s var(--ease); }
+/* Цвет несёт смысл: утекающие деньги — тревожный тон, возвращённые — рост. */
+.ba-total.is-after b { color: var(--up); }
+.ba-total-note { display: block; margin-top: 0.9rem; font-size: 0.85rem; color: var(--muted); max-width: 46ch; }
+
+.ba-lines { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1rem, 2vw, 1.5rem); }
+.ba-lines li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: center; }
+.ba-lines .d-icon { width: 2.4rem; margin: 0; }
+.ba-line-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; margin-bottom: 0.55rem; }
+.ba-line-head span { font-size: 0.94rem; color: var(--text); }
+.ba-line-head b { font-size: 1.05rem; font-weight: 400; color: var(--ink); letter-spacing: -0.02em; white-space: nowrap; }
+.ba-line-track { height: 4px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.ba-line-track span { display: block; height: 100%; width: var(--pct); border-radius: 999px; background: var(--grad); transition: width 0.5s var(--ease); }
+.ba-total.is-after ~ .ba-lines .ba-line-track span { background: linear-gradient(90deg, #17a673, #33c7ea); }
+.ba-note { display: block; margin-top: clamp(1.5rem, 3vw, 2.2rem); max-width: 60ch; }
+
+@media (max-width: 700px) {
+  .ba-controls { grid-template-columns: 1fr; }
+  .ba-lines li { grid-template-columns: 1fr; gap: 0.6rem; }
+  .ba-lines .d-icon { width: 2rem; }
+}
+
+/* карточка человека с портретом */
+.sc-person--photo { padding: 0 0 1.4rem; overflow: hidden; }
+.sc-person-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 1.2rem; }
+.sc-person--photo h3, .sc-person--photo p { padding-inline: clamp(1.2rem, 2vw, 1.6rem); }
+
+/* ═══ Закреплённая дорожная карта ═══
+   Обёртка выше экрана — её высота и есть длина «залипания». Внутри липкий
+   слой, а прогресс прокрутки по обёртке приходит в --p. */
+.rd { position: relative; height: calc(100dvh + var(--n) * 46vh); --p: 0; }
+.rd-sticky { position: sticky; top: var(--nav-h); height: calc(100dvh - var(--nav-h)); display: grid; align-content: center; overflow: hidden; }
+.rd-inner { width: 100%; }
+.rd-head { max-width: 60rem; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+.rd-head .d-lead { max-width: 54ch; }
+
+.rd-track { position: relative; list-style: none; margin: 0; padding: 2.6rem 0 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
+.rd-line, .rd-line-fill { position: absolute; top: 11px; left: 0; height: 2px; }
+.rd-line { right: 0; background: var(--line); }
+/* линия тянется ровно на пройденную долю — она и есть индикатор пути */
+.rd-line-fill { width: calc(var(--p) * 100%); background: var(--grad); transition: width 0.08s linear; }
+
+.rd-track li {
+  position: relative;
+  /* Фаза загорается, когда прогресс дошёл до её номера. Порог считает CSS,
+     из скрипта приходит одно число на весь блок. */
+  --lit: clamp(0, calc(var(--p) * var(--n) - var(--i) + 0.35), 1);
+  opacity: calc(0.18 + var(--lit) * 0.82);
+  transform: translateY(calc((1 - var(--lit)) * 14px));
+  transition: opacity 0.25s linear, transform 0.25s linear;
+}
+.rd-dot { position: absolute; top: -2.6rem; left: 0; width: 16px; height: 16px; border-radius: 999px; background: var(--paper-2); border: 2px solid var(--line); transition: border-color 0.25s linear, background-color 0.25s linear; }
+.rd-track li[style*="--i"] .rd-dot { border-color: color-mix(in oklab, var(--brand) calc(var(--lit) * 100%), var(--line)); }
+.rd-track li .rd-dot { background: color-mix(in oklab, var(--brand) calc(var(--lit) * 100%), var(--paper-2)); }
+
+.rd-n { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.6; margin-bottom: 0.45rem; }
+.rd-name { display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin-bottom: 0.7rem; }
+.rd-track h3 { font-size: clamp(0.95rem, 0.85rem + 0.3vw, 1.1rem); font-weight: 500; color: var(--ink); margin: 0; }
+.rd-track p { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--muted); }
+.rd-out { display: block; margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px dashed var(--line); font-size: 0.78rem; color: var(--text); }
+
+/* при выключенной анимации закрепление только мешает */
+.rd[data-static="true"] { height: auto; }
+.rd[data-static="true"] .rd-sticky { position: static; height: auto; }
+
+@media (max-width: 1000px) {
+  /* На узком экране закрепление отбирает управление прокруткой, а шесть фаз
+     в один экран всё равно не помещаются — отдаём обычным списком. */
+  .rd { height: auto; }
+  .rd-sticky { position: static; height: auto; padding-block: var(--section-y); }
+  .rd-track { grid-template-columns: 1fr; gap: 0; padding-top: 0; }
+  .rd-line, .rd-line-fill { display: none; }
+  .rd-track li { opacity: 1 !important; transform: none !important; padding: 1.6rem 1.4rem; background: var(--paper-2); border-radius: 22px; margin-bottom: 1rem; }
+  .rd-dot { display: none; }
+}
+
 /* ═══ Счёт, который не выставят ═══
    Белый документ на тёмной секции: контраст среды делает его артефактом,
    а не очередным блоком текста. */
@@ -342,3 +562,55 @@
 .ba-param-head b i { font-style: normal; font-size: 0.74rem; color: var(--dim); margin-left: 0.25rem; }
 @media (max-width: 900px) { .ba-params-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .ba-params-grid { grid-template-columns: 1fr; } }
+
+/* ═══ Сквозная цепочка процесса ═══ */
+.ch { margin-top: clamp(2rem, 4vw, 3rem); }
+.ch-track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(0.8rem, 1.6vw, 1.5rem); }
+.ch-track li { position: relative; }
+.ch-node { display: grid; place-items: center; width: clamp(3.4rem, 5vw, 4.4rem); height: clamp(3.4rem, 5vw, 4.4rem); border-radius: 16px; background: var(--paper-2); border: 1px solid var(--line); margin-bottom: 1rem; }
+.ch-node .d-icon { width: 62%; margin: 0; }
+.ch-n { display: block; font-size: 0.64rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.55; margin-bottom: 0.4rem; }
+.ch-track h3 { font-size: clamp(0.9rem, 0.82rem + 0.25vw, 1rem); font-weight: 500; line-height: 1.25; color: var(--ink); margin: 0; }
+.ch-track p { margin: 0.5rem 0 0; font-size: 0.82rem; color: var(--muted); }
+
+/* Связь между узлами. Импульс бежит непрерывно и не начинается заново на
+   каждом узле — именно это и доказывает, что процесс один. */
+.ch-link {
+  position: absolute; top: clamp(1.7rem, 2.5vw, 2.2rem);
+  left: calc(clamp(3.4rem, 5vw, 4.4rem) + 0.5rem);
+  right: calc(-1 * clamp(0.8rem, 1.6vw, 1.5rem) - 0.5rem);
+  height: 2px; border-radius: 2px;
+  background:
+    linear-gradient(90deg, var(--cyan) 0 22%, transparent 22% 100%) 0 0 / 200% 100% no-repeat,
+    var(--line);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ch-link { animation: ch-pulse 2.4s linear infinite; }
+  /* задержки выстраивают импульс в одну бегущую волну через всю цепочку */
+  .ch-track li:nth-child(1) .ch-link { animation-delay: 0s; }
+  .ch-track li:nth-child(2) .ch-link { animation-delay: 0.4s; }
+  .ch-track li:nth-child(3) .ch-link { animation-delay: 0.8s; }
+  .ch-track li:nth-child(4) .ch-link { animation-delay: 1.2s; }
+  .ch-track li:nth-child(5) .ch-link { animation-delay: 1.6s; }
+  @keyframes ch-pulse { from { background-position: -100% 0, 0 0; } to { background-position: 200% 0, 0 0; } }
+}
+
+.ch-caption { margin: clamp(1.6rem, 3vw, 2.4rem) 0 0; font-size: 0.92rem; color: var(--muted); max-width: 56ch; }
+
+@media (max-width: 1000px) {
+  .ch-track { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem 1.2rem; }
+  .ch-track li:nth-child(3n) .ch-link { display: none; }
+}
+@media (max-width: 620px) {
+  .ch-track { grid-template-columns: 1fr; gap: 0; }
+  .ch-track li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 1rem; padding-bottom: 1.4rem; }
+  .ch-node { grid-row: span 3; margin-bottom: 0; }
+  /* на узком экране связь становится вертикальной — цепочка идёт вниз */
+  .ch-link { top: clamp(3.4rem, 5vw, 4.4rem); left: calc(clamp(3.4rem, 5vw, 4.4rem) / 2 - 1px); right: auto; bottom: 0; width: 2px; height: auto;
+    background: linear-gradient(180deg, var(--cyan) 0 22%, transparent 22% 100%) 0 0 / 100% 200% no-repeat, var(--line); }
+  .ch-track li:nth-child(3n) .ch-link { display: block; }
+  .ch-track li:last-child .ch-link { display: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes ch-pulse { from { background-position: 0 -100%, 0 0; } to { background-position: 0 200%, 0 0; } }
+  }
+}

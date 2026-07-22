@@ -20,10 +20,14 @@
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0 clamp(2rem, 4vw, 4rem);
 }
-.d-losses li { padding: clamp(1.4rem, 2.4vw, 2rem) 0; border-top: 1px solid rgba(255, 255, 255, 0.14); }
-.d-losses p { margin: 0.7rem 0 0; color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
+.d-losses li { padding: clamp(1.6rem, 2.6vw, 2.2rem) 0 clamp(1.6rem, 2.6vw, 2.2rem); border-top: 1px solid rgba(255, 255, 255, 0.16); }
+.d-losses p { margin: 0.8rem 0 0; color: rgba(255, 255, 255, 0.62); font-size: 0.95rem; max-width: 38ch; }
+/* Иконка и номер в одной строке: иконка даёт предмет, номер — счёт по порядку */
+.d-loss-mark { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.1rem; }
+.d-losses .d-icon { width: clamp(2.4rem, 3vw, 3rem); margin: 0; }
+.d-loss-n { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--cyan); opacity: 0.7; }
 .d-loss-src { display: block; margin-top: 0.9rem; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--cyan); opacity: 0.75; }
-.d-losses-cta { margin-top: clamp(2.5rem, 4vw, 3.5rem); }
+.d-losses-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.8rem; margin-top: clamp(2.5rem, 4vw, 3.5rem); padding-top: clamp(1.6rem, 3vw, 2.2rem); border-top: 1px solid rgba(255, 255, 255, 0.16); }
 
 /* ─── решение ─── */
 .d-solution-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
