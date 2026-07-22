@@ -7,6 +7,7 @@ import { Btn, Section, SectionHead, TextLink } from "./ui";
 import "./sections/sections.css";
 import "./schemes/schemes.css";
 import "./inner.css";
+import { em } from "./emphasis";
 
 const HOME = { label: "Главная", href: "/design" };
 
@@ -161,7 +162,7 @@ export function CareersView() {
                 <span className="sc-road-dot" aria-hidden />
                 <span className="sc-road-n">{s.n}</span>
                 <h3>{s.title}</h3>
-                <p>{s.text}</p>
+                <p>{em(s.text)}</p>
               </Reveal>
             ))}
           </ol>

@@ -14,6 +14,9 @@ import { useEffect, useRef, type ReactNode } from "react";
  * вычитаем половину ширины. Позиция в кадре при этом не меняется, поэтому
  * склейки не видно и лента бесконечная в обе стороны.
  */
+/** Сколько ждать после отпускания пальца, пока догорит инерция прокрутки. */
+const INERTIA_MS = 1400;
+
 export function DragMarquee({
   children,
   speed = 0.4,
@@ -41,11 +44,27 @@ export function DragMarquee({
 
     const half = () => el.scrollWidth / 2;
 
-    const tick = () => {
-      if (!paused && !dragging) el.scrollLeft += speed;
-      // нормализуем позицию в обе стороны — лента бесконечна и влево
-      if (el.scrollLeft >= half()) el.scrollLeft -= half();
-      else if (el.scrollLeft <= 0) el.scrollLeft += half();
+    // Позицию ведём отдельной дробной переменной. Прибавлять доли пикселя
+    // прямо к scrollLeft нельзя: браузер округляет его до целого, и лента
+    // вместо ровного хода идёт ступеньками по пикселю.
+    let pos = el.scrollLeft;
+    // Время, до которого автодвижение молчит. Нужно из-за инерции: палец уже
+    // отпущен, а лента ещё катится сама, и запись scrollLeft в этот момент
+    // рвёт инерцию — на телефоне это и читается как дёрганье.
+    let quietUntil = 0;
+
+    const tick = (now: number) => {
+      const h = half();
+      if (!paused && !dragging && now >= quietUntil) {
+        pos += speed;
+        // нормализуем позицию в обе стороны — лента бесконечна и влево
+        if (pos >= h) pos -= h;
+        else if (pos <= 0) pos += h;
+        el.scrollLeft = pos;
+      } else {
+        // Ведёт пользователь — только следим за позицией и ничего не пишем.
+        pos = el.scrollLeft;
+      }
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
@@ -82,8 +101,15 @@ export function DragMarquee({
     el.addEventListener("pointerleave", resume);
     el.addEventListener("focusin", pause);
     el.addEventListener("focusout", resume);
-    el.addEventListener("touchstart", pause, { passive: true });
-    el.addEventListener("touchend", resume, { passive: true });
+    // Палец опущен — стоим. Отпущен — ждём, пока угаснет инерция, и только
+    // потом продолжаем ехать сами.
+    const onTouchStart = () => { quietUntil = Number.POSITIVE_INFINITY; };
+    // resume здесь обязателен: на тач-экране pointerenter ставит паузу, а
+    // парного pointerleave может не прийти — и лента замирала навсегда.
+    const onTouchEnd = () => { quietUntil = performance.now() + INERTIA_MS; resume(); };
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
+    el.addEventListener("touchcancel", onTouchEnd, { passive: true });
     el.addEventListener("pointerdown", onDown);
 
     return () => {
@@ -92,6 +118,9 @@ export function DragMarquee({
       el.removeEventListener("pointerleave", resume);
       el.removeEventListener("focusin", pause);
       el.removeEventListener("focusout", resume);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("touchcancel", onTouchEnd);
       el.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerup", onUp);

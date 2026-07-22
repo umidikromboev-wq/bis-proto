@@ -62,6 +62,14 @@
 .d-section--ink .d-kicker { color: var(--cyan); }
 .d-section--ink .d-kicker::before { background: var(--cyan); }
 
+/* Смысловое выделение внутри текста.
+   Тексты на сайте набраны приглушённым цветом, поэтому важное место
+   вытягивается не только начертанием, но и контрастом: на светлом — до
+   основного тона, на тёмной секции — до белого. Одного веса при разнице
+   в 400/600 на таком кегле недостаточно. */
+.d strong { font-weight: 600; color: var(--ink); }
+.d .d-section--ink strong { color: #ffffff; }
+
 /* — появление по скроллу — */
 .d-reveal { opacity: 0; }
 @media (prefers-reduced-motion: no-preference) {

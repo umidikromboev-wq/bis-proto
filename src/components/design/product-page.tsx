@@ -5,6 +5,7 @@ import { Reveal } from "./reveal";
 import { Btn, Section, SectionHead, TextLink } from "./ui";
 import "./sections/sections.css";
 import "./product-page.css";
+import { em } from "./emphasis";
 
 /**
  * Один шаблон на обе страницы продукта: у Business One и S/4HANA одинаковая
@@ -69,7 +70,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
                 <h3 className="d-h3">{m.name}</h3>
               </div>
               <div className="d-product-body">
-                <p>{m.text}</p>
+                <p>{em(m.text)}</p>
                 <ul className="d-marks">
                   {m.marks.map((mk) => (
                     <li key={mk}>{mk}</li>
@@ -92,7 +93,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
             <Reveal as="li" key={s.time} delay={(i % 3) * 70}>
               <span className="dp-day-time">{s.time}</span>
               <h3 className="d-h3">{s.title}</h3>
-              <p>{s.text}</p>
+              <p>{em(s.text)}</p>
             </Reveal>
           ))}
         </ol>
@@ -111,7 +112,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
                 <span className="d-phase-name">{p.term}</span>
               </div>
               <h3 className="d-h3">{p.name}</h3>
-              <p>{p.text}</p>
+              <p>{em(p.text)}</p>
             </Reveal>
           ))}
         </ol>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { process } from "@/content/blocks";
+import { em } from "../emphasis";
 
 /**
  * Шесть фаз внедрения, закреплённые на экране.
@@ -77,7 +78,7 @@ export function PinnedRoadmap() {
                 <span className="rd-n">{s.n}</span>
                 <span className="rd-name">{s.name}</span>
                 <h3>{s.title}</h3>
-                <p>{s.text}</p>
+                <p>{em(s.text)}</p>
                 <span className="rd-out">{s.out}</span>
               </li>
             ))}

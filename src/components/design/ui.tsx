@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { PixelArrow } from "./marks";
+import { em } from "./emphasis";
 
 /** Внутренние ссылки идут через Link, внешние и якоря — через <a>. */
 function isInternal(href: string) {
@@ -63,7 +64,7 @@ export function SectionHead({ kicker, h2, lead, id }: { kicker?: string; h2: str
     <div className="d-head">
       {kicker ? <Kicker>{kicker}</Kicker> : null}
       <h2 className="d-h2" id={id}>{h2}</h2>
-      {lead ? <p className="d-lead">{lead}</p> : null}
+      {lead ? <p className="d-lead">{em(lead)}</p> : null}
     </div>
   );
 }

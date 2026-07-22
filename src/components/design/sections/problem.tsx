@@ -2,6 +2,7 @@ import { cost, pain } from "@/content/blocks";
 import { GlassIcon, type IconName } from "../icon";
 import { Reveal } from "../reveal";
 import { Btn, Section, SectionHead } from "../ui";
+import { em } from "../emphasis";
 
 /**
  * Боль. Шесть симптомов одной причины.
@@ -22,7 +23,7 @@ export function Pain() {
           <Reveal as="li" key={item.title} delay={(i % 2) * 90}>
             <span className="d-symptom-idx">{String(i + 1).padStart(2, "0")}</span>
             <h3 className="d-h3">{item.title}</h3>
-            <p>{item.text}</p>
+            <p>{em(item.text)}</p>
           </Reveal>
         ))}
       </ul>
@@ -61,7 +62,7 @@ export function Cost() {
               <span className="d-loss-n">{String(i + 1).padStart(2, "0")}</span>
             </span>
             <h3 className="d-h3">{item.title}</h3>
-            <p>{item.text}</p>
+            <p>{em(item.text)}</p>
             {item.source ? <span className="d-loss-src">{item.source}</span> : null}
           </Reveal>
         ))}

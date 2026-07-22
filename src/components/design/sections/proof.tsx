@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { cases, casesMeta, process, readiness, team, why } from "@/content/blocks";
 import { designTeam } from "@/content/design-team";
 import { trust } from "@/content/playbook";
@@ -8,6 +7,7 @@ import { GlassIcon, type IconName } from "../icon";
 import { DragMarquee } from "../schemes/marquee";
 import { ScrollText } from "../schemes/scroll-text";
 import { Btn, Section, SectionHead, TextLink } from "../ui";
+import { em } from "../emphasis";
 
 /**
  * Доверие. Регалии и цитата основателя.
@@ -131,7 +131,7 @@ export function Process() {
               <span className="sc-road-n">{s.n}</span>
               <span className="sc-road-name">{s.name}</span>
               <h3>{s.title}</h3>
-              <p>{s.text}</p>
+              <p>{em(s.text)}</p>
               <span className="sc-road-out">{s.out}</span>
             </Reveal>
           ))}
@@ -163,7 +163,7 @@ export function Readiness() {
           <Reveal as="li" key={item.title} delay={(i % 3) * 70}>
             <GlassIcon name={READY_ICONS[i]} />
             <h3 className="d-h3">{item.title}</h3>
-            <p>{item.text}</p>
+            <p>{em(item.text)}</p>
           </Reveal>
         ))}
       </ul>
@@ -203,7 +203,7 @@ export function Why() {
           <Reveal key={p.title} delay={(i % 2) * 80} className="d-why-point">
             <GlassIcon name={WHY_ICONS[i]} />
             <h3 className="d-h3">{p.title}</h3>
-            <p>{p.text}</p>
+            <p>{em(p.text)}</p>
           </Reveal>
         ))}
       </div>
@@ -253,13 +253,19 @@ export function Team() {
   );
 }
 
-/** Ссылка на все кейсы — используется на главной под блоком кейсов. */
+/**
+ * Ссылка на все кейсы — используется на главной под блоком кейсов.
+ *
+ * Это кнопка, а не текстовая ссылка: она стоит одна, без соседнего главного
+ * действия, и как ссылка на узком экране терялась. Иконочная плитка обязательна
+ * — без неё разметка кнопки на мобильном разъезжается.
+ */
 export function AllCasesLink() {
   return (
-    <div className="d-wrap" style={{ paddingBottom: "1rem" }}>
-      <Link href="/design/cases" className="dh-textlink">
-        <span className="dh-textlink-label">Все кейсы внедрения</span>
-      </Link>
+    <div className="d-wrap d-allcases">
+      <Btn href="/design/cases" variant="ghost">
+        Смотреть все кейсы внедрения
+      </Btn>
     </div>
   );
 }

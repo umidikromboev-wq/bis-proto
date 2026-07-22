@@ -7,6 +7,7 @@ import { GlassIcon, type IconName } from "../icon";
 
 import { FlowScheme } from "../schemes/flow";
 import { Section, SectionHead } from "../ui";
+import { em } from "../emphasis";
 
 /**
  * Лента клиентов сразу под первым экраном.
@@ -82,9 +83,13 @@ export function UnifiedBase() {
 export function Effect() {
   return (
     <Section id="effect" tone="tint">
-      <Reveal>
-        <SectionHead kicker={effect.kicker} h2={effect.h2} lead={effect.lead} />
-      </Reveal>
+      {/* Две колонки: шапка держится слева, пока справа идут показатели.
+          Одной колонкой во всю страницу список занимал левую половину, а
+          правая оставалась пустой на два экрана. */}
+      <div className="dn-split">
+        <Reveal className="dn-aside">
+          <SectionHead kicker={effect.kicker} h2={effect.h2} lead={effect.lead} />
+        </Reveal>
 
       {/* Круговая шкала вместо полосы: значение стоит внутри круга, и каждый
           показатель читается как отдельная величина, а не как строка таблицы.
@@ -104,11 +109,12 @@ export function Effect() {
             </span>
             <div className="dn-body">
               <h3 className="d-h3">{bar.label}</h3>
-              <p>{bar.note}</p>
+              <p>{em(bar.note)}</p>
             </div>
           </Reveal>
         ))}
-      </ul>
+        </ul>
+      </div>
 
       <div className="d-multipliers">
         {effect.multipliers.map((m, i) => (

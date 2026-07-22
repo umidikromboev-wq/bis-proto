@@ -6,6 +6,7 @@ import { GlassIcon, type IconName } from "../icon";
 import { SapMark } from "../marks";
 import { PixelArrow } from "../marks";
 import { Section, SectionHead } from "../ui";
+import { em } from "../emphasis";
 
 /**
  * Решение. Текст плюс сравнение «как было / как стало».
@@ -62,11 +63,25 @@ export function Solution() {
           {solution.compare.rows.map((row) => (
             <div className="d-compare-row" key={row.task}>
               <dt>{row.task}</dt>
-              {/* Подписи «как сейчас» и «в системе» видны только на узком
-                  экране: там колонки схлопываются, и без них плюс и минус
-                  сливаются в один поток текста. */}
-              <dd className="d-compare-old"><span className="d-cmp-tag">Как сейчас</span>{row.old}</dd>
-              <dd className="d-compare-new"><span className="d-cmp-tag">В системе</span>{row.neu}</dd>
+              {/* Подписи видны только на узком экране: там колонки
+                  схлопываются, легенда с логотипами пропадает, и без них плюс
+                  и минус сливаются в один поток текста. Поэтому логотипы
+                  переезжают из легенды в сами строки. */}
+              <dd className="d-compare-old">
+                <span className="d-cmp-tag">
+                  <img src="/design/excel.svg" alt="" width={16} height={16} aria-hidden />
+                  <img src="/design/onec.svg" alt="" width={27} height={16} aria-hidden />
+                  Excel и 1С
+                </span>
+                {row.old}
+              </dd>
+              <dd className="d-compare-new">
+                <span className="d-cmp-tag">
+                  <SapMark />
+                  SAP Business One
+                </span>
+                {row.neu}
+              </dd>
             </div>
           ))}
         </dl>
@@ -79,7 +94,7 @@ export function Solution() {
 const MODULE_ICONS: IconName[] = ["finance", "warehouse", "procurement", "production", "partnership", "analytics", "support", "people"];
 
 /** Иконка на продукт: масштаб бизнеса, под который он сделан. */
-const PRODUCT_ICONS: IconName[] = ["production", "cloud", "integration"];
+const PRODUCT_ICONS: IconName[] = ["production", "integration"];
 
 /**
  * Продукты. Строка-витрина: превью, крупное имя, стрелка, чипы.
@@ -107,7 +122,7 @@ export function Products() {
                   <h3>{item.name}</h3>
                   <span className="sc-row-arrow" aria-hidden><PixelArrow /></span>
                 </div>
-                <p className="sc-row-sub">{item.text}</p>
+                <p className="sc-row-sub">{em(item.text)}</p>
                 <ul className="sc-row-tags">
                   <li>{item.for}</li>
                   {item.marks.map((m) => (

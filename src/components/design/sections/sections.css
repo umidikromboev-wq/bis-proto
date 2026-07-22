@@ -42,6 +42,10 @@
 .d-compare-legend,
 .d-compare-row { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.1fr) minmax(0, 1.1fr); gap: clamp(1rem, 2.5vw, 2.5rem); }
 .d-compare-legend { padding-bottom: 0.9rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); border-bottom: 1px solid var(--line); }
+/* Подпись со знаками нужна только на узком экране, где легенда скрыта.
+   Правило стоит ДО медиазапроса: объявленное после, оно перебивало бы его —
+   при равной специфичности выигрывает то, что идёт ниже по файлу. */
+.d-cmp-tag { display: none; }
 .d-compare-legend .is-new { color: var(--brand); }
 .d-compare-rows { margin: 0; }
 .d-compare-row { padding: clamp(1.1rem, 2vw, 1.6rem) 0; border-bottom: 1px solid var(--line); }
@@ -86,7 +90,12 @@
   .d-compare-row dd { padding: 0.9rem 1rem; border-radius: 14px; }
   .d-compare-old { background: var(--paper); color: var(--muted); }
   .d-compare-new { background: rgba(28, 134, 214, 0.08); border-left: 0; padding-left: 1rem; color: var(--text); }
-  .d-cmp-tag { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.45rem; }
+  /* Логотипы переезжают сюда из легенды: она на узком экране скрыта, а без
+     знаков строки читаются как два одинаковых абзаца. */
+  .d-cmp-tag { display: flex; align-items: center; gap: 0.4rem; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .d-cmp-tag img, .d-cmp-tag svg { height: 0.95rem; width: auto; display: block; flex: none; }
+  .d-cmp-tag svg { border-radius: 2px; }
+  .d-cmp-tag img:last-of-type { margin-right: 0.15rem; }
   .d-compare-old .d-cmp-tag { color: var(--dim); }
   .d-compare-new .d-cmp-tag { color: var(--brand); }
   .d-product { grid-template-columns: auto minmax(0, 1fr); }
@@ -419,13 +428,21 @@
   .d-quote-photo { width: 5.5rem; }
 }
 
+/* ─── переход к списку кейсов ─── */
+/* Действие стоит в секции одно, без соседней главной кнопки, поэтому ему
+   нужен собственный воздух сверху и снизу. */
+.d-allcases { padding-block: 0 clamp(2.5rem, 5vw, 4rem); }
+@media (max-width: 640px) {
+  /* Во всю ширину: одиночная кнопка посреди пустой строки читается как
+     обрезанная, а палец промахивается мимо короткой цели. */
+  .d-allcases .dh-btn { display: flex; width: 100%; }
+}
+
 /* ─── логотипы в шапке сравнения ─── */
 .d-cmp-brand { display: inline-flex; align-items: center; gap: 0.55rem; }
 .d-cmp-brand img { height: 1.15rem; width: auto; display: block; }
 .d-cmp-brand svg { height: 1.15rem; width: auto; display: block; border-radius: 2px; }
 .d-cmp-brand i { font-style: normal; }
-/* подпись «как сейчас / в системе» нужна только на узком экране */
-.d-cmp-tag { display: none; }
 
 /* ─── иконки контуров системы ─── */
 .d-modules li { display: flex; align-items: center; gap: 0.9rem; }
@@ -434,7 +451,13 @@
 /* ─── иконка продукта: плашка большая, знак в ней должен держать её ─── */
 
 /* ─── круговые шкалы эффекта ─── */
-.dn-list { list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; display: grid; gap: 0; max-width: 64rem; }
+/* Шапка слева, показатели справа. Шапка залипает: список длинный, и без
+   этого читатель к третьему показателю уже не помнит, что за диапазоны
+   перед ним. */
+.dn-split { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.dn-aside { position: sticky; top: 7rem; }
+
+.dn-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .dn-row { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(1.2rem, 3vw, 2.5rem); align-items: center; padding: clamp(1.2rem, 2.2vw, 1.8rem) 0; border-top: 1px solid var(--line); }
 .dn-list > *:last-child .dn-row, .dn-list > *:last-child { border-bottom: 1px solid var(--line); }
 
@@ -457,6 +480,13 @@
 .dn-value i { font-style: normal; font-size: 0.72em; font-weight: 400; color: var(--brand); margin-top: 0.15rem; }
 .dn-body p { margin: 0.5rem 0 0; font-size: 0.9rem; color: var(--muted); max-width: 46ch; }
 
+/* Ниже этой ширины две колонки уже не дают воздуха — шапка встаёт над
+   списком, как в остальных секциях. */
+@media (max-width: 1000px) {
+  .dn-split { grid-template-columns: 1fr; gap: 0; }
+  .dn-aside { position: static; }
+  .dn-list { margin-top: clamp(2.5rem, 5vw, 4rem); }
+}
 @media (max-width: 560px) {
   .dn-row { grid-template-columns: 1fr; justify-items: start; gap: 1rem; }
 }

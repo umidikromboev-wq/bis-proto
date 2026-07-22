@@ -9,6 +9,7 @@ import { Reveal } from "./reveal";
 import { Btn, Section, SectionHead, TextLink } from "./ui";
 import "./sections/sections.css";
 import "./inner.css";
+import { em } from "./emphasis";
 
 const HOME = { label: "Главная", href: "/design" };
 
@@ -175,13 +176,13 @@ export function BlogList() {
 
 /** Тело статьи — простые блоки, без markdown-парсера: так задумано в контенте. */
 function Block({ b }: { b: BlogBlock }) {
-  if (b.type === "p") return <p>{b.text}</p>;
+  if (b.type === "p") return <p>{em(b.text)}</p>;
   if (b.type === "h3") return <h3>{b.text}</h3>;
   if (b.type === "list") return <ul>{b.items.map((i) => <li key={i}>{i}</li>)}</ul>;
   if (b.type === "quote")
     return (
       <blockquote>
-        <p>{b.text}</p>
+        <p>{em(b.text)}</p>
         {b.author ? <footer>{b.author}</footer> : null}
       </blockquote>
     );
@@ -189,7 +190,7 @@ function Block({ b }: { b: BlogBlock }) {
     return (
       <aside className="di-callout">
         <b>{b.title}</b>
-        <p>{b.text}</p>
+        <p>{em(b.text)}</p>
       </aside>
     );
   return null;
