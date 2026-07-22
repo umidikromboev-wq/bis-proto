@@ -86,22 +86,29 @@ export function Effect() {
         <SectionHead kicker={effect.kicker} h2={effect.h2} lead={effect.lead} />
       </Reveal>
 
-      <div className="d-bars">
+      {/* Круговая шкала вместо полосы: значение стоит внутри круга, и каждый
+          показатель читается как отдельная величина, а не как строка таблицы.
+          Круг заполняется, когда строка появляется в экране. */}
+      <ul className="dn-list">
         {effect.bars.map((bar, i) => (
-          <Reveal key={bar.label} delay={i * 70} className="d-bar">
-            <div className="d-bar-head">
-              <span className="d-bar-label">{bar.label}</span>
-              <span className="d-bar-value">
-                {bar.from}<em>…{bar.to}</em>
+          <Reveal as="li" key={bar.label} delay={i * 90} className="dn-row">
+            <span className="dn-gauge" style={{ ["--pct" as string]: bar.pct }}>
+              <svg viewBox="0 0 120 120" aria-hidden>
+                <circle className="dn-track" cx="60" cy="60" r="52" />
+                <circle className="dn-fill" cx="60" cy="60" r="52" />
+              </svg>
+              <span className="dn-value">
+                {bar.from}
+                <i>…{bar.to}</i>
               </span>
+            </span>
+            <div className="dn-body">
+              <h3 className="d-h3">{bar.label}</h3>
+              <p>{bar.note}</p>
             </div>
-            <div className="d-bar-track">
-              <span className="d-bar-fill" style={{ ["--pct" as string]: `${bar.pct}%` }} />
-            </div>
-            <span className="d-bar-note">{bar.note}</span>
           </Reveal>
         ))}
-      </div>
+      </ul>
 
       <div className="d-multipliers">
         {effect.multipliers.map((m, i) => (

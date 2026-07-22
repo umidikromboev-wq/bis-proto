@@ -188,7 +188,9 @@
 .d-case-before li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 1px; background: var(--dim); }
 .d-case-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 1rem; align-content: start; }
 .d-case-after b { display: block; font-size: clamp(1.2rem, 1rem + 0.7vw, 1.6rem); font-weight: 300; letter-spacing: -0.02em; color: var(--brand); line-height: 1; }
-.d-case-after span { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
+/* Только подписи под цифрами: селектор по всем span захватывал и части
+   кнопки — из-за его отступа плитка вставала не по центру. */
+.d-case-after > div > span { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
 /* Ссылка на кейс тонула в блоке цифр: рядом с крупными синими значениями
    тонкая строка не читалась как действие. Теперь это кнопка. */
 /* Кнопка сжималась под ширину узкой колонки, и иконочная плитка вылезала за
@@ -430,3 +432,31 @@
 .d-modules .d-icon { width: 2.2rem; margin: 0; flex: none; }
 
 /* ─── иконка продукта: плашка большая, знак в ней должен держать её ─── */
+
+/* ─── круговые шкалы эффекта ─── */
+.dn-list { list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; display: grid; gap: 0; max-width: 64rem; }
+.dn-row { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(1.2rem, 3vw, 2.5rem); align-items: center; padding: clamp(1.2rem, 2.2vw, 1.8rem) 0; border-top: 1px solid var(--line); }
+.dn-list > *:last-child .dn-row, .dn-list > *:last-child { border-bottom: 1px solid var(--line); }
+
+.dn-gauge { position: relative; display: grid; place-items: center; width: clamp(5.5rem, 8vw, 7rem); aspect-ratio: 1; flex: none; }
+.dn-gauge svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.dn-track { fill: none; stroke: var(--line); stroke-width: 8; }
+.dn-fill {
+  fill: none; stroke: var(--brand); stroke-width: 8; stroke-linecap: round;
+  /* 2πr при r=52 ≈ 326.7 — длина окружности, по ней и считается заполнение */
+  stroke-dasharray: 326.7;
+  stroke-dashoffset: calc(326.7 - 326.7 * var(--pct) / 100);
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* круг пустой, пока строка не появилась в экране */
+  .dn-fill { stroke-dashoffset: 326.7; transition: stroke-dashoffset 1.1s var(--ease) 0.15s; }
+  .d-reveal.is-in .dn-fill { stroke-dashoffset: calc(326.7 - 326.7 * var(--pct) / 100); }
+}
+.dn-value { position: absolute; display: grid; justify-items: center; line-height: 1; text-align: center; }
+.dn-value { font-size: clamp(0.95rem, 0.8rem + 0.5vw, 1.2rem); font-weight: 500; color: var(--ink); letter-spacing: -0.02em; }
+.dn-value i { font-style: normal; font-size: 0.72em; font-weight: 400; color: var(--brand); margin-top: 0.15rem; }
+.dn-body p { margin: 0.5rem 0 0; font-size: 0.9rem; color: var(--muted); max-width: 46ch; }
+
+@media (max-width: 560px) {
+  .dn-row { grid-template-columns: 1fr; justify-items: start; gap: 1rem; }
+}

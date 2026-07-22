@@ -1,0 +1,67 @@
+/*
+  Симулятор в цвете.
+
+  Разметка и классы взяты из прототипа без изменений — они уже описаны в его
+  globals.css. Здесь только переопределены переменные, на которых собран
+  симулятор, и точечно те правила, где прототип брал светлое на тёмном.
+  Так поведение остаётся ровно тем, которое проверяли, а вид становится
+  частью дизайн-версии.
+*/
+.d .sim {
+  --bg: var(--paper);
+  --panel: #ffffff;
+  --panel-2: var(--paper);
+  --text: var(--ink);
+  --accent: var(--brand);
+  /* Семантика цвета сохранена: потеря — тревожный тон, возврат — рост */
+  --loss: #d9534a;
+  --recover: var(--up);
+  color: var(--text);
+}
+
+/* Заголовки прототипа набраны капслоком и жирным — в дизайн-версии крупный
+   кегль идёт тонким и без верхнего регистра. */
+.d .sim .h1 { font-weight: 300; text-transform: none; letter-spacing: -0.025em; color: var(--ink); }
+.d .sim .h3 { font-weight: 500; color: var(--ink); }
+.d .sim .kicker { color: var(--brand); }
+.d .sim .kicker::before { background: var(--brand); border-radius: 999px; }
+.d .sim .lead { color: var(--muted); }
+.d .sim .wrap { max-width: none; padding-inline: 0; }
+.d .sim .section { padding-block: 0; }
+.sim-crumbs { margin-bottom: clamp(1.2rem, 2.5vw, 2rem); }
+
+/* Панели: на светлом фоне нужна видимая, но не жёсткая граница */
+.d .sim .panel,
+.d .sim .lc { background: #ffffff; border-color: var(--line); }
+.d .sim .manual { background: var(--paper); border-color: var(--line); }
+.d .sim .sim-result { background: #ffffff; border-color: var(--line); top: calc(var(--nav-h) + 1rem); }
+.d .sim .panel-2 { background: #ffffff; border-color: var(--line); }
+
+/* Ползунки и кнопки берут брендовый цвет вместо белого текста прототипа */
+.d .sim input[type=range] { background: var(--line); }
+.d .sim input[type=range]::-webkit-slider-thumb { background: var(--brand); border-color: #ffffff; }
+.d .sim input[type=range]::-moz-range-thumb { background: var(--brand); border-color: #ffffff; }
+.d .sim .pbtn { color: var(--text); border-color: var(--line); background: #ffffff; }
+.d .sim .pbtn:hover { border-color: var(--brand); color: var(--brand); }
+.d .sim .pbtn.active { background: var(--brand); color: #ffffff; border-color: var(--brand); }
+.d .sim .ctoggle { border-color: var(--line); background: #ffffff; }
+.d .sim .ctoggle button.active { background: var(--brand); color: #ffffff; }
+.d .sim .num-input, .d .sim .manual input { background: #ffffff; color: var(--ink); border-color: var(--line); }
+.d .sim .num-input:focus, .d .sim .manual input:focus { border-color: var(--brand); }
+
+/* Кнопки действия — тот же язык, что и на остальном сайте */
+.d .sim .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 12px; border: 1px solid var(--line); background: #ffffff; color: var(--text);
+  font-weight: 500; transition: background-color .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
+  transform: none;
+}
+.d .sim .btn:hover { background: #ffffff; border-color: var(--brand); color: var(--brand); transform: none; }
+.d .sim .btn-solid { background: var(--brand); color: #ffffff; border-color: var(--brand); }
+.d .sim .btn-solid:hover { background: var(--brand-deep); color: #ffffff; border-color: var(--brand-deep); }
+
+/* Полосы и итог */
+.d .sim .rbar { background: var(--line); }
+.d .sim .green { background: rgba(23, 166, 115, 0.08); border-color: rgba(23, 166, 115, 0.28); }
+.d .sim .msticky { background: #ffffff; border-top-color: var(--line); }
+.d .sim .note { color: var(--dim); }

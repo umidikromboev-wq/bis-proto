@@ -125,8 +125,10 @@
   cursor: pointer; text-decoration: none; border: 1px solid transparent;
   transition: background-color 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
-.dh-btn-label { line-height: 1.15; }
-.dh-btn-icon { flex: none; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 10px; transition: background-color 0.2s var(--ease), color 0.2s var(--ease); }
+.dh-btn-label { line-height: 1.15; align-self: center; }
+/* align-self и line-height заданы явно: без них плитку смещала базовая линия
+   подписи, и в компактной кнопке она вставала на 3-4px ниже центра. */
+.dh-btn-icon { flex: none; align-self: center; margin: 0; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; line-height: 0; border-radius: 10px; transition: background-color 0.2s var(--ease), color 0.2s var(--ease); }
 .dh-btn-icon svg { width: 0.95rem; height: 0.95rem; }
 
 .dh-btn-primary { background-color: var(--brand); color: #ffffff; }
