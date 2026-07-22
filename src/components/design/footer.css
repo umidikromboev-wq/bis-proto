@@ -1,0 +1,83 @@
+/*
+  Подвал. Последний экран, а не служебная сноска.
+
+  Приёмы те же, что держат весь сайт: крупный тонкий набор, волосяные линии,
+  плитка со стрелкой у действия. Отличие одно — здесь всё крупнее обычного:
+  подвал видят в конце длинной страницы, и мелкий набор в этот момент просто
+  не читают.
+*/
+.df {
+  position: relative;
+  background: #061423;
+  color: rgba(255, 255, 255, 0.62);
+  padding-block: clamp(3.5rem, 6vw, 6rem) clamp(1.5rem, 3vw, 2.5rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+/* один брендовый отсвет в углу — единственный декор на всём подвале */
+.df::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(60% 70% at 88% 0%, rgba(28, 134, 214, 0.28) 0%, transparent 62%),
+    radial-gradient(50% 60% at 0% 100%, rgba(51, 199, 234, 0.12) 0%, transparent 64%);
+}
+
+.df-cap { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255, 255, 255, 0.38); margin-bottom: 1.1rem; }
+
+/* ─── призыв ─── */
+.df-call {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 2rem;
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.df-call-h { margin: 0; font-size: clamp(1.6rem, 1rem + 2.6vw, 3.2rem); font-weight: 300; line-height: 1.14; letter-spacing: -0.028em; color: #ffffff; }
+.df-call-btn {
+  display: inline-flex; align-items: center; gap: 1.4rem; flex: none;
+  padding: 0.5rem 0.5rem 0.5rem 1.6rem; border-radius: 14px;
+  background: #ffffff; color: #061423; text-decoration: none; font-size: 1rem; font-weight: 500;
+  transition: background-color 0.25s var(--ease);
+}
+.df-call-btn:hover { background: var(--cyan); }
+.df-call-icon { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 10px; background: var(--brand); color: #ffffff; }
+.df-call-icon svg { width: 0.95rem; height: 0.95rem; }
+
+/* ─── сетка ─── */
+.df-grid {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) repeat(2, minmax(0, 0.75fr)) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+.df-brand img { width: auto; height: clamp(2.6rem, 3.4vw, 3.4rem); }
+.df-brand p { margin: 1.4rem 0 0; font-size: 0.84rem; line-height: 1.6; max-width: 32ch; }
+.df-partner { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 1.6rem; font-size: 0.78rem; color: rgba(255, 255, 255, 0.7); }
+.df-partner svg { width: 2.3rem; height: auto; border-radius: 3px; flex: none; }
+
+.df-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.df-col a { color: rgba(255, 255, 255, 0.72); text-decoration: none; font-size: 0.92rem; transition: color 0.25s var(--ease); }
+.df-col a:hover { color: var(--cyan); }
+
+.df-phone { display: block; font-size: clamp(1.25rem, 1rem + 0.8vw, 1.7rem); font-weight: 300; letter-spacing: -0.02em; color: #ffffff; text-decoration: none; }
+.df-phone:hover { color: var(--cyan); }
+.df-mail { display: inline-block; margin-top: 0.8rem; color: rgba(255, 255, 255, 0.72); text-decoration: none; font-size: 0.92rem; }
+.df-mail:hover { color: var(--cyan); }
+.df-address { margin: 1.1rem 0 0; font-size: 0.84rem; line-height: 1.6; max-width: 28ch; }
+
+/* ─── нижняя строка ─── */
+.df-bottom {
+  display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; align-items: center;
+  padding-top: clamp(1.4rem, 2.5vw, 2rem); border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.78rem; color: rgba(255, 255, 255, 0.4);
+}
+.df-bottom span:last-child { margin-left: auto; }
+
+@media (max-width: 900px) {
+  .df-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .df-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .df-call { flex-direction: column; align-items: stretch; }
+  .df-call-btn { justify-content: space-between; }
+  .df-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+  .df-bottom span:last-child { margin-left: 0; }
+}

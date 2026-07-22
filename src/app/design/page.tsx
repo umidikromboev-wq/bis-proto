@@ -1,7 +1,8 @@
 import { DesignHero } from "@/components/design/hero";
 import { LeadMagnet, Faq, FinalCta, Pricing } from "@/components/design/sections/close";
 import { Cost, Pain } from "@/components/design/sections/problem";
-import { AllCasesLink, Cases, Process, Readiness, Team, Trust, Why } from "@/components/design/sections/proof";
+import { AllCasesLink, Cases, Readiness, Team, Trust, Why } from "@/components/design/sections/proof";
+import { PinnedRoadmap } from "@/components/design/schemes/roadmap";
 import { Products, Solution } from "@/components/design/sections/solution";
 import { Effect, Industries, LogoStrip, Roles, UnifiedBase } from "@/components/design/sections/value";
 import "@/components/design/sections/sections.css";
@@ -29,7 +30,7 @@ export default function DesignHome() {
       <Trust />
       <Cases />
       <AllCasesLink />
-      <Process />
+      <PinnedRoadmap />
       <Readiness />
       <Why />
       <Team />

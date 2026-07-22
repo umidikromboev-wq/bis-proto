@@ -161,7 +161,10 @@
 
 /* ─── кейсы ─── */
 .d-cases { margin-top: clamp(2.5rem, 5vw, 4rem); }
-.d-case { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 3rem); padding: clamp(1.8rem, 3vw, 2.8rem) 0; border-top: 1px solid var(--line); }
+/* Четвёртая колонка — снимок отрасли: кейс про склад и цех, и показать их
+   нагляднее, чем пересказать. */
+.d-case { display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(0, 0.72fr) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 2.5vw, 2.5rem); padding: clamp(1.8rem, 3vw, 2.8rem) 0; border-top: 1px solid var(--line); align-items: start; }
+.d-case-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; }
 .d-case:last-child { border-bottom: 1px solid var(--line); }
 .d-case-head { display: flex; gap: 1rem; align-items: baseline; }
 .d-case-idx { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.55; }
@@ -173,7 +176,9 @@
 .d-case-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 1rem; align-content: start; }
 .d-case-after b { display: block; font-size: clamp(1.2rem, 1rem + 0.7vw, 1.6rem); font-weight: 300; letter-spacing: -0.02em; color: var(--brand); line-height: 1; }
 .d-case-after span { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
-.d-case-after .dh-textlink { grid-column: 1 / -1; margin-top: 0.4rem; }
+/* Ссылка на кейс тонула в блоке цифр: рядом с крупными синими значениями
+   тонкая строка не читалась как действие. Теперь это кнопка. */
+.d-case-after .dh-btn { grid-column: 1 / -1; margin-top: 1rem; justify-self: start; }
 
 /* ─── процесс ─── */
 .d-phases { list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); }
@@ -292,7 +297,8 @@
 @media (max-width: 1000px) {
   .d-multipliers, .d-industries, .d-phases, .d-conditions, .d-team, .d-docs-list, .d-tariffs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .d-regalia, .d-why-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .d-links li, .d-case { grid-template-columns: 1fr; gap: 1rem; }
+  .d-links li { grid-template-columns: 1fr; gap: 1rem; }
+  .d-case { grid-template-columns: 1fr; gap: 1.2rem; }
   .d-lead-grid { grid-template-columns: 1fr; }
   .d-lead-side { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.14); padding-top: 2rem; }
 }
@@ -312,3 +318,55 @@
 /* ─── фотографии ─── */
 .d-industry-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; margin-bottom: 1.4rem; }
 .d-lead-photo { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; margin-bottom: 1.8rem; }
+
+
+/* ═══ Мобильные поверхности ═══
+   Правила живут здесь, а не в site.css: у них та же специфичность, что у
+   десктопных правил секций, а sections.css грузится позже — из site.css они
+   просто не долетали, и у плашек оставался нулевой боковой отступ. Отсюда и
+   был эффект «текст прилип к краю». */
+@media (max-width: 700px) {
+  .d .d-symptoms li,
+  .d .d-conditions li,
+  .d .d-why-point,
+  .d .d-role,
+  .d .d-links li {
+    background: var(--paper-2);
+    border: 0;
+    border-radius: 22px;
+    padding: 1.6rem 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .d .d-section--tint .d-symptoms li,
+  .d .d-section--tint .d-conditions li,
+  .d .d-section--tint .d-why-point,
+  .d .d-section--tint .d-role { background: var(--paper); }
+
+  .d .d-losses li {
+    background: rgba(255, 255, 255, 0.05);
+    border: 0;
+    border-radius: 22px;
+    padding: 1.6rem 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  /* сетки перестают добавлять свои зазоры — расстояние держит margin плашки */
+  .d .d-symptoms, .d .d-losses, .d .d-conditions, .d .d-roles, .d .d-why-points, .d .d-links { gap: 0; }
+
+  /* заголовок секции не должен упираться в первый блок под ним */
+  .d .d-head { margin-bottom: 1.8rem; }
+  .d .d-industry, .d .d-multiplier, .d .d-why-stat, .d .d-regale { padding-top: 1.2rem; }
+}
+
+/* ─── финальный призыв с мокапом ─── */
+.d-final-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.d-final-inner { max-width: 46rem; }
+/* Мокап выходит за правый край секции: экран продолжается за пределы кадра и
+   читается как настоящий монитор на столе, а не как картинка в рамке. */
+.d-final-art { margin-right: calc(-1 * var(--pad-x)); }
+.d-final-art img { display: block; width: 100%; height: auto; border-radius: 18px 0 0 18px; }
+@media (max-width: 1000px) {
+  .d-final-grid { grid-template-columns: 1fr; }
+  .d-final-art { margin-right: 0; order: -1; }
+  .d-final-art img { border-radius: 18px; }
+}

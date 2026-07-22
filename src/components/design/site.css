@@ -241,20 +241,3 @@
 /* Поверхность для сгруппированных блоков: белая плашка с волосяной рамкой.
    На бумажном фоне она отделяет объект без единой лишней линии. */
 .d-surface { background: var(--paper-2); border: 1px solid var(--line); border-radius: 18px; padding: clamp(1.2rem, 2.5vw, 2rem); }
-
-@media (max-width: 700px) {
-  /* На узком экране объекты стоят друг под другом вплотную, поэтому граница
-     между ними обязана быть видимой: пункты получают собственную поверхность. */
-  /* Пункты отделяются тоном, а не рамкой: рамка вернула бы жёсткие границы,
-     от которых мы как раз ушли. */
-  .d-symptoms li, .d-conditions li, .d-why-point, .d-role, .d-links li {
-    background: var(--paper-2); border: 0; border-top: 0;
-    border-radius: 22px; padding: 1.6rem 1.4rem; margin-bottom: 1rem;
-  }
-  .d-section--tint .d-symptoms li,
-  .d-section--tint .d-conditions li,
-  .d-section--tint .d-why-point,
-  .d-section--tint .d-role { background: var(--paper); }
-  .d-losses li { border-radius: 22px; padding: 1.6rem 1.4rem; margin-bottom: 0.85rem; background: rgba(255, 255, 255, 0.05); border: 0; }
-  .d-industry, .d-multiplier, .d-why-stat, .d-regale { padding-top: 1.2rem; }
-}

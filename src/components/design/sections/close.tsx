@@ -163,26 +163,45 @@ export function Faq() {
   );
 }
 
-/** Финальный призыв. Последняя развилка: аудит или открытая встреча. */
+/**
+ * Финальный призыв.
+ *
+ * Правая половина раньше пустовала, и блок читался как обрыв страницы.
+ * Теперь там дашборд SAP на мониторе: последнее, что видит человек перед
+ * решением, — это то, что он получит. Обещание «покажем систему» становится
+ * показом системы.
+ */
 export function FinalCta() {
   return (
     <Section id="audit" className="d-final">
-      <Reveal className="d-final-inner">
-        <h2 className="d-h2">{finalCta.h2}</h2>
-        <p className="d-lead">{finalCta.lead}</p>
+      <div className="d-final-grid">
+        <Reveal className="d-final-inner">
+          <h2 className="d-h2">{finalCta.h2}</h2>
+          <p className="d-lead">{finalCta.lead}</p>
 
-        <ul className="d-final-bullets">
-          {finalCta.bullets.map((b) => (
-            <li key={b}>{b}</li>
-          ))}
-        </ul>
+          <ul className="d-final-bullets">
+            {finalCta.bullets.map((b) => (
+              <li key={b}>{b}</li>
+            ))}
+          </ul>
 
-        <div className="dh-cta-row">
-          <Btn href="#form">{finalCta.cta}</Btn>
-          <TextLink href="#zoom">{finalCta.altCta}</TextLink>
-        </div>
-        <p className="d-note">{finalCta.alt}</p>
-      </Reveal>
+          <div className="dh-cta-row">
+            <Btn href="#form">{finalCta.cta}</Btn>
+            <TextLink href="#zoom">{finalCta.altCta}</TextLink>
+          </div>
+          <p className="d-note">{finalCta.alt}</p>
+        </Reveal>
+
+        <Reveal delay={120} className="d-final-art">
+          <Image
+            src="/design/photos/dashboard.webp"
+            alt="Дашборд SAP Business One: выручка, денежный поток, складские остатки и статусы заказов"
+            width={2200}
+            height={1643}
+            sizes="(max-width: 1000px) 100vw, 52vw"
+          />
+        </Reveal>
+      </div>
     </Section>
   );
 }

@@ -46,42 +46,6 @@
 
 .sc-caption { margin: clamp(1.5rem, 3vw, 2.2rem) 0 0; font-size: 0.9rem; color: var(--muted); }
 
-/* ═══ Дырявое ведро ═══ */
-.sc-bucket { display: grid; grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; margin-top: clamp(2.5rem, 5vw, 4rem); }
-.sc-bucket-art { position: relative; }
-.sc-bucket-art svg { display: block; width: 100%; max-width: 22rem; height: auto; margin-inline: auto; }
-.sc-bucket-body { fill: rgba(255, 255, 255, 0.06); stroke: rgba(255, 255, 255, 0.35); stroke-width: 2; }
-.sc-bucket-rim { fill: none; stroke: rgba(255, 255, 255, 0.45); stroke-width: 2; }
-.sc-hole circle { fill: #08182a; stroke: rgba(255, 255, 255, 0.4); stroke-width: 1.5; transition: fill 0.25s var(--ease), stroke 0.25s var(--ease), r 0.25s var(--ease); }
-.sc-hole.is-on circle { fill: var(--cyan); stroke: var(--cyan); }
-.sc-jet { fill: var(--cyan); opacity: 0.75; }
-@media (prefers-reduced-motion: no-preference) {
-  /* transform-box: fill-box обязателен — без него transform-origin в SVG
-     считается от начала холста, и струя росла вверх, а не вниз. */
-  .sc-jet { animation: sc-drip 1.1s linear infinite; transform-box: fill-box; transform-origin: top; }
-  @keyframes sc-drip { 0% { transform: scaleY(0.2); opacity: 0.9; } 100% { transform: scaleY(1); opacity: 0; } }
-}
-.sc-puddle { position: absolute; left: 50%; bottom: -0.5rem; width: 46%; height: 10px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(50% 50%, rgba(51, 199, 234, 0.35), transparent 70%); }
-
-.sc-leaks { list-style: none; margin: 0; padding: 0; }
-.sc-leaks li { border-top: 1px solid rgba(255, 255, 255, 0.14); }
-.sc-leaks li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
-.sc-leaks button {
-  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; width: 100%;
-  padding: clamp(0.9rem, 1.6vw, 1.3rem) 0; border: 0; background: none; cursor: pointer;
-  font: inherit; text-align: left; color: inherit;
-  transition: opacity 0.3s var(--ease), padding-left 0.35s var(--ease);
-}
-@media (hover: hover) {
-  .sc-bucket:hover .sc-leaks li:not(.is-on) button { opacity: 0.4; }
-  .sc-leaks li.is-on button { padding-left: clamp(0.4rem, 1vw, 1rem); }
-}
-.sc-leaks button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
-.sc-leak-n { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--cyan); opacity: 0.7; padding-top: 0.3em; }
-.sc-leak-body b { display: block; font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem); font-weight: 400; color: #ffffff; }
-.sc-leak-body > span { display: block; margin-top: 0.5rem; font-size: 0.92rem; color: rgba(255, 255, 255, 0.6); }
-.sc-leak-body i { display: block; margin-top: 0.7rem; font-style: normal; font-size: 0.72rem; color: var(--cyan); opacity: 0.75; }
-
 /* ═══ Змея (Roadmap): фазы внедрения ═══ */
 .sc-road { position: relative; margin-top: clamp(2.5rem, 5vw, 4rem); }
 /* сплошная линия проходит через все шесть точек — маршрут виден целиком,
@@ -102,8 +66,6 @@
   .sc-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sc-chain li:nth-child(3n) .sc-link { display: block; }
   .sc-chain li:nth-child(2n) .sc-link { display: none; }
-  .sc-bucket { grid-template-columns: 1fr; }
-  .sc-bucket-art svg { max-width: 15rem; }
   .sc-road ol { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
   .sc-road::before { display: none; }
   .sc-road li { padding-top: 2.2rem; }
@@ -254,3 +216,103 @@
 .sc-person--photo { padding: 0 0 1.4rem; overflow: hidden; }
 .sc-person-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 1.2rem; }
 .sc-person--photo h3, .sc-person--photo p { padding-inline: clamp(1.2rem, 2vw, 1.6rem); }
+
+/* ═══ Закреплённая дорожная карта ═══
+   Обёртка выше экрана — её высота и есть длина «залипания». Внутри липкий
+   слой, а прогресс прокрутки по обёртке приходит в --p. */
+.rd { position: relative; height: calc(100dvh + var(--n) * 46vh); --p: 0; }
+.rd-sticky { position: sticky; top: var(--nav-h); height: calc(100dvh - var(--nav-h)); display: grid; align-content: center; overflow: hidden; }
+.rd-inner { width: 100%; }
+.rd-head { max-width: 60rem; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+.rd-head .d-lead { max-width: 54ch; }
+
+.rd-track { position: relative; list-style: none; margin: 0; padding: 2.6rem 0 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
+.rd-line, .rd-line-fill { position: absolute; top: 11px; left: 0; height: 2px; }
+.rd-line { right: 0; background: var(--line); }
+/* линия тянется ровно на пройденную долю — она и есть индикатор пути */
+.rd-line-fill { width: calc(var(--p) * 100%); background: var(--grad); transition: width 0.08s linear; }
+
+.rd-track li {
+  position: relative;
+  /* Фаза загорается, когда прогресс дошёл до её номера. Порог считает CSS,
+     из скрипта приходит одно число на весь блок. */
+  --lit: clamp(0, calc(var(--p) * var(--n) - var(--i) + 0.35), 1);
+  opacity: calc(0.18 + var(--lit) * 0.82);
+  transform: translateY(calc((1 - var(--lit)) * 14px));
+  transition: opacity 0.25s linear, transform 0.25s linear;
+}
+.rd-dot { position: absolute; top: -2.6rem; left: 0; width: 16px; height: 16px; border-radius: 999px; background: var(--paper-2); border: 2px solid var(--line); transition: border-color 0.25s linear, background-color 0.25s linear; }
+.rd-track li[style*="--i"] .rd-dot { border-color: color-mix(in oklab, var(--brand) calc(var(--lit) * 100%), var(--line)); }
+.rd-track li .rd-dot { background: color-mix(in oklab, var(--brand) calc(var(--lit) * 100%), var(--paper-2)); }
+
+.rd-n { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.6; margin-bottom: 0.45rem; }
+.rd-name { display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin-bottom: 0.7rem; }
+.rd-track h3 { font-size: clamp(0.95rem, 0.85rem + 0.3vw, 1.1rem); font-weight: 500; color: var(--ink); margin: 0; }
+.rd-track p { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--muted); }
+.rd-out { display: block; margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px dashed var(--line); font-size: 0.78rem; color: var(--text); }
+
+/* при выключенной анимации закрепление только мешает */
+.rd[data-static="true"] { height: auto; }
+.rd[data-static="true"] .rd-sticky { position: static; height: auto; }
+
+@media (max-width: 1000px) {
+  /* На узком экране закрепление отбирает управление прокруткой, а шесть фаз
+     в один экран всё равно не помещаются — отдаём обычным списком. */
+  .rd { height: auto; }
+  .rd-sticky { position: static; height: auto; padding-block: var(--section-y); }
+  .rd-track { grid-template-columns: 1fr; gap: 0; padding-top: 0; }
+  .rd-line, .rd-line-fill { display: none; }
+  .rd-track li { opacity: 1 !important; transform: none !important; padding: 1.6rem 1.4rem; background: var(--paper-2); border-radius: 22px; margin-bottom: 1rem; }
+  .rd-dot { display: none; }
+}
+
+/* ═══ Счёт, который не выставят ═══
+   Белый документ на тёмной секции: контраст среды делает его артефактом,
+   а не очередным блоком текста. */
+.inv { display: flex; justify-content: center; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.inv-paper { width: 100%; max-width: 54rem; background: var(--paper-2); border-radius: 20px; padding: clamp(1.6rem, 3vw, 2.6rem); color: var(--text); }
+
+.inv-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; padding-bottom: 1.4rem; border-bottom: 2px solid var(--ink); }
+.inv-cap { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand); margin-bottom: 0.6rem; }
+.inv-title { margin: 0; font-size: clamp(1.2rem, 1rem + 0.8vw, 1.7rem); font-weight: 300; letter-spacing: -0.02em; color: var(--ink); }
+.inv-period { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); white-space: nowrap; padding-top: 0.3rem; }
+
+.inv-rows { list-style: none; margin: 0; padding: 0; }
+.inv-rows li { border-bottom: 1px solid var(--line); }
+.inv-rows button {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 1rem; align-items: baseline;
+  width: 100%; padding: clamp(0.9rem, 1.6vw, 1.2rem) 0; border: 0; background: none; cursor: pointer;
+  font: inherit; text-align: left; color: inherit;
+}
+.inv-rows button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.inv-n { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; color: var(--brand); opacity: 0.5; font-variant-numeric: tabular-nums; }
+.inv-name { font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.1rem); color: var(--ink); transition: color 0.2s var(--ease); }
+.inv-rows button:hover .inv-name { color: var(--brand); }
+/* Знак вопроса вместо суммы: придуманная цифра здесь была бы враньём, а
+   пустая колонка заставляет посчитать свою. */
+.inv-sum { font-size: 1.15rem; color: var(--dim); font-variant-numeric: tabular-nums; }
+.inv-rows li.is-open .inv-sum { color: var(--brand); }
+.inv-body { padding: 0 0 1.2rem calc(0.7rem + 1rem + 1.2ch); }
+.inv-body p { margin: 0; font-size: 0.92rem; color: var(--muted); max-width: 62ch; }
+.inv-src { display: block; margin-top: 0.7rem; font-size: 0.74rem; color: var(--brand); opacity: 0.75; }
+
+.inv-total { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; padding: 1.3rem 0; border-bottom: 2px solid var(--ink); }
+.inv-total-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
+.inv-total-sum { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem); font-weight: 300; line-height: 1; color: var(--ink); }
+
+.inv-cta {
+  display: inline-flex; align-items: center; gap: 1.3rem; margin-top: 1.8rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem; border-radius: 14px;
+  background: var(--brand); color: #ffffff; text-decoration: none; font-size: 0.97rem; font-weight: 500;
+  transition: background-color 0.25s var(--ease);
+}
+.inv-cta:hover { background: var(--brand-deep); }
+.inv-cta-icon { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 10px; background: #ffffff; color: var(--brand); }
+.inv-cta-icon svg { width: 0.95rem; height: 0.95rem; }
+.inv-note { margin: 1.4rem 0 0; font-size: 0.8rem; color: var(--dim); max-width: 56ch; }
+
+@media (max-width: 620px) {
+  .inv-head { flex-direction: column; gap: 0.6rem; }
+  .inv-body { padding-left: 0; }
+  .inv-cta { width: 100%; justify-content: space-between; }
+}

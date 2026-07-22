@@ -54,6 +54,17 @@ export function Cases() {
       <div className="d-cases">
         {cases.map((c, i) => (
           <Reveal key={c.slug} delay={i * 80} className="d-case">
+            {/* Снимок отрасли клиента: кейс про склад и цех, и показать их
+                нагляднее, чем пересказать. Это иллюстрация среды, а не фото
+                самого объекта заказчика. */}
+            <Image
+              className="d-case-photo"
+              src={`/design/cases/${c.slug}.webp`}
+              alt={`Отрасль клиента: ${c.industry.toLowerCase()}`}
+              width={1600}
+              height={1195}
+              sizes="(max-width: 1000px) 100vw, 26vw"
+            />
             <div className="d-case-head">
               <span className="d-case-idx">{String(i + 1).padStart(2, "0")}</span>
               <div>
@@ -78,7 +89,7 @@ export function Cases() {
                   <span>{a.label}</span>
                 </div>
               ))}
-              <TextLink href={`/design/cases/${c.slug}`}>{casesMeta.cta}</TextLink>
+              <Btn href={`/design/cases/${c.slug}`} variant="ghost" small>{casesMeta.cta}</Btn>
             </div>
           </Reveal>
         ))}

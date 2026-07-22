@@ -1,6 +1,6 @@
 import { cost, pain } from "@/content/blocks";
 import { Reveal } from "../reveal";
-import { LeakyBucket } from "../schemes/bucket";
+import { LossInvoice } from "../schemes/invoice";
 import { Btn, Section, SectionHead } from "../ui";
 
 /**
@@ -33,9 +33,9 @@ export function Pain() {
 /**
  * Цена бездействия. Единственная тёмная секция в верхней половине страницы.
  *
- * Список из шести пунктов заменён схемой «Дырявое ведро» — приёмом из каталога
- * смысловых приёмов для потерь, которые «по умолчанию» невидны. Секция прямо
- * про это: «счёт за это не приходит».
+ * Заголовок говорит буквально: «счёт за это не приходит». Поэтому блок и
+ * сделан этим счётом — приём «Артефакты» из каталога: вместо рассказа о
+ * документе показывают сам документ.
  *
  * Смена среды делает работу, которую иначе пришлось бы делать красным цветом
  * и восклицательными знаками: читатель физически чувствует, что разговор
@@ -49,12 +49,9 @@ export function Cost() {
       </Reveal>
 
       <Reveal>
-        <LeakyBucket />
+        <LossInvoice />
       </Reveal>
 
-      <Reveal className="d-losses-cta">
-        <Btn href="/design/simulator" variant="light">{cost.cta}</Btn>
-      </Reveal>
     </Section>
   );
 }
