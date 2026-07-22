@@ -92,14 +92,20 @@
 
 @media (max-width: 960px) {
   .dh-figure { width: 100%; }
-  .dh-spot-hint { font-size: 0.64rem; max-width: 52%; }
+  /* Кадр на узком экране намеренно выходит за вьюпорт на 7%, а отступ
+     считается от кадра — поэтому left: 1% уводил подсказку за край экрана.
+     Здесь отступ компенсирует этот вынос. Ширина задана в символах, а не
+     в процентах от кадра: в процентах число строк плыло от ширины экрана. */
+  .dh-spot-hint { top: 2%; left: 11%; font-size: 0.64rem; max-width: 17ch; align-items: flex-start; }
+  .dh-spot-hint span { margin-top: 0.35em; }
   .dh-spot-btn { width: 2.1rem; height: 2.1rem; }
   .dh-spot-btn svg { width: 0.95rem; height: 0.95rem; }
 }
 @media (max-width: 760px) {
   .dh-tip { display: none; }
   .dh-tip-bar {
-    position: absolute; left: 2%; bottom: 3%; z-index: 3;
+    /* тот же вынос кадра за вьюпорт, что и у подсказки, — иначе плашку срезает слева */
+    position: absolute; left: 10%; bottom: 3%; z-index: 3;
     display: flex; flex-direction: column; gap: 0.15rem;
     padding: 0.5rem 0.8rem; border-radius: 12px;
     background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(10px);

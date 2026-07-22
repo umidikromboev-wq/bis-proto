@@ -80,8 +80,8 @@ export function DesignHero() {
               {/* Второе действие намеренно без рамки: две одинаково весомые
                   кнопки конкурируют и размывают главный шаг. */}
               <Link href="/simulator" className="dh-textlink">
-                Посчитать, сколько теряю
-                <PixelArrow />
+                <span className="dh-textlink-label">Посчитать, сколько теряю</span>
+                <span className="dh-textlink-icon"><PixelArrow /></span>
               </Link>
             </div>
           </div>
