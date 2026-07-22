@@ -2,6 +2,7 @@ import Link from "next/link";
 import { cases, casesMeta, process, readiness, team, why } from "@/content/blocks";
 import { trust } from "@/content/playbook";
 import { Reveal } from "../reveal";
+import { GlassIcon, type IconName } from "../icon";
 import { Btn, Section, SectionHead, TextLink } from "../ui";
 
 /** Инициалы вместо портрета: единых фотографий команды пока нет. */
@@ -118,6 +119,9 @@ export function Process() {
   );
 }
 
+const READY_ICONS: IconName[] = ["people", "settings", "report", "checklist", "support", "shield"];
+const WHY_ICONS: IconName[] = ["shield", "people", "settings", "support"];
+
 /** Честно о рисках. Снятие возражения до договора, а не после. */
 export function Readiness() {
   return (
@@ -129,6 +133,7 @@ export function Readiness() {
       <ul className="d-conditions">
         {readiness.items.map((item, i) => (
           <Reveal as="li" key={item.title} delay={(i % 3) * 70}>
+            <GlassIcon name={READY_ICONS[i]} />
             <h3 className="d-h3">{item.title}</h3>
             <p>{item.text}</p>
           </Reveal>
@@ -163,6 +168,7 @@ export function Why() {
       <div className="d-why-points">
         {why.points.map((p, i) => (
           <Reveal key={p.title} delay={(i % 2) * 80} className="d-why-point">
+            <GlassIcon name={WHY_ICONS[i]} />
             <h3 className="d-h3">{p.title}</h3>
             <p>{p.text}</p>
           </Reveal>

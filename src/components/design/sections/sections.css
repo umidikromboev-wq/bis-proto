@@ -300,3 +300,8 @@
   .d-regalia, .d-why-stats { grid-template-columns: 1fr; }
   .d-case-after { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ─── иконки-стекло ─── */
+.d-icon { display: block; width: clamp(2.6rem, 3.4vw, 3.4rem); height: auto; margin-bottom: 1rem; }
+/* На тёмной секции стекло слишком светлое и спорит с фоном — гасим блик. */
+.d-section--ink .d-icon { opacity: 0.9; }

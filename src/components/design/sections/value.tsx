@@ -3,6 +3,7 @@ import { industries } from "@/content/blocks";
 import { clientLogos } from "@/content/client-logos";
 import { effect, logoStrip, roles, unifiedBase } from "@/content/playbook";
 import { Reveal } from "../reveal";
+import { GlassIcon, type IconName } from "../icon";
 import { Section, SectionHead } from "../ui";
 
 /**
@@ -142,6 +143,9 @@ export function Industries() {
   );
 }
 
+/** Иконка на роль — по её предмету, а не по должности. */
+const ROLE_ICONS: IconName[] = ["analytics", "finance", "production", "warehouse", "partnership", "procurement"];
+
 /**
  * Роли. Второй срез аудитории поверх отраслевого.
  *
@@ -159,6 +163,7 @@ export function Roles() {
       <div className="d-roles">
         {roles.items.map((r, i) => (
           <Reveal key={r.role} delay={(i % 2) * 80} className="d-role">
+            <GlassIcon name={ROLE_ICONS[i]} />
             <h3 className="d-h3">{r.role}</h3>
             <p className="d-role-pain">«{r.pain}»</p>
             <p className="d-role-gain">{r.gain}</p>
