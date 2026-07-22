@@ -324,3 +324,21 @@
 .dm:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
 .dm-row { display: flex; gap: clamp(1rem, 2vw, 1.75rem); width: max-content; }
 .dm-team { margin-top: clamp(2.5rem, 5vw, 4rem); }
+
+/* ─── параметры расчёта ─── */
+.ba-params { margin-bottom: clamp(1.5rem, 2.5vw, 2rem); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ba-params summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; cursor: pointer; list-style: none; font-size: 0.95rem; font-weight: 500; color: var(--brand); }
+.ba-params summary::-webkit-details-marker { display: none; }
+.ba-params summary i { position: relative; width: 12px; height: 12px; flex: none; }
+.ba-params summary i::before, .ba-params summary i::after { content: ""; position: absolute; left: 50%; top: 50%; background: var(--brand); transition: transform 0.3s var(--ease); }
+.ba-params summary i::before { width: 12px; height: 1.5px; transform: translate(-50%, -50%); }
+.ba-params summary i::after { width: 1.5px; height: 12px; transform: translate(-50%, -50%); }
+.ba-params[open] summary i::after { transform: translate(-50%, -50%) rotate(90deg); }
+.ba-params-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.1rem, 2vw, 1.8rem); padding-bottom: 1.6rem; }
+.ba-params-grid label { display: block; }
+.ba-param-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.8rem; margin-bottom: 0.5rem; }
+.ba-param-head > span { font-size: 0.82rem; color: var(--muted); }
+.ba-param-head b { font-size: 0.95rem; font-weight: 500; color: var(--ink); white-space: nowrap; }
+.ba-param-head b i { font-style: normal; font-size: 0.74rem; color: var(--dim); margin-left: 0.25rem; }
+@media (max-width: 900px) { .ba-params-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .ba-params-grid { grid-template-columns: 1fr; } }

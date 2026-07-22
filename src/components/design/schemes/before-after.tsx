@@ -22,6 +22,28 @@ const PRESETS = {
 
 type PresetKey = keyof typeof PRESETS;
 
+/** Параметры расчёта — те же, что в проверенном симуляторе прототипа. */
+const SLIDERS = [
+  { k: "margin", label: "Маржинальность", unit: "%", min: 5, max: 60, step: 1 },
+  { k: "frozen", label: "Доля выручки, замороженная в неликвиде", unit: "%", min: 1, max: 30, step: 1 },
+  { k: "wacc", label: "Стоимость денег для компании", unit: "% в год", min: 8, max: 40, step: 1 },
+  { k: "blindShare", label: "Доля сделок со скидкой «из головы»", unit: "%", min: 0, max: 80, step: 5 },
+  { k: "blindLoss", label: "Средняя потеря маржи на такой сделке", unit: "%", min: 0.5, max: 10, step: 0.5 },
+  { k: "people", label: "Людей на ручном сведении отчётов", unit: "чел.", min: 0, max: 10, step: 1 },
+  { k: "salary", label: "Зарплата такого сотрудника", unit: "$ / мес", min: 200, max: 3000, step: 50 },
+  { k: "time", label: "Их времени уходит на сведение", unit: "%", min: 10, max: 100, step: 5 },
+  { k: "lost", label: "Доля упущенных заказов", unit: "%", min: 0, max: 15, step: 0.5 },
+] as const;
+
+type SliderKey = (typeof SLIDERS)[number]["k"];
+type Params = Record<SliderKey, number>;
+
+function paramsOf(k: PresetKey): Params {
+  const p = PRESETS[k];
+  return { margin: p.margin, frozen: p.frozen, wacc: p.wacc, blindShare: p.blindShare,
+           blindLoss: p.blindLoss, people: p.people, salary: p.salary, time: p.time, lost: p.lost };
+}
+
 /** Доля неликвида, высвобождаемая системой разово, и возврат по каждой строке за год. */
 const UNFREEZE = 0.3;
 const REC = { A: 0.3, B: 0.8, C: 0.7, D: 0.5 };
@@ -33,11 +55,22 @@ function money(usd: number) {
 }
 
 export function BeforeAfter() {
-  const [preset, setPreset] = useState<PresetKey>("prod");
+  const [preset, setPreset] = useState<PresetKey | null>("prod");
   const [revenue, setRevenue] = useState<number>(PRESETS.prod.revenue);
+  const [p, setP] = useState<Params>(paramsOf("prod"));
   const [after, setAfter] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const p = PRESETS[preset];
+  function applyPreset(k: PresetKey) {
+    setPreset(k);
+    setRevenue(PRESETS[k].revenue);
+    setP(paramsOf(k));
+  }
+  /** Ручная правка снимает пресет: цифры больше не «типовые», а свои. */
+  function setParam(k: SliderKey, v: number) {
+    setPreset(null);
+    setP((prev) => ({ ...prev, [k]: v }));
+  }
 
   const r = useMemo(() => {
     const excessStock = revenue * (p.frozen / 100);
@@ -69,10 +102,7 @@ export function BeforeAfter() {
                 type="button"
                 className={preset === k ? "is-on" : ""}
                 aria-pressed={preset === k}
-                onClick={() => {
-                  setPreset(k);
-                  setRevenue(PRESETS[k].revenue);
-                }}
+                onClick={() => applyPreset(k)}
               >
                 {PRESETS[k].label}
               </button>
@@ -93,6 +123,33 @@ export function BeforeAfter() {
           />
         </div>
       </div>
+
+      {/* Параметры свёрнуты: девять ползунков сразу отпугивают, а пресет уже
+          даёт осмысленный ответ. Кому нужна точность — раскрывает и правит. */}
+      <details className="ba-params" open={open} onToggle={(e) => setOpen((e.currentTarget as HTMLDetailsElement).open)}>
+        <summary>
+          <span>{open ? "Скрыть параметры" : "Уточнить под свою компанию"}</span>
+          <i aria-hidden />
+        </summary>
+        <div className="ba-params-grid">
+          {SLIDERS.map((s) => (
+            <label key={s.k}>
+              <span className="ba-param-head">
+                <span>{s.label}</span>
+                <b>{p[s.k]}<i>{s.unit}</i></b>
+              </span>
+              <input
+                type="range"
+                min={s.min}
+                max={s.max}
+                step={s.step}
+                value={p[s.k]}
+                onChange={(e) => setParam(s.k, Number(e.target.value))}
+              />
+            </label>
+          ))}
+        </div>
+      </details>
 
       {/* Переключатель состояний — тот же приём, что и в схеме потока:
           один и тот же бизнес показан дважды. */}
