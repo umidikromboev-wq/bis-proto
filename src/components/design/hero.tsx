@@ -1,5 +1,7 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { FactoryVideo } from "./factory-video";
+import { PixelArrow, SapMark } from "./marks";
 import "./hero.css";
 
 const NAV = [
@@ -17,6 +19,45 @@ const METRICS = [
   { pos: "m3", dir: "down", val: "-25%", lbl: "затраты на управление" },
   { pos: "m4", dir: "up", val: "+15%", lbl: "рост продаж" },
 ];
+
+type BtnProps = {
+  children: ReactNode;
+  href: string;
+  /** primary — заливка брендом, ghost — белая на светлом фоне */
+  variant?: "primary" | "ghost";
+  /** компактный размер для шапки */
+  small?: boolean;
+  /** внутренняя навигация идёт через Link, внешние ссылки и якоря — через <a> */
+  internal?: boolean;
+};
+
+/**
+ * Кнопка: подпись слева, квадратная иконочная плитка справа.
+ * Плитка инвертирована относительно кнопки — она и держит акцент.
+ */
+function Btn({ children, href, variant = "primary", small = false, internal = false }: BtnProps) {
+  const cls = ["dh-btn", `dh-btn-${variant}`, small ? "dh-btn-sm" : ""].filter(Boolean).join(" ");
+  const inner = (
+    <>
+      <span className="dh-btn-label">{children}</span>
+      <span className="dh-btn-icon">
+        <PixelArrow />
+      </span>
+    </>
+  );
+  if (internal) {
+    return (
+      <Link href={href} className={cls}>
+        {inner}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} className={cls}>
+      {inner}
+    </a>
+  );
+}
 
 function Trend({ up }: { up: boolean }) {
   return (
@@ -43,13 +84,16 @@ export function DesignHero() {
           </div>
           <div className="dh-navcta">
             <a href="tel:+998908231012" className="dh-phone">+998 90 823 10 12</a>
-            <a href="#" className="dh-btn dh-btn-primary" style={{ padding: "0.7rem 1.2rem", fontSize: "0.88rem" }}>Получить расчёт</a>
+            <Btn href="#" small>Получить расчёт</Btn>
           </div>
         </nav>
 
         <section className="dh-hero">
           <div className="dh-content">
-            <p className="dh-eyebrow dh-rise dh-rise-1"><i />Официальный партнёр SAP в Узбекистане</p>
+            <p className="dh-eyebrow dh-rise dh-rise-1">
+              <SapMark className="dh-eyebrow-mark" />
+              Официальный партнёр SAP в Узбекистане
+            </p>
             <h1 className="dh-h1 dh-rise dh-rise-2">
               Одна система вместо <em>Excel, 1С и&nbsp;десяти чатов</em>
             </h1>
@@ -57,11 +101,8 @@ export function DesignHero() {
               Когда заказов и людей всё больше, таблицы перестают справляться. SAP связывает финансы, склад, закупки и продажи в одном месте. Данные вводятся один раз и видны всем. Вы держите бизнес под контролем и масштабируетесь спокойно.
             </p>
             <div className="dh-cta-row dh-rise dh-rise-4">
-              <a href="#" className="dh-btn dh-btn-primary">
-                Получить расчёт за 1 день
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-              </a>
-              <Link href="/simulator" className="dh-btn dh-btn-ghost">Сначала посчитать, сколько теряю</Link>
+              <Btn href="#">Получить расчёт за 1 день</Btn>
+              <Btn href="/simulator" variant="ghost" internal>Сначала посчитать, сколько теряю</Btn>
             </div>
           </div>
 
