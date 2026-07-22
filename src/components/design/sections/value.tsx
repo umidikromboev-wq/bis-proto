@@ -4,6 +4,7 @@ import { clientLogos } from "@/content/client-logos";
 import { effect, logoStrip, roles, unifiedBase } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { GlassIcon, type IconName } from "../icon";
+import { FlowScheme } from "../schemes/flow";
 import { Section, SectionHead } from "../ui";
 
 /**
@@ -45,30 +46,27 @@ export function LogoStrip() {
 /**
  * Единая база. Снимает главный страх при покупке ERP — «модули не свяжутся».
  *
- * Поэтому связки показаны действиями, а не схемой с иконками: слева то, что
- * человек делает, справа — что от этого происходит у остальных.
+ * Показано схемой «Модель потока» в паре с приёмом «Было — стало»: одна и та
+ * же цепочка в двух состояниях. Фраза «единая система» ничем не отличается от
+ * такой же фразы у конкурента — а разорванная и сплошная цепочка отличаются.
  */
 export function UnifiedBase() {
   return (
     <Section id="unified">
       <Reveal>
-        <SectionHead kicker={unifiedBase.kicker} h2={unifiedBase.h2} lead={unifiedBase.lead} />
+        <SectionHead
+          kicker={unifiedBase.kicker}
+          h2={unifiedBase.h2}
+          // Лид из контента писался под прототип без графики и заканчивался
+          // словами «а не на схеме с иконками» — на экране, где теперь стоит
+          // именно схема, он спорит сам с собой. Первая половина сохранена.
+          lead="Главный страх при покупке ERP — что модули не свяжутся и получится тот же зоопарк, только дороже. Поэтому показываем связки на конкретных действиях: переключите состояние и посмотрите, что меняется на каждом стыке."
+        />
       </Reveal>
 
-      <ul className="d-links">
-        {unifiedBase.links.map((l, i) => (
-          <Reveal as="li" key={l.action} delay={(i % 2) * 80}>
-            <div className="d-link-action">
-              <span className="d-link-arrow" aria-hidden>→</span>
-              <h3 className="d-h3">{l.action}</h3>
-            </div>
-            <div className="d-link-effect">
-              <p>{l.effect}</p>
-              <span className="d-link-old">{l.old}</span>
-            </div>
-          </Reveal>
-        ))}
-      </ul>
+      <Reveal delay={90}>
+        <FlowScheme />
+      </Reveal>
     </Section>
   );
 }

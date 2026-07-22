@@ -5,6 +5,7 @@ import { AllCasesLink, Cases, Process, Readiness, Team, Trust, Why } from "@/com
 import { Products, Solution } from "@/components/design/sections/solution";
 import { Effect, Industries, LogoStrip, Roles, UnifiedBase } from "@/components/design/sections/value";
 import "@/components/design/sections/sections.css";
+import "@/components/design/schemes/schemes.css";
 
 /**
  * Главная дизайн-версии.

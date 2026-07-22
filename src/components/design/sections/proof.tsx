@@ -92,8 +92,10 @@ export function Cases() {
 /**
  * Процесс. Шесть фаз SAP Activate.
  *
- * Вертикальная лента с номерами: каждая фаза заканчивается документом,
- * и результат вынесен в отдельную строку — это то, что заказчик подписывает.
+ * Схема «Змея (Roadmap)» из каталога смысловых приёмов: сплошная линия
+ * проходит через все шесть точек, и маршрут виден целиком — иначе читателю
+ * приходится собирать его из шести отдельных карточек. Каждая фаза
+ * заканчивается документом, который заказчик подписывает.
  */
 export function Process() {
   return (
@@ -102,19 +104,20 @@ export function Process() {
         <SectionHead kicker={process.kicker} h2={process.h2} lead={process.lead} />
       </Reveal>
 
-      <ol className="d-phases">
-        {process.steps.map((s, i) => (
-          <Reveal as="li" key={s.n} delay={(i % 3) * 70}>
-            <div className="d-phase-mark">
-              <span className="d-phase-n">{s.n}</span>
-              <span className="d-phase-name">{s.name}</span>
-            </div>
-            <h3 className="d-h3">{s.title}</h3>
-            <p>{s.text}</p>
-            <p className="d-phase-out"><span>Результат фазы</span>{s.out}</p>
-          </Reveal>
-        ))}
-      </ol>
+      <div className="sc-road">
+        <ol>
+          {process.steps.map((s, i) => (
+            <Reveal as="li" key={s.n} delay={i * 60}>
+              <span className="sc-road-dot" aria-hidden />
+              <span className="sc-road-n">{s.n}</span>
+              <span className="sc-road-name">{s.name}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+              <span className="sc-road-out">{s.out}</span>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
     </Section>
   );
 }

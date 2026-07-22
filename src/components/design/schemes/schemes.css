@@ -1,0 +1,115 @@
+/*
+  Смысловые схемы. Приёмы взяты из каталога «277 карточек смысловых приёмов»:
+  «Модель потока», «Было — стало», «Дырявое ведро», «Змея (Roadmap)».
+  Каждая схема заменяет собой абзац текста, а не украшает его.
+*/
+
+/* ═══ Модель потока: цепочка «Раньше / В SAP» ═══ */
+.sc-flow { margin-top: clamp(2rem, 4vw, 3rem); }
+
+/* переключатель состояний */
+.sc-switch { position: relative; display: inline-flex; padding: 4px; border: 1px solid var(--line); border-radius: 999px; background: #ffffff; }
+.sc-switch button {
+  position: relative; z-index: 1; border: 0; background: none; cursor: pointer; font: inherit;
+  padding: 0.5rem 1.4rem; border-radius: 999px; font-size: 0.9rem; font-weight: 500;
+  color: var(--muted); transition: color 0.3s var(--ease);
+}
+.sc-switch button.is-on { color: #ffffff; }
+.sc-switch button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.sc-switch-thumb {
+  position: absolute; top: 4px; bottom: 4px; width: calc(50% - 4px); border-radius: 999px;
+  background: var(--brand); transition: transform 0.35s var(--ease);
+}
+.sc-switch-thumb[data-side="left"] { left: 4px; transform: translateX(0); }
+.sc-switch-thumb[data-side="right"] { left: 4px; transform: translateX(100%); }
+
+.sc-chain { list-style: none; margin: clamp(2rem, 3vw, 2.6rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3.5rem); }
+.sc-chain li { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: start; }
+.sc-node { display: grid; justify-items: center; gap: 0.4rem; }
+.sc-node .d-icon { width: clamp(2.4rem, 3vw, 3rem); margin: 0; }
+.sc-node-short { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+.sc-body p { margin: 0.6rem 0 0; font-size: 0.92rem; }
+
+/* Связь между узлами: в режиме «Раньше» она рвётся пунктиром, в режиме
+   «В SAP» становится сплошной брендовой линией. Это и есть всё сообщение. */
+.sc-link { position: absolute; top: 1.4rem; right: calc(-1 * clamp(1rem, 2vw, 1.75rem)); width: clamp(1rem, 2vw, 1.75rem); height: 2px; }
+.sc-chain.is-live .sc-link { background: var(--grad); }
+.sc-chain.is-broken .sc-link { background: repeating-linear-gradient(90deg, var(--line) 0 4px, transparent 4px 8px); }
+/* у последнего в строке связь не рисуется — она бы уходила в пустоту */
+.sc-chain li:nth-child(3n) .sc-link { display: none; }
+
+.sc-chain.is-live .sc-old, .sc-chain.is-broken .sc-live { display: none; }
+.sc-live { color: var(--text); }
+.sc-old { color: var(--dim); }
+.sc-chain.is-broken .sc-node .d-icon { filter: grayscale(1); opacity: 0.5; }
+.sc-chain .d-icon, .sc-chain .sc-link { transition: filter 0.35s var(--ease), opacity 0.35s var(--ease); }
+
+.sc-caption { margin: clamp(1.5rem, 3vw, 2.2rem) 0 0; font-size: 0.9rem; color: var(--muted); }
+
+/* ═══ Дырявое ведро ═══ */
+.sc-bucket { display: grid; grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.sc-bucket-art { position: relative; }
+.sc-bucket-art svg { display: block; width: 100%; max-width: 22rem; height: auto; margin-inline: auto; }
+.sc-bucket-body { fill: rgba(255, 255, 255, 0.06); stroke: rgba(255, 255, 255, 0.35); stroke-width: 2; }
+.sc-bucket-rim { fill: none; stroke: rgba(255, 255, 255, 0.45); stroke-width: 2; }
+.sc-hole circle { fill: #08182a; stroke: rgba(255, 255, 255, 0.4); stroke-width: 1.5; transition: fill 0.25s var(--ease), stroke 0.25s var(--ease), r 0.25s var(--ease); }
+.sc-hole.is-on circle { fill: var(--cyan); stroke: var(--cyan); }
+.sc-jet { fill: var(--cyan); opacity: 0.75; }
+@media (prefers-reduced-motion: no-preference) {
+  /* transform-box: fill-box обязателен — без него transform-origin в SVG
+     считается от начала холста, и струя росла вверх, а не вниз. */
+  .sc-jet { animation: sc-drip 1.1s linear infinite; transform-box: fill-box; transform-origin: top; }
+  @keyframes sc-drip { 0% { transform: scaleY(0.2); opacity: 0.9; } 100% { transform: scaleY(1); opacity: 0; } }
+}
+.sc-puddle { position: absolute; left: 50%; bottom: -0.5rem; width: 46%; height: 10px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(50% 50%, rgba(51, 199, 234, 0.35), transparent 70%); }
+
+.sc-leaks { list-style: none; margin: 0; padding: 0; }
+.sc-leaks li { border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.sc-leaks li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
+.sc-leaks button {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; width: 100%;
+  padding: clamp(0.9rem, 1.6vw, 1.3rem) 0; border: 0; background: none; cursor: pointer;
+  font: inherit; text-align: left; color: inherit;
+  transition: opacity 0.3s var(--ease), padding-left 0.35s var(--ease);
+}
+@media (hover: hover) {
+  .sc-bucket:hover .sc-leaks li:not(.is-on) button { opacity: 0.4; }
+  .sc-leaks li.is-on button { padding-left: clamp(0.4rem, 1vw, 1rem); }
+}
+.sc-leaks button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.sc-leak-n { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--cyan); opacity: 0.7; padding-top: 0.3em; }
+.sc-leak-body b { display: block; font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem); font-weight: 400; color: #ffffff; }
+.sc-leak-body > span { display: block; margin-top: 0.5rem; font-size: 0.92rem; color: rgba(255, 255, 255, 0.6); }
+.sc-leak-body i { display: block; margin-top: 0.7rem; font-style: normal; font-size: 0.72rem; color: var(--cyan); opacity: 0.75; }
+
+/* ═══ Змея (Roadmap): фазы внедрения ═══ */
+.sc-road { position: relative; margin-top: clamp(2.5rem, 5vw, 4rem); }
+/* сплошная линия проходит через все шесть точек — маршрут виден целиком,
+   а не собирается читателем из шести отдельных карточек */
+.sc-road::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: linear-gradient(90deg, var(--line), var(--brand) 45%, var(--cyan)); }
+.sc-road ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
+.sc-road li { position: relative; padding-top: 2.6rem; }
+.sc-road-dot { position: absolute; top: 4px; left: 0; width: 16px; height: 16px; border-radius: 999px; background: #ffffff; border: 2px solid var(--brand); }
+.sc-road li:last-child .sc-road-dot { background: var(--brand); }
+.sc-road-n { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.6; margin-bottom: 0.5rem; }
+.sc-road-name { display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin-bottom: 0.7rem; }
+.sc-road h3 { font-size: 1rem; font-weight: 400; color: var(--ink); margin: 0; }
+.sc-road p { margin: 0.6rem 0 0; font-size: 0.86rem; color: var(--muted); }
+.sc-road-out { display: block; margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px dashed var(--line); font-size: 0.8rem; color: var(--text); }
+
+/* ═══ адаптив ═══ */
+@media (max-width: 1000px) {
+  .sc-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sc-chain li:nth-child(3n) .sc-link { display: block; }
+  .sc-chain li:nth-child(2n) .sc-link { display: none; }
+  .sc-bucket { grid-template-columns: 1fr; }
+  .sc-bucket-art svg { max-width: 15rem; }
+  .sc-road ol { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+  .sc-road::before { display: none; }
+  .sc-road li { padding-top: 2.2rem; }
+}
+@media (max-width: 640px) {
+  .sc-chain { grid-template-columns: 1fr; }
+  .sc-chain .sc-link { display: none !important; }
+  .sc-road ol { grid-template-columns: 1fr; }
+}
