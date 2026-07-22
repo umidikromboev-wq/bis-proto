@@ -87,3 +87,212 @@
   .d-losses { grid-template-columns: 1fr; }
   .d-modules ul { grid-template-columns: 1fr; }
 }
+
+/* ─── лента клиентов ─── */
+.d-strip { padding-block: clamp(2rem, 4vw, 3.2rem); border-block: 1px solid var(--line); overflow: hidden; }
+.d-strip-title { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); margin-bottom: 1.6rem; }
+.d-strip-track { display: flex; width: max-content; }
+.d-strip-track ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
+.d-strip-track li { padding-inline: clamp(1.2rem, 2.5vw, 2.4rem); font-size: clamp(0.85rem, 0.8rem + 0.2vw, 1rem); letter-spacing: 0.08em; color: var(--dim); white-space: nowrap; }
+.d-strip-track li + li { border-left: 1px solid var(--line); }
+@media (prefers-reduced-motion: no-preference) {
+  .d-strip-track { animation: d-marquee 58s linear infinite; }
+  .d-strip:hover .d-strip-track { animation-play-state: paused; }
+  @keyframes d-marquee { to { transform: translateX(-50%); } }
+}
+
+/* ─── единая база ─── */
+.d-links { list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; }
+.d-links li { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.3fr); gap: clamp(1.5rem, 4vw, 4rem); padding: clamp(1.4rem, 2.5vw, 2.1rem) 0; border-top: 1px solid var(--line); }
+.d-links li:last-child { border-bottom: 1px solid var(--line); }
+.d-link-action { display: flex; gap: 0.9rem; align-items: baseline; }
+.d-link-arrow { color: var(--brand); font-size: 1.1rem; line-height: 1; }
+.d-link-effect p { margin: 0; color: var(--text); font-size: 1rem; }
+.d-link-old { display: block; margin-top: 0.7rem; font-size: 0.82rem; color: var(--dim); }
+
+/* ─── эффект ─── */
+.d-bars { margin-top: clamp(2.5rem, 5vw, 4rem); display: grid; gap: clamp(1.4rem, 2.5vw, 2rem); max-width: 60rem; }
+.d-bar-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem 1.5rem; margin-bottom: 0.7rem; }
+.d-bar-label { font-size: 0.98rem; color: var(--ink); }
+.d-bar-value { font-size: 1.15rem; font-weight: 400; color: var(--brand); letter-spacing: -0.01em; white-space: nowrap; }
+.d-bar-value em { font-style: normal; }
+.d-bar-track { height: 4px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.d-bar-fill { display: block; height: 100%; width: var(--pct); border-radius: 999px; background: var(--grad); }
+@media (prefers-reduced-motion: no-preference) {
+  /* полоса дорисовывается вместе с появлением строки, а не до него */
+  .d-bar-fill { width: 0; transition: width 1.1s var(--ease) 0.15s; }
+  .d-reveal.is-in .d-bar-fill { width: var(--pct); }
+}
+.d-bar-note { display: block; margin-top: 0.55rem; font-size: 0.8rem; color: var(--dim); }
+
+.d-multipliers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(3rem, 5vw, 4.5rem); }
+.d-multiplier { padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.d-multiplier b { display: block; font-size: clamp(2.2rem, 1.5rem + 2vw, 3.4rem); font-weight: 300; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+.d-multiplier span { display: block; margin-top: 0.7rem; font-size: 0.88rem; color: var(--muted); max-width: 26ch; }
+
+/* ─── отрасли ─── */
+.d-industries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.d-industry { padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.d-industry h3 { display: flex; align-items: baseline; gap: 0.8rem; }
+.d-industry-count { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.55; }
+.d-industry ul { list-style: none; margin: 1.2rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+.d-industry li { font-size: 0.92rem; color: var(--muted); }
+
+/* ─── роли ─── */
+.d-roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.d-role { padding: clamp(1.4rem, 2.5vw, 2rem) 0; border-top: 1px solid var(--line); }
+.d-role-pain { margin: 0.8rem 0 0; font-size: 0.95rem; color: var(--dim); }
+.d-role-gain { margin: 0.7rem 0 0; font-size: 0.95rem; color: var(--text); }
+
+/* ─── доверие ─── */
+.d-regalia { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.d-regale { padding-top: 1.4rem; border-top: 1px solid rgba(255, 255, 255, 0.16); }
+.d-regale b { display: block; font-size: clamp(1.4rem, 1rem + 1.3vw, 2.1rem); font-weight: 300; letter-spacing: -0.025em; color: #ffffff; line-height: 1.1; }
+.d-regale span { display: block; margin-top: 0.7rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); }
+
+.d-quote { margin-top: clamp(3rem, 6vw, 5rem); max-width: 52rem; }
+.d-quote blockquote { margin: 0; padding-left: clamp(1.2rem, 2vw, 2rem); border-left: 2px solid var(--cyan); }
+.d-quote p { margin: 0; font-size: clamp(1.15rem, 0.95rem + 0.8vw, 1.7rem); font-weight: 300; line-height: 1.45; letter-spacing: -0.015em; color: #ffffff; }
+.d-quote footer { margin-top: 1.3rem; font-size: 0.85rem; color: var(--cyan); }
+
+/* ─── кейсы ─── */
+.d-cases { margin-top: clamp(2.5rem, 5vw, 4rem); }
+.d-case { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 3rem); padding: clamp(1.8rem, 3vw, 2.8rem) 0; border-top: 1px solid var(--line); }
+.d-case:last-child { border-bottom: 1px solid var(--line); }
+.d-case-head { display: flex; gap: 1rem; align-items: baseline; }
+.d-case-idx { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.55; }
+.d-case-industry { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--dim); }
+.d-case-intro { margin: 0; font-size: 0.95rem; color: var(--muted); }
+.d-case-before { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+.d-case-before li { position: relative; padding-left: 1.1rem; font-size: 0.85rem; color: var(--dim); }
+.d-case-before li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 1px; background: var(--dim); }
+.d-case-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 1rem; align-content: start; }
+.d-case-after b { display: block; font-size: clamp(1.2rem, 1rem + 0.7vw, 1.6rem); font-weight: 300; letter-spacing: -0.02em; color: var(--brand); line-height: 1; }
+.d-case-after span { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
+.d-case-after .dh-textlink { grid-column: 1 / -1; margin-top: 0.4rem; }
+
+/* ─── процесс ─── */
+.d-phases { list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); }
+.d-phases li { padding: clamp(1.4rem, 2.5vw, 2rem) 0; border-top: 1px solid var(--line); }
+.d-phase-mark { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 0.9rem; }
+.d-phase-n { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.55; }
+.d-phase-name { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+.d-phases p { margin: 0.7rem 0 0; font-size: 0.93rem; color: var(--muted); }
+.d-phase-out { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 1.1rem !important; padding-top: 0.9rem; border-top: 1px dashed var(--line); color: var(--text) !important; font-size: 0.87rem !important; }
+.d-phase-out span { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand); opacity: 0.7; }
+
+/* ─── готовность ─── */
+.d-conditions { list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); }
+.d-conditions li { padding: clamp(1.4rem, 2.5vw, 2rem) 0; border-top: 1px solid var(--line); }
+.d-conditions p { margin: 0.7rem 0 0; font-size: 0.93rem; color: var(--muted); }
+.d-conditions-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: clamp(2.5rem, 4vw, 3.5rem); }
+.d-note { font-size: 0.83rem; color: var(--dim); max-width: 40ch; }
+.d-section--ink .d-note { color: rgba(255, 255, 255, 0.5); }
+
+/* ─── почему BIS ─── */
+.d-why-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.d-why-stat { padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.d-why-stat b { display: block; font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.8rem); font-weight: 300; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+.d-why-stat span { display: block; margin-top: 0.7rem; font-size: 0.85rem; color: var(--muted); }
+.d-why-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(2.5rem, 4vw, 3.5rem); }
+.d-why-point { padding: clamp(1.4rem, 2.5vw, 2rem) 0; border-top: 1px solid var(--line); }
+.d-why-point p { margin: 0.7rem 0 0; font-size: 0.93rem; color: var(--muted); }
+
+/* ─── команда ─── */
+.d-team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.d-person { padding: clamp(1.6rem, 2.5vw, 2.2rem) 0; border-top: 1px solid var(--line); }
+.d-person-avatar { display: grid; place-items: center; width: 3.2rem; height: 3.2rem; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); color: var(--brand); font-size: 0.9rem; letter-spacing: 0.04em; margin-bottom: 1.1rem; }
+.d-person-role { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--brand); }
+.d-person-note { margin: 0.7rem 0 0; font-size: 0.87rem; color: var(--muted); }
+
+/* ─── лид-магнит ─── */
+.d-lead-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr); gap: clamp(2rem, 5vw, 5rem); }
+.d-lead-bullets { list-style: none; margin: clamp(2rem, 3vw, 2.6rem) 0 0; padding: 0; display: grid; gap: 0.8rem; }
+.d-lead-bullets li { position: relative; padding-left: 1.5rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.75); }
+.d-lead-bullets li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 8px; height: 1px; background: var(--cyan); }
+.d-lead-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: clamp(2rem, 3vw, 2.6rem); }
+
+.d-lead-side { border-left: 1px solid rgba(255, 255, 255, 0.14); padding-left: clamp(1.5rem, 3vw, 2.5rem); }
+.d-expert { display: flex; align-items: center; gap: 1rem; }
+.d-expert-avatar { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 999px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); color: #ffffff; font-size: 0.85rem; }
+.d-expert b { display: block; color: #ffffff; font-weight: 400; }
+.d-expert span { display: block; font-size: 0.82rem; color: rgba(255, 255, 255, 0.5); }
+.d-expert-line { margin: 1.2rem 0 0; font-size: 0.9rem; color: rgba(255, 255, 255, 0.65); }
+.d-zoom { margin-top: clamp(2rem, 3vw, 2.6rem); padding-top: 1.6rem; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.d-zoom p { margin: 0 0 1rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.65); }
+.d-section--ink .dh-textlink { color: #ffffff; }
+.d-section--ink .dh-textlink:hover { color: var(--cyan); }
+
+.d-docs { margin-top: clamp(3rem, 6vw, 5rem); padding-top: clamp(2rem, 3vw, 2.6rem); border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.d-docs-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); margin-top: 1.8rem; }
+.d-doc { display: block; padding: 1.4rem; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px; text-decoration: none; transition: border-color 0.25s var(--ease), background-color 0.25s var(--ease); }
+.d-doc:hover { border-color: var(--cyan); background: rgba(255, 255, 255, 0.04); }
+.d-doc-format { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.9rem; }
+.d-doc b { display: block; color: #ffffff; font-weight: 400; font-size: 1rem; }
+.d-doc-text { display: block; margin-top: 0.6rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); }
+
+/* ─── тарифы ─── */
+.d-tariffs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.d-tariff { position: relative; padding-top: 1.6rem; border-top: 2px solid var(--line); }
+/* рекомендуемый пакет держит вертикаль, а не заливка: заливка сделала бы
+   соседние пакеты похожими на отбракованные */
+.d-tariff.is-popular { border-top-color: var(--brand); }
+.d-tariff-flag { display: inline-block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand); margin-bottom: 0.8rem; }
+.d-tariff-for { margin: 0.8rem 0 0; font-size: 0.88rem; color: var(--muted); min-height: 3.4em; }
+.d-tariff-price { margin-top: 1.6rem; }
+.d-tariff-price b { display: block; font-size: clamp(1.5rem, 1.2rem + 1vw, 2.1rem); font-weight: 300; letter-spacing: -0.025em; color: var(--ink); line-height: 1; }
+.d-tariff-price span { display: block; margin-top: 0.45rem; font-size: 0.78rem; color: var(--dim); }
+.d-tariff-term { display: flex; gap: 0.6rem; margin: 1.1rem 0 0; font-size: 0.88rem; color: var(--text); }
+.d-tariff-term span { color: var(--dim); }
+.d-tariff-includes { list-style: none; margin: 1.6rem 0 0; padding: 1.4rem 0 0; border-top: 1px solid var(--line); display: grid; gap: 0.7rem; }
+.d-tariff-includes li { position: relative; padding-left: 1.3rem; font-size: 0.88rem; color: var(--muted); }
+.d-tariff-includes li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 7px; height: 7px; border-radius: 2px; border: 1px solid var(--brand); opacity: 0.5; }
+
+.d-guarantee { margin-top: clamp(3rem, 5vw, 4.5rem); padding-top: clamp(1.6rem, 3vw, 2.2rem); border-top: 1px solid var(--line); }
+.d-guarantee ul { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem clamp(2rem, 4vw, 4rem); }
+.d-guarantee li { position: relative; padding-left: 1.5rem; font-size: 0.92rem; color: var(--muted); }
+.d-guarantee li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 1px; background: var(--brand); }
+
+/* ─── вопросы ─── */
+.d-faq { margin-top: clamp(2.5rem, 5vw, 4rem); max-width: 62rem; }
+.d-faq-item { border-top: 1px solid var(--line); }
+.d-faq .d-reveal:last-child .d-faq-item { border-bottom: 1px solid var(--line); }
+.d-faq-item summary {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 2rem;
+  padding: clamp(1.1rem, 2vw, 1.6rem) 0; cursor: pointer; list-style: none;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem); color: var(--ink);
+  transition: color 0.25s var(--ease);
+}
+.d-faq-item summary::-webkit-details-marker { display: none; }
+.d-faq-item summary:hover { color: var(--brand); }
+.d-faq-item summary i { position: relative; flex: none; width: 14px; height: 14px; margin-top: 0.35em; }
+.d-faq-item summary i::before,
+.d-faq-item summary i::after { content: ""; position: absolute; left: 50%; top: 50%; background: var(--brand); transition: transform 0.3s var(--ease); }
+.d-faq-item summary i::before { width: 14px; height: 1px; transform: translate(-50%, -50%); }
+.d-faq-item summary i::after { width: 1px; height: 14px; transform: translate(-50%, -50%); }
+.d-faq-item[open] summary i::after { transform: translate(-50%, -50%) rotate(90deg); }
+.d-faq-item p { margin: 0 0 clamp(1.2rem, 2vw, 1.8rem); padding-right: clamp(0, 6vw, 6rem); font-size: 0.95rem; color: var(--muted); max-width: 68ch; }
+
+/* ─── финал ─── */
+.d-final { text-align: left; }
+.d-final-inner { max-width: 46rem; }
+.d-final-bullets { list-style: none; margin: clamp(1.8rem, 3vw, 2.4rem) 0 0; padding: 0; display: grid; gap: 0.75rem; }
+.d-final-bullets li { position: relative; padding-left: 1.5rem; font-size: 0.95rem; color: var(--muted); }
+.d-final-bullets li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 1px; background: var(--brand); }
+.d-final .dh-cta-row { margin-top: clamp(2rem, 3vw, 2.6rem); }
+.d-final .d-note { display: block; margin-top: 1.2rem; }
+
+/* ─── адаптив новых секций ─── */
+@media (max-width: 1000px) {
+  .d-multipliers, .d-industries, .d-phases, .d-conditions, .d-team, .d-docs-list, .d-tariffs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .d-regalia, .d-why-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .d-links li, .d-case { grid-template-columns: 1fr; gap: 1rem; }
+  .d-lead-grid { grid-template-columns: 1fr; }
+  .d-lead-side { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.14); padding-top: 2rem; }
+}
+@media (max-width: 700px) {
+  .d-roles, .d-why-points, .d-guarantee ul { grid-template-columns: 1fr; }
+  .d-multipliers, .d-industries, .d-phases, .d-conditions, .d-team, .d-docs-list, .d-tariffs { grid-template-columns: 1fr; }
+  .d-regalia, .d-why-stats { grid-template-columns: 1fr; }
+  .d-case-after { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
