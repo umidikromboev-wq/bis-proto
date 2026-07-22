@@ -1,0 +1,89 @@
+/*
+  Секции главной.
+  Общий приём: содержимое держат волосяные линии и крупные номера, а не рамки
+  и карточки. Карточная сетка уравнивает всё в весе и читается как шаблон.
+*/
+
+/* ─── боль ─── */
+.d-symptoms {
+  list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(2rem, 5vw, 5rem);
+}
+.d-symptoms li { position: relative; padding: clamp(1.5rem, 2.5vw, 2.2rem) 0; border-top: 1px solid var(--line); }
+.d-symptom-idx { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.55; margin-bottom: 0.8rem; font-variant-numeric: tabular-nums; }
+.d-symptoms p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.95rem; max-width: 44ch; }
+
+/* ─── цена бездействия ─── */
+.d-losses {
+  list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 clamp(2rem, 4vw, 4rem);
+}
+.d-losses li { padding: clamp(1.4rem, 2.4vw, 2rem) 0; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.d-losses p { margin: 0.7rem 0 0; color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
+.d-loss-src { display: block; margin-top: 0.9rem; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--cyan); opacity: 0.75; }
+.d-losses-cta { margin-top: clamp(2.5rem, 4vw, 3.5rem); }
+
+/* ─── решение ─── */
+.d-solution-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.d-solution-body p { margin: 0 0 1.2rem; color: var(--muted); font-size: clamp(1rem, 0.95rem + 0.3vw, 1.12rem); }
+.d-solution-body p:last-child { margin-bottom: 0; }
+
+.d-compare { margin-top: clamp(3.5rem, 7vw, 6rem); }
+.d-compare-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6rem 1.5rem; margin-bottom: 1.8rem; }
+.d-compare-note { margin: 0; font-size: 0.85rem; color: var(--dim); }
+
+/* Легенда и строки делят одну сетку — иначе колонки разъезжаются. */
+.d-compare-legend,
+.d-compare-row { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.1fr) minmax(0, 1.1fr); gap: clamp(1rem, 2.5vw, 2.5rem); }
+.d-compare-legend { padding-bottom: 0.9rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); border-bottom: 1px solid var(--line); }
+.d-compare-legend .is-new { color: var(--brand); }
+.d-compare-rows { margin: 0; }
+.d-compare-row { padding: clamp(1.1rem, 2vw, 1.6rem) 0; border-bottom: 1px solid var(--line); }
+.d-compare-row dt { font-weight: 400; color: var(--ink); font-size: 1rem; }
+.d-compare-row dd { margin: 0; font-size: 0.93rem; }
+.d-compare-old { color: var(--dim); }
+.d-compare-new { color: var(--text); }
+/* Тонкая вертикаль слева от нового способа — единственный акцент в сравнении. */
+.d-compare-new { border-left: 2px solid var(--brand); padding-left: clamp(0.9rem, 1.5vw, 1.4rem); }
+
+/* ─── продукты ─── */
+.d-products { margin-top: clamp(2.5rem, 5vw, 4rem); }
+.d-product {
+  display: grid; grid-template-columns: auto minmax(0, 0.9fr) minmax(0, 1.3fr);
+  gap: clamp(1rem, 3vw, 3rem); align-items: start;
+  padding: clamp(1.6rem, 3vw, 2.6rem) 0; border-top: 1px solid var(--line);
+}
+.d-product:last-child { border-bottom: 1px solid var(--line); }
+.d-product-idx { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.55; padding-top: 0.4rem; font-variant-numeric: tabular-nums; }
+.d-product-for { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--dim); max-width: 26ch; }
+.d-product-body p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+
+.d-marks { list-style: none; margin: 1.2rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.d-marks li { font-size: 0.78rem; color: var(--text); background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.8rem; }
+
+.d-modules { margin-top: clamp(3rem, 5vw, 4.5rem); }
+.d-modules ul { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+.d-modules li { position: relative; padding: 1rem 1rem 1rem 0; border-top: 1px solid var(--line); font-size: 0.92rem; color: var(--text); }
+
+/* ─── адаптив ─── */
+@media (max-width: 1000px) {
+  .d-losses { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .d-solution-top { grid-template-columns: 1fr; gap: 2rem; }
+  .d-modules ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* Сравнение перестаёт быть тремя колонками: задача становится подзаголовком
+     строки, а два способа встают друг под другом. */
+  .d-compare-legend { display: none; }
+  .d-compare-row { grid-template-columns: 1fr; gap: 0.5rem; }
+  .d-compare-row dt { font-weight: 500; margin-bottom: 0.3rem; }
+  .d-compare-old::before { content: "Excel и 1С · "; color: var(--dim); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .d-compare-new::before { content: "SAP Business One · "; color: var(--brand); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .d-product { grid-template-columns: auto minmax(0, 1fr); }
+  .d-product-body { grid-column: 2; }
+}
+@media (max-width: 700px) {
+  .d-symptoms { grid-template-columns: 1fr; }
+  .d-losses { grid-template-columns: 1fr; }
+  .d-modules ul { grid-template-columns: 1fr; }
+}
