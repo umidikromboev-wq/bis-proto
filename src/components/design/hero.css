@@ -162,7 +162,17 @@
 /* Абсолютный слой: визуал берёт высоту строки героя и вписывается в неё.
    Иначе картинка задаёт высоту сама и выталкивает полосу цифр за пределы экрана. */
 .dh-stage-media { position: absolute; inset: -2% -4%; z-index: 1; }
-.dh-stage-media img { display: block; width: 100%; height: 100%; object-fit: contain; }
+/* Маска и видео описывают один прямоугольник: у маски та же пропорция, что у
+   кадра, поэтому mask-size: contain даёт ровно ту же геометрию, что и
+   object-fit: contain у видео. Совмещать вручную ничего не нужно. */
+.dh-factory {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+  -webkit-mask-image: url("/design/factory-mask.png");
+  mask-image: url("/design/factory-mask.png");
+  -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-position: center; mask-position: center;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
 
 /* — полоса цифр: доказательства на первом экране — */
 .dh-stats {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { FactoryVideo } from "./factory-video";
 import { PixelArrow, SapMark } from "./marks";
 import { SplitHeading } from "./split-text";
 import "./hero.css";
@@ -103,14 +104,7 @@ export function DesignHero() {
 
           <div className="dh-stage dh-fade dh-fade-2">
             <div className="dh-stage-media">
-              <Image
-                src="/design/factory.webp"
-                alt="Производство, объединённое в одну систему SAP: склад, цех, конвейер и аналитика"
-                width={2400}
-                height={1907}
-                priority
-                sizes="(max-width: 960px) 100vw, 60vw"
-              />
+              <FactoryVideo />
             </div>
           </div>
 
