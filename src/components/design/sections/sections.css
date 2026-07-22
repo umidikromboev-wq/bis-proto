@@ -93,10 +93,14 @@
 .d-strip-title { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); margin-bottom: 1.6rem; }
 .d-strip-track { display: flex; width: max-content; }
 .d-strip-track ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
-.d-strip-track li { padding-inline: clamp(1.2rem, 2.5vw, 2.4rem); font-size: clamp(0.85rem, 0.8rem + 0.2vw, 1rem); letter-spacing: 0.08em; color: var(--dim); white-space: nowrap; }
+.d-strip-track li { display: grid; place-items: center; padding-inline: clamp(1.4rem, 3vw, 3rem); }
 .d-strip-track li + li { border-left: 1px solid var(--line); }
+/* Знаки приглушены и выровнены по высоте: в ленте важен факт «их много»,
+   а не разглядывание каждого. На наведении лента замирает и знак оживает. */
+.d-strip-track img { width: auto; height: clamp(1.5rem, 2.2vw, 2.1rem); object-fit: contain; opacity: 0.42; transition: opacity 0.3s var(--ease); }
+.d-strip-track li:hover img { opacity: 0.85; }
 @media (prefers-reduced-motion: no-preference) {
-  .d-strip-track { animation: d-marquee 58s linear infinite; }
+  .d-strip-track { animation: d-marquee 86s linear infinite; }
   .d-strip:hover .d-strip-track { animation-play-state: paused; }
   @keyframes d-marquee { to { transform: translateX(-50%); } }
 }

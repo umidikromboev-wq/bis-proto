@@ -1,4 +1,6 @@
-import { clients, industries } from "@/content/blocks";
+import Image from "next/image";
+import { industries } from "@/content/blocks";
+import { clientLogos } from "@/content/client-logos";
 import { effect, logoStrip, roles, unifiedBase } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { Section, SectionHead } from "../ui";
@@ -6,9 +8,10 @@ import { Section, SectionHead } from "../ui";
 /**
  * Лента клиентов сразу под первым экраном.
  *
- * Логотипов в векторе пока нет, поэтому имена набраны текстом — это честнее,
- * чем пересъёмка логотипов с чужих сайтов в разном качестве. Лента едет сама:
- * шестнадцать имён в статичный ряд не встают ни на одной ширине.
+ * Знаки настоящие — из рабочей группы BIS. Все приведены к монохрому и одной
+ * оптической высоте: исходники пришли на фонах от чёрного до жёлтого, и в
+ * пёстром виде ряд читался бы как свалка, а не как список клиентов.
+ * Лента едет сама — двадцать восемь знаков в статичный ряд не встают.
  */
 export function LogoStrip() {
   return (
@@ -17,12 +20,19 @@ export function LogoStrip() {
         <span className="d-strip-title">{logoStrip.title}</span>
       </div>
       <div className="d-strip-track">
-        {/* список продублирован: вторая копия подхватывает ленту в момент,
-            когда первая уезжает, и стык не виден */}
+        {/* вторая копия подхватывает ленту в момент, когда первая уезжает */}
         {[0, 1].map((copy) => (
           <ul key={copy} aria-hidden={copy === 1}>
-            {clients.items.map((c) => (
-              <li key={`${copy}-${c}`}>{c}</li>
+            {clientLogos.map((c) => (
+              <li key={`${copy}-${c.file}`}>
+                <Image
+                  src={`/design/logos/${c.file}`}
+                  alt={copy === 0 ? c.name : ""}
+                  width={c.w}
+                  height={c.h}
+                  loading="lazy"
+                />
+              </li>
             ))}
           </ul>
         ))}
