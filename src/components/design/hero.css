@@ -226,7 +226,12 @@
   .dh-stats { grid-area: auto; order: 2; }
   .dh-stage { grid-area: auto; order: 3; }
   .dh-phone { display: none; }
-  .dh-stage { margin-right: 0; margin-inline: -4%; min-height: 58vw; }
+  /* На узком экране визуал перестаёт быть абсолютным слоем и встаёт в поток
+     во всю ширину по своей пропорции. Пока он был слоем, высоту задавала
+     строка, а object-fit: contain ужимал завод до трёх четвертей экрана. */
+  .dh-stage { margin-right: 0; margin-inline: -7%; min-height: 0; }
+  .dh-stage-media { position: static; inset: auto; }
+  .dh-factory { height: auto; }
   .dh-stats { grid-template-columns: 1fr; gap: 1.1rem; }
   .dh-stat { padding-inline: 0; }
   .dh-stat + .dh-stat::before { display: none; }
