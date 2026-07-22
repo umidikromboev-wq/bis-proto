@@ -81,8 +81,14 @@
   .d-compare-legend { display: none; }
   .d-compare-row { grid-template-columns: 1fr; gap: 0.5rem; }
   .d-compare-row dt { font-weight: 500; margin-bottom: 0.3rem; }
-  .d-compare-old::before { content: "Excel и 1С · "; color: var(--dim); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
-  .d-compare-new::before { content: "SAP Business One · "; color: var(--brand); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  /* На узком экране колонки схлопываются, и минус с плюсом сливаются в один
+     поток. Поэтому каждая сторона получает свою плашку и подпись. */
+  .d-compare-row dd { padding: 0.9rem 1rem; border-radius: 14px; }
+  .d-compare-old { background: var(--paper); color: var(--muted); }
+  .d-compare-new { background: rgba(28, 134, 214, 0.08); border-left: 0; padding-left: 1rem; color: var(--text); }
+  .d-cmp-tag { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.45rem; }
+  .d-compare-old .d-cmp-tag { color: var(--dim); }
+  .d-compare-new .d-cmp-tag { color: var(--brand); }
   .d-product { grid-template-columns: auto minmax(0, 1fr); }
   .d-product-body { grid-column: 2; }
 }
@@ -144,7 +150,10 @@
 .d-industry h3 { display: flex; align-items: baseline; gap: 0.8rem; }
 .d-industry-count { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.55; }
 .d-industry ul { list-style: none; margin: 1.2rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
-.d-industry li { font-size: 0.92rem; color: var(--muted); }
+/* Маркер перед пунктом: без него восемь строк подряд читаются сплошным
+   абзацем, а не перечнем. */
+.d-industry li { position: relative; padding-left: 1.2rem; font-size: 0.92rem; color: var(--muted); }
+.d-industry li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 2px; border: 1px solid var(--brand); opacity: 0.55; }
 
 /* ─── роли ─── */
 .d-roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
@@ -399,9 +408,25 @@
 
 
 /* портрет у цитаты основателя */
-.d-quote { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
-.d-quote-photo { width: clamp(5.5rem, 9vw, 8rem); height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 12%; border-radius: 14px; }
+/* Портрет тянется на всю высоту цитаты: маленький квадрат рядом с крупным
+   набором читался как случайная миниатюра, а не как автор слов. */
+.d-quote { display: grid; grid-template-columns: clamp(9rem, 15vw, 14rem) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: stretch; }
+.d-quote-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; border-radius: 16px; }
 @media (max-width: 620px) {
   .d-quote { grid-template-columns: 1fr; }
   .d-quote-photo { width: 5.5rem; }
 }
+
+/* ─── логотипы в шапке сравнения ─── */
+.d-cmp-brand { display: inline-flex; align-items: center; gap: 0.55rem; }
+.d-cmp-brand img { height: 1.15rem; width: auto; display: block; }
+.d-cmp-brand svg { height: 1.15rem; width: auto; display: block; border-radius: 2px; }
+.d-cmp-brand i { font-style: normal; }
+/* подпись «как сейчас / в системе» нужна только на узком экране */
+.d-cmp-tag { display: none; }
+
+/* ─── иконки контуров системы ─── */
+.d-modules li { display: flex; align-items: center; gap: 0.9rem; }
+.d-modules .d-icon { width: 2.2rem; margin: 0; flex: none; }
+
+/* ─── иконка продукта: плашка большая, знак в ней должен держать её ─── */

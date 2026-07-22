@@ -144,7 +144,13 @@ export function Process() {
 const READY_ICONS: IconName[] = ["people", "settings", "report", "checklist", "support", "shield"];
 const WHY_ICONS: IconName[] = ["shield", "people", "settings", "support"];
 
-/** Честно о рисках. Снятие возражения до договора, а не после. */
+/**
+ * Честно о рисках. Снятие возражения до договора, а не после.
+ *
+ * Кнопка скачивания чек-листа отсюда убрана: тот же документ отдаётся ниже,
+ * в блоке материалов, и два входа к одному файлу на одной странице делят
+ * внимание вместо того, чтобы вести к заявке.
+ */
 export function Readiness() {
   return (
     <Section id="readiness">
@@ -162,10 +168,6 @@ export function Readiness() {
         ))}
       </ul>
 
-      <Reveal className="d-conditions-cta">
-        <Btn href="#lead" variant="ghost">{readiness.cta}</Btn>
-        <span className="d-note">{readiness.ctaNote}</span>
-      </Reveal>
     </Section>
   );
 }

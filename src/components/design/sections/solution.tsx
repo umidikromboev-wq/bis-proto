@@ -3,6 +3,7 @@ import { Reveal } from "../reveal";
 import { ProcessChain } from "../schemes/chain";
 import { ScrollText } from "../schemes/scroll-text";
 import { GlassIcon, type IconName } from "../icon";
+import { SapMark } from "../marks";
 import { PixelArrow } from "../marks";
 import { Section, SectionHead } from "../ui";
 
@@ -42,18 +43,30 @@ export function Solution() {
           <p className="d-compare-note">{solution.compare.note}</p>
         </div>
 
-        <div className="d-compare-legend" aria-hidden>
+        {/* Логотипы вместо подписей: сравнение читается с одного взгляда,
+            ещё до чтения строк. */}
+        <div className="d-compare-legend">
           <span>Задача</span>
-          <span>Excel и 1С</span>
-          <span className="is-new">SAP Business One</span>
+          <span className="d-cmp-brand">
+            <img src="/design/excel.svg" alt="Microsoft Excel" width={20} height={20} />
+            <img src="/design/onec.svg" alt="1С" width={34} height={20} />
+            <i>Excel и 1С</i>
+          </span>
+          <span className="d-cmp-brand is-new">
+            <SapMark />
+            <i>SAP Business One</i>
+          </span>
         </div>
 
         <dl className="d-compare-rows">
           {solution.compare.rows.map((row) => (
             <div className="d-compare-row" key={row.task}>
               <dt>{row.task}</dt>
-              <dd className="d-compare-old">{row.old}</dd>
-              <dd className="d-compare-new">{row.neu}</dd>
+              {/* Подписи «как сейчас» и «в системе» видны только на узком
+                  экране: там колонки схлопываются, и без них плюс и минус
+                  сливаются в один поток текста. */}
+              <dd className="d-compare-old"><span className="d-cmp-tag">Как сейчас</span>{row.old}</dd>
+              <dd className="d-compare-new"><span className="d-cmp-tag">В системе</span>{row.neu}</dd>
             </div>
           ))}
         </dl>
@@ -61,6 +74,9 @@ export function Solution() {
     </Section>
   );
 }
+
+/** Иконка на контур системы — по его предмету. */
+const MODULE_ICONS: IconName[] = ["finance", "warehouse", "procurement", "production", "partnership", "analytics", "support", "people"];
 
 /** Иконка на продукт: масштаб бизнеса, под который он сделан. */
 const PRODUCT_ICONS: IconName[] = ["production", "cloud", "integration"];
@@ -107,8 +123,11 @@ export function Products() {
       <Reveal className="d-modules">
         <h3 className="d-h3">{products.modules.h3}</h3>
         <ul>
-          {products.modules.items.map((m) => (
-            <li key={m}>{m}</li>
+          {products.modules.items.map((m, i) => (
+            <li key={m}>
+              <GlassIcon name={MODULE_ICONS[i]} />
+              {m}
+            </li>
           ))}
         </ul>
       </Reveal>
