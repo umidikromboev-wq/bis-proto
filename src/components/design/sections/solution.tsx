@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { products, solution } from "@/content/blocks";
 import { Reveal } from "../reveal";
 import { ProcessChain } from "../schemes/chain";
@@ -96,6 +97,9 @@ const MODULE_ICONS: IconName[] = ["finance", "warehouse", "procurement", "produc
 /** Иконка на продукт: масштаб бизнеса, под который он сделан. */
 const PRODUCT_ICONS: IconName[] = ["production", "integration"];
 
+/** Страницы продуктов в том же порядке, что и элементы в контенте. */
+const PRODUCT_HREFS = ["/design/sap-business-one", "/design/sap-s4hana"];
+
 /**
  * Продукты. Строка-витрина: превью, крупное имя, стрелка, чипы.
  *
@@ -119,7 +123,12 @@ export function Products() {
               </div>
               <div>
                 <div className="sc-row-title">
-                  <h3>{item.name}</h3>
+                  {/* Ссылка растянута на всю строку псевдоэлементом: стрелка
+                      обещает переход, и кликом должна отвечать вся строка, а не
+                      одно слово в заголовке. */}
+                  <h3>
+                    <Link href={PRODUCT_HREFS[i]} className="sc-row-link">{item.name}</Link>
+                  </h3>
                   <span className="sc-row-arrow" aria-hidden><PixelArrow /></span>
                 </div>
                 <p className="sc-row-sub">{em(item.text)}</p>

@@ -622,3 +622,13 @@
     @keyframes ch-pulse { from { background-position: 0 -100%, 0 0; } to { background-position: 0 200%, 0 0; } }
   }
 }
+
+/* ═══ Строка продукта целиком ведёт на страницу продукта ═══
+   Плитка со стрелкой обещает переход, поэтому кликом отвечает вся строка:
+   ссылка в заголовке растянута псевдоэлементом на весь прямоугольник. Так
+   попадание пальцем на телефоне не зависит от длины названия. */
+.sc-row { position: relative; }
+.sc-row-link { color: inherit; text-decoration: none; }
+.sc-row-link::after { content: ""; position: absolute; inset: 0; }
+.sc-row-link:focus-visible { outline: none; }
+.sc-row-link:focus-visible::after { outline: 2px solid var(--cyan); outline-offset: 6px; border-radius: 12px; }
