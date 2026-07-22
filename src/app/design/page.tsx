@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Onest } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { DesignHero } from "@/components/design/hero";
 
-/** Onest — чистый премиальный гротеск с полной кириллицей (RU/UZ). */
-const onest = Onest({
+/**
+ * Manrope — геометрический гротеск без засечек с характером: узкие апертуры,
+ * высокая x-height и настоящий ExtraBold для крупных заголовков. Кириллица
+ * закрывает RU и UZ. Взят вместо Onest, который читался нейтрально-дефолтным.
+ */
+const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
@@ -17,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function DesignPage() {
   return (
-    <div className={onest.className}>
+    <div className={manrope.className}>
       <DesignHero />
     </div>
   );

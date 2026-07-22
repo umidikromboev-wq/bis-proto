@@ -1,42 +1,37 @@
 /*
   Дизайн-версия · первый экран.
-  Направление: светлый corporate-tech. Живой изо-завод (видео) справа сливается
-  с фоном страницы, контент слева, вокруг завода — плавающие карточки-метрики.
-  Палитра из лого BIS: белый/сета-голубой фон + сине-циановый акцент.
+  Направление: светлый corporate-tech, брендовая сине-циановая палитра BIS.
+
+  Ключевое отличие от прошлой версии: завод — PNG с прозрачным фоном, а не
+  видео на серой подложке. Поэтому здесь больше нет ни mix-blend-mode, ни
+  осветляющего фильтра, ни требования «фон страницы обязан совпадать с фоном
+  рендера». Фон свободен, а модель везде садится без шва.
+
   Все стили скоупятся под .dh, чтобы не пересекаться с монохромным прототипом.
 */
 .dh {
-  --paper: #f0f1f3;
-  --paper-2: #eaf1f9;
   --card: #ffffff;
   --line: #dce7f2;
-  --line-soft: #e9f0f8;
   --ink: #0c2137;
   --text: #12304c;
   --muted: #5a7590;
   --dim: #8aa0b6;
   --brand: #1c86d6;
   --cyan: #33c7ea;
-  --up: #17a673;
   --grad: linear-gradient(115deg, #1c86d6 0%, #33c7ea 100%);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   position: relative;
-  min-height: 100dvh;
-  /* Фон — многослойный «световой» воздух, а не плоская заливка.
-     Завод накладывается режимом multiply (см. .dh-stage-media), поэтому фон
-     больше не обязан совпадать с цветом рендера — важно лишь держать все слои
-     светлыми (яркость ≥ ~0.90), иначе multiply затемнит саму 3D-модель. */
-  background:
-    radial-gradient(58% 62% at 4% 8%, rgba(28, 134, 214, 0.16) 0%, transparent 62%),
-    radial-gradient(52% 58% at 96% 74%, rgba(51, 199, 234, 0.16) 0%, transparent 64%),
-    radial-gradient(80% 60% at 62% -8%, rgba(255, 255, 255, 0.95) 0%, transparent 62%),
-    linear-gradient(168deg, #f2f6fb 0%, #e8eff7 46%, #eef2f7 100%);
   color: var(--text);
   overflow: hidden;
   isolation: isolate;
+  background:
+    radial-gradient(58% 62% at 4% 6%, rgba(28, 134, 214, 0.17) 0%, transparent 62%),
+    radial-gradient(50% 56% at 98% 70%, rgba(51, 199, 234, 0.17) 0%, transparent 64%),
+    radial-gradient(78% 58% at 60% -10%, rgba(255, 255, 255, 0.95) 0%, transparent 62%),
+    linear-gradient(168deg, #f3f7fb 0%, #e7eef7 48%, #eef2f7 100%);
 }
-/* тонкая техно-сетка на фоне */
+/* тонкая техно-сетка */
 .dh::after {
   content: "";
   position: absolute;
@@ -46,8 +41,8 @@
     linear-gradient(rgba(28, 134, 214, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(28, 134, 214, 0.07) 1px, transparent 1px);
   background-size: 52px 52px;
-  -webkit-mask: radial-gradient(130% 110% at 78% 12%, #000 6%, rgba(0, 0, 0, 0.45) 42%, transparent 80%);
-  mask: radial-gradient(130% 110% at 78% 12%, #000 6%, rgba(0, 0, 0, 0.45) 42%, transparent 80%);
+  -webkit-mask: radial-gradient(130% 110% at 78% 10%, #000 6%, rgba(0, 0, 0, 0.45) 42%, transparent 80%);
+  mask: radial-gradient(130% 110% at 78% 10%, #000 6%, rgba(0, 0, 0, 0.45) 42%, transparent 80%);
   pointer-events: none;
 }
 /* зерно: снимает «пластиковую» гладкость градиента, читается только вблизи */
@@ -62,41 +57,61 @@
   pointer-events: none;
 }
 
-/* контент идёт во всю ширину экрана — без пустых полей по бокам на широких мониторах */
-.dh-wrap { position: relative; width: 100%; padding-inline: clamp(1.25rem, 3.2vw, 4rem); }
+/* Колонка на всю высоту вьюпорта: шапка / герой / полоса цифр.
+   Полоса цифр входит в эти же 100dvh — доказательства видно без скролла. */
+.dh-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding-inline: clamp(1.25rem, 3.2vw, 4rem);
+}
 
 /* — навигация — */
-.dh-nav { position: relative; z-index: 5; display: flex; align-items: center; gap: 1.25rem; height: 76px; }
-.dh-logo { display: inline-flex; flex-direction: column; line-height: 1; text-decoration: none; }
-.dh-logo b {
-  font-size: 1.55rem; font-weight: 800; letter-spacing: 0.01em;
-  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-.dh-logo span { font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); margin-top: 3px; white-space: nowrap; }
-.dh-navlinks { display: flex; gap: 1.35rem; margin-left: 0.25rem; }
-.dh-navlinks a { color: var(--muted); text-decoration: none; font-size: 0.86rem; font-weight: 500; transition: color 0.2s var(--ease); white-space: nowrap; }
+.dh-nav { position: relative; z-index: 5; flex: none; display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); padding-block: 1.1rem; }
+.dh-logo { display: block; flex: none; line-height: 0; }
+.dh-logo img { width: auto; height: clamp(3.1rem, 4.4vw, 4.3rem); }
+.dh-navlinks { display: flex; gap: clamp(1rem, 1.6vw, 1.75rem); }
+.dh-navlinks a { position: relative; color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; white-space: nowrap; transition: color 0.2s var(--ease); }
+/* подчёркивание раскрывается от левого края, а не проявляется целиком */
+.dh-navlinks a::after { content: ""; position: absolute; left: 0; bottom: -0.4rem; width: 100%; height: 1.5px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
 .dh-navlinks a:hover { color: var(--brand); }
-.dh-navcta { margin-left: auto; display: inline-flex; align-items: center; gap: 0.9rem; }
+.dh-navlinks a:hover::after { transform: scaleX(1); }
+.dh-navcta { margin-left: auto; display: inline-flex; align-items: center; gap: 1rem; }
 .dh-phone { color: var(--text); text-decoration: none; font-size: 0.9rem; font-weight: 600; white-space: nowrap; }
+.dh-phone:hover { color: var(--brand); }
 .dh-nav .dh-btn { white-space: nowrap; }
 
 /* — сетка героя — */
-.dh-hero { position: relative; display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: clamp(0.5rem, 1.5vw, 1.25rem); align-items: center; min-height: calc(100dvh - 76px); padding-block: clamp(1rem, 2vw, 2rem) clamp(3rem, 5vw, 4rem); }
+.dh-hero {
+  position: relative; flex: 1 1 auto; min-height: 0; display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: clamp(0.5rem, 1.5vw, 1.5rem); align-items: center;
+  padding-block: clamp(1rem, 2.5vw, 2.5rem) 0;
+}
+.dh-content { grid-area: 1 / 1; }
+.dh-stage { grid-area: 1 / 2; }
+/* полоса цифр лежит под обеими колонками — во всю ширину экрана */
+.dh-stats { grid-area: 2 / 1 / 3 / 3; }
 
 /* левая колонка — контент */
 .dh-content { position: relative; z-index: 3; }
-.dh-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.75rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--brand); font-weight: 700; background: #ffffff; border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 1.05rem 0.45rem 0.5rem; box-shadow: 0 6px 18px rgba(28, 134, 214, 0.08); }
+.dh-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.73rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); font-weight: 700; background: #ffffff; border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 1.05rem 0.45rem 0.5rem; box-shadow: 0 6px 18px rgba(28, 134, 214, 0.08); }
 /* знак SAP вместо декоративной точки: партнёрство подтверждается логотипом вендора */
 .dh-eyebrow-mark { width: 2.55rem; height: auto; flex: none; display: block; border-radius: 3px; }
 
-.dh-h1 { font-size: clamp(2rem, 1.5rem + 2.2vw, 3.6rem); line-height: 1.08; letter-spacing: -0.025em; font-weight: 800; color: var(--ink); margin: 1.35rem 0 0; max-width: 17ch; }
-.dh-h1 em { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.dh-h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.7rem); line-height: 1.06; letter-spacing: -0.032em; font-weight: 800; color: var(--ink); margin: 1.3rem 0 0; max-width: 17ch; }
+.dh-word-accent { color: var(--brand); }
+/* текстовая копия заголовка только для скринридеров */
+.dh-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 
-.dh-lead { color: var(--muted); font-size: clamp(1.02rem, 0.96rem + 0.35vw, 1.18rem); line-height: 1.6; margin: 1.4rem 0 0; max-width: 42ch; }
+.dh-lead { color: var(--muted); font-size: clamp(1rem, 0.94rem + 0.34vw, 1.14rem); line-height: 1.62; margin: 1.35rem 0 0; max-width: 44ch; }
 
 /* обе кнопки тянутся: в одну строку делят ширину, при переносе становятся равными */
-.dh-cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 2.1rem; max-width: 40rem; }
-.dh-cta-row .dh-btn { flex: 1 1 17rem; }
+.dh-cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 2rem; max-width: 40rem; }
+.dh-cta-row .dh-btn { flex: 1 1 16rem; }
+
 /* Анатомия кнопки: подпись слева, квадратная иконочная плитка справа.
    Плитка всегда инвертирована относительно самой кнопки — это её акцент. */
 .dh-btn {
@@ -106,11 +121,7 @@
   transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 .dh-btn-label { line-height: 1.2; }
-.dh-btn-icon {
-  flex: none; display: grid; place-items: center;
-  width: 2.75rem; height: 2.75rem; border-radius: 10px;
-  transition: transform 0.2s var(--ease);
-}
+.dh-btn-icon { flex: none; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 10px; transition: transform 0.2s var(--ease); }
 .dh-btn-icon svg { width: 0.95rem; height: 0.95rem; }
 .dh-btn:hover .dh-btn-icon { transform: translate(2px, -2px); }
 
@@ -128,85 +139,83 @@
 
 .dh-btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
 
-/* — правая колонка: живой изо-завод — */
+/* — правая колонка: изо-завод — */
 .dh-stage {
-  position: relative; align-self: stretch; min-height: 540px;
+  position: relative; align-self: stretch; min-height: 0;
   /* выходим за правый паддинг контейнера — визуал живёт до края экрана */
   margin-right: calc(-1 * clamp(1.25rem, 3.2vw, 4rem));
 }
-/* «подиум» — мягкий световой круг под заводом: гасит сетку прямо под моделью */
+/* тень-опора: вырезанный PNG лишён собственной тени и без неё висел бы в воздухе */
 .dh-stage::before {
-  content: ""; position: absolute; inset: -12% -10%; z-index: 0; pointer-events: none;
-  background: radial-gradient(52% 46% at 52% 54%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.55) 45%, transparent 72%);
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  left: 12%; right: 12%; bottom: 14%; height: 16%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(12, 33, 55, 0.16) 0%, transparent 70%);
+  filter: blur(18px);
 }
-.dh-stage-media { position: absolute; inset: -12% -14% -14% -12%; }
-.dh-stage-media video, .dh-stage-media img {
-  width: 100%; height: 100%; object-fit: contain;
-  /* Фон рендера — не белый, а #f0f1f3 (240). brightness(1.063) выводит его ровно
-     в 255, и только после этого multiply делает его полностью прозрачным.
-     Без осветления multiply оставлял бы видимый серый прямоугольник кадра. */
-  filter: brightness(1.063);
-  mix-blend-mode: multiply;
-  transform: scale(1.16);
-  transform-origin: 54% 52%;
+/* Абсолютный слой: визуал берёт высоту строки героя и вписывается в неё.
+   Иначе картинка задаёт высоту сама и выталкивает полосу цифр за пределы экрана. */
+.dh-stage-media { position: absolute; inset: -2% -4%; z-index: 1; }
+.dh-stage-media img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+/* — полоса цифр: доказательства на первом экране — */
+.dh-stats {
+  position: relative; z-index: 3;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  padding-block: clamp(1.1rem, 2vw, 1.75rem) clamp(1.4rem, 2.5vw, 2.25rem);
 }
+.dh-stat { position: relative; padding-inline: clamp(1rem, 2.5vw, 2.75rem); }
+.dh-stat:first-child { padding-left: 0; }
+/* волосяные разделители вместо рамок — полоса читается как одна строка данных */
+.dh-stat + .dh-stat::before { content: ""; position: absolute; left: 0; top: 0.15rem; bottom: 0.15rem; width: 1px; background: linear-gradient(180deg, transparent, var(--line) 22%, var(--line) 78%, transparent); }
+.dh-stat-idx { display: block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.2em; color: var(--brand); opacity: 0.55; margin-bottom: 0.45rem; font-variant-numeric: tabular-nums; }
+.dh-stat b { display: block; font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.5rem); font-weight: 800; letter-spacing: -0.035em; color: var(--ink); line-height: 1; }
+.dh-stat-lbl { display: block; font-size: 0.82rem; line-height: 1.4; color: var(--dim); margin-top: 0.5rem; max-width: 24ch; }
 
-/* плавающие карточки-метрики вокруг завода */
-.dh-metric {
-  position: absolute; z-index: 4;
-  background: rgba(255, 255, 255, 0.86); backdrop-filter: blur(10px);
-  border: 1px solid var(--line); border-radius: 13px; padding: 0.75rem 0.95rem;
-  box-shadow: 0 14px 34px rgba(12, 33, 55, 0.1); min-width: 132px;
-}
-.dh-metric .m-val { display: flex; align-items: center; gap: 0.4rem; font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); line-height: 1; }
-.dh-metric .m-val svg { color: var(--up); }
-.dh-metric .m-val.down svg { color: var(--brand); }
-.dh-metric .m-lbl { font-size: 0.74rem; color: var(--muted); margin-top: 0.35rem; line-height: 1.3; max-width: 15ch; }
-.dh-metric.m1 { top: 4%; left: -2%; }
-.dh-metric.m2 { top: 20%; right: 1%; }
-.dh-metric.m3 { bottom: 20%; left: 2%; }
-.dh-metric.m4 { bottom: 6%; right: 4%; }
-
-/* — полоса цифр под героем — */
-.dh-stats { position: relative; z-index: 3; display: flex; flex-wrap: wrap; gap: clamp(1.5rem, 5vw, 3.5rem); padding: 1.4rem 0 2.5rem; border-top: 1px solid var(--line); }
-.dh-stat b { display: block; font-size: 1.45rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
-.dh-stat span { display: block; font-size: 0.82rem; color: var(--dim); margin-top: 0.25rem; max-width: 22ch; }
-
-/* — вход (motion intensity 4) — */
+/* — движение — */
 @media (prefers-reduced-motion: no-preference) {
-  .dh-rise { opacity: 0; transform: translateY(16px); animation: dh-rise 0.7s var(--ease) forwards; }
-  .dh-rise-1 { animation-delay: 0.05s; }
-  .dh-rise-2 { animation-delay: 0.13s; }
-  .dh-rise-3 { animation-delay: 0.21s; }
-  .dh-rise-4 { animation-delay: 0.29s; }
-  /* одно правило animation на элемент: вход + плавание в одном списке, иначе float перебивает вход */
-  .dh-metric.dh-float { animation: dh-pop 0.6s var(--ease) both, dh-float 6s ease-in-out 0.9s infinite; }
-  .dh-metric.m1.dh-float { animation-delay: 0.5s, 0.9s; }
-  .dh-metric.m2.dh-float { animation-delay: 0.65s, 2.9s; }
-  .dh-metric.m3.dh-float { animation-delay: 0.8s, 4.9s; }
-  .dh-metric.m4.dh-float { animation-delay: 0.95s, 1.9s; }
-  @keyframes dh-rise { to { opacity: 1; transform: none; } }
-  @keyframes dh-pop { from { opacity: 0; transform: translateY(10px) scale(0.96); } to { opacity: 1; transform: none; } }
-  @keyframes dh-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+  /* Заголовок собирается по буквам снизу вверх.
+     Слово с overflow:hidden работает шторкой; вертикальные отступы с
+     отрицательным margin возвращают место под выносные элементы (у, р, д),
+     иначе шторка срезала бы им хвосты. */
+  .dh-word { display: inline-block; overflow: hidden; padding: 0.14em 0 0.18em; margin: -0.14em 0 -0.18em; }
+  .dh-char { display: inline-block; transform: translateY(115%); animation: dh-char-rise 0.85s var(--ease) both; }
+  @keyframes dh-char-rise { to { transform: none; } }
+
+  /* Обычные тексты просто проявляются — без сдвига. */
+  .dh-fade { opacity: 0; animation: dh-fade 0.9s ease forwards; }
+  .dh-fade-1 { animation-delay: 0.05s; }
+  .dh-fade-2 { animation-delay: 0.5s; }
+  .dh-fade-3 { animation-delay: 0.68s; }
+  .dh-fade-4 { animation-delay: 0.86s; }
+  @keyframes dh-fade { to { opacity: 1; } }
+
+  /* завод едва заметно дышит — статичный вырез иначе выглядит наклейкой */
+  .dh-stage-media { animation: dh-drift 9s ease-in-out 1s infinite; }
+  @keyframes dh-drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+}
+
+/* — планшет — */
+@media (max-width: 1100px) {
+  .dh-navlinks { display: none; }
 }
 
 /* — мобильный — */
 @media (max-width: 960px) {
-  .dh-hero { grid-template-columns: 1fr; gap: 1rem; min-height: 0; padding-top: 1rem; }
-  .dh-navlinks, .dh-phone { display: none; }
-  .dh-nav .dh-btn { flex: none; }
-  .dh-stage { min-height: 380px; margin-top: 0.5rem; margin-right: 0; }
-  .dh-stage-media { inset: -8% -6%; }
-  .dh-stage-media video, .dh-stage-media img { transform: scale(1.08); }
-  .dh-metric { min-width: 118px; padding: 0.6rem 0.8rem; }
-  .dh-metric .m-val { font-size: 1.2rem; }
-  .dh-metric.m1 { left: -1%; }
-  .dh-metric.m4 { right: 0; }
+  .dh-wrap { min-height: 0; }
+  .dh-hero { grid-template-columns: 1fr; grid-template-rows: none; gap: 1.25rem; padding-block: 1.5rem; }
+  /* на узком экране цифры поднимаются над визуалом: доказательства важнее картинки */
+  .dh-content { grid-area: auto; order: 1; }
+  .dh-stats { grid-area: auto; order: 2; }
+  .dh-stage { grid-area: auto; order: 3; }
+  .dh-phone { display: none; }
+  .dh-stage { margin-right: 0; margin-inline: -4%; min-height: 58vw; }
+  .dh-stats { grid-template-columns: 1fr; gap: 1.1rem; }
+  .dh-stat { padding-inline: 0; }
+  .dh-stat + .dh-stat::before { display: none; }
+  .dh-stat-lbl { max-width: none; }
 }
 @media (max-width: 540px) {
-  /* дескриптор логотипа задан nowrap и на узком экране выталкивал кнопку за вьюпорт */
-  .dh-logo span { display: none; }
-  .dh-nav .dh-btn { padding: 0.6rem 0.95rem; font-size: 0.82rem; }
+  .dh-nav { padding-block: 0.9rem; }
   .dh-cta-row .dh-btn { flex: 1 1 100%; }
-  .dh-metric.m2, .dh-metric.m3 { display: none; }
 }

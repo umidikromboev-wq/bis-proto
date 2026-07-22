@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { FactoryVideo } from "./factory-video";
 import { PixelArrow, SapMark } from "./marks";
+import { SplitHeading } from "./split-text";
 import "./hero.css";
 
 const NAV = [
@@ -12,12 +13,11 @@ const NAV = [
   { label: "Контакты", href: "#" },
 ];
 
-/** Метрики вокруг завода — эффект внедрения SAP. dir: up = рост, down = снижение. */
-const METRICS = [
-  { pos: "m1", dir: "up", val: "+30%", lbl: "загрузка оборудования" },
-  { pos: "m2", dir: "down", val: "-40%", lbl: "простои производства" },
-  { pos: "m3", dir: "down", val: "-25%", lbl: "затраты на управление" },
-  { pos: "m4", dir: "up", val: "+15%", lbl: "рост продаж" },
+/** Доказательства компании. Живут на первом экране — их не нужно искать скроллом. */
+const STATS = [
+  { val: "35+", lbl: "внедрений SAP в Узбекистане" },
+  { val: "с 2016", lbl: "на рынке автоматизации" },
+  { val: "Партнёр SAP", lbl: "лицензии и поддержка вендора напрямую" },
 ];
 
 type BtnProps = {
@@ -45,37 +45,25 @@ function Btn({ children, href, variant = "primary", small = false, internal = fa
       </span>
     </>
   );
-  if (internal) {
-    return (
-      <Link href={href} className={cls}>
-        {inner}
-      </Link>
-    );
-  }
-  return (
-    <a href={href} className={cls}>
-      {inner}
-    </a>
+  return internal ? (
+    <Link href={href} className={cls}>{inner}</Link>
+  ) : (
+    <a href={href} className={cls}>{inner}</a>
   );
 }
 
-function Trend({ up }: { up: boolean }) {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      {up ? <path d="M7 17 17 7M9 7h8v8" /> : <path d="M7 7l10 10M17 9v8H9" />}
-    </svg>
-  );
-}
-
-/** Первый экран дизайн-версии. Живой изо-завод справа, контент слева. */
+/**
+ * Первый экран дизайн-версии.
+ * Раскладка — колонка на всю высоту вьюпорта: шапка, герой, полоса цифр.
+ * Полоса цифр входит в те же 100dvh, поэтому доказательства видно без скролла.
+ */
 export function DesignHero() {
   return (
     <header className="dh">
       <div className="dh-wrap">
         <nav className="dh-nav" aria-label="Основная навигация">
-          <Link href="/" className="dh-logo">
-            <b>BIS</b>
-            <span>Business Intelligence Solutions</span>
+          <Link href="/" className="dh-logo" aria-label="BIS — Business Intelligence Solutions">
+            <Image src="/design/bis-logo.png" alt="BIS — Business Intelligence Solutions" width={1012} height={782} priority />
           </Link>
           <div className="dh-navlinks">
             {NAV.map((n) => (
@@ -90,43 +78,50 @@ export function DesignHero() {
 
         <section className="dh-hero">
           <div className="dh-content">
-            <p className="dh-eyebrow dh-rise dh-rise-1">
+            <p className="dh-eyebrow dh-fade dh-fade-1">
               <SapMark className="dh-eyebrow-mark" />
               Официальный партнёр SAP в Узбекистане
             </p>
-            <h1 className="dh-h1 dh-rise dh-rise-2">
-              Одна система вместо <em>Excel, 1С и&nbsp;десяти чатов</em>
+            <h1 className="dh-h1">
+              <SplitHeading
+                segments={[
+                  { text: "Одна система вместо " },
+                  { text: "Excel, 1С и десяти чатов", accent: true },
+                ]}
+              />
             </h1>
-            <p className="dh-lead dh-rise dh-rise-3">
-              Когда заказов и людей всё больше, таблицы перестают справляться. SAP связывает финансы, склад, закупки и продажи в одном месте. Данные вводятся один раз и видны всем. Вы держите бизнес под контролем и масштабируетесь спокойно.
+            <p className="dh-lead dh-fade dh-fade-2">
+              Когда заказов и людей всё больше, таблицы перестают справляться. SAP связывает финансы, склад, закупки и продажи в одном месте. Данные вводятся один раз и видны всем.
             </p>
-            <div className="dh-cta-row dh-rise dh-rise-4">
+            <div className="dh-cta-row dh-fade dh-fade-3">
               <Btn href="#">Получить расчёт за 1 день</Btn>
-              <Btn href="/simulator" variant="ghost" internal>Сначала посчитать, сколько теряю</Btn>
+              <Btn href="/simulator" variant="ghost" internal>Посчитать, сколько теряю</Btn>
             </div>
           </div>
 
-          <div className="dh-stage">
+          <div className="dh-stage dh-fade dh-fade-2">
             <div className="dh-stage-media">
-              <FactoryVideo />
+              <Image
+                src="/design/factory.webp"
+                alt="Производство, объединённое в одну систему SAP: склад, цех, конвейер и аналитика"
+                width={2400}
+                height={1907}
+                priority
+                sizes="(max-width: 960px) 100vw, 60vw"
+              />
             </div>
-            {METRICS.map((m) => (
-              <div key={m.pos} className={`dh-metric ${m.pos} dh-float`}>
-                <div className={`m-val ${m.dir}`}>
-                  <Trend up={m.dir === "up"} />
-                  {m.val}
-                </div>
-                <div className="m-lbl">{m.lbl}</div>
+          </div>
+
+          <div className="dh-stats">
+            {STATS.map((s, i) => (
+              <div className="dh-stat dh-fade dh-fade-4" key={s.val}>
+                <span className="dh-stat-idx">{String(i + 1).padStart(2, "0")}</span>
+                <b>{s.val}</b>
+                <span className="dh-stat-lbl">{s.lbl}</span>
               </div>
             ))}
           </div>
         </section>
-
-        <div className="dh-stats">
-          <div className="dh-stat"><b>35+</b><span>внедрений SAP в Узбекистане</span></div>
-          <div className="dh-stat"><b>с 2016</b><span>на рынке автоматизации</span></div>
-          <div className="dh-stat"><b>Партнёр SAP</b><span>лицензии и поддержка вендора напрямую</span></div>
-        </div>
       </div>
     </header>
   );
