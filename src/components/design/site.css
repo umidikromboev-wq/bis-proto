@@ -43,27 +43,11 @@
 
 /* — секция — */
 .d-section { position: relative; padding-block: var(--section-y); }
-/* Границы между секциями намеренно мягкие: белое вытекает из бумаги и уходит
-   обратно, без линии раздела. Читаемость держится не границей, а весом набора
-   и тем, что бумага стала темнее — белая среда теперь видна сама по себе. */
-.d-section--tint {
-  background: linear-gradient(180deg,
-    rgba(255, 255, 255, 0) 0%,
-    var(--paper-2) 14%,
-    var(--paper-2) 86%,
-    rgba(255, 255, 255, 0) 100%);
-}
-/* Тёмная секция — единственная жёсткая смена среды на сайте, и она заслужена.
-   Но и её края растушёваны: сверху и снизу цвет входит и выходит плавно,
-   поэтому переход читается как перелив, а не как обрыв. */
-.d-section--ink { position: relative; background: #08182a; color: rgba(255, 255, 255, 0.75); }
-.d-section--ink::before,
-.d-section--ink::after {
-  content: ""; position: absolute; left: 0; right: 0; height: clamp(3rem, 6vw, 6rem);
-  pointer-events: none;
-}
-.d-section--ink::before { top: 0; background: linear-gradient(180deg, var(--paper), transparent); opacity: 0.22; }
-.d-section--ink::after { bottom: 0; background: linear-gradient(0deg, var(--paper), transparent); opacity: 0.22; }
+/* Границы между секциями чёткие: каждая секция — плоская заливка, края не
+   растворяются. Смена среды происходит резко, ровно на стыке. Читаемость
+   внутри секции держат вес набора и разница тона бумаги и белого. */
+.d-section--tint { background: var(--paper-2); }
+.d-section--ink { background: #08182a; color: rgba(255, 255, 255, 0.75); }
 
 /* Шапка секции: надзаголовок, заголовок, лид. Одна колонка и узкая мера —
    длинная строка на светлом фоне читается тяжело. */
