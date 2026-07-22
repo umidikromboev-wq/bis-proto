@@ -68,15 +68,14 @@
 }
 
 /* — навигация — */
-.dh-nav { position: relative; z-index: 5; flex: none; display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); padding-block: 1.1rem; }
-.dh-logo { display: block; flex: none; line-height: 0; }
-.dh-logo img { width: auto; height: clamp(3.1rem, 4.4vw, 4.3rem); }
-.dh-navlinks { display: flex; gap: clamp(1rem, 1.6vw, 1.75rem); }
-.dh-navlinks a { position: relative; color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 400; white-space: nowrap; transition: color 0.2s var(--ease); }
-/* подчёркивание раскрывается от левого края, а не проявляется целиком */
-.dh-navlinks a::after { content: ""; position: absolute; left: 0; bottom: -0.4rem; width: 100%; height: 1.5px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
-.dh-navlinks a:hover { color: var(--brand); }
-.dh-navlinks a:hover::after { transform: scaleX(1); }
+.dh-nav { position: relative; z-index: 60; flex: none; display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); padding-block: 1.1rem; }
+/* Два варианта знака лежат друг на друге: на тёмной шторке меню цветной
+   логотип пропадает, поэтому он подменяется белым. */
+.dh-logo { display: grid; flex: none; line-height: 0; }
+.dh-logo img { grid-area: 1 / 1; width: auto; height: clamp(2.15rem, 2.7vw, 2.7rem); transition: opacity 0.3s var(--ease); }
+.dh-logo img:last-child { opacity: 0; }
+.dh-nav.is-menu-open .dh-logo img:first-child { opacity: 0; }
+.dh-nav.is-menu-open .dh-logo img:last-child { opacity: 1; }
 .dh-navcta { margin-left: auto; display: inline-flex; align-items: center; gap: 1rem; }
 .dh-phone { color: var(--text); text-decoration: none; font-size: 0.92rem; font-weight: 500; white-space: nowrap; }
 .dh-phone:hover { color: var(--brand); }
@@ -111,9 +110,20 @@
    меняется и цвет — на светлом фоне 600 без потемнения читается вяло. */
 .dh-lead strong { font-weight: 600; color: var(--ink); }
 
-/* обе кнопки тянутся: в одну строку делят ширину, при переносе становятся равными */
-.dh-cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 2rem; max-width: 40rem; }
-.dh-cta-row .dh-btn { flex: 1 1 16rem; }
+/* Главное действие — кнопка, второе — текстовая ссылка. Разный вес нужен,
+   чтобы шаги не конкурировали. */
+.dh-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-top: 2rem; }
+.dh-textlink {
+  position: relative; display: inline-flex; align-items: center; gap: 0.6rem;
+  color: var(--text); text-decoration: none; font-size: 0.97rem; font-weight: 400;
+  transition: color 0.25s var(--ease);
+}
+.dh-textlink svg { width: 0.8rem; height: 0.8rem; }
+/* линия раскрывается от левого края, а не проявляется целиком */
+.dh-textlink::after { content: ""; position: absolute; left: 0; right: 1.4rem; bottom: -0.35rem; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.35s var(--ease); }
+.dh-textlink:hover { color: var(--brand); }
+.dh-textlink:hover::after { transform: scaleX(1); }
+.dh-textlink:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
 
 /* Анатомия кнопки: подпись слева, квадратная иконочная плитка справа.
    Плитка всегда инвертирована относительно самой кнопки — это её акцент.
@@ -161,18 +171,9 @@
 }
 /* Абсолютный слой: визуал берёт высоту строки героя и вписывается в неё.
    Иначе картинка задаёт высоту сама и выталкивает полосу цифр за пределы экрана. */
-.dh-stage-media { position: absolute; inset: -2% -4%; z-index: 1; }
-/* Маска и видео описывают один прямоугольник: у маски та же пропорция, что у
-   кадра, поэтому mask-size: contain даёт ровно ту же геометрию, что и
-   object-fit: contain у видео. Совмещать вручную ничего не нужно. */
-.dh-factory {
-  display: block; width: 100%; height: 100%; object-fit: contain;
-  -webkit-mask-image: url("/design/factory-mask.png");
-  mask-image: url("/design/factory-mask.png");
-  -webkit-mask-size: contain; mask-size: contain;
-  -webkit-mask-position: center; mask-position: center;
-  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-}
+/* container-type: size включает единицы cqh, по которым .dh-figure считает
+   свою ширину по правилу contain (см. factory-stage.css) */
+.dh-stage-media { position: absolute; inset: -2% -4%; z-index: 1; container-type: size; display: grid; place-items: center; }
 
 /* — полоса цифр: доказательства на первом экране — */
 .dh-stats {
@@ -207,16 +208,9 @@
   .dh-fade-4 { animation-delay: 0.86s; }
   @keyframes dh-fade { to { opacity: 1; } }
 
-  /* завод едва заметно дышит — статичный вырез иначе выглядит наклейкой */
-  .dh-stage-media { animation: dh-drift 9s ease-in-out 1s infinite; }
-  @keyframes dh-drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 }
 
 /* — планшет — */
-@media (max-width: 1100px) {
-  .dh-navlinks { display: none; }
-}
-
 /* — мобильный — */
 @media (max-width: 960px) {
   .dh-wrap { min-height: 0; }
@@ -230,8 +224,9 @@
      во всю ширину по своей пропорции. Пока он был слоем, высоту задавала
      строка, а object-fit: contain ужимал завод до трёх четвертей экрана. */
   .dh-stage { margin-right: 0; margin-inline: -7%; min-height: 0; }
-  .dh-stage-media { position: static; inset: auto; }
-  .dh-factory { height: auto; }
+  .dh-stage-media { position: static; inset: auto; container-type: normal; display: block; }
+  /* цифры о компании на узком экране пока скрыты */
+  .dh-stats { display: none; }
   .dh-stats { grid-template-columns: 1fr; gap: 1.1rem; }
   .dh-stat { padding-inline: 0; }
   .dh-stat + .dh-stat::before { display: none; }
@@ -240,4 +235,5 @@
 @media (max-width: 540px) {
   .dh-nav { padding-block: 0.9rem; }
   .dh-cta-row .dh-btn { flex: 1 1 100%; }
+  .dh-textlink { margin-top: 0.2rem; }
 }

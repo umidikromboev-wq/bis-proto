@@ -1,0 +1,110 @@
+/*
+  Визуал завода и точки показателей.
+
+  Точки заданы в процентах от кадра, поэтому .dh-figure обязан совпадать с
+  прямоугольником видео пиксель в пиксель. Обычный object-fit: contain здесь
+  не годится — он вписывает картинку внутрь коробки, а сама коробка остаётся
+  прежней, и проценты уезжают. Поэтому коробка сама считается по правилу
+  contain через единицы контейнера: ширина — меньшее из полной ширины и той,
+  что даёт полная высота при пропорции кадра.
+*/
+.dh-figure {
+  position: relative;
+  width: min(100%, calc(100cqh * 2000 / 1562));
+  aspect-ratio: 2000 / 1562;
+}
+.dh-factory {
+  display: block; width: 100%; height: 100%;
+  /* маска повторяет силуэт завода: у видео фон непрозрачный и белый */
+  -webkit-mask-image: url("/design/factory-mask.png");
+  mask-image: url("/design/factory-mask.png");
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
+
+/* — подсказка о кликабельности — */
+.dh-spot-hint {
+  position: absolute; top: 3%; left: 1%; z-index: 3; margin: 0;
+  display: inline-flex; align-items: center; gap: 0.5rem; max-width: 46%;
+  font-size: 0.7rem; font-weight: 400; line-height: 1.35; color: var(--dim);
+}
+.dh-spot-hint span { width: 5px; height: 5px; border-radius: 50%; background: var(--brand); flex: none; }
+
+/* — точки показателей — */
+.dh-spots { position: absolute; inset: 0; }
+.dh-spot { position: absolute; transform: translate(-50%, -50%); }
+
+.dh-spot-btn {
+  position: relative; z-index: 2;
+  display: grid; place-items: center;
+  width: 2.6rem; height: 2.6rem; padding: 0;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(6px);
+  color: var(--brand); cursor: pointer;
+  box-shadow: 0 6px 20px rgba(12, 33, 55, 0.12);
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.dh-spot-btn svg { width: 1.15rem; height: 1.15rem; }
+.dh-spot-btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.dh-spot.is-active .dh-spot-btn { background: var(--brand); border-color: var(--brand); color: #ffffff; }
+
+/* Пульсирующее кольцо — единственный сигнал, что точки живые.
+   Гаснет у раскрытой точки: она уже ответила на вопрос «что тут». */
+.dh-spot-btn::after {
+  content: ""; position: absolute; inset: -2px; border-radius: 999px;
+  border: 1px solid var(--brand); opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dh-spot-btn::after { animation: dh-ping 2.8s var(--ease) infinite; }
+  .dh-spot.is-active .dh-spot-btn::after { animation: none; }
+  @keyframes dh-ping {
+    0% { transform: scale(1); opacity: 0.55; }
+    70%, 100% { transform: scale(1.85); opacity: 0; }
+  }
+}
+
+/* — подсказка — */
+.dh-tip {
+  position: absolute; top: 50%; z-index: 1;
+  display: flex; flex-direction: column; gap: 0.2rem;
+  padding: 0.6rem 0.9rem; border-radius: 12px;
+  background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 34px rgba(12, 33, 55, 0.12);
+  white-space: nowrap; pointer-events: none;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.28s var(--ease), transform 0.35s var(--ease), visibility 0s linear 0.28s;
+}
+.dh-tip b { font-size: 1.15rem; font-weight: 400; letter-spacing: -0.02em; color: var(--ink); line-height: 1; }
+.dh-tip i { font-style: normal; font-size: 0.76rem; font-weight: 300; color: var(--muted); }
+
+/* Подсказка выезжает из-под кнопки в сторону, заданную точкой: так она не
+   упирается в край кадра. */
+.dh-spot[data-side="right"] .dh-tip { left: 1.7rem; transform: translate(-6px, -50%); }
+.dh-spot[data-side="left"] .dh-tip { right: 1.7rem; transform: translate(6px, -50%); }
+.dh-spot.is-active .dh-tip {
+  opacity: 1; visibility: visible; transform: translate(0, -50%);
+  transition: opacity 0.28s var(--ease), transform 0.35s var(--ease), visibility 0s;
+}
+
+/* плашка нужна только на узком экране — на широком подсказка живёт у точки */
+.dh-tip-bar { display: none; }
+
+@media (max-width: 960px) {
+  .dh-figure { width: 100%; }
+  .dh-spot-hint { font-size: 0.64rem; max-width: 52%; }
+  .dh-spot-btn { width: 2.1rem; height: 2.1rem; }
+  .dh-spot-btn svg { width: 0.95rem; height: 0.95rem; }
+}
+@media (max-width: 760px) {
+  .dh-tip { display: none; }
+  .dh-tip-bar {
+    position: absolute; left: 2%; bottom: 3%; z-index: 3;
+    display: flex; flex-direction: column; gap: 0.15rem;
+    padding: 0.5rem 0.8rem; border-radius: 12px;
+    background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(10px);
+    border: 1px solid var(--line); box-shadow: 0 12px 30px rgba(12, 33, 55, 0.12);
+  }
+  .dh-tip-bar b { font-size: 1.05rem; font-weight: 400; letter-spacing: -0.02em; color: var(--ink); line-height: 1; }
+  .dh-tip-bar i { font-style: normal; font-size: 0.72rem; font-weight: 300; color: var(--muted); }
+}

@@ -1,18 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { FactoryVideo } from "./factory-video";
+import { FactoryStage } from "./factory-stage";
+import { SiteHeader } from "./menu";
 import { PixelArrow, SapMark } from "./marks";
 import { SplitHeading } from "./split-text";
 import "./hero.css";
-
-const NAV = [
-  { label: "SAP Business One", href: "#" },
-  { label: "SAP S/4HANA", href: "#" },
-  { label: "Кейсы", href: "#" },
-  { label: "Блог", href: "#" },
-  { label: "Контакты", href: "#" },
-];
 
 /** Доказательства компании. Живут на первом экране — их не нужно искать скроллом. */
 const STATS = [
@@ -62,20 +54,7 @@ export function DesignHero() {
   return (
     <header className="dh">
       <div className="dh-wrap">
-        <nav className="dh-nav" aria-label="Основная навигация">
-          <Link href="/" className="dh-logo" aria-label="BIS — Business Intelligence Solutions">
-            <Image src="/design/bis-logo.png" alt="BIS — Business Intelligence Solutions" width={1012} height={782} priority />
-          </Link>
-          <div className="dh-navlinks">
-            {NAV.map((n) => (
-              <a key={n.label} href={n.href}>{n.label}</a>
-            ))}
-          </div>
-          <div className="dh-navcta">
-            <a href="tel:+998908231012" className="dh-phone">+998 90 823 10 12</a>
-            <Btn href="#" small>Получить расчёт</Btn>
-          </div>
-        </nav>
+        <SiteHeader />
 
         <section className="dh-hero">
           <div className="dh-content">
@@ -98,13 +77,18 @@ export function DesignHero() {
             </p>
             <div className="dh-cta-row dh-fade dh-fade-3">
               <Btn href="#">Получить расчёт за 1 день</Btn>
-              <Btn href="/simulator" variant="ghost" internal>Посчитать, сколько теряю</Btn>
+              {/* Второе действие намеренно без рамки: две одинаково весомые
+                  кнопки конкурируют и размывают главный шаг. */}
+              <Link href="/simulator" className="dh-textlink">
+                Посчитать, сколько теряю
+                <PixelArrow />
+              </Link>
             </div>
           </div>
 
           <div className="dh-stage dh-fade dh-fade-2">
             <div className="dh-stage-media">
-              <FactoryVideo />
+              <FactoryStage />
             </div>
           </div>
 
