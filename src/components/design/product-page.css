@@ -1,0 +1,38 @@
+/* Страница продукта. Секции переиспользуют общий словарь главной, здесь —
+   только то, чего на главной нет. */
+
+/* ─── кому подходит / кому нет ─── */
+.dp-fit { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr); gap: clamp(2rem, 4vw, 4rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.dp-fit-yes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(1.5rem, 3vw, 3rem); }
+.dp-fit-item { padding: clamp(1.3rem, 2.2vw, 1.8rem) 0; border-top: 1px solid var(--line); }
+.dp-fit-item p { margin: 0.7rem 0 0; font-size: 0.93rem; color: var(--muted); }
+/* Отсечка «когда не нужно» стоит отдельным блоком, а не пунктом в общем
+   списке: честный отказ — самостоятельное сообщение, а не оговорка. */
+.dp-fit-no { padding: clamp(1.4rem, 2.5vw, 2rem) clamp(1.4rem, 2.5vw, 2rem) clamp(1.6rem, 3vw, 2.2rem); background: var(--paper); border: 1px solid var(--line); border-radius: 16px; align-self: start; }
+.dp-fit-no .d-footer-cap { color: var(--dim); }
+.dp-fit-no ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+.dp-fit-no li { position: relative; padding-left: 1.4rem; font-size: 0.9rem; color: var(--muted); }
+.dp-fit-no li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 9px; height: 1px; background: var(--dim); }
+
+/* ─── день из жизни ─── */
+.dp-day { list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); }
+.dp-day li { padding: clamp(1.4rem, 2.5vw, 2rem) 0; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.dp-day-time { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; color: var(--cyan); margin-bottom: 0.9rem; font-variant-numeric: tabular-nums; }
+.dp-day p { margin: 0.7rem 0 0; font-size: 0.93rem; color: rgba(255, 255, 255, 0.6); }
+
+/* ─── бюджет ─── */
+.dp-budget { margin-top: clamp(3rem, 5vw, 4.5rem); padding-top: clamp(1.6rem, 3vw, 2.2rem); border-top: 1px solid var(--line); }
+.dp-budget-cap { color: var(--dim); }
+.dp-budget-rows { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.2rem, 3vw, 2.5rem); }
+.dp-budget-label { display: block; font-size: 0.85rem; color: var(--muted); }
+.dp-budget-rows b { display: block; margin-top: 0.6rem; font-size: clamp(1.3rem, 1rem + 1vw, 1.9rem); font-weight: 300; letter-spacing: -0.025em; color: var(--ink); line-height: 1; }
+.dp-budget-note { display: block; margin-top: 0.5rem; font-size: 0.78rem; color: var(--dim); }
+.dp-budget .d-note { display: block; margin-top: 1.6rem; }
+
+@media (max-width: 1000px) {
+  .dp-fit { grid-template-columns: 1fr; }
+  .dp-day, .dp-budget-rows { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .dp-fit-yes, .dp-day, .dp-budget-rows { grid-template-columns: 1fr; }
+}

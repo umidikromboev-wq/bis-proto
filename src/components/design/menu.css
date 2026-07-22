@@ -1,6 +1,18 @@
 /* ─── шапка: рендерится макетом, поэтому стили живут рядом с меню ─── */
 /* — навигация — */
-.dh-nav { position: relative; z-index: 60; flex: none; display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); padding-block: 1.1rem; }
+/* Шапка лежит поверх первого экрана, а не над ним отдельной полосой: свой фон
+   у неё появляется только после прокрутки. Иначе на главной была бы видна
+   светлая полоса поверх градиента героя. Высота жёстко равна --nav-h, и на
+   ту же величину первый экран отступает сверху — тогда стык всегда точный. */
+.dh-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem);
+  height: var(--nav-h); padding-inline: var(--pad-x);
+  transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease), backdrop-filter 0.3s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.dh-nav.is-stuck { background: rgba(238, 242, 247, 0.82); backdrop-filter: blur(14px); border-bottom-color: var(--line); }
+.dh-nav.is-menu-open, .dh-nav.is-menu-open.is-stuck { background: transparent; backdrop-filter: none; border-bottom-color: transparent; }
 /* Два варианта знака лежат друг на друге: на тёмной шторке меню цветной
    логотип пропадает, поэтому он подменяется белым. */
 .dh-logo { display: grid; flex: none; line-height: 0; }
@@ -12,8 +24,6 @@
 .dh-phone { color: var(--text); text-decoration: none; font-size: 0.92rem; font-weight: 500; white-space: nowrap; }
 .dh-phone:hover { color: var(--brand); }
 .dh-nav .dh-btn { white-space: nowrap; }
-.dh-nav { padding-block: 1.1rem; }
-@media (max-width: 540px) { .dh-nav { padding-block: 0.9rem; } }
 
 /*
   Полноэкранное меню.

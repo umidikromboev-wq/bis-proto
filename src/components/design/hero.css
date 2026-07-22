@@ -11,6 +11,7 @@
 */
 .dh {
   position: relative;
+  padding-top: var(--nav-h);
   overflow: hidden;
   isolation: isolate;
   background:
@@ -73,9 +74,7 @@
 
 /* левая колонка — контент */
 .dh-content { position: relative; z-index: 3; }
-.dh-eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.73rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); font-weight: 600; background: #ffffff; border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 1.05rem 0.45rem 0.5rem; box-shadow: 0 6px 18px rgba(28, 134, 214, 0.08); }
-/* знак SAP вместо декоративной точки: партнёрство подтверждается логотипом вендора */
-.dh-eyebrow-mark { width: 2.55rem; height: auto; flex: none; display: block; border-radius: 3px; }
+
 
 .dh-h1 { font-size: clamp(2.05rem, 1.4rem + 2.5vw, 3.85rem); line-height: 1.08; letter-spacing: -0.018em; font-weight: 300; color: var(--ink); margin: 1.3rem 0 0; max-width: 17ch; }
 .dh-word-accent { color: var(--brand); font-weight: 400; }

@@ -34,12 +34,21 @@ const SECONDARY = [
  */
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [stuck, setStuck] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   const close = useCallback(() => {
     setOpen(false);
     triggerRef.current?.focus();
+  }, []);
+
+  // Фон шапки появляется только после того, как первый экран уехал вверх.
+  useEffect(() => {
+    const onScroll = () => setStuck(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -76,7 +85,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <nav className={`dh-nav${open ? " is-menu-open" : ""}`} aria-label="Основная навигация">
+      <nav className={`dh-nav${stuck ? " is-stuck" : ""}${open ? " is-menu-open" : ""}`} aria-label="Основная навигация">
         <Link href="/design" className="dh-logo" aria-label="BIS — Business Intelligence Solutions">
           <Image src="/design/bis-logo.png" alt="BIS — Business Intelligence Solutions" width={1012} height={782} priority />
           <Image src="/design/bis-logo-white.png" alt="" aria-hidden width={1012} height={782} />

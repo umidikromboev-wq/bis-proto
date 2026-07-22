@@ -1,0 +1,99 @@
+/*
+  Внутренние страницы: кейсы, блог, контакты.
+  Словарь тот же, что на главной — волосяные линии, крупные номера, тонкий
+  набор. Здесь только то, чего в общем словаре нет.
+*/
+
+/* ─── список кейсов ─── */
+.di-cases { display: grid; gap: 0; margin-top: clamp(1rem, 2vw, 2rem); }
+.di-case-card {
+  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(2rem, 3.5vw, 3rem) 0; border-top: 1px solid var(--line);
+  text-decoration: none; color: inherit;
+  transition: padding-left 0.4s var(--ease);
+}
+.di-cases > *:last-child .di-case-card { border-bottom: 1px solid var(--line); }
+@media (hover: hover) { .di-case-card:hover { padding-left: clamp(0.5rem, 1.2vw, 1.2rem); } }
+.di-case-card:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+.di-case-client { display: flex; align-items: baseline; gap: 1rem; }
+.di-case-meta { margin: 0.6rem 0 0; font-size: 0.86rem; color: var(--dim); }
+.di-case-scale { margin: 0.9rem 0 0; font-size: 0.84rem; color: var(--muted); }
+.di-case-nums { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 1.5rem; align-content: start; }
+.di-case-nums b { display: block; font-size: clamp(1.2rem, 1rem + 0.8vw, 1.7rem); font-weight: 300; letter-spacing: -0.025em; color: var(--brand); line-height: 1; }
+.di-case-nums span { display: block; margin-top: 0.45rem; font-size: 0.8rem; color: var(--muted); }
+
+/* ─── страница кейса ─── */
+.di-case-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); }
+.di-before { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: 0.8rem; }
+.di-before li { position: relative; padding-left: 1.5rem; font-size: 0.95rem; color: var(--muted); }
+.di-before li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 9px; height: 1px; background: var(--dim); }
+.di-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.di-after > div { padding-top: 1.3rem; border-top: 1px solid var(--line); }
+.di-after b { display: block; font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.6rem); font-weight: 300; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+.di-after span { display: block; margin-top: 0.6rem; font-size: 0.86rem; color: var(--muted); }
+
+/* ─── блог ─── */
+.di-posts { display: grid; margin-top: clamp(1rem, 2vw, 2rem); }
+.di-post-card {
+  display: grid; grid-template-columns: minmax(0, 0.28fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  padding: clamp(1.8rem, 3vw, 2.6rem) 0; border-top: 1px solid var(--line);
+  text-decoration: none; color: inherit;
+  transition: padding-left 0.4s var(--ease);
+}
+.di-posts > *:last-child .di-post-card { border-bottom: 1px solid var(--line); }
+@media (hover: hover) { .di-post-card:hover { padding-left: clamp(0.5rem, 1.2vw, 1.2rem); } }
+.di-post-card:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+.di-post-meta { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.78rem; color: var(--dim); }
+.di-post-cat { color: var(--brand); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.66rem; }
+.di-post-excerpt { margin: 0.8rem 0 0; font-size: 0.95rem; color: var(--muted); max-width: 60ch; }
+
+/* ─── статья ─── */
+.di-article { max-width: 44rem; }
+.di-article p { font-size: clamp(1rem, 0.96rem + 0.28vw, 1.12rem); line-height: 1.75; color: var(--text); margin: 0 0 1.5rem; }
+.di-article h3 { font-size: clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem); font-weight: 400; letter-spacing: -0.018em; color: var(--ink); margin: clamp(2.5rem, 4vw, 3.5rem) 0 1.2rem; }
+.di-article ul { list-style: none; margin: 0 0 1.8rem; padding: 0; display: grid; gap: 0.8rem; }
+.di-article ul li { position: relative; padding-left: 1.6rem; color: var(--text); }
+.di-article ul li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 9px; height: 1px; background: var(--brand); }
+.di-article blockquote { margin: clamp(2rem, 3vw, 2.6rem) 0; padding-left: clamp(1.2rem, 2vw, 1.8rem); border-left: 2px solid var(--brand); }
+.di-article blockquote p { font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem); font-weight: 300; line-height: 1.5; color: var(--ink); margin-bottom: 0.8rem; }
+.di-article blockquote footer { font-size: 0.85rem; color: var(--dim); }
+/* Выноска — единственный блок статьи с заливкой: она останавливает чтение. */
+.di-callout { margin: clamp(2rem, 3vw, 2.6rem) 0; padding: clamp(1.2rem, 2vw, 1.6rem); background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
+.di-callout b { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand); margin-bottom: 0.8rem; }
+.di-callout p { margin: 0; font-size: 0.97rem; color: var(--text); }
+
+/* ─── контакты ─── */
+.di-channels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.di-channel { padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.di-channel-title { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); margin-bottom: 1rem; }
+.di-channel a { display: inline-block; font-size: clamp(1.1rem, 0.95rem + 0.6vw, 1.5rem); font-weight: 300; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; transition: color 0.25s var(--ease); }
+.di-channel a:hover { color: var(--brand); }
+.di-channel p { margin: 0.8rem 0 0; font-size: 0.84rem; color: var(--muted); }
+
+.di-office { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 4rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.di-office dl { margin: 0; display: grid; gap: 1.2rem; }
+.di-office dt { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); margin-bottom: 0.4rem; }
+.di-office dd { margin: 0; font-size: 0.97rem; color: var(--text); }
+
+.di-formats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.di-format { display: flex; flex-direction: column; padding-top: 1.4rem; border-top: 2px solid var(--line); }
+.di-format:first-child { border-top-color: var(--brand); }
+.di-format-time { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand); margin-bottom: 0.9rem; }
+.di-format p { margin: 0.8rem 0 1.6rem; font-size: 0.93rem; color: var(--muted); flex: 1; }
+
+.di-requisites { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.di-requisites > div { padding: 1.1rem 0; border-top: 1px solid var(--line); }
+.di-requisites dt { font-size: 0.78rem; color: var(--dim); }
+.di-requisites dd { margin: 0.35rem 0 0; font-size: 0.97rem; color: var(--text); }
+
+@media (max-width: 1000px) {
+  .di-case-card, .di-case-grid, .di-office { grid-template-columns: 1fr; }
+  .di-channels, .di-formats, .di-requisites { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .di-post-card { grid-template-columns: 1fr; gap: 0.8rem; }
+  .di-post-meta { flex-direction: row; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: baseline; }
+}
+@media (max-width: 700px) {
+  .di-channels, .di-formats, .di-requisites, .di-after, .di-case-nums { grid-template-columns: 1fr; }
+}

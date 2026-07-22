@@ -1,0 +1,46 @@
+/*
+  Первый экран внутренней страницы.
+  Тот же световой фон, что у главной, но без 100dvh: здесь экран ориентирует,
+  а не продаёт, и забирать под него всю высоту незачем.
+*/
+.dp {
+  position: relative;
+  padding-block: calc(var(--nav-h) + clamp(2rem, 3vw, 3rem)) clamp(3.5rem, 6vw, 6rem);
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(54% 70% at 3% 0%, rgba(28, 134, 214, 0.16) 0%, transparent 62%),
+    radial-gradient(46% 60% at 97% 30%, rgba(51, 199, 234, 0.14) 0%, transparent 64%),
+    linear-gradient(170deg, #f3f7fb 0%, #e9eff7 100%);
+}
+.dp::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(rgba(28, 134, 214, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 134, 214, 0.06) 1px, transparent 1px);
+  background-size: 52px 52px;
+  -webkit-mask: radial-gradient(120% 130% at 82% 0%, #000 4%, rgba(0, 0, 0, 0.4) 45%, transparent 82%);
+  mask: radial-gradient(120% 130% at 82% 0%, #000 4%, rgba(0, 0, 0, 0.4) 45%, transparent 82%);
+  pointer-events: none;
+}
+
+.dp-crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--dim); margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.dp-crumbs a { color: var(--dim); text-decoration: none; transition: color 0.25s var(--ease); }
+.dp-crumbs a:hover { color: var(--brand); }
+.dp-crumbs b { font-weight: 400; color: var(--text); }
+.dp-crumbs i { font-style: normal; opacity: 0.5; margin-inline: 0.15rem; }
+
+.dp-eyebrow { margin-bottom: 1.5rem; }
+.dp-h1 { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 3.4rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.022em; color: var(--ink); margin: 0; max-width: 20ch; }
+.dp-lead { font-size: clamp(1rem, 0.95rem + 0.32vw, 1.16rem); color: var(--muted); margin: 1.4rem 0 0; max-width: 52ch; }
+.dp .dh-cta-row { margin-top: clamp(1.8rem, 3vw, 2.4rem); }
+
+.dp-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.2rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); padding-top: clamp(1.4rem, 2.5vw, 2rem); border-top: 1px solid var(--line); }
+.dp-fact-idx { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.2em; color: var(--brand); opacity: 0.5; margin-bottom: 0.6rem; }
+.dp-facts b { display: block; font-size: clamp(1.3rem, 1rem + 1vw, 1.9rem); font-weight: 300; letter-spacing: -0.025em; color: var(--ink); line-height: 1; }
+.dp-facts > div > span:last-child { display: block; margin-top: 0.55rem; font-size: 0.84rem; color: var(--muted); }
+
+@media (max-width: 700px) {
+  .dp-facts { grid-template-columns: 1fr; gap: 1.2rem; }
+}
