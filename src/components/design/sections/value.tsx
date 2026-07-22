@@ -4,6 +4,7 @@ import { clientLogos } from "@/content/client-logos";
 import { effect, logoStrip, roles, unifiedBase } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { GlassIcon, type IconName } from "../icon";
+
 import { FlowScheme } from "../schemes/flow";
 import { Section, SectionHead } from "../ui";
 
@@ -114,7 +115,15 @@ export function Effect() {
   );
 }
 
-/** Отрасли. Три группы, внутри — плотный список направлений. */
+/** Фотография на группу: снимок среды, в которой работает клиент. */
+const INDUSTRY_PHOTOS = ["production", "distribution", "retail"];
+
+/**
+ * Отрасли. Три группы, внутри — плотный список направлений.
+ *
+ * Снимки документальные и намеренно неглянцевые: сайт продаёт учёт на
+ * реальном производстве, и вылизанный сток здесь работал бы против доверия.
+ */
 export function Industries() {
   return (
     <Section id="industries">
@@ -125,6 +134,15 @@ export function Industries() {
       <div className="d-industries">
         {industries.groups.map((g, i) => (
           <Reveal key={g.name} delay={i * 90} className="d-industry">
+            <Image
+              className="d-industry-photo"
+              src={`/design/photos/${INDUSTRY_PHOTOS[i]}.webp`}
+              alt=""
+              aria-hidden
+              width={1600}
+              height={1195}
+              sizes="(max-width: 700px) 100vw, 33vw"
+            />
             <h3 className="d-h3">
               <span className="d-industry-count">{String(g.items.length).padStart(2, "0")}</span>
               {g.name}

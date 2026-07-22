@@ -306,3 +306,7 @@
 /* На тёмной секции стекло слишком светлое и спорит с фоном — гасим блик. */
 .d-section--ink .d-icon { opacity: 0.9; }
 .d-solution-tail { margin-top: clamp(1.5rem, 2.5vw, 2rem) !important; }
+
+/* ─── фотографии ─── */
+.d-industry-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; margin-bottom: 1.4rem; }
+.d-lead-photo { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; margin-bottom: 1.8rem; }

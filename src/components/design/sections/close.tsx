@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { faq, finalCta, pricing } from "@/content/blocks";
 import { leadMagnet } from "@/content/playbook";
 import { Reveal } from "../reveal";
@@ -31,6 +32,16 @@ export function LeadMagnet() {
         </Reveal>
 
         <Reveal delay={120} className="d-lead-side">
+          {/* Снимок самой встречи: обещание «разберём на аудите» становится
+              картинкой того, как это выглядит, а не остаётся словами. */}
+          <Image
+            className="d-lead-photo"
+            src="/design/photos/audit.webp"
+            alt="Разбор процессов на встрече с консультантом BIS"
+            width={2000}
+            height={1116}
+            sizes="(max-width: 1000px) 100vw, 34vw"
+          />
           <div className="d-expert">
             <span className="d-expert-avatar" aria-hidden>ЖМ</span>
             <div>

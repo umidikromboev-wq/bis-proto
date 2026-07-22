@@ -7,9 +7,9 @@
   переменные, не трогая globals.css прототипа.
 */
 .d {
-  --paper: #eef2f7;
+  --paper: #e8edf4;
   --paper-2: #ffffff;
-  --line: #dce7f2;
+  --line: #d3dfec;
   --line-soft: #e9f0f8;
   --ink: #0c2137;
   --text: #12304c;
@@ -31,7 +31,9 @@
   min-height: 100dvh;
   background: var(--paper);
   color: var(--text);
-  font-weight: 300;
+  /* 400 в теле, 300 — только на крупном кегле. Light на мелком размывается и
+     сливает объекты друг с другом; именно это и читалось как «переливаются». */
+  font-weight: 400;
   line-height: 1.6;
   overflow-x: clip;
 }
@@ -41,8 +43,11 @@
 
 /* — секция — */
 .d-section { position: relative; padding-block: var(--section-y); }
-.d-section--tint { background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 12%, #ffffff 88%, rgba(255, 255, 255, 0) 100%); }
-.d-section--ink { background: #08182a; color: rgba(255, 255, 255, 0.72); }
+/* Раньше здесь был градиент, растворяющий края: на глаз секция не отличалась
+   от соседней, и страница читалась одним сплошным полотном. Теперь это
+   плоская белая плашка с волосяными границами — среда меняется явно. */
+.d-section--tint { background: var(--paper-2); border-block: 1px solid var(--line); }
+.d-section--ink { background: #08182a; color: rgba(255, 255, 255, 0.75); }
 
 /* Шапка секции: надзаголовок, заголовок, лид. Одна колонка и узкая мера —
    длинная строка на светлом фоне читается тяжело. */
@@ -168,4 +173,86 @@
 @media (max-width: 540px) {
   .dh-nav { padding-block: 0.9rem; }
   .dh-cta-row .dh-btn { flex: 1 1 100%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   МОБИЛЬНАЯ ТИПОГРАФИКА · управление вниманием
+
+   На узком экране всё, что на десктопе разведено по колонкам, встаёт в одну
+   ленту. Если веса и размеры остаются десктопными, лента читается как
+   однородный поток — «бардак без воздуха». Здесь работают четыре рычага:
+
+   1. Контраст размеров. Заголовок секции заметно крупнее тела, а не на пару
+      пунктов: глазу нужна точка входа в каждый экран.
+   2. Вес как иерархия. Ключевая строка идёт на 500, пояснение остаётся на
+      300. Один сильный элемент на экран, остальное — фон для него.
+   3. Контраст цвета. Важное темнее, второстепенное светлее. На десктопе
+      разницу держит расположение, на мобильном её приходится держать тоном.
+   4. Воздух. Отступы между блоками растут, а не сжимаются: на узком экране
+      пустота — единственный способ отделить одну мысль от другой.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 700px) {
+  .d { --section-y: clamp(3.5rem, 12vw, 5rem); }
+
+  /* точка входа в секцию: крупнее и плотнее, чем на десктопе */
+  .d-h2 { font-size: clamp(1.75rem, 7.6vw, 2.3rem); line-height: 1.1; letter-spacing: -0.028em; max-width: 15ch; }
+  .d-kicker { font-size: 0.66rem; margin-bottom: 1rem; }
+  .d-kicker::before { width: 1.1rem; }
+
+  /* лид перестаёт быть серым шумом: тон ближе к основному тексту */
+  .d-lead { font-size: 1.02rem; line-height: 1.6; color: var(--text); max-width: 38ch; margin-top: 1.1rem; }
+  .d-section--ink .d-lead { color: rgba(255, 255, 255, 0.78); }
+
+  /* подзаголовок пункта — единственный носитель веса внутри блока */
+  .d-h3 { font-size: 1.08rem; font-weight: 500; line-height: 1.3; }
+
+  /* пояснения светлее и мельче заголовка: разрыв должен быть заметным */
+  .d-symptoms p, .d-conditions p, .d-why-point p, .d-role-gain,
+  .d-product-body p, .d-case-intro, .d-phases p, .sc-body p, .d-industry li {
+    font-size: 0.92rem; line-height: 1.6; color: var(--muted);
+  }
+
+  /* воздух между пунктами вместо плотной сетки */
+  .d-symptoms li, .d-conditions li, .d-role, .d-why-point, .d-person, .d-links li {
+    padding-block: 1.6rem;
+  }
+  .d-symptoms, .d-losses, .d-conditions, .d-roles, .d-why-points, .d-team { gap: 0; }
+
+  /* крупные цифры остаются главным акцентом экрана */
+  .d-stat b, .sc-figure b, .d-why-stat b, .d-multiplier b { letter-spacing: -0.04em; }
+  .sc-figure b { font-size: clamp(2.8rem, 15vw, 3.6rem); }
+
+  /* мелкие служебные подписи уводим ещё дальше на второй план */
+  .d-note, .d-loss-src, .d-bar-note, .d-case-industry, .d-product-for { font-size: 0.78rem; }
+
+  /* строка действий: главная кнопка отделена от второй воздухом, а не рамкой */
+  .dh-cta-row { gap: 0.9rem; margin-top: 1.8rem; }
+}
+
+/* ═══ Разделение объектов ═══
+   Жалоба «объекты переливаются друг с другом» — про две вещи сразу: один фон
+   на всю страницу и одинаковый лёгкий вес. Фон развели выше, здесь — вес и
+   поверхности. */
+.d-h2, .dp-h1, .dh-h1, .sc-read { font-weight: 300; }           /* крупный кегль — Light */
+.d-h3 { font-weight: 500; }                                      /* подзаголовок держит вес */
+.d-lead { font-weight: 400; }
+.d-kicker, .d-footer-cap { font-weight: 600; }
+
+/* Поверхность для сгруппированных блоков: белая плашка с волосяной рамкой.
+   На бумажном фоне она отделяет объект без единой лишней линии. */
+.d-surface { background: var(--paper-2); border: 1px solid var(--line); border-radius: 18px; padding: clamp(1.2rem, 2.5vw, 2rem); }
+
+@media (max-width: 700px) {
+  /* На узком экране объекты стоят друг под другом вплотную, поэтому граница
+     между ними обязана быть видимой: пункты получают собственную поверхность. */
+  .d-symptoms li, .d-conditions li, .d-why-point, .d-role, .d-links li {
+    background: var(--paper-2); border: 1px solid var(--line); border-top: 1px solid var(--line);
+    border-radius: 16px; padding: 1.3rem 1.2rem; margin-bottom: 0.85rem;
+  }
+  .d-section--tint .d-symptoms li,
+  .d-section--tint .d-conditions li,
+  .d-section--tint .d-why-point,
+  .d-section--tint .d-role { background: var(--paper); }
+  .d-losses li { border-radius: 16px; padding: 1.3rem 1.2rem; margin-bottom: 0.85rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14); }
+  .d-industry, .d-multiplier, .d-why-stat, .d-regale { padding-top: 1.2rem; }
 }
