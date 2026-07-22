@@ -10,6 +10,7 @@ import { Btn, Section, SectionHead, TextLink } from "./ui";
 import "./sections/sections.css";
 import "./inner.css";
 import { em } from "./emphasis";
+import { LeadButton } from "./lead-popup";
 
 const HOME = { label: "Главная", href: "/design" };
 
@@ -108,7 +109,7 @@ export function CaseView({ slug }: { slug: string }) {
           <h2 className="d-h2">Хотите такой же разбор по своей компании?</h2>
           <p className="d-lead">Бесплатный аудит: покажем, где вы теряете деньги, и что из этого закрывает система.</p>
           <div className="dh-cta-row">
-            <Btn href="#form" variant="light">Записаться на аудит</Btn>
+            <LeadButton source="audit" variant="light">Записаться на аудит</LeadButton>
             <TextLink href="/design/cases">Другие кейсы</TextLink>
           </div>
         </Reveal>
@@ -278,7 +279,7 @@ export function ContactsView() {
               <span className="di-format-time">{f.time}</span>
               <h3 className="d-h3">{f.title}</h3>
               <p>{f.text}</p>
-              <div><Btn href="#form" variant="ghost" small>{f.cta}</Btn></div>
+              <div><LeadButton source="audit" variant="ghost" small>{f.cta}</LeadButton></div>
             </Reveal>
           ))}
         </div>

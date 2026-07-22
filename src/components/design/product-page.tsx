@@ -6,6 +6,7 @@ import { Btn, Section, SectionHead, TextLink } from "./ui";
 import "./sections/sections.css";
 import "./product-page.css";
 import { em } from "./emphasis";
+import { LeadButton } from "./lead-popup";
 
 /**
  * Один шаблон на обе страницы продукта: у Business One и S/4HANA одинаковая
@@ -191,7 +192,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
             За одну встречу покажем, где вы теряете деньги сейчас, и как это закрывает {data.title}. Письменное заключение остаётся у вас в любом случае.
           </p>
           <div className="dh-cta-row">
-            <Btn href="#form">Записаться на аудит</Btn>
+            <LeadButton source="audit">Записаться на аудит</LeadButton>
             <TextLink href="/design/simulator">Сначала посчитать потери</TextLink>
           </div>
         </Reveal>

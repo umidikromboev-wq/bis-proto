@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/design/footer";
 import { SiteHeader } from "@/components/design/menu";
+import { LeadPopupProvider } from "@/components/design/lead-popup";
 import "@/components/design/site.css";
+import "@/components/design/lead-popup.css";
 
 /**
  * Manrope — геометрический гротеск без засечек с характером: узкие апертуры
@@ -27,9 +29,13 @@ export const metadata: Metadata = {
 export default function DesignLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={`d ${manrope.className}`}>
-      <SiteHeader />
-      <main>{children}</main>
-      <SiteFooter />
+      {/* Провайдер обёрнут вокруг всего каркаса: кнопку «оставить заявку»
+          открывают и шапка, и подвал, и любая секция страницы. */}
+      <LeadPopupProvider>
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
+      </LeadPopupProvider>
     </div>
   );
 }

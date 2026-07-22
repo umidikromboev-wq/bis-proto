@@ -5,6 +5,10 @@ import { Reveal } from "../reveal";
 import { ScrollText } from "../schemes/scroll-text";
 import { PixelArrow } from "../marks";
 import { Btn, Kicker, Section, SectionHead, TextLink } from "../ui";
+import { DocButton, LeadButton, LeadTextLink, type LeadSource } from "../lead-popup";
+
+/** Порядок документов в контенте задаёт, какой попап открывает каждая плитка. */
+const DOC_SOURCES: LeadSource[] = ["checklist", "guide", "estimate"];
 
 /**
  * Лид-магнит. Главный конверсионный блок страницы.
@@ -27,7 +31,7 @@ export function LeadMagnet() {
           </ul>
 
           <div className="d-lead-actions">
-            <Btn href="#form" variant="light">{leadMagnet.cta}</Btn>
+            <LeadButton source="calc" variant="light">{leadMagnet.cta}</LeadButton>
             <span className="d-note">{leadMagnet.micro}</span>
           </div>
         </Reveal>
@@ -63,7 +67,7 @@ export function LeadMagnet() {
 
           <div className="d-zoom">
             <p>{leadMagnet.zoom.text}</p>
-            <TextLink href="#zoom">{leadMagnet.zoom.cta}</TextLink>
+            <LeadTextLink source="zoom">{leadMagnet.zoom.cta}</LeadTextLink>
           </div>
         </Reveal>
       </div>
@@ -71,8 +75,8 @@ export function LeadMagnet() {
       <Reveal className="d-docs">
         <h3 className="d-h3">{leadMagnet.docs.h3}</h3>
         <div className="d-docs-list">
-          {leadMagnet.docs.items.map((d) => (
-            <a key={d.name} href="#doc" className="d-doc" download>
+          {leadMagnet.docs.items.map((d, i) => (
+            <DocButton key={d.name} source={DOC_SOURCES[i]}>
               <span className="d-doc-top">
                 {/* Иконка формата: человек должен понимать, что получит файл,
                     ещё до клика — иначе «скачать» читается как очередная форма. */}
@@ -85,7 +89,7 @@ export function LeadMagnet() {
                 Скачать
                 <PixelArrow />
               </span>
-            </a>
+            </DocButton>
           ))}
         </div>
       </Reveal>
@@ -196,8 +200,8 @@ export function FinalCta() {
           </ul>
 
           <div className="dh-cta-row">
-            <Btn href="#form">{finalCta.cta}</Btn>
-            <TextLink href="#zoom">{finalCta.altCta}</TextLink>
+            <LeadButton source="audit">{finalCta.cta}</LeadButton>
+            <LeadTextLink source="zoom">{finalCta.altCta}</LeadTextLink>
           </div>
           <p className="d-note">{finalCta.alt}</p>
         </Reveal>

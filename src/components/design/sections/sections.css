@@ -263,7 +263,9 @@
 
 .d-docs { margin-top: clamp(3rem, 6vw, 5rem); padding-top: clamp(2rem, 3vw, 2.6rem); border-top: 1px solid rgba(255, 255, 255, 0.14); }
 .d-docs-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); margin-top: 1.8rem; }
-.d-doc { display: block; padding: 1.4rem; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px; text-decoration: none; transition: border-color 0.25s var(--ease), background-color 0.25s var(--ease); }
+/* Плитка — <button>: она открывает попап, а не ведёт на файл. Поэтому здесь
+   сброшены собственные стили кнопки и задано выравнивание текста. */
+.d-doc { display: block; width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; background: transparent; padding: 1.4rem; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px; text-decoration: none; transition: border-color 0.25s var(--ease), background-color 0.25s var(--ease); }
 .d-doc:hover { border-color: var(--cyan); background: rgba(255, 255, 255, 0.04); }
 .d-doc-format { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.9rem; }
 .d-doc b { display: block; color: #ffffff; font-weight: 400; font-size: 1rem; }

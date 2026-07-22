@@ -8,6 +8,7 @@ import "./sections/sections.css";
 import "./schemes/schemes.css";
 import "./inner.css";
 import { em } from "./emphasis";
+import { LeadButton } from "./lead-popup";
 
 const HOME = { label: "Главная", href: "/design" };
 
@@ -80,7 +81,7 @@ export function AcademyView() {
           <h2 className="d-h2">{cta.h2}</h2>
           <p className="d-lead">{cta.text}</p>
           <div className="dh-cta-row">
-            <Btn href="#form" variant="light">{cta.primary}</Btn>
+            <LeadButton source="audit" variant="light">{cta.primary}</LeadButton>
             <TextLink href="/design#lead">{cta.secondary}</TextLink>
           </div>
         </Reveal>

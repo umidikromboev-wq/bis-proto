@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { contacts, footer, nav, navSecondary } from "@/content/blocks";
 import { PixelArrow, SapMark } from "./marks";
+import { FooterCallButton } from "./footer-cta";
 import "./footer.css";
 
 /** Ссылки дизайн-версии живут под /design, пока она не стала основной. */
@@ -27,10 +28,7 @@ export function SiteFooter() {
               Разберём ваши процессы<br />и покажем систему на них
             </p>
           </div>
-          <a href="#form" className="df-call-btn">
-            <span>Записаться на аудит</span>
-            <span className="df-call-icon"><PixelArrow /></span>
-          </a>
+          <FooterCallButton />
         </div>
 
         <div className="df-grid">

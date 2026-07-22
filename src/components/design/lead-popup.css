@@ -1,0 +1,85 @@
+/* Текстовая ссылка, которая на самом деле кнопка: сбрасываем оформление
+   <button>, чтобы она вставала в строку рядом с обычными ссылками. */
+.dh-textlink--btn { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+
+/* ─── попап заявки ─── */
+/* Затемнение плотное: попап — единственное место сайта, где от человека
+   ждут действия, и фон не должен с ним конкурировать. */
+.dl-overlay {
+  position: fixed; inset: 0; z-index: 60;
+  display: grid; place-items: center;
+  padding: clamp(0.75rem, 3vw, 2rem);
+  background: rgba(6, 18, 31, 0.72);
+  overflow-y: auto;
+  animation: dl-fade 0.25s var(--ease);
+}
+@keyframes dl-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.dl-modal {
+  position: relative; width: min(60rem, 100%);
+  background: #ffffff; border-radius: 20px;
+  padding: clamp(1.5rem, 3.5vw, 2.75rem);
+  animation: dl-rise 0.4s var(--ease);
+}
+@keyframes dl-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .dl-overlay, .dl-modal { animation: none; }
+}
+
+.dl-close {
+  position: absolute; top: 0.9rem; right: 0.9rem;
+  width: 2.5rem; height: 2.5rem; border-radius: 999px;
+  display: grid; place-items: center;
+  border: 1px solid var(--line); background: transparent; color: var(--muted);
+  cursor: pointer; transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.dl-close:hover { color: var(--ink); border-color: var(--ink); }
+.dl-close:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+/* Слева обещание, справа поля: человек видит, за что отдаёт контакт,
+   в момент заполнения, а не до открытия попапа. */
+.dl-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 3.5vw, 3rem); align-items: start; }
+.dl-side { padding-right: 2rem; }
+.dl-title { font-size: clamp(1.35rem, 1.1rem + 1.1vw, 1.95rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin: 0; }
+.dl-lead { margin: 0.9rem 0 0; font-size: 0.95rem; color: var(--muted); }
+
+.dl-bullets { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: 0.75rem; }
+.dl-bullets li { position: relative; padding-left: 1.2rem; font-size: 0.92rem; color: var(--text); }
+.dl-bullets li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 0.5rem; height: 1px; background: var(--brand); }
+
+/* ─── поля ─── */
+.dl-form { display: grid; gap: 1rem; align-content: start; }
+.dl-field { display: grid; gap: 0.4rem; }
+.dl-field > span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+.dl-field > span em { font-style: normal; font-weight: 400; letter-spacing: 0.04em; text-transform: none; }
+.dl-field input,
+.dl-field textarea {
+  width: 100%; font: inherit; font-size: 0.97rem; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+  padding: 0.8rem 1rem; resize: vertical;
+  transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease);
+}
+.dl-field input::placeholder,
+.dl-field textarea::placeholder { color: var(--dim); }
+.dl-field input:focus,
+.dl-field textarea:focus { outline: none; border-color: var(--brand); background: #ffffff; }
+.dl-field input[aria-invalid="true"] { border-color: #c2413a; }
+.dl-field i { font-style: normal; font-size: 0.8rem; color: #c2413a; }
+
+.dl-submit { justify-content: space-between; width: 100%; margin-top: 0.4rem; }
+.dl-submit:disabled { opacity: 0.6; cursor: progress; }
+.dl-micro { margin: 0; font-size: 0.8rem; color: var(--dim); }
+.dl-error { margin: 0; font-size: 0.85rem; color: #c2413a; }
+.dl-error a { color: inherit; font-weight: 500; }
+
+.dl-done { gap: 1rem; }
+.dl-done .dh-btn { justify-content: space-between; margin-top: 0.5rem; }
+
+@media (max-width: 800px) {
+  .dl-overlay { place-items: start center; }
+  .dl-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .dl-side { padding-right: 2.5rem; }
+  /* На узком экране список обещаний отодвигает поля за пределы экрана —
+     остаётся заголовок и одна строка сути. */
+  .dl-bullets { display: none; }
+}
