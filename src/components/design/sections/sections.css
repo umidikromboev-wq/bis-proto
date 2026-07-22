@@ -178,7 +178,10 @@
 .d-case-after span { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
 /* Ссылка на кейс тонула в блоке цифр: рядом с крупными синими значениями
    тонкая строка не читалась как действие. Теперь это кнопка. */
-.d-case-after .dh-btn { grid-column: 1 / -1; margin-top: 1rem; justify-self: start; }
+/* Кнопка сжималась под ширину узкой колонки, и иконочная плитка вылезала за
+   скруглённый край. Запрет переноса и auto-ширина держат её целой. */
+.d-case-after .dh-btn { grid-column: 1 / -1; margin-top: 1rem; justify-self: start; width: auto; white-space: nowrap; }
+.d-case-after .dh-btn .dh-btn-label { white-space: nowrap; }
 
 /* ─── процесс ─── */
 .d-phases { list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); }
@@ -388,4 +391,13 @@
 @media (max-width: 960px) {
   .d .d-section--ink .dh-textlink { color: var(--ink); }
   .d .d-section--ink .dh-textlink:hover { color: var(--brand); }
+}
+
+
+/* портрет у цитаты основателя */
+.d-quote { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+.d-quote-photo { width: clamp(5.5rem, 9vw, 8rem); height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 12%; border-radius: 14px; }
+@media (max-width: 620px) {
+  .d-quote { grid-template-columns: 1fr; }
+  .d-quote-photo { width: 5.5rem; }
 }

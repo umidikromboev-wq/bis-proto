@@ -12,6 +12,14 @@ export type Person = { slug: string; name: string; role: string; note: string };
 
 export const designTeam: Person[] = [
   {
+    // [?] Лицо не сверено по подписи: портрет прислан отдельно от студийной
+    // серии, как и снимок Сардора. Подтвердить у заказчика.
+    slug: "ergashev",
+    name: "Эргашев Ахмаджон",
+    role: "Основатель, CEO",
+    note: "Управлял SAP ERP-проектами на сумму свыше $2M. Сертифицированный специалист ACCA",
+  },
+  {
     slug: "zairov",
     name: "Заиров Сардоржон",
     role: "Руководитель проектов SAP Business One",

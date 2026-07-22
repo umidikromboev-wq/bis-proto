@@ -31,7 +31,16 @@ export function Trust() {
         ))}
       </div>
 
+      {/* Портрет рядом с цитатой: это единственное место, где говорит
+          человек, а не компания, и лицо здесь делает больше, чем подпись. */}
       <Reveal className="d-quote">
+        <Image
+          className="d-quote-photo"
+          src="/design/team/ergashev.webp"
+          alt={trust.quote.author}
+          width={900}
+          height={1125}
+        />
         <blockquote>
           <p>{trust.quote.text}</p>
           <footer>{trust.quote.author}</footer>
