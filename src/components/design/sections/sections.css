@@ -218,7 +218,9 @@
 
 .d-lead-side { border-left: 1px solid rgba(255, 255, 255, 0.14); padding-left: clamp(1.5rem, 3vw, 2.5rem); }
 .d-expert { display: flex; align-items: center; gap: 1rem; }
-.d-expert-avatar { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 999px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); color: #ffffff; font-size: 0.85rem; }
+/* Портрет кадрируется по лицу: у снимка поясной план, и при вписывании в
+   круг без сдвига вверх в кадр попадала бы грудь, а не лицо. */
+.d-expert-avatar { flex: none; width: 3.4rem; height: 3.4rem; border-radius: 999px; object-fit: cover; object-position: 50% 12%; border: 1px solid rgba(255, 255, 255, 0.22); }
 .d-expert b { display: block; color: #ffffff; font-weight: 400; }
 .d-expert span { display: block; font-size: 0.82rem; color: rgba(255, 255, 255, 0.5); }
 .d-expert-line { margin: 1.2rem 0 0; font-size: 0.9rem; color: rgba(255, 255, 255, 0.65); }

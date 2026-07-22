@@ -43,7 +43,16 @@ export function LeadMagnet() {
             sizes="(max-width: 1000px) 100vw, 34vw"
           />
           <div className="d-expert">
-            <span className="d-expert-avatar" aria-hidden>ЖМ</span>
+            {/* Портрет из фотосессии BIS вместо инициалов: обещание «расчёт
+                делает консультант, а не робот» держится на том, что этого
+                консультанта видно в лицо. */}
+            <Image
+              className="d-expert-avatar"
+              src="/design/team/mavlyanov.webp"
+              alt={leadMagnet.expert.name}
+              width={900}
+              height={1125}
+            />
             <div>
               <b>{leadMagnet.expert.name}</b>
               <span>{leadMagnet.expert.role}</span>
