@@ -210,3 +210,42 @@
   /* На узком экране липкий заголовок съедал бы пол-экрана над списком */
   .sc-split-side { position: static; }
 }
+
+/* ═══ Инструмент «до / после» ═══ */
+.ba { margin-top: clamp(2rem, 4vw, 3rem); }
+.ba-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: clamp(2rem, 3vw, 2.6rem); }
+.ba-cap { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); margin-bottom: 0.9rem; }
+.ba-presets { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.ba-presets button {
+  border: 1px solid var(--line); background: var(--paper-2); border-radius: 999px;
+  padding: 0.5rem 1.1rem; font: inherit; font-size: 0.88rem; color: var(--muted); cursor: pointer;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+.ba-presets button.is-on { border-color: var(--brand); color: #ffffff; background: var(--brand); }
+.ba-presets button:focus-visible, .ba input:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+.ba input[type="range"] { width: 100%; accent-color: var(--brand); }
+.ba-switch { margin-bottom: clamp(1.5rem, 2.5vw, 2rem); }
+
+.ba-total { padding: clamp(1.4rem, 2.5vw, 2rem) 0 clamp(1.6rem, 3vw, 2.2rem); border-top: 1px solid var(--line); }
+.ba-total b { display: block; font-size: clamp(2.4rem, 1.4rem + 4vw, 4.4rem); font-weight: 300; letter-spacing: -0.04em; line-height: 1; color: var(--ink); transition: color 0.35s var(--ease); }
+/* Цвет несёт смысл: утекающие деньги — тревожный тон, возвращённые — рост. */
+.ba-total.is-after b { color: var(--up); }
+.ba-total-note { display: block; margin-top: 0.9rem; font-size: 0.85rem; color: var(--muted); max-width: 46ch; }
+
+.ba-lines { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1rem, 2vw, 1.5rem); }
+.ba-lines li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: center; }
+.ba-lines .d-icon { width: 2.4rem; margin: 0; }
+.ba-line-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; margin-bottom: 0.55rem; }
+.ba-line-head span { font-size: 0.94rem; color: var(--text); }
+.ba-line-head b { font-size: 1.05rem; font-weight: 400; color: var(--ink); letter-spacing: -0.02em; white-space: nowrap; }
+.ba-line-track { height: 4px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.ba-line-track span { display: block; height: 100%; width: var(--pct); border-radius: 999px; background: var(--grad); transition: width 0.5s var(--ease); }
+.ba-total.is-after ~ .ba-lines .ba-line-track span { background: linear-gradient(90deg, #17a673, #33c7ea); }
+.ba-note { display: block; margin-top: clamp(1.5rem, 3vw, 2.2rem); max-width: 60ch; }
+
+@media (max-width: 700px) {
+  .ba-controls { grid-template-columns: 1fr; }
+  .ba-lines li { grid-template-columns: 1fr; gap: 0.6rem; }
+  .ba-lines .d-icon { width: 2rem; }
+}
