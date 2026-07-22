@@ -249,3 +249,8 @@
   .ba-lines li { grid-template-columns: 1fr; gap: 0.6rem; }
   .ba-lines .d-icon { width: 2rem; }
 }
+
+/* карточка человека с портретом */
+.sc-person--photo { padding: 0 0 1.4rem; overflow: hidden; }
+.sc-person-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 1.2rem; }
+.sc-person--photo h3, .sc-person--photo p { padding-inline: clamp(1.2rem, 2vw, 1.6rem); }

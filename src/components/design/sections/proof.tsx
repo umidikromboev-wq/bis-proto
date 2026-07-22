@@ -1,15 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cases, casesMeta, process, readiness, team, why } from "@/content/blocks";
+import { designTeam } from "@/content/design-team";
 import { trust } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { GlassIcon, type IconName } from "../icon";
 import { ScrollText } from "../schemes/scroll-text";
 import { Btn, Section, SectionHead, TextLink } from "../ui";
-
-/** Инициалы вместо портрета: единых фотографий команды пока нет. */
-function initials(name: string) {
-  return name.split(" ").slice(0, 2).map((w) => w[0]).join("");
-}
 
 /**
  * Доверие. Регалии и цитата основателя.
@@ -191,7 +188,14 @@ export function Why() {
   );
 }
 
-/** Команда. Пока без портретов — инициалы честнее разнородных фото. */
+/**
+ * Команда. Реальные портреты из фотосессии BIS.
+ *
+ * Съёмка единая: один фон, один свет, поясной план — именно этого требовал
+ * бриф, и разнородные снимки здесь разваливали бы ряд. В списке только те
+ * пятеро, чьи лица и роли удалось сверить с блоком команды на действующем
+ * сайте BIS; додумывать остальных по фотографиям было бы выдумкой.
+ */
 export function Team() {
   return (
     <Section id="team">
@@ -199,16 +203,22 @@ export function Team() {
         <SectionHead kicker={team.kicker} h2={team.h2} />
       </Reveal>
 
-      {/* Лента едет сама и замирает на наведении: шесть человек в статичной
-          сетке занимают экран целиком, а движение показывает, что команда
-          больше одного ряда, не забирая высоту. */}
+      {/* Лента едет сама и замирает на наведении: пять карточек с портретами
+          в статичной сетке заняли бы экран целиком. */}
       <div className="sc-marquee" aria-label="Команда BIS">
         <div className="sc-marquee-track">
           {[0, 1].map((copy) => (
             <div className="sc-marquee-row" key={copy} aria-hidden={copy === 1}>
-              {team.people.map((p) => (
-                <article className="sc-person" key={`${copy}-${p.name}`}>
-                  <span className="sc-person-avatar" aria-hidden>{initials(p.name)}</span>
+              {designTeam.map((p) => (
+                <article className="sc-person sc-person--photo" key={`${copy}-${p.slug}`}>
+                  <Image
+                    className="sc-person-photo"
+                    src={`/design/team/${p.slug}.webp`}
+                    alt={copy === 0 ? `${p.name} — ${p.role}` : ""}
+                    width={900}
+                    height={1125}
+                    loading="lazy"
+                  />
                   <h3>{p.name}</h3>
                   <p className="sc-person-role">{p.role}</p>
                   <p className="sc-person-note">{p.note}</p>
