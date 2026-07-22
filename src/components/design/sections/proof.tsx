@@ -5,6 +5,7 @@ import { designTeam } from "@/content/design-team";
 import { trust } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { GlassIcon, type IconName } from "../icon";
+import { DragMarquee } from "../schemes/marquee";
 import { ScrollText } from "../schemes/scroll-text";
 import { Btn, Section, SectionHead, TextLink } from "../ui";
 
@@ -214,31 +215,29 @@ export function Team() {
         <SectionHead kicker={team.kicker} h2={team.h2} />
       </Reveal>
 
-      {/* Лента едет сама и замирает на наведении: пять карточек с портретами
-          в статичной сетке заняли бы экран целиком. */}
-      <div className="sc-marquee" aria-label="Команда BIS">
-        <div className="sc-marquee-track">
-          {[0, 1].map((copy) => (
-            <div className="sc-marquee-row" key={copy} aria-hidden={copy === 1}>
-              {designTeam.map((p) => (
-                <article className="sc-person sc-person--photo" key={`${copy}-${p.slug}`}>
-                  <Image
-                    className="sc-person-photo"
-                    src={`/design/team/${p.slug}.webp`}
-                    alt={copy === 0 ? `${p.name} — ${p.role}` : ""}
-                    width={900}
-                    height={1125}
-                    loading="lazy"
-                  />
-                  <h3>{p.name}</h3>
-                  <p className="sc-person-role">{p.role}</p>
-                  <p className="sc-person-note">{p.note}</p>
-                </article>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Лента едет сама, замирает на наведении и листается рукой:
+          автодвижение показывает, что команда больше одного ряда, а рука
+          даёт вернуться к любому человеку. */}
+      <DragMarquee label="Команда BIS" className="dm-team" speed={0.35}>
+        {[0, 1].map((copy) =>
+          designTeam.map((p) => (
+            <article className="sc-person sc-person--photo" key={`${copy}-${p.slug}`} aria-hidden={copy === 1}>
+              <Image
+                className="sc-person-photo"
+                src={`/design/team/${p.slug}.webp`}
+                alt={copy === 0 ? `${p.name} — ${p.role}` : ""}
+                width={900}
+                height={1125}
+                loading="lazy"
+                draggable={false}
+              />
+              <h3>{p.name}</h3>
+              <p className="sc-person-role">{p.role}</p>
+              <p className="sc-person-note">{p.note}</p>
+            </article>
+          )),
+        )}
+      </DragMarquee>
     </Section>
   );
 }

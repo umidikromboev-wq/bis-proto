@@ -316,3 +316,11 @@
   .inv-body { padding-left: 0; }
   .inv-cta { width: 100%; justify-content: space-between; }
 }
+
+/* ═══ Перетаскиваемая лента ═══ */
+.dm { overflow-x: auto; overflow-y: hidden; margin-inline: calc(-1 * var(--pad-x)); padding-inline: var(--pad-x); cursor: grab; scrollbar-width: none; -ms-overflow-style: none; }
+.dm::-webkit-scrollbar { display: none; }
+.dm.is-dragging { cursor: grabbing; user-select: none; }
+.dm:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+.dm-row { display: flex; gap: clamp(1rem, 2vw, 1.75rem); width: max-content; }
+.dm-team { margin-top: clamp(2.5rem, 5vw, 4rem); }

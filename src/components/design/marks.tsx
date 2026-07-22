@@ -5,7 +5,8 @@
  * с другими inline-svg на странице.
  */
 
-/** Официальный знак SAP. Пропорции и цвета вендора не меняем. */
+/** Знак SAP — продукта, который мы внедряем. Пропорции и цвета вендора не
+ *  меняем. Партнёрский статус нигде не заявляется: его нет. */
 export function SapMark({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 412.38 204" role="img" aria-label="SAP">

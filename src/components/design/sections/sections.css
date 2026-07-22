@@ -370,3 +370,22 @@
   .d-final-art { margin-right: 0; order: -1; }
   .d-final-art img { border-radius: 18px; }
 }
+
+/* ─── материалы на скачивание ─── */
+.d-doc { display: flex; flex-direction: column; }
+.d-doc-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
+.d-doc-badge { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; color: #ffffff; background: var(--brand); border-radius: 5px; padding: 0.25rem 0.4rem; }
+.d-docs-list .d-doc-format { margin-bottom: 0; }
+.d-doc-text { flex: 1; }
+/* Кнопка внутри карточки: «заберите материалы» без видимого действия
+   читается как описание, а не как возможность скачать. */
+.d-doc-btn { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1.3rem; font-size: 0.86rem; font-weight: 500; color: #ffffff; }
+.d-doc-btn svg { width: 0.75rem; height: 0.75rem; color: var(--cyan); }
+.d-doc:hover .d-doc-btn { color: var(--cyan); }
+
+/* На тёмной секции текстовая ссылка превращалась в белую кнопку с белым же
+   текстом — надпись пропадала. Здесь ей возвращается тёмный текст. */
+@media (max-width: 960px) {
+  .d .d-section--ink .dh-textlink { color: var(--ink); }
+  .d .d-section--ink .dh-textlink:hover { color: var(--brand); }
+}

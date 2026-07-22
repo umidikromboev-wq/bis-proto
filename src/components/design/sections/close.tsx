@@ -3,6 +3,7 @@ import { faq, finalCta, pricing } from "@/content/blocks";
 import { leadMagnet } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { ScrollText } from "../schemes/scroll-text";
+import { PixelArrow } from "../marks";
 import { Btn, Kicker, Section, SectionHead, TextLink } from "../ui";
 
 /**
@@ -71,10 +72,19 @@ export function LeadMagnet() {
         <h3 className="d-h3">{leadMagnet.docs.h3}</h3>
         <div className="d-docs-list">
           {leadMagnet.docs.items.map((d) => (
-            <a key={d.name} href="#doc" className="d-doc">
-              <span className="d-doc-format">{d.format}</span>
+            <a key={d.name} href="#doc" className="d-doc" download>
+              <span className="d-doc-top">
+                {/* Иконка формата: человек должен понимать, что получит файл,
+                    ещё до клика — иначе «скачать» читается как очередная форма. */}
+                <span className="d-doc-badge" aria-hidden>PDF</span>
+                <span className="d-doc-format">{d.format}</span>
+              </span>
               <b>{d.name}</b>
               <span className="d-doc-text">{d.text}</span>
+              <span className="d-doc-btn">
+                Скачать
+                <PixelArrow />
+              </span>
             </a>
           ))}
         </div>

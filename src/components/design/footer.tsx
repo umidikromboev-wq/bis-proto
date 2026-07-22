@@ -39,7 +39,7 @@ export function SiteFooter() {
             <p>{contacts.legal}</p>
             <span className="df-partner">
               <SapMark />
-              Официальный партнёр SAP в Узбекистане
+              Внедряем SAP в Узбекистане с 2019 года
             </span>
           </div>
 

@@ -75,7 +75,7 @@ export const contactsPage = {
   requisites: {
     h2: "Реквизиты",
     company: "ООО «Accelerated Business Consulting»",
-    partner: "Официальный партнёр SAP",
+    partner: "Внедрение и поддержка SAP с 2019 года",
     rows: [
       { label: "ИНН", value: "[?]" },
       { label: "Расчётный счёт", value: "[?]" },

@@ -158,7 +158,7 @@ export function SiteHeader() {
           <div className="dh-menu-foot" style={{ ["--i" as string]: 7 }}>
             <span className="dh-menu-foot-mark">
               <SapMark />
-              Официальный партнёр SAP в Узбекистане
+              Внедряем SAP в Узбекистане с 2019 года
             </span>
             <span>Ташкент · внедрение и поддержка SAP</span>
           </div>

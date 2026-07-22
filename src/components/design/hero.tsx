@@ -24,7 +24,7 @@ export function DesignHero() {
           <div className="dh-content">
             <p className="dh-eyebrow dh-fade dh-fade-1">
               <SapMark className="dh-eyebrow-mark" />
-              Официальный партнёр SAP в Узбекистане
+              Внедряем SAP в Узбекистане с 2019 года
             </p>
             <h1 className="dh-h1">
               <SplitHeading
