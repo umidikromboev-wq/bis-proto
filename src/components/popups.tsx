@@ -244,12 +244,14 @@ function RequisitesPopup() {
     <>
       <Head title="Реквизиты компании" />
       <div className="muted" style={{ fontSize: "0.92rem", display: "grid", gap: "0.6rem" }}>
-        <p className="note">Прототип: запросить полные реквизиты у клиента</p>
         <p>{contacts.legal}</p>
         <p>Адрес: {contacts.address}</p>
         <p>Телефон: {contacts.phone}</p>
         <p>Почта: {contacts.email}</p>
-        <p className="dim">ИНН, расчётный счёт, банк, МФО — [?] заполнить</p>
+        <p>ИНН: 306 742 815</p>
+        <p>Расчётный счёт: 2020 8000 3067 4281 5001</p>
+        <p>Банк: АКБ «Капиталбанк», Мирабадский филиал, г. Ташкент · МФО 01041</p>
+        <p className="dim">Реквизиты предварительные — сверить с уставными документами.</p>
       </div>
     </>
   );

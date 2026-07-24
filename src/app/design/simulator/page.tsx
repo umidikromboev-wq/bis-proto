@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { SimulatorFull } from "@/components/design/simulator-full";
+import { WorkingCapitalCalculator } from "@/components/design/calculator/working-capital";
 import "@/components/design/page-hero.css";
 
 export const metadata: Metadata = {
-  title: "Сколько бизнес теряет без единой системы · BIS",
+  title: "Калькулятор оборотного капитала · BIS",
   description:
-    "Симулятор потерь без единой системы учёта: подставьте свои цифры и увидите, во что обходится текущая схема и что вернёт внедрение SAP.",
+    "Посчитайте денежный цикл бизнеса: за сколько дней оборачивается товар, когда возвращаются деньги от клиентов и сколько заморожено в запасах и дебиторке. Расчёт по методике консультантов BIS.",
 };
 
 export default function Page() {
   return (
     <div className="d-wrap" style={{ paddingBlock: "calc(var(--nav-h) + 2rem) var(--section-y)" }}>
-      <SimulatorFull />
+      <WorkingCapitalCalculator />
     </div>
   );
 }

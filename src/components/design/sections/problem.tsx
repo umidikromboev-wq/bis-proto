@@ -72,7 +72,7 @@ export function Cost() {
         <Btn href="/design/simulator" variant="light">{cost.cta}</Btn>
         <span className="d-note">
           Точную сумму заочно не назовёт никто: она зависит от оборота, отрасли и состояния
-          учёта. Симулятор покажет порядок за три минуты.
+          учёта. Калькулятор покажет порядок за три минуты.
         </span>
       </Reveal>
     </Section>

@@ -193,7 +193,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
           </p>
           <div className="dh-cta-row">
             <LeadButton source="audit">Записаться на аудит</LeadButton>
-            <TextLink href="/design/simulator">Сначала посчитать потери</TextLink>
+            <TextLink href="/design/simulator">Сначала посчитать оборотный капитал</TextLink>
           </div>
         </Reveal>
       </Section>

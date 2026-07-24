@@ -1,0 +1,112 @@
+/*
+  Калькулятор оборотного капитала. Базовые оболочки (.sim, .panel, .rbar,
+  .green) приходят из прототипа и перекрашены в simulator.css — здесь только
+  то, чего в той разметке не было: группы полей, сетка метрик, диагностика,
+  таблица сценариев и стадии производства.
+
+  Все правила ограничены классом .wc, чтобы не задеть симулятор прототипа.
+*/
+
+.d .wc .wc-section { padding-block: 0; }
+.d .wc .wc-h1 { font-size: clamp(1.8rem, 1.3rem + 2.4vw, 3rem); text-transform: none; max-width: 20ch; }
+.d .wc .wc-lead { margin-top: 1.25rem; max-width: 62ch; }
+.d .wc .wc-grid { margin-top: 2rem; }
+.d .wc .wc-inputs { padding: 1.4rem; }
+
+/* ── Переключатели сверху ───────────────────────────────────────────────── */
+.d .wc .wc-top {
+  display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: space-between; align-items: flex-end;
+  padding-bottom: 1.1rem; margin-bottom: 1.1rem; border-bottom: 1px solid var(--line);
+}
+.d .wc .wc-top-col { display: grid; gap: 0.5rem; }
+.d .wc .wc-chips { display: flex; gap: 0.45rem; flex-wrap: wrap; }
+.d .wc .wc-eyebrow {
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim);
+}
+
+/* ── Поля ───────────────────────────────────────────────────────────────── */
+.d .wc .wc-group {
+  font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand);
+  margin: 1.6rem 0 0.85rem; padding-top: 1.1rem; border-top: 1px solid var(--line);
+}
+.d .wc .wc-inputs > .wc-group:first-of-type { margin-top: 0.2rem; }
+.d .wc .wc-field { display: block; margin-bottom: 0.9rem; }
+.d .wc .wc-label {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem;
+  font-size: 0.85rem; font-weight: 500; margin-bottom: 0.4rem;
+}
+.d .wc .wc-label i { font-style: normal; font-size: 0.74rem; color: var(--dim); text-align: right; }
+.d .wc .wc-sliders { display: grid; gap: 1rem; }
+.d .wc .wc-slider .mlabel i.wc-hint { display: block; font-style: normal; font-size: 0.72rem; color: var(--dim); }
+.d .wc .wc-manual { margin-top: 1.4rem; }
+.d .wc .wc-h3 { font-size: 0.98rem; font-weight: 500; color: var(--ink); margin-bottom: 0.45rem; }
+.d .wc .wc-note { font-size: 0.8rem; line-height: 1.55; color: var(--muted); }
+.d .wc .wc-mode { margin-bottom: 0.4rem; }
+
+/* ── Итог ───────────────────────────────────────────────────────────────── */
+.d .wc .wc-under { font-size: 0.8rem; line-height: 1.5; margin-bottom: 1.25rem; }
+.d .wc .wc-rows {
+  display: grid; gap: 0.7rem; padding-bottom: 1.1rem; margin-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+.d .wc .wc-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.1rem; }
+.d .wc .wc-metric {
+  display: grid; gap: 0.2rem; padding: 0.6rem 0.7rem; border: 1px solid var(--line); border-radius: 10px;
+}
+.d .wc .wc-metric span { font-size: 0.7rem; letter-spacing: 0.04em; }
+.d .wc .wc-metric b { font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+.d .wc .wc-metric.is-accent { border-color: var(--brand); }
+.d .wc .wc-metric.is-accent b { color: var(--brand); }
+.d .wc .wc-green { margin-bottom: 1.1rem; }
+.d .wc .wc-green-row { display: flex; justify-content: space-between; gap: 0.6rem; padding: 0.32rem 0; font-size: 0.82rem; }
+.d .wc .wc-small { font-size: 0.72rem; line-height: 1.45; margin-top: 0.5rem; }
+.d .wc .wc-cta { width: 100%; margin-bottom: 0.6rem; }
+.d .wc .wc-foot { font-size: 0.74rem; text-align: center; margin-top: 0.7rem; }
+
+/* ── Диагностика и сценарии ─────────────────────────────────────────────── */
+.d .wc .wc-insights { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.d .wc .wc-panel { padding: 1.4rem; }
+.d .wc .wc-panel .wc-h3 { font-size: 1.05rem; margin-bottom: 1rem; }
+.d .wc .wc-signals { display: grid; gap: 0.75rem; }
+.d .wc .wc-signal {
+  display: grid; gap: 0.15rem; padding-left: 0.85rem; border-left: 2px solid var(--line);
+}
+.d .wc .wc-signal span { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.d .wc .wc-signal b { font-size: 0.92rem; font-weight: 600; color: var(--ink); }
+.d .wc .wc-signal p { font-size: 0.78rem; color: var(--muted); }
+.d .wc .wc-signal.is-good { border-left-color: var(--up); }
+.d .wc .wc-signal.is-watch { border-left-color: var(--brand); }
+.d .wc .wc-signal.is-risk { border-left-color: var(--loss); }
+
+.d .wc .wc-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.d .wc .wc-table th {
+  font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim);
+  font-weight: 500; text-align: left; padding: 0 0 0.55rem;
+}
+.d .wc .wc-table th:not(:first-child), .d .wc .wc-table td:not(:first-child) { text-align: right; }
+.d .wc .wc-table td { font-size: 0.85rem; padding: 0.55rem 0; border-top: 1px solid var(--line); color: var(--ink); }
+.d .wc .wc-good { color: var(--up); }
+
+.d .wc .wc-stages { display: grid; gap: 0.9rem; margin-bottom: 1rem; }
+.d .wc .wc-stage { display: grid; gap: 0.3rem; }
+
+.d .wc .wc-disclaimer { padding: 0.9rem 1.1rem; margin-top: 1.25rem; font-size: 0.8rem; color: var(--muted); }
+.d .wc .wc-disclaimer b { color: var(--ink); font-weight: 600; }
+.d .wc .wc-source { margin-top: 0.75rem; }
+
+/* ── Мобильная полоса итога ─────────────────────────────────────────────── */
+.d .wc .wc-sticky-label { font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.d .wc .wc-sticky-value { font-weight: 700; font-size: 1.15rem; color: var(--loss); }
+.d .wc .wc-sticky-btn { padding: 0.7rem 1rem; flex: none; }
+
+@media (max-width: 860px) {
+  .d .wc .wc-inputs { padding: 1.1rem; }
+  .d .wc .wc-metrics { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 520px) {
+  .d .wc .wc-top { gap: 0.9rem; }
+  .d .wc .wc-label { flex-direction: column; gap: 0.15rem; }
+  .d .wc .wc-label i { text-align: left; }
+  .d .wc .wc-table td, .d .wc .wc-table th { font-size: 0.78rem; }
+}

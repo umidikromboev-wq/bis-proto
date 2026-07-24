@@ -18,7 +18,7 @@ const PRIMARY = [
 ];
 
 const SECONDARY = [
-  { label: "Симулятор потерь", href: "/simulator" },
+  { label: "Калькулятор оборотного капитала", href: "/simulator" },
   { label: "SAP Академия", href: "/academy" },
   { label: "Вакансии", href: "/careers" },
 ];

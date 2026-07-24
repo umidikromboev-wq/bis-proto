@@ -56,7 +56,7 @@ export function SiteFooter() {
               {navSecondary.map((n) => (
                 <li key={n.href}><Link href={base(n.href)}>{n.label}</Link></li>
               ))}
-              <li><Link href="/design/simulator">Симулятор потерь</Link></li>
+              <li><Link href="/design/simulator">Калькулятор оборотного капитала</Link></li>
               {footer.legal.map((n) => (
                 <li key={n.label}><a href={n.href}>{n.label}</a></li>
               ))}

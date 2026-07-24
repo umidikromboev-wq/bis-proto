@@ -46,9 +46,6 @@ export function CasesIndex() {
             <span key={c} className="dim" style={{ fontSize: "0.78rem", border: "1px solid var(--line)", borderRadius: 999, padding: "0.35rem 0.8rem" }}>{c}</span>
           ))}
         </div>
-        <p className="note" style={{ marginTop: "2rem" }}>
-          [?] Запросить у клиента ещё 2–3 кейса с цифрами — трёх мало для раздела «Кейсы» как отдельной страницы
-        </p>
       </Section>
     </>
   );

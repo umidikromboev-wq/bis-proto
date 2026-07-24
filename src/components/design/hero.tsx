@@ -43,7 +43,7 @@ export function DesignHero() {
               <Btn href="#lead">Получить расчёт за 1 день</Btn>
               {/* Второе действие намеренно без рамки: две одинаково весомые
                   кнопки конкурируют и размывают главный шаг. */}
-              <TextLink href="/design/simulator">Посчитать, сколько теряю</TextLink>
+              <TextLink href="/design/simulator">Посчитать замороженные деньги</TextLink>
             </div>
           </div>
 
