@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BIS — сайт по внедрению SAP в Узбекистане
 
-## Getting Started
+Next.js 16 (App Router) + TypeScript. Хостинг — Vercel, деплой автоматический из
+этого репозитория.
 
-First, run the development server:
+## Быстрый старт
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # подставить токен бота и chat_id
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Для сборки как в проде: `npm run build && npm start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Всё, что нужно для работы сайта, лежит в репозитории — включая шрифты (подключены
+через `next/font`), изображения, логотипы клиентов и видео первого экрана
+(`public/design/`). Локально ничего докачивать не нужно. Единственное, чего нет в
+git, — секреты из `.env.local`; их шаблон в `.env.example`, а рабочие значения
+заданы в Vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Ветки и деплой
 
-## Learn More
+| Ветка | Что это | Куда деплоится |
+|---|---|---|
+| `main` | рабочая версия сайта | продакшн — https://bis-proto.vercel.app |
+| `prototype` | смысловой прототип до дизайна, архив | не деплоится |
+| любая другая | ветка разработчика | превью с уникальной ссылкой |
 
-To learn more about Next.js, take a look at the following resources:
+Push в `main` автоматически уходит в продакшн. Push в любую другую ветку создаёт
+превью-деплой, ссылка на него приходит комментарием к коммиту и в pull request —
+**доступ к аккаунту Vercel для этого не нужен.**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Рекомендуемый порядок: ветка → push → проверить по ссылке из комментария → pull
+request → merge в `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Структура
 
-## Deploy on Vercel
+```
+src/
+├── app/                    маршруты (App Router)
+│   ├── page.tsx            главная
+│   ├── sap-business-one/   продуктовая страница
+│   ├── sap-s4hana/         продуктовая страница
+│   ├── cases/[slug]/       кейсы
+│   ├── blog/[slug]/        блог
+│   ├── contacts/           контакты и реквизиты
+│   ├── simulator/          калькулятор оборотного капитала
+│   ├── academy/            SAP Академия
+│   ├── careers/            вакансии
+│   └── api/lead/           приём заявок → Telegram
+├── components/design/      вся вёрстка и секции
+│   ├── site.css            токены дизайн-системы, кнопки, базовые секции
+│   ├── sections/           секции главной
+│   ├── schemes/            смысловые схемы
+│   └── calculator/         модель оборотного капитала
+└── content/                ВЕСЬ ТЕКСТ САЙТА
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Правки текста вносятся только в `src/content/` — вёрстку трогать не нужно.**
+В текстах важное помечается `**двумя звёздочками**`, утилита
+`components/design/emphasis.tsx` превращает разметку в `<strong>`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Заявки
+
+Форма живёт в попапе (`components/design/lead-popup.tsx`), приём —
+`app/api/lead/route.ts` → Telegram-бот. Один компонент обслуживает все сценарии
+(аудит, Zoom, калькулятор, чек-лист, гайд, смета, контакты) — различаются
+заголовок, список обещаний и тег источника заявки.
+
+## Перед передачей клиенту
+
+- [ ] `TELEGRAM_CHAT_ID` переключить с личного чата на группу BIS — иначе заявки
+      продолжат приходить не туда
+- [ ] Подставить настоящие юрлицо, ИНН и банковские реквизиты в
+      `src/content/contacts-page.ts` (сейчас там пометка «уточняются у клиента»:
+      прежние данные принадлежали другой компании и удалены)
+- [ ] Сверить с заказчиком предварительные цифры — список в `HANDOFF.md`
+- [ ] Подтвердить состав команды и фото основателя (`src/content/design-team.ts`)
+- [ ] Снять `robots: { index: false }` в `src/app/layout.tsx`, когда сайт
+      переедет на рабочий домен
+
+Подробное состояние проекта, принятые решения и открытые вопросы к заказчику —
+в [HANDOFF.md](HANDOFF.md).
