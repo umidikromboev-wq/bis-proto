@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { WorkingCapitalCalculator } from "@/components/design/calculator/working-capital";
 import "@/components/design/page-hero.css";
-
-export const metadata: Metadata = {
-  title: "Калькулятор оборотного капитала · BIS",
-  description:
-    "Посчитайте денежный цикл бизнеса: за сколько дней оборачивается товар, когда возвращаются деньги от клиентов и сколько заморожено в запасах и дебиторке. Расчёт по методике консультантов BIS.",
-};
 
 export default function Page() {
   return (
@@ -15,3 +10,5 @@ export default function Page() {
     </div>
   );
 }
+
+export const metadata: Metadata = pageMetadata("ru", "/simulator");

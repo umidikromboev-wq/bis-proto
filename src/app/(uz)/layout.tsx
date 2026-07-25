@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/design/footer";
 import { SiteHeader } from "@/components/design/menu";
 import { LeadPopupProvider } from "@/components/design/lead-popup";
+import { OrganizationJsonLd } from "@/components/seo/json-ld";
 import "../globals.css";
 import "@/components/design/site.css";
 import "@/components/design/lead-popup.css";
@@ -39,6 +40,7 @@ export default function UzLayout({ children }: Readonly<{ children: React.ReactN
   return (
     <html lang="uz" className="h-full antialiased">
       <body className={`d ${manrope.className}`}>
+        <OrganizationJsonLd locale="uz" />
         <LeadPopupProvider locale="uz">
           <SiteHeader locale="uz" />
           <main>{children}</main>

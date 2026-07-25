@@ -1,3 +1,7 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import { FaqJsonLd } from "@/components/seo/json-ld";
+import { content } from "@/content";
 import { DesignHero } from "@/components/design/hero";
 import { LeadMagnet, Faq, FinalCta, Pricing } from "@/components/design/sections/close";
 import { Cost, Pain } from "@/components/design/sections/problem";
@@ -15,8 +19,10 @@ import "@/components/design/schemes/schemes.css";
  * потерял предмет.
  */
 export default function DesignHome() {
+  const faq = content("uz").blocks.faq;
   return (
     <>
+      <FaqJsonLd items={faq.items} />
       <DesignHero  locale="uz" />
       <LogoStrip  locale="uz" />
       <Pain  locale="uz" />
@@ -41,3 +47,5 @@ export default function DesignHome() {
     </>
   );
 }
+
+export const metadata: Metadata = pageMetadata("uz", "/");

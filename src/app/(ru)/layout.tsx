@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/design/footer";
 import { SiteHeader } from "@/components/design/menu";
 import { LeadPopupProvider } from "@/components/design/lead-popup";
+import { OrganizationJsonLd } from "@/components/seo/json-ld";
 import "../globals.css";
 import "@/components/design/site.css";
 import "@/components/design/lead-popup.css";
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`d ${manrope.className}`}>
         {/* Провайдер обёрнут вокруг всего каркаса: кнопку «оставить заявку»
             открывают и шапка, и подвал, и любая секция страницы. */}
+        <OrganizationJsonLd locale="ru" />
         <LeadPopupProvider locale="ru">
           <SiteHeader locale="ru" />
           <main>{children}</main>
