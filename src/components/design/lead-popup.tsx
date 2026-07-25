@@ -173,6 +173,8 @@ function LeadForm({ scenario, source }: { scenario: Scenario; source: LeadSource
   // Ловушка для ботов. Настоящий посетитель поле не видит и не заполняет,
   // автозаполнялка ботов лезет во все поля подряд.
   const [website, setWebsite] = useState("");
+  // Момент открытия формы — сервер по нему отличает человека от скрипта.
+  const [startedAt] = useState(() => Date.now());
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -193,6 +195,7 @@ function LeadForm({ scenario, source }: { scenario: Scenario; source: LeadSource
           company: company.trim(),
           comment: comment.trim(),
           website,
+          startedAt,
           source,
           page: typeof window === "undefined" ? "" : window.location.pathname,
         }),

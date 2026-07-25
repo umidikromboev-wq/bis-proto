@@ -30,10 +30,24 @@ const RATE_LIMIT = { max: 5, windowMs: 10 * 60 * 1000 };
 /** Тело запроса дальше этого размера даже не разбираем. */
 const MAX_BODY_BYTES = 8 * 1024;
 
+/**
+ * Минимальное время заполнения формы.
+ *
+ * Главная защита от ботов на serverless: счётчик в памяти там ненадёжен —
+ * экземпляров несколько и у каждого своя память, — а время заполнения приходит
+ * из самой формы и проверяется без общего хранилища. Человек физически не
+ * успевает ввести имя и телефон за три секунды, скрипт отправляет мгновенно.
+ */
+const MIN_FILL_MS = 3000;
+/** Форма, открытая сутки назад, — почти наверняка не человек за экраном. */
+const MAX_FILL_MS = 12 * 60 * 60 * 1000;
+
 type Lead = {
   name?: string;
   /** Ловушка: поле скрыто от человека и заполняется только ботами. */
   website?: string;
+  /** Момент открытия формы — по нему считается время заполнения. */
+  startedAt?: number;
   phone?: string;
   company?: string;
   comment?: string;
@@ -91,6 +105,15 @@ export async function POST(request: Request) {
   // Отвечаем успехом — чтобы бот не подбирал обход, увидев отказ.
   if (clean(body.website, 200)) {
     console.warn("[lead] отсеяна заявка с заполненной ловушкой");
+    return Response.json({ ok: true });
+  }
+
+  // Слишком быстрое заполнение — признак скрипта. Ответ тоже успешный:
+  // бот не должен понять, по какому признаку его отсеяли.
+  const startedAt = typeof body.startedAt === "number" ? body.startedAt : 0;
+  const filledIn = startedAt > 0 ? Date.now() - startedAt : -1;
+  if (filledIn >= 0 && (filledIn < MIN_FILL_MS || filledIn > MAX_FILL_MS)) {
+    console.warn("[lead] отсеяна заявка по времени заполнения:", filledIn, "мс");
     return Response.json({ ok: true });
   }
 
