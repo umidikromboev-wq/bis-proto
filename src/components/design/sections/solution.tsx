@@ -41,7 +41,7 @@ export function Solution({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
       {/* Фраза «это один непрерывный процесс, а не шесть отдельных таблиц»
           текстом не доказывается — её нужно увидеть. */}
       <Reveal delay={80}>
-        <ProcessChain />
+        <ProcessChain locale={locale} />
       </Reveal>
 
       <Reveal className="d-compare">

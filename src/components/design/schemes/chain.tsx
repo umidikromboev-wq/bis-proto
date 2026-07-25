@@ -1,4 +1,6 @@
-import { GlassIcon, type IconName } from "../icon";
+import { GlassIcon } from "../icon";
+import { schemes } from "@/content/schemes";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 /**
  * Сквозной процесс: заказ → закупка → производство → склад → себестоимость →
@@ -12,16 +14,9 @@ import { GlassIcon, type IconName } from "../icon";
  * Импульс сделан на CSS-анимации фона линии, а не элементом: браузер держит
  * его на композиторе, и шесть бегущих точек ничего не стоят по кадрам.
  */
-const STAGES: { icon: IconName; name: string; note: string }[] = [
-  { icon: "partnership", name: "Заказ от клиента", note: "менеджер принял и зарезервировал" },
-  { icon: "procurement", name: "Закупка сырья", note: "MRP посчитал, чего не хватит" },
-  { icon: "production", name: "Производственное задание", note: "цех видит состав и срок" },
-  { icon: "warehouse", name: "Движение по складу", note: "остаток обновился для всех" },
-  { icon: "analytics", name: "Расчёт себестоимости", note: "пересчитался по факту списания" },
-  { icon: "finance", name: "Деньги", note: "маржа по заказу видна сразу" },
-];
 
-export function ProcessChain() {
+export function ProcessChain({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const { stages: STAGES, caption } = schemes(locale).chain;
   return (
     <div className="ch">
       <ol className="ch-track">
@@ -37,10 +32,7 @@ export function ProcessChain() {
           </li>
         ))}
       </ol>
-      <p className="ch-caption">
-        Данные вводятся один раз в начале цепочки и дальше идут по ней сами — без повторного
-        ввода на каждом стыке.
-      </p>
+      <p className="ch-caption">{caption}</p>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { Btn, Section, SectionHead } from "../ui";
 import { em } from "../emphasis";
 import { content } from "@/content";
 import { DEFAULT_LOCALE, localePath, type Locale } from "@/content/locale";
+import { ui } from "@/content/ui";
 
 /**
  * Боль. Шесть симптомов одной причины.
@@ -52,6 +53,7 @@ const COST_ICONS: IconName[] = ["warehouse", "finance", "people", "partnership",
  */
 export function Cost({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const site = content(locale);
+  const txt = ui(locale);
   const lp = (path: string) => localePath(locale, path);
   const { cost } = site.blocks;
   return (
@@ -77,8 +79,7 @@ export function Cost({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
       <Reveal className="d-losses-cta">
         <Btn href={lp("/simulator")} variant="light">{cost.cta}</Btn>
         <span className="d-note">
-          Точную сумму заочно не назовёт никто: она зависит от оборота, отрасли и состояния
-          учёта. Калькулятор покажет порядок за три минуты.
+          {txt.costExactNote}
         </span>
       </Reveal>
     </Section>

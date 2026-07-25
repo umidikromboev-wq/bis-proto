@@ -7,6 +7,7 @@ import { Btn, Section, SectionHead, TextLink } from "../ui";
 import { em } from "../emphasis";
 import { content } from "@/content";
 import { DEFAULT_LOCALE, localePath, type Locale } from "@/content/locale";
+import { ui } from "@/content/ui";
 
 /**
  * Доверие. Регалии и цитата основателя.
@@ -58,6 +59,7 @@ export function Trust({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
  */
 export function Cases({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const site = content(locale);
+  const txt = ui(locale);
   const lp = (path: string) => localePath(locale, path);
   const { cases, casesMeta } = site.blocks;
   return (
@@ -75,7 +77,7 @@ export function Cases({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
             <Image
               className="d-case-photo"
               src={`/cases/${c.slug}.webp`}
-              alt={`Отрасль клиента: ${c.industry.toLowerCase()}`}
+              alt={`${txt.clientIndustry}: ${c.industry.toLowerCase()}`}
               width={1600}
               height={1195}
               sizes="(max-width: 1000px) 100vw, 26vw"
@@ -194,7 +196,7 @@ export function Why({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
       <Reveal delay={80}>
         <ScrollText
           className="sc-read--tight"
-          text="За семь лет мы собрали не портфолио, а повторяемый результат: цифры ниже — это то, что стоит за каждым следующим проектом."
+          text={why.kicker === "Nega BIS" ? "Yillar davomida portfolio emas, takrorlanadigan natija yigʻdik: quyidagi raqamlar har bir keyingi loyiha ortida turadi." : "За семь лет мы собрали не портфолио, а повторяемый результат: цифры ниже — это то, что стоит за каждым следующим проектом."}
         />
       </Reveal>
 
@@ -232,6 +234,7 @@ export function Why({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
  */
 export function Team({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const site = content(locale);
+  const txt = ui(locale);
   const { team } = site.blocks;
   const { designTeam } = site;
   return (
@@ -243,7 +246,7 @@ export function Team({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
       {/* Лента едет сама, замирает на наведении и листается рукой:
           автодвижение показывает, что команда больше одного ряда, а рука
           даёт вернуться к любому человеку. */}
-      <DragMarquee label="Команда BIS" className="dm-team" speed={0.35}>
+      <DragMarquee label={txt.teamMarquee} className="dm-team" speed={0.35}>
         {[0, 1].map((copy) =>
           designTeam.map((p) => (
             <article className="sc-person sc-person--photo" key={`${copy}-${p.slug}`} aria-hidden={copy === 1}>
@@ -276,12 +279,13 @@ export function Team({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
  */
 export function AllCasesLink({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const site = content(locale);
+  const txt = ui(locale);
   const lp = (path: string) => localePath(locale, path);
   const { cases } = site.blocks;
   return (
     <div className="d-wrap d-allcases">
       <Btn href={lp("/cases")} variant="ghost">
-        Смотреть все кейсы внедрения
+        {txt.allCases}
       </Btn>
     </div>
   );

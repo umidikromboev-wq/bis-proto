@@ -82,6 +82,7 @@ export const careers = {
 
   cta: {
     ...ru.cta,
+    note: "Jangovar versiyada — rezyume yuklash va Telegram maydoni bilan murojaat shakli.",
     h2: "Oʻzingizga mos lavozimni topmadingizmi?",
     text: "Agar SAP, integratsiyalar yoki joriy etishni boshqarishda kuchli boʻlsangiz — yozing. Biz loyihalar bilan oʻsamiz va kuchli odamlar uchun rol ochamiz.",
   },

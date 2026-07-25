@@ -77,7 +77,7 @@ export function CaseView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
       <Section tone="tint">
         <div className="di-case-grid">
           <Reveal>
-            <SectionHead kicker="Что было" h2="С чем компания пришла" />
+            <SectionHead kicker={txt.caseWasKicker} h2={txt.caseWasH2} />
             <ul className="di-before">
               {c.before.map((b) => (
                 <li key={b}>{b}</li>
@@ -85,7 +85,7 @@ export function CaseView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
             </ul>
           </Reveal>
           <Reveal delay={110}>
-            <SectionHead kicker="О компании" h2="Масштаб и отрасль" />
+            <SectionHead kicker={txt.caseAboutKicker} h2={txt.caseAboutH2} />
             <p className="d-lead">{c.industry}</p>
             <p className="d-lead">{c.scale}</p>
           </Reveal>
@@ -94,7 +94,7 @@ export function CaseView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
 
       <Section>
         <Reveal>
-          <SectionHead kicker="Что стало" h2="Результат после запуска" />
+          <SectionHead kicker={txt.caseNowKicker} h2={txt.caseNowH2} />
         </Reveal>
         <div className="di-after">
           {c.after.map((a, i) => (
@@ -127,7 +127,7 @@ export function CaseView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
 
       <Section>
         <Reveal>
-          <SectionHead kicker="Ещё кейсы" h2="Другие внедрения" />
+          <SectionHead kicker={txt.moreCasesKicker} h2={txt.moreCasesH2} />
         </Reveal>
         <div className="di-cases">
           {others.map((o, i) => (
@@ -246,7 +246,7 @@ export function PostView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
 
       <Section tone="tint">
         <Reveal>
-          <SectionHead kicker="Читать дальше" h2="Другие разборы" />
+          <SectionHead kicker={txt.readMoreKicker} h2={txt.readMoreH2} />
         </Reveal>
         <div className="di-posts">
           {others.map((o, i) => (

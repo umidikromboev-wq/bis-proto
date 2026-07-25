@@ -135,6 +135,7 @@ export const productS4: ProductPage = {
 
   project: {
     ...ru.project,
+    note: "Mijozdan soʻrash kerak: yakunlangan S/4HANA loyihalari bormi — sahifa tasdiqlangan tajriba emas, ekspertiza sifatida yozilgan",
     kicker: "Loyiha",
     h2: "Kompaniyalar guruhida joriy etish qanday boradi",
     lead:

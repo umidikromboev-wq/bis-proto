@@ -1,3 +1,4 @@
+import type { CalcStrings } from "@/content/calc";
 /**
  * Модель оборотного капитала — формулы взяты один в один из рабочего файла
  * клиента «Aylanma kapital kalkulyatori» (листы Kalkulyator, SKU tahlil,
@@ -50,10 +51,14 @@ export interface CalcInput {
 
 export type Verdict = "good" | "watch" | "risk";
 
+/**
+ * Сигнал диагностики. Несёт ключи, а не готовые фразы: формулы согласованы с
+ * рабочим файлом клиента и не должны знать про язык интерфейса.
+ */
 export interface Signal {
-  readonly label: string;
-  readonly state: string;
-  readonly hint: string;
+  readonly signal: keyof CalcStrings["signals"];
+  readonly state: keyof CalcStrings["states"];
+  readonly hint: keyof CalcStrings["hints"];
   readonly verdict: Verdict;
 }
 
@@ -111,33 +116,33 @@ function div(a: number, b: number): number {
 }
 
 function cccSignal(ccc: number): Signal {
-  if (ccc <= 15) return { label: "Денежный цикл", state: "Сильный", hint: "Деньги оборачиваются быстро", verdict: "good" };
-  if (ccc <= 45) return { label: "Денежный цикл", state: "Нормальный", hint: "Держите под контролем", verdict: "watch" };
-  return { label: "Денежный цикл", state: "Риск", hint: "Оборот денег растянут", verdict: "risk" };
+  if (ccc <= 15) return { signal: "ccc", state: "strong", hint: "cccFast", verdict: "good" };
+  if (ccc <= 45) return { signal: "ccc", state: "normal", hint: "cccControl", verdict: "watch" };
+  return { signal: "ccc", state: "risk", hint: "cccStretched", verdict: "risk" };
 }
 
 function stockSignal(excess: number): Signal {
-  if (excess > 0) return { label: "Запасы", state: "Избыток", hint: "На складе спят деньги", verdict: "risk" };
-  if (excess < 0) return { label: "Запасы", state: "Дефицит", hint: "Риск встать без товара", verdict: "watch" };
-  return { label: "Запасы", state: "В норме", hint: "Запас соответствует обороту", verdict: "good" };
+  if (excess > 0) return { signal: "stock", state: "excess", hint: "stockSleeping", verdict: "risk" };
+  if (excess < 0) return { signal: "stock", state: "deficit", hint: "stockShortage", verdict: "watch" };
+  return { signal: "stock", state: "ok", hint: "stockOk", verdict: "good" };
 }
 
 function receivablesSignal(excess: number): Signal {
-  if (excess > 0) return { label: "Дебиторка", state: "Избыток", hint: "Вы кредитуете своих клиентов", verdict: "risk" };
-  if (excess < 0) return { label: "Дебиторка", state: "Лучше нормы", hint: "Деньги собираются быстрее срока", verdict: "good" };
-  return { label: "Дебиторка", state: "В норме", hint: "Сроки соблюдаются", verdict: "good" };
+  if (excess > 0) return { signal: "receivables", state: "excess", hint: "recCredit", verdict: "risk" };
+  if (excess < 0) return { signal: "receivables", state: "betterThanNorm", hint: "recFast", verdict: "good" };
+  return { signal: "receivables", state: "ok", hint: "recOk", verdict: "good" };
 }
 
 function roiSignal(roi: number): Signal {
-  if (roi >= 0.5) return { label: "Отдача капитала", state: "Высокая", hint: "Капитал работает эффективно", verdict: "good" };
-  if (roi >= 0.2) return { label: "Отдача капитала", state: "Средняя", hint: "Есть куда расти", verdict: "watch" };
-  return { label: "Отдача капитала", state: "Низкая", hint: "В обороте связано слишком много денег", verdict: "risk" };
+  if (roi >= 0.5) return { signal: "roi", state: "high", hint: "roiGood", verdict: "good" };
+  if (roi >= 0.2) return { signal: "roi", state: "medium", hint: "roiGrow", verdict: "watch" };
+  return { signal: "roi", state: "low", hint: "roiTied", verdict: "risk" };
 }
 
 function supplierSignal(dpo: number, term: number): Signal {
-  if (term <= 0) return { label: "Поставщики", state: "Без отсрочки", hint: "Закупки оплачиваются сразу — цикл финансируете вы", verdict: "watch" };
-  if (dpo >= term) return { label: "Поставщики", state: "Отсрочка работает", hint: "Часть цикла финансирует поставщик", verdict: "good" };
-  return { label: "Поставщики", state: "Платите раньше срока", hint: "Бесплатные деньги поставщика не используются", verdict: "watch" };
+  if (term <= 0) return { signal: "supplier", state: "noTerm", hint: "supNoTerm", verdict: "watch" };
+  if (dpo >= term) return { signal: "supplier", state: "termWorks", hint: "supWorks", verdict: "good" };
+  return { signal: "supplier", state: "payEarly", hint: "supUnused", verdict: "watch" };
 }
 
 export function calculate(input: CalcInput): CalcResult {

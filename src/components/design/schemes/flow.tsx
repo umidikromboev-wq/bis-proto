@@ -6,6 +6,7 @@ import { em } from "../emphasis";
 import { content } from "@/content";
 import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 import { ui } from "@/content/ui";
+import { schemes } from "@/content/schemes";
 
 /**
  * Схема сквозного потока — приём «Модель потока» из каталога смысловых приёмов
@@ -19,17 +20,11 @@ import { ui } from "@/content/ui";
  * теряются данные; в режиме «В SAP» цепочка сплошная. Переключатель делает
  * работу, которую иначе пришлось бы делать абзацем текста.
  */
-const NODES: { icon: IconName; short: string }[] = [
-  { icon: "partnership", short: "Заказ" },
-  { icon: "warehouse", short: "Склад" },
-  { icon: "production", short: "Цех" },
-  { icon: "finance", short: "Деньги" },
-  { icon: "procurement", short: "Закупка" },
-  { icon: "analytics", short: "Аналитика" },
-];
 
 export function FlowScheme({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const txt = ui(locale);
+  const fl = schemes(locale).flow;
+  const NODES = fl.nodes;
   const site = content(locale);
   const { unifiedBase } = site.playbook;
   const [live, setLive] = useState(true);
@@ -44,7 +39,7 @@ export function FlowScheme({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
           onClick={() => setLive(false)}
           aria-pressed={!live}
         >
-          Раньше
+          {txt.flowBefore}
         </button>
         <button
           type="button"
@@ -52,7 +47,7 @@ export function FlowScheme({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
           onClick={() => setLive(true)}
           aria-pressed={live}
         >
-          В SAP
+          {txt.flowInSap}
         </button>
         <span className="sc-switch-thumb" data-side={live ? "right" : "left"} aria-hidden />
       </div>
@@ -70,7 +65,7 @@ export function FlowScheme({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
               {/* Обе реплики всегда в разметке: они меняются местами, а не
                   подгружаются, поэтому переключение мгновенное и без сдвига. */}
               <p className="sc-live">{em(l.effect)}</p>
-              <p className="sc-old">{l.old.replace(/^Раньше:\s*/, "")}</p>
+              <p className="sc-old">{l.old.replace(new RegExp("^" + txt.oldPrefix + "\\s*"), "")}</p>
             </div>
 
             {i < links.length - 1 ? <span className="sc-link" aria-hidden /> : null}
@@ -80,8 +75,8 @@ export function FlowScheme({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
 
       <p className="sc-caption">
         {live
-          ? "Данные вводятся один раз и дальше идут по цепочке сами."
-          : "На каждом стыке данные вводятся заново — и расходятся."}
+          ? "{fl.after}"
+          : "{fl.before}"}
       </p>
     </div>
   );

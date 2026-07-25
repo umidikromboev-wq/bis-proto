@@ -11,10 +11,10 @@ import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
  * пиксель — этим занимается .dh-figure в стилях.
  */
 const SPOTS = [
-  { x: 56, y: 67, side: "right", val: "+30%", lbl: "загрузка оборудования", icon: "gauge" },
-  { x: 31, y: 56, side: "left", val: "−40%", lbl: "простои производства", icon: "pause" },
-  { x: 69, y: 17, side: "left", val: "−25%", lbl: "затраты на управление", icon: "wallet" },
-  { x: 81, y: 51, side: "left", val: "+15%", lbl: "рост продаж", icon: "trend" },
+  { x: 56, y: 67, side: "right", val: "+30%", lblKey: "fsLoad", icon: "gauge" },
+  { x: 31, y: 56, side: "left", val: "−40%", lblKey: "fsDowntime", icon: "pause" },
+  { x: 69, y: 17, side: "left", val: "−25%", lblKey: "fsAdminCost", icon: "wallet" },
+  { x: 81, y: 51, side: "left", val: "+15%", lblKey: "fsSalesGrowth", icon: "trend" },
 ] as const;
 
 function Icon({ name }: { name: (typeof SPOTS)[number]["icon"] }) {
@@ -79,13 +79,13 @@ export function FactoryStage({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
       {/* Верхний левый угол кадра пустой — подсказка там ничего не перекрывает */}
       <p className="dh-spot-hint" aria-hidden>
         <span />
-        Нажмите на точки — что меняется после внедрения
+        {txt.fsHint}
       </p>
 
       <div className="dh-spots">
         {SPOTS.map((s, i) => (
           <div
-            key={s.lbl}
+            key={txt[s.lblKey]}
             className={`dh-spot${active === i ? " is-active" : ""}`}
             data-side={s.side}
             style={{ left: `${s.x}%`, top: `${s.y}%` }}
@@ -103,12 +103,12 @@ export function FactoryStage({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
             >
               <Icon name={s.icon} />
               <span className="dh-sr">
-                {s.val} — {s.lbl}
+                {s.val} — {txt[s.lblKey]}
               </span>
             </button>
             <span className="dh-tip" aria-hidden={active !== i}>
               <b>{s.val}</b>
-              <i>{s.lbl}</i>
+              <i>{txt[s.lblKey]}</i>
             </span>
           </div>
         ))}
@@ -120,7 +120,7 @@ export function FactoryStage({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
       {active >= 0 ? (
         <span className="dh-tip-bar" aria-hidden>
           <b>{SPOTS[active].val}</b>
-          <i>{SPOTS[active].lbl}</i>
+          <i>{txt[SPOTS[active].lblKey]}</i>
         </span>
       ) : null}
     </div>

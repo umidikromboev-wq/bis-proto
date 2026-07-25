@@ -46,8 +46,10 @@ export const hero = {
   ...ru.hero,
   eyebrow: "2019 yildan Oʻzbekistonda SAP joriy etamiz",
   h1: "Excel, 1C va oʻnlab chat oʻrniga bitta tizim",
+  h1Plain: "Bitta tizim — ",
+  h1Accent: "Excel, 1C va oʻnlab chat oʻrniga",
   lead:
-    "Buyurtma va xodim koʻpaygan sari jadvallar bardosh bermay qoʻyadi. SAP moliya, ombor, xarid va sotuvni bitta joyda bogʻlaydi — maʼlumot bir marta kiritiladi va hammaga koʻrinadi. Biznes nazoratda qoladi, siz esa xotirjam oʻsasiz.",
+    "Buyurtma va xodim koʻpaygan sari jadvallar bardosh bermay qoʻyadi. SAP moliya, ombor, xarid va sotuvni **bitta tizimga** yigʻadi — va siz oy oxirida emas, **haqiqiy foydani istalgan paytda** koʻrasiz.",
   cta: "1 kunda hisob-kitob olish",
   ctaSecondary: "Avval qancha yoʻqotayotganimni hisoblash",
   facts: [
@@ -473,6 +475,7 @@ export const team = {
 // ── 12. ТАРИФЫ ──────────────────────────────────────────────────────────────
 export const pricing = {
   ...ru.pricing,
+  note: "Paket narx oraliqlari dastlabki — nashrdan oldin mijoz bilan tasdiqlash kerak",
   kicker: "Narx",
   h2: "Joriy etish budjeti soʻrov qoldirishdan va qoʻngʻiroqdan oldin maʼlum",
   lead:

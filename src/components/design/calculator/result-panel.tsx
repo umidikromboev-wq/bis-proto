@@ -8,6 +8,7 @@
 import { money, days, percent, type Currency } from "./format";
 import type { CalcInput, CalcResult } from "./model";
 import { ui } from "@/content/ui";
+import { calc } from "@/content/calc";
 import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 export function ResultPanel({
@@ -26,6 +27,7 @@ export function ResultPanel({
   locale?: Locale;
 }) {
   const txt = ui(locale);
+  const cs = calc(locale);
   const stockPart = Math.max(result.excessStock, 0);
   const receivablePart = Math.max(result.excessReceivables, 0);
   const max = Math.max(stockPart, receivablePart, 1);
@@ -119,16 +121,17 @@ export function Insights({
   locale?: Locale;
 }) {
   const txt = ui(locale);
+  const cs = calc(locale);
   return (
     <div className="wc-insights">
       <section className="panel wc-panel">
         <h2 className="wc-h3">{txt.calcDiagnosis}</h2>
         <div className="wc-signals">
           {result.signals.map((s) => (
-            <div key={s.label} className={`wc-signal is-${s.verdict}`}>
-              <span className="dim">{s.label}</span>
-              <b>{s.state}</b>
-              <p>{s.hint}</p>
+            <div key={s.signal} className={`wc-signal is-${s.verdict}`}>
+              <span className="dim">{cs.signals[s.signal]}</span>
+              <b>{cs.states[s.state]}</b>
+              <p>{cs.hints[s.hint]}</p>
             </div>
           ))}
         </div>

@@ -25,7 +25,7 @@ export function ProductPageView({ data, locale = DEFAULT_LOCALE }: { data: Produ
   return (
     <>
       <PageHero
-        crumbs={[{ label: "Главная", href: "/" }, { label: data.title }]}
+        crumbs={[{ label: txt.home, href: localePath(locale, "/") }, { label: data.title }]}
         eyebrow={data.hero.eyebrow}
         h1={data.hero.h1}
         lead={data.hero.lead}
@@ -142,7 +142,7 @@ export function ProductPageView({ data, locale = DEFAULT_LOCALE }: { data: Produ
       {related.length ? (
         <Section id="cases">
           <Reveal>
-            <SectionHead kicker="Кейсы" h2="Внедрения этого продукта" />
+            <SectionHead kicker={txt.productCasesKicker} h2={txt.productCasesH2} />
           </Reveal>
           <div className="d-cases">
             {related.map((c, i) => (
@@ -174,7 +174,7 @@ export function ProductPageView({ data, locale = DEFAULT_LOCALE }: { data: Produ
 
       <Section id="faq" tone="tint">
         <Reveal>
-          <SectionHead kicker="Вопросы" h2={`Что спрашивают про ${data.title}`} />
+          <SectionHead kicker={txt.questionsKicker} h2={`${txt.questionsAbout} ${data.title}`} />
         </Reveal>
         <div className="d-faq">
           {data.faq.map((item, i) => (
@@ -195,7 +195,7 @@ export function ProductPageView({ data, locale = DEFAULT_LOCALE }: { data: Produ
         <Reveal className="d-final-inner">
           <h2 className="d-h2">{txt.auditProcessH2}</h2>
           <p className="d-lead">
-            За одну встречу покажем, где вы теряете деньги сейчас, и как это закрывает {data.title}. Письменное заключение остаётся у вас в любом случае.
+            {txt.auditOneMeeting} {data.title}. {txt.auditWritten}
           </p>
           <div className="dh-cta-row">
             <LeadButton source="audit">{txt.bookAudit}</LeadButton>

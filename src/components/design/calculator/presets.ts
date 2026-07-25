@@ -1,3 +1,4 @@
+import type { CalcStrings } from "@/content/calc";
 /**
  * Готовые примеры бизнеса. Дистрибуция и производство — цифры из рабочего
  * файла клиента (12 млн оборота), розница — тот же профиль в меньшем масштабе.
@@ -8,10 +9,10 @@ import type { CalcInput } from "./model";
 
 export type PresetKey = "distrib" | "retail" | "production";
 
-export const PRESET_LABELS: { readonly key: PresetKey; readonly label: string }[] = [
-  { key: "distrib", label: "Дистрибуция" },
-  { key: "retail", label: "Розница" },
-  { key: "production", label: "Производство" },
+export const PRESET_LABELS: { readonly key: PresetKey; readonly labelKey: keyof CalcStrings["presets"] }[] = [
+  { key: "distrib", labelKey: "distrib" },
+  { key: "retail", labelKey: "retail" },
+  { key: "production", labelKey: "production" },
 ];
 
 const distrib: CalcInput = {

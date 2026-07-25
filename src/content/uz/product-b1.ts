@@ -145,6 +145,7 @@ export const productB1: ProductPage = {
 
   project: {
     ...ru.project,
+    note: "Narx oraliqlari dastlabki — nashrdan oldin narxnoma va loyihalar portfeli bilan tekshirish kerak",
     kicker: "Loyiha",
     h2: "Loyiha va budjet nimalardan yigʻiladi",
     lead:

@@ -90,7 +90,7 @@ export function LeadMagnet({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
               <b>{d.name}</b>
               <span className="d-doc-text">{d.text}</span>
               <span className="d-doc-btn">
-                Скачать
+                {txt.download}
                 <PixelArrow />
               </span>
             </DocButton>

@@ -22,6 +22,7 @@ import { Insights, ResultPanel } from "./result-panel";
 import "../simulator.css";
 import "./working-capital.css";
 import { ui } from "@/content/ui";
+import { calc } from "@/content/calc";
 import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 const MONEY_KEYS = [
@@ -34,6 +35,7 @@ const PLAIN_KEYS = ["leadTime", "safetyStock", "termDays", "bankRate", "supplier
 
 export function WorkingCapitalCalculator({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const txt = ui(locale);
+  const cs = calc(locale);
   const { openLead } = useLeadPopup();
   const [currency, setCurrency] = useState<Currency>("usd");
   const [preset, setPreset] = useState<PresetKey | null>(DEFAULT_PRESET);
@@ -121,7 +123,7 @@ export function WorkingCapitalCalculator({ locale = DEFAULT_LOCALE }: { locale?:
                   <div className="wc-chips">
                     {PRESET_LABELS.map((p) => (
                       <button key={p.key} className={`pbtn ${preset === p.key ? "active" : ""}`} onClick={() => applyPreset(p.key)}>
-                        {p.label}
+                        {cs.presets[p.labelKey]}
                       </button>
                     ))}
                   </div>

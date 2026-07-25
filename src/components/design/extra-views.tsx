@@ -27,7 +27,7 @@ export function AcademyView({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   return (
     <>
       <PageHero
-        crumbs={[home, { label: "SAP Академия" }]}
+        crumbs={[home, { label: txt.academyCrumb }]}
         eyebrow={hero.kicker}
         h1={hero.h1}
         lead={hero.lead}
@@ -125,7 +125,7 @@ export function CareersView({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
 
       <Section>
         <Reveal>
-          <SectionHead kicker="Открытые позиции" h2="Кого мы ищем сейчас" />
+          <SectionHead kicker={txt.openPositionsKicker} h2={txt.openPositionsH2} />
         </Reveal>
         <div className="di-cases">
           {positions.map((p, i) => (
@@ -186,7 +186,7 @@ export function CareersView({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
           <h2 className="d-h2">{cta.h2}</h2>
           <p className="d-lead">{cta.text}</p>
           <div className="dh-cta-row">
-            <Btn href={cta.emailHref} variant="light">Написать на {cta.email}</Btn>
+            <Btn href={cta.emailHref} variant="light">{txt.writeTo} {cta.email}</Btn>
           </div>
           <p className="d-note">{cta.note}</p>
         </Reveal>
