@@ -3,14 +3,12 @@ import { Reveal } from "../reveal";
 import { ScrollText } from "../schemes/scroll-text";
 import { PixelArrow } from "../marks";
 import { Btn, Kicker, Section, SectionHead, TextLink } from "../ui";
-import { DocButton, LeadButton, LeadTextLink, type LeadSource } from "../lead-popup";
+import { LeadButton, LeadTextLink } from "../lead-popup";
 import { content } from "@/content";
 import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 import { ui } from "@/content/ui";
 
 /** Порядок документов в контенте задаёт, какой попап открывает каждая плитка. */
-const DOC_SOURCES: LeadSource[] = ["checklist", "guide", "estimate"];
-
 /**
  * Лид-магнит. Главный конверсионный блок страницы.
  *
@@ -80,7 +78,16 @@ export function LeadMagnet({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
         <h3 className="d-h3">{leadMagnet.docs.h3}</h3>
         <div className="d-docs-list">
           {leadMagnet.docs.items.map((d, i) => (
-            <DocButton key={d.name} source={DOC_SOURCES[i]}>
+            // Ссылка со скачиванием вместо попапа: обещали «забрать материалы
+            // без разговора» — значит без формы, иначе обещание ложное.
+            <a
+              key={d.name}
+              className="d-doc"
+              href={d.file}
+              download
+              target="_blank"
+              rel="noopener"
+            >
               <span className="d-doc-top">
                 {/* Иконка формата: человек должен понимать, что получит файл,
                     ещё до клика — иначе «скачать» читается как очередная форма. */}
@@ -93,7 +100,7 @@ export function LeadMagnet({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
                 {txt.download}
                 <PixelArrow />
               </span>
-            </DocButton>
+            </a>
           ))}
         </div>
       </Reveal>
