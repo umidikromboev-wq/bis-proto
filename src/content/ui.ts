@@ -26,7 +26,7 @@ const RU = {
   tagline: "Ташкент · внедрение и поддержка SAP",
   partnerLine: "Внедряем SAP в Узбекистане с 2019 года",
   nextStep: "Следующий шаг",
-  footerCallH: ["Разберём ваши процессы", "и покажем систему на них"] as const,
+  footerCallH: ["Разберём ваши процессы", "и покажем систему на них"] as [string, string],
   workingCapital: "Калькулятор оборотного капитала",
 
   // Кнопки и призывы
@@ -123,7 +123,7 @@ const UZ: typeof RU = {
   tagline: "Toshkent · SAP joriy etish va qoʻllab-quvvatlash",
   partnerLine: "2019 yildan Oʻzbekistonda SAP joriy etamiz",
   nextStep: "Keyingi qadam",
-  footerCallH: ["Jarayonlaringizni tahlil qilamiz", "va tizimni ularda koʻrsatamiz"] as const,
+  footerCallH: ["Jarayonlaringizni tahlil qilamiz", "va tizimni ularda koʻrsatamiz"],
   workingCapital: "Aylanma kapital kalkulyatori",
 
   bookAudit: "Auditga yozilish",
