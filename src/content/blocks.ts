@@ -11,7 +11,9 @@ export const contacts = {
   phoneHref: "tel:+998908231012",
   email: "info@bis-pro.com",
   address: "Ташкент, ул. Абдуллы Каххара 56А, БЦ Ventum Plaza, этаж 6, офис 602",
-  legal: "ООО «Accelerated Business Consulting» · внедрение и поддержка SAP",
+  // Юрлицо намеренно не указано: прежнее название принадлежало другой компании.
+  // Подставить точное название из уставных документов, когда клиент их пришлёт.
+  legal: "BIS · внедрение и поддержка SAP с 2019 года",
   telegram: "https://t.me/bis_uz",
 };
 
