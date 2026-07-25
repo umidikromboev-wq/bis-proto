@@ -98,7 +98,7 @@ const MODULE_ICONS: IconName[] = ["finance", "warehouse", "procurement", "produc
 const PRODUCT_ICONS: IconName[] = ["production", "integration"];
 
 /** Страницы продуктов в том же порядке, что и элементы в контенте. */
-const PRODUCT_HREFS = ["/design/sap-business-one", "/design/sap-s4hana"];
+const PRODUCT_HREFS = ["/sap-business-one", "/sap-s4hana"];
 
 /**
  * Продукты. Строка-витрина: превью, крупное имя, стрелка, чипы.

@@ -96,7 +96,7 @@ export function WorkingCapitalCalculator() {
   return (
     <div className="sim sim-page wc">
       <nav className="dp-crumbs sim-crumbs" aria-label="Хлебные крошки">
-        <span><Link href="/design">Главная</Link><i aria-hidden>/</i></span>
+        <span><Link href="/">Главная</Link><i aria-hidden>/</i></span>
         <span><b>Калькулятор оборотного капитала</b></span>
       </nav>
 

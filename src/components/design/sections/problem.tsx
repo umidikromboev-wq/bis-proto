@@ -69,7 +69,7 @@ export function Cost() {
       </ul>
 
       <Reveal className="d-losses-cta">
-        <Btn href="/design/simulator" variant="light">{cost.cta}</Btn>
+        <Btn href="/simulator" variant="light">{cost.cta}</Btn>
         <span className="d-note">
           Точную сумму заочно не назовёт никто: она зависит от оборота, отрасли и состояния
           учёта. Калькулятор покажет порядок за три минуты.

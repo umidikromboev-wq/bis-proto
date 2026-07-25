@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { SiteShell } from "@/components/shell";
-import { ProductPageView } from "@/components/product-page";
+import { ProductPageView } from "@/components/design/product-page";
 import { productB1 } from "@/content/product-b1";
 
 export const metadata: Metadata = {
@@ -9,9 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return (
-    <SiteShell>
-      <ProductPageView data={productB1} />
-    </SiteShell>
-  );
+  return <ProductPageView data={productB1} />;
 }

@@ -69,7 +69,7 @@ export function Cases() {
                 самого объекта заказчика. */}
             <Image
               className="d-case-photo"
-              src={`/design/cases/${c.slug}.webp`}
+              src={`/cases/${c.slug}.webp`}
               alt={`Отрасль клиента: ${c.industry.toLowerCase()}`}
               width={1600}
               height={1195}
@@ -99,7 +99,7 @@ export function Cases() {
                   <span>{a.label}</span>
                 </div>
               ))}
-              <Btn href={`/design/cases/${c.slug}`} variant="ghost" small>{casesMeta.cta}</Btn>
+              <Btn href={`/cases/${c.slug}`} variant="ghost" small>{casesMeta.cta}</Btn>
             </div>
           </Reveal>
         ))}
@@ -263,7 +263,7 @@ export function Team() {
 export function AllCasesLink() {
   return (
     <div className="d-wrap d-allcases">
-      <Btn href="/design/cases" variant="ghost">
+      <Btn href="/cases" variant="ghost">
         Смотреть все кейсы внедрения
       </Btn>
     </div>

@@ -12,7 +12,7 @@ import "./inner.css";
 import { em } from "./emphasis";
 import { LeadButton } from "./lead-popup";
 
-const HOME = { label: "Главная", href: "/design" };
+const HOME = { label: "Главная", href: "/" };
 
 /* ─────────────── кейсы ─────────────── */
 
@@ -24,7 +24,7 @@ export function CasesList() {
         <div className="di-cases">
           {cases.map((c, i) => (
             <Reveal key={c.slug} delay={(i % 3) * 70}>
-              <Link href={`/design/cases/${c.slug}`} className="di-case-card">
+              <Link href={`/cases/${c.slug}`} className="di-case-card">
                 <div>
                   <div className="di-case-client">
                     <span className="d-case-idx">{String(i + 1).padStart(2, "0")}</span>
@@ -58,7 +58,7 @@ export function CaseView({ slug }: { slug: string }) {
   return (
     <>
       <PageHero
-        crumbs={[HOME, { label: "Кейсы", href: "/design/cases" }, { label: c.client }]}
+        crumbs={[HOME, { label: "Кейсы", href: "/cases" }, { label: c.client }]}
         h1={c.client}
         lead={c.intro}
         facts={c.after.slice(0, 3).map((a) => ({ value: a.value, label: a.label }))}
@@ -110,7 +110,7 @@ export function CaseView({ slug }: { slug: string }) {
           <p className="d-lead">Бесплатный аудит: покажем, где вы теряете деньги, и что из этого закрывает система.</p>
           <div className="dh-cta-row">
             <LeadButton source="audit" variant="light">Записаться на аудит</LeadButton>
-            <TextLink href="/design/cases">Другие кейсы</TextLink>
+            <TextLink href="/cases">Другие кейсы</TextLink>
           </div>
         </Reveal>
       </Section>
@@ -122,7 +122,7 @@ export function CaseView({ slug }: { slug: string }) {
         <div className="di-cases">
           {others.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80}>
-              <Link href={`/design/cases/${o.slug}`} className="di-case-card">
+              <Link href={`/cases/${o.slug}`} className="di-case-card">
                 <div>
                   <div className="di-case-client">
                     <h3 className="d-h3">{o.client}</h3>
@@ -156,7 +156,7 @@ export function BlogList() {
         <div className="di-posts">
           {posts.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 3) * 70}>
-              <Link href={`/design/blog/${p.slug}`} className="di-post-card">
+              <Link href={`/blog/${p.slug}`} className="di-post-card">
                 <div className="di-post-meta">
                   <span className="di-post-cat">{p.category}</span>
                   <span>{p.date}</span>
@@ -205,7 +205,7 @@ export function PostView({ slug }: { slug: string }) {
   return (
     <>
       <PageHero
-        crumbs={[HOME, { label: "Блог", href: "/design/blog" }, { label: post.category }]}
+        crumbs={[HOME, { label: "Блог", href: "/blog" }, { label: post.category }]}
         h1={post.title}
         lead={post.excerpt}
       >
@@ -231,7 +231,7 @@ export function PostView({ slug }: { slug: string }) {
         <div className="di-posts">
           {others.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80}>
-              <Link href={`/design/blog/${o.slug}`} className="di-post-card">
+              <Link href={`/blog/${o.slug}`} className="di-post-card">
                 <div className="di-post-meta">
                   <span className="di-post-cat">{o.category}</span>
                   <span>{o.readingTime}</span>

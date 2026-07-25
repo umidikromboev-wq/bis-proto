@@ -19,7 +19,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
   return (
     <>
       <PageHero
-        crumbs={[{ label: "Главная", href: "/design" }, { label: data.title }]}
+        crumbs={[{ label: "Главная", href: "/" }, { label: data.title }]}
         eyebrow={data.hero.eyebrow}
         h1={data.hero.h1}
         lead={data.hero.lead}
@@ -27,7 +27,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
       >
         <div className="dh-cta-row">
           <Btn href="#lead">{data.hero.cta}</Btn>
-          <TextLink href="/design#pricing">{data.hero.ctaSecondary}</TextLink>
+          <TextLink href="/#pricing">{data.hero.ctaSecondary}</TextLink>
         </div>
       </PageHero>
 
@@ -158,7 +158,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
                       <span>{a.label}</span>
                     </div>
                   ))}
-                  <TextLink href={`/design/cases/${c.slug}`}>Смотреть кейс полностью</TextLink>
+                  <TextLink href={`/cases/${c.slug}`}>Смотреть кейс полностью</TextLink>
                 </div>
               </Reveal>
             ))}
@@ -193,7 +193,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
           </p>
           <div className="dh-cta-row">
             <LeadButton source="audit">Записаться на аудит</LeadButton>
-            <TextLink href="/design/simulator">Сначала посчитать оборотный капитал</TextLink>
+            <TextLink href="/simulator">Сначала посчитать оборотный капитал</TextLink>
           </div>
         </Reveal>
       </Section>

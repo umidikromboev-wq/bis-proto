@@ -6,8 +6,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { PixelArrow, SapMark } from "./marks";
 import "./menu.css";
 
-/** Дизайн-версия живёт под /design, пока не станет основной. */
-const base = (href: string) => `/design${href}`;
+/** Дизайн-версия переведена на основной домен: маршруты живут в корне. */
+const base = (href: string) => href;
 
 const PRIMARY = [
   { label: "SAP Business One", href: "/sap-business-one", note: "Для растущего бизнеса" },
@@ -86,7 +86,7 @@ export function SiteHeader() {
   return (
     <>
       <nav className={`dh-nav${stuck ? " is-stuck" : ""}${open ? " is-menu-open" : ""}`} aria-label="Основная навигация">
-        <Link href="/design" className="dh-logo" aria-label="BIS — Business Intelligence Solutions">
+        <Link href="/" className="dh-logo" aria-label="BIS — Business Intelligence Solutions">
           <Image src="/design/bis-logo.png" alt="BIS — Business Intelligence Solutions" width={1012} height={782} priority />
           <Image src="/design/bis-logo-white.png" alt="" aria-hidden width={1012} height={782} />
         </Link>

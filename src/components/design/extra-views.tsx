@@ -10,7 +10,7 @@ import "./inner.css";
 import { em } from "./emphasis";
 import { LeadButton } from "./lead-popup";
 
-const HOME = { label: "Главная", href: "/design" };
+const HOME = { label: "Главная", href: "/" };
 
 /* ─────────────── SAP Академия ─────────────── */
 
@@ -82,7 +82,7 @@ export function AcademyView() {
           <p className="d-lead">{cta.text}</p>
           <div className="dh-cta-row">
             <LeadButton source="audit" variant="light">{cta.primary}</LeadButton>
-            <TextLink href="/design#lead">{cta.secondary}</TextLink>
+            <TextLink href="/#lead">{cta.secondary}</TextLink>
           </div>
         </Reveal>
       </Section>

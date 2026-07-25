@@ -5,8 +5,8 @@ import { PixelArrow, SapMark } from "./marks";
 import { FooterCallButton } from "./footer-cta";
 import "./footer.css";
 
-/** Ссылки дизайн-версии живут под /design, пока она не стала основной. */
-const base = (href: string) => (href.startsWith("/") ? `/design${href === "/" ? "" : href}` : href);
+/** Дизайн-версия переведена на основной домен: маршруты живут в корне. */
+const base = (href: string) => href;
 
 /**
  * Подвал.
@@ -56,7 +56,7 @@ export function SiteFooter() {
               {navSecondary.map((n) => (
                 <li key={n.href}><Link href={base(n.href)}>{n.label}</Link></li>
               ))}
-              <li><Link href="/design/simulator">Калькулятор оборотного капитала</Link></li>
+              <li><Link href="/simulator">Калькулятор оборотного капитала</Link></li>
               {footer.legal.map((n) => (
                 <li key={n.label}><a href={n.href}>{n.label}</a></li>
               ))}
