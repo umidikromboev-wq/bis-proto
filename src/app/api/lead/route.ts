@@ -5,6 +5,8 @@
  * переписке было видно, какой попап принёс заявку.
  */
 
+import { clientIp, rateLimit } from "@/lib/rate-limit";
+
 /** Откуда пришла заявка. Пишется в сообщение тегом. */
 const SOURCE_TAGS: Record<string, string> = {
   audit: "#аудит",
@@ -19,8 +21,19 @@ const SOURCE_TAGS: Record<string, string> = {
 /** Ограничения на входящие поля: защита от мусора и раздутых сообщений. */
 const LIMITS = { name: 80, phone: 32, company: 120, comment: 600, industry: 60 };
 
+/**
+ * Порог антиспама: с одного адреса не больше 5 заявок за 10 минут.
+ * Живой человек столько не отправляет, скрипт — за секунду.
+ */
+const RATE_LIMIT = { max: 5, windowMs: 10 * 60 * 1000 };
+
+/** Тело запроса дальше этого размера даже не разбираем. */
+const MAX_BODY_BYTES = 8 * 1024;
+
 type Lead = {
   name?: string;
+  /** Ловушка: поле скрыто от человека и заполняется только ботами. */
+  website?: string;
   phone?: string;
   company?: string;
   comment?: string;
@@ -46,11 +59,39 @@ export async function POST(request: Request) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
 
+  // Заявка отправляется только со своих страниц. Запрос без совпадающего
+  // источника — это не браузер посетителя, а чужой скрипт.
+  const origin = request.headers.get("origin");
+  const host = request.headers.get("host");
+  if (origin && host && new URL(origin).host !== host) {
+    return Response.json({ ok: false, error: "forbidden" }, { status: 403 });
+  }
+
+  const limit = rateLimit(`lead:${clientIp(request)}`, RATE_LIMIT.max, RATE_LIMIT.windowMs);
+  if (!limit.allowed) {
+    return Response.json(
+      { ok: false, error: "rate_limited" },
+      { status: 429, headers: { "Retry-After": String(limit.retryAfter) } },
+    );
+  }
+
+  const raw = await request.text();
+  if (raw.length > MAX_BODY_BYTES) {
+    return Response.json({ ok: false, error: "too_large" }, { status: 413 });
+  }
+
   let body: Lead;
   try {
-    body = await request.json();
+    body = JSON.parse(raw);
   } catch {
     return Response.json({ ok: false, error: "bad_request" }, { status: 400 });
+  }
+
+  // Ловушка для ботов: поле скрыто стилями, человек его не видит и не заполняет.
+  // Отвечаем успехом — чтобы бот не подбирал обход, увидев отказ.
+  if (clean(body.website, 200)) {
+    console.warn("[lead] отсеяна заявка с заполненной ловушкой");
+    return Response.json({ ok: true });
   }
 
   const name = clean(body.name, LIMITS.name);

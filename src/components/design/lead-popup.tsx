@@ -170,6 +170,10 @@ function LeadForm({ scenario, source }: { scenario: Scenario; source: LeadSource
 
   const digits = phone.replace(/\D/g, "").replace(/^998/, "");
 
+  // Ловушка для ботов. Настоящий посетитель поле не видит и не заполняет,
+  // автозаполнялка ботов лезет во все поля подряд.
+  const [website, setWebsite] = useState("");
+
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const next: { name?: string; phone?: string } = {};
@@ -188,6 +192,7 @@ function LeadForm({ scenario, source }: { scenario: Scenario; source: LeadSource
           phone,
           company: company.trim(),
           comment: comment.trim(),
+          website,
           source,
           page: typeof window === "undefined" ? "" : window.location.pathname,
         }),
@@ -216,6 +221,19 @@ function LeadForm({ scenario, source }: { scenario: Scenario; source: LeadSource
 
   return (
     <form className="dl-form" onSubmit={onSubmit} noValidate>
+      {/* Ловушка: убрана из потока и с клавиатуры, скринридеру не видна. */}
+      <div className="dl-trap" aria-hidden>
+        <label htmlFor="dl-website">Website</label>
+        <input
+          id="dl-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+        />
+      </div>
       <label className="dl-field">
         <span>{txt.fieldName}</span>
         <input
