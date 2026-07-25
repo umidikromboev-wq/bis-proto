@@ -1,4 +1,7 @@
 import type { CalcStrings } from "@/content/calc";
+
+/** Стадия запасов в производстве. Названия живут в словаре, здесь только ключ. */
+export type StageKey = "raw" | "wip" | "finished";
 /**
  * Модель оборотного капитала — формулы взяты один в один из рабочего файла
  * клиента «Aylanma kapital kalkulyatori» (листы Kalkulyator, SKU tahlil,
@@ -101,7 +104,7 @@ export interface CalcResult {
   readonly newRoi: number;
   readonly cheapMoney: number;
 
-  readonly longestStage: string;
+  readonly longestStage: StageKey;
   readonly stageShare: { readonly raw: number; readonly wip: number; readonly finished: number };
   readonly scenarios: readonly CccScenario[];
   readonly signals: readonly Signal[];
@@ -194,10 +197,10 @@ export function calculate(input: CalcInput): CalcResult {
   const newRoi = div(input.ebit, newWorkingCapital);
   const cheapMoney = input.payables * input.bankRate;
 
-  const stages: { key: string; days: number }[] = [
-    { key: "Сырьё", days: dioRaw },
-    { key: "Незавершённое производство", days: dioWip },
-    { key: "Готовая продукция", days: dioFinished },
+  const stages: { key: StageKey; days: number }[] = [
+    { key: "raw", days: dioRaw },
+    { key: "wip", days: dioWip },
+    { key: "finished", days: dioFinished },
   ];
   const longest = stages.reduce((a, b) => (b.days > a.days ? b : a), stages[0]);
   const stageTotal = dioRaw + dioWip + dioFinished;

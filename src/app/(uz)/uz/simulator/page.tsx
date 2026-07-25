@@ -3,7 +3,7 @@ import { WorkingCapitalCalculator } from "@/components/design/calculator/working
 import "@/components/design/page-hero.css";
 
 export const metadata: Metadata = {
-  title: "Калькулятор оборотного капитала · BIS",
+  title: "Aylanma kapital kalkulyatori · BIS",
   description:
     "Посчитайте денежный цикл бизнеса: за сколько дней оборачивается товар, когда возвращаются деньги от клиентов и сколько заморожено в запасах и дебиторке. Расчёт по методике консультантов BIS.",
 };

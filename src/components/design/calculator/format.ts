@@ -22,8 +22,8 @@ export function money(usd: number, currency: Currency): string {
   return `${sign}${sep(abs)} сум`;
 }
 
-export function days(value: number): string {
-  return `${value.toFixed(1).replace(".", ",")} дн.`;
+export function days(value: number, unit = "дн."): string {
+  return `${value.toFixed(1).replace(".", ",")} ${unit}`;
 }
 
 export function percent(value: number, digits = 0): string {

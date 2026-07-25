@@ -94,7 +94,7 @@ export function WorkingCapitalCalculator({ locale = DEFAULT_LOCALE }: { locale?:
     MONEY_KEYS.forEach((k) => p.set(k, String(Math.round(input[k] * (currency === "uzs" ? RATE : 1)))));
     PLAIN_KEYS.forEach((k) => p.set(k, String(input[k])));
     const url = `${window.location.origin}${window.location.pathname}?${p.toString()}`;
-    const text = "Расчёт оборотного капитала — BIS";
+    const text = cs.copy.shareText;
     window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, "_blank");
   }
 
@@ -110,9 +110,7 @@ export function WorkingCapitalCalculator({ locale = DEFAULT_LOCALE }: { locale?:
           <p className="kicker">{txt.calcKicker}</p>
           <h1 className="h1 wc-h1">{txt.calcH1}</h1>
           <p className="lead wc-lead">
-            Тот самый расчёт, который консультант BIS делает на первой встрече. Возьмите готовый пример или
-            подставьте свои цифры: сколько дней живёт товар, когда возвращаются деньги от клиентов и сколько из
-            оборота можно вернуть без единого сума инвестиций.
+            {cs.copy.lead1} {cs.copy.lead2} {cs.copy.lead3}
           </p>
 
           <div className="sim-grid wc-grid">
@@ -158,78 +156,74 @@ export function WorkingCapitalCalculator({ locale = DEFAULT_LOCALE }: { locale?:
 
               <p className="wc-note wc-mode">
                 {isProduction
-                  ? "В производстве запасы считаются по трём стадиям: сырьё делится на потребление, незавершёнка на выпуск, готовая продукция на себестоимость продаж."
+                  ? cs.copy.modeProduction
                   : input.basis === "exact"
-                    ? "Точный режим: склад считается от себестоимости, кредиторка — от закупок. Так делает финансист."
-                    : "Простой режим: всё считается от выручки. Нужны только четыре суммы, точность ниже."}
+                    ? cs.copy.modeExact
+                    : cs.copy.modeSimple}
               </p>
 
               <GroupTitle>{txt.calcYearTurnover}</GroupTitle>
-              <MoneyField label="Выручка" hint="продажи за 12 месяцев" value={input.revenue} currency={currency} onChange={(v) => set("revenue", v)} />
+              <MoneyField label={cs.fields.revenue} hint={cs.fields.revenueHint} value={input.revenue} currency={currency} onChange={(v) => set("revenue", v)} />
               {(isProduction || input.basis === "exact") && (
-                <MoneyField label="Себестоимость проданного" hint="COGS" value={input.cogs} currency={currency} onChange={(v) => set("cogs", v)} />
+                <MoneyField label={cs.fields.cogs} hint="COGS" value={input.cogs} currency={currency} onChange={(v) => set("cogs", v)} />
               )}
               {!isProduction && input.basis === "exact" && (
-                <MoneyField label="Закупки у поставщиков" hint="за 12 месяцев" value={input.purchases} currency={currency} onChange={(v) => set("purchases", v)} />
+                <MoneyField label={cs.fields.purchases} hint={cs.fields.purchasesHint} value={input.purchases} currency={currency} onChange={(v) => set("purchases", v)} />
               )}
               {isProduction && (
                 <>
-                  <MoneyField label="Закупка сырья" hint="у поставщиков за год" value={input.rawPurchases} currency={currency} onChange={(v) => set("rawPurchases", v)} />
-                  <MoneyField label="Израсходовано сырья" hint="ушло в производство" value={input.rawConsumed} currency={currency} onChange={(v) => set("rawConsumed", v)} />
-                  <MoneyField label="Выпущено продукции" hint="по себестоимости, COGM" value={input.cogm} currency={currency} onChange={(v) => set("cogm", v)} />
+                  <MoneyField label={cs.fields.rawPurchases} hint={cs.fields.rawPurchasesHint} value={input.rawPurchases} currency={currency} onChange={(v) => set("rawPurchases", v)} />
+                  <MoneyField label={cs.fields.rawConsumed} hint={cs.fields.rawConsumedHint} value={input.rawConsumed} currency={currency} onChange={(v) => set("rawConsumed", v)} />
+                  <MoneyField label={cs.fields.cogm} hint={cs.fields.cogmHint} value={input.cogm} currency={currency} onChange={(v) => set("cogm", v)} />
                 </>
               )}
-              <MoneyField label="Операционная прибыль" hint="EBITDA за год" value={input.ebit} currency={currency} onChange={(v) => set("ebit", v)} />
-              <MoneyField label="Чистая прибыль" hint="после налогов и процентов" value={input.netProfit} currency={currency} onChange={(v) => set("netProfit", v)} />
+              <MoneyField label={cs.fields.ebit} hint={cs.fields.ebitHint} value={input.ebit} currency={currency} onChange={(v) => set("ebit", v)} />
+              <MoneyField label={cs.fields.netProfit} hint={cs.fields.netProfitHint} value={input.netProfit} currency={currency} onChange={(v) => set("netProfit", v)} />
 
               <GroupTitle>{txt.calcInCirculation}</GroupTitle>
               {isProduction ? (
                 <>
-                  <MoneyField label="Сырьё на складе" value={input.raw} currency={currency} onChange={(v) => set("raw", v)} />
-                  <MoneyField label="Незавершённое производство" value={input.wip} currency={currency} onChange={(v) => set("wip", v)} />
-                  <MoneyField label="Готовая продукция" value={input.finished} currency={currency} onChange={(v) => set("finished", v)} />
+                  <MoneyField label={cs.fields.raw} value={input.raw} currency={currency} onChange={(v) => set("raw", v)} />
+                  <MoneyField label={cs.fields.wip} value={input.wip} currency={currency} onChange={(v) => set("wip", v)} />
+                  <MoneyField label={cs.fields.finished} value={input.finished} currency={currency} onChange={(v) => set("finished", v)} />
                 </>
               ) : (
-                <MoneyField label="Товар на складе" hint="остаток по себестоимости" value={input.stock} currency={currency} onChange={(v) => set("stock", v)} />
+                <MoneyField label={cs.fields.stock} hint={cs.fields.stockHint} value={input.stock} currency={currency} onChange={(v) => set("stock", v)} />
               )}
-              <MoneyField label="Дебиторка" hint="долг клиентов перед вами" value={input.receivables} currency={currency} onChange={(v) => set("receivables", v)} />
-              <MoneyField label="Деньги в кассе и на счетах" value={input.cash} currency={currency} onChange={(v) => set("cash", v)} />
-              <MoneyField label="Кредиторка" hint="ваш долг поставщикам" value={input.payables} currency={currency} onChange={(v) => set("payables", v)} />
-              <MoneyField label="Основные средства" hint="оборудование, транспорт, здания" value={input.fixedAssets} currency={currency} onChange={(v) => set("fixedAssets", v)} />
+              <MoneyField label={cs.fields.receivables} hint={cs.fields.receivablesHint} value={input.receivables} currency={currency} onChange={(v) => set("receivables", v)} />
+              <MoneyField label={cs.fields.cash} value={input.cash} currency={currency} onChange={(v) => set("cash", v)} />
+              <MoneyField label={cs.fields.payables} hint={cs.fields.payablesHint} value={input.payables} currency={currency} onChange={(v) => set("payables", v)} />
+              <MoneyField label={cs.fields.fixedAssets} hint={cs.fields.fixedAssetsHint} value={input.fixedAssets} currency={currency} onChange={(v) => set("fixedAssets", v)} />
 
               <GroupTitle>{txt.calcNormsTerms}</GroupTitle>
               <div className="wc-sliders">
-                <SliderField label="Срок поставки" hint="от заказа до склада" value={input.leadTime} display={`${input.leadTime} дн.`} min={1} max={90} step={1} onChange={(v) => set("leadTime", v)} />
-                <SliderField label="Страховой запас" hint="на случай сбоя поставки" value={input.safetyStock} display={`${input.safetyStock} дн.`} min={0} max={60} step={1} onChange={(v) => set("safetyStock", v)} />
-                <SliderField label="Отсрочка клиентам" hint="согласованный срок оплаты" value={input.termDays} display={`${input.termDays} дн.`} min={0} max={90} step={1} onChange={(v) => set("termDays", v)} />
-                <SliderField label="Отсрочка от поставщиков" hint="сколько дней даёт поставщик" value={input.supplierTerm} display={`${input.supplierTerm} дн.`} min={0} max={120} step={1} onChange={(v) => set("supplierTerm", v)} />
-                <SliderField label="Ставка банка" hint="во сколько обходятся деньги" value={Math.round(input.bankRate * 100)} display={percent(input.bankRate)} min={5} max={45} step={1} onChange={(v) => set("bankRate", v / 100)} />
+                <SliderField label={cs.fields.leadTime} hint={cs.fields.leadTimeHint} value={input.leadTime} display={`${input.leadTime} ${cs.fields.days}`} min={1} max={90} step={1} onChange={(v) => set("leadTime", v)} />
+                <SliderField label={cs.fields.safetyStock} hint={cs.fields.safetyStockHint} value={input.safetyStock} display={`${input.safetyStock} ${cs.fields.days}`} min={0} max={60} step={1} onChange={(v) => set("safetyStock", v)} />
+                <SliderField label={cs.fields.termDays} hint={cs.fields.termDaysHint} value={input.termDays} display={`${input.termDays} ${cs.fields.days}`} min={0} max={90} step={1} onChange={(v) => set("termDays", v)} />
+                <SliderField label={cs.fields.supplierTerm} hint={cs.fields.supplierTermHint} value={input.supplierTerm} display={`${input.supplierTerm} ${cs.fields.days}`} min={0} max={120} step={1} onChange={(v) => set("supplierTerm", v)} />
+                <SliderField label={cs.fields.bankRate} hint={cs.fields.bankRateHint} value={Math.round(input.bankRate * 100)} display={percent(input.bankRate)} min={5} max={45} step={1} onChange={(v) => set("bankRate", v / 100)} />
               </div>
 
               <div className="manual wc-manual">
                 <p className="wc-h3">{txt.calcStockLever}</p>
                 <p className="wc-note">
-                  {isProduction ? "Здоровый запас сырья" : "Здоровый склад"} — это срок поставки плюс страховой
-                  запас: {result.healthyStockDays} дн. и {money(result.healthyStock, currency)}. Всё, что лежит
-                  сверх этого, — деньги, которые вы уже потратили, но ещё не заработали. Система считает такой
-                  норматив по каждой позиции, а не по складу целиком.
+                  {isProduction ? cs.copy.healthyRaw : cs.copy.healthyStock} {cs.copy.healthyIs}{" "}
+                  {result.healthyStockDays} {cs.fields.days} {cs.copy.healthyAnd} {money(result.healthyStock, currency)}. {cs.copy.healthyTail}
                 </p>
               </div>
             </div>
 
-            <ResultPanel result={result} input={input} currency={currency} onRequest={() => openLead("calc")} onShare={share} />
+            <ResultPanel result={result} input={input} currency={currency} onRequest={() => openLead("calc")} onShare={share} locale={locale} />
           </div>
 
-          <Insights result={result} input={input} currency={currency} />
+          <Insights result={result} input={input} currency={currency} locale={locale} />
 
           <div className="panel-2 wc-disclaimer">
-            <b>{txt.calcBlindSpots}</b> упущенных сделок из-за неназванного срока, скидок вслепую без точной
-            себестоимости и часов, которые люди тратят на ручную сверку. Поэтому реальная цена текущей схемы{" "}
-            <b>{txt.calcAboveCalc}</b>, а не ниже.
+            <b>{txt.calcBlindSpots}</b> {cs.copy.blindTail}{" "}
+            <b>{txt.calcAboveCalc}</b>{cs.copy.blindEnd}
           </div>
           <p className="note wc-source">
-            Методика и формулы — рабочий расчёт консультантов BIS: денежный цикл (DIO + DSO − DPO), нормативы запаса
-            и отдача оборотного капитала. Точный расчёт консультант делает по вашей номенклатуре и клиентам.
+            {cs.copy.method}
           </p>
         </div>
       </section>

@@ -28,12 +28,14 @@ export function ResultPanel({
 }) {
   const txt = ui(locale);
   const cs = calc(locale);
+  const stageName = (k: "raw" | "wip" | "finished") =>
+    k === "raw" ? cs.panel.raw : k === "wip" ? cs.panel.wip : cs.fields.finished;
   const stockPart = Math.max(result.excessStock, 0);
   const receivablePart = Math.max(result.excessReceivables, 0);
   const max = Math.max(stockPart, receivablePart, 1);
   const rows = [
-    { name: input.industry === "production" ? "Избыток сырья на складе" : "Избыток запасов на складе", value: stockPart },
-    { name: "Не собранная вовремя дебиторка", value: receivablePart },
+    { name: input.industry === "production" ? cs.panel.excessRaw : cs.panel.excessStock, value: stockPart },
+    { name: cs.panel.lateReceivables, value: receivablePart },
   ];
 
   return (
@@ -41,7 +43,7 @@ export function ResultPanel({
       <p className="wc-eyebrow">{txt.calcFrozen}</p>
       <div className="sim-big">{money(result.frozen, currency)}</div>
       <p className="dim wc-under">
-        Это ваши деньги, которые уже вложены и не работают. Чтобы их вернуть, инвестор не нужен.
+        {cs.panel.yourMoney}
       </p>
 
       <div className="wc-rows">
@@ -59,32 +61,32 @@ export function ResultPanel({
       </div>
 
       <div className="wc-metrics">
-        <Metric label="Запасы" value={days(result.dio)} />
-        <Metric label="Дебиторка" value={days(result.dso)} />
-        <Metric label="Кредиторка" value={days(result.dpo)} />
-        <Metric label="Денежный цикл" value={days(result.ccc)} accent />
+        <Metric label={cs.signals.stock} value={days(result.dio, cs.fields.days)} />
+        <Metric label={cs.signals.receivables} value={days(result.dso, cs.fields.days)} />
+        <Metric label={cs.fields.payables} value={days(result.dpo, cs.fields.days)} />
+        <Metric label={cs.signals.ccc} value={days(result.ccc, cs.fields.days)} accent />
       </div>
 
       <div className="wc-metrics">
-        <Metric label="Оборотный капитал" value={money(result.workingCapital, currency)} />
-        <Metric label="Отдача капитала" value={percent(result.operatingRoi)} />
+        <Metric label={cs.panel.workingCapital} value={money(result.workingCapital, currency)} />
+        <Metric label={cs.signals.roi} value={percent(result.operatingRoi)} />
       </div>
 
       <div className="green wc-green">
         <p className="wc-eyebrow">{txt.calcReturnGives}</p>
-        <GreenRow label="Дополнительная прибыль в год" value={`${money(result.extraProfit, currency)}/год`} />
-        <GreenRow label="Отдача капитала станет" value={percent(result.newRoi)} />
-        <GreenRow label="Бесплатные деньги поставщика" value={`${money(result.cheapMoney, currency)}/год`} />
+        <GreenRow label={cs.panel.extraProfit} value={`${money(result.extraProfit, currency)}/${cs.panel.perYear}`} />
+        <GreenRow label={cs.panel.roiBecomes} value={percent(result.newRoi)} />
+        <GreenRow label={cs.panel.freeSupplierMoney} value={`${money(result.cheapMoney, currency)}/${cs.panel.perYear}`} />
         <p className="dim wc-small">
-          Дополнительная прибыль — замороженная сумма, вложенная в оборот с вашей же текущей отдачей.
+          {cs.panel.extraProfitNote}
         </p>
       </div>
 
       <button className="btn btn-solid wc-cta" onClick={onRequest}>
-        Разобрать расчёт с консультантом
+        {cs.panel.discussWithConsultant}
       </button>
       <button className="btn wc-cta" onClick={onShare}>
-        Отправить расчёт себе в Telegram
+        {cs.panel.sendToTelegram}
       </button>
       <p className="dim wc-foot">{txt.calcNoCall}</p>
     </div>
@@ -122,6 +124,8 @@ export function Insights({
 }) {
   const txt = ui(locale);
   const cs = calc(locale);
+  const stageName = (k: "raw" | "wip" | "finished") =>
+    k === "raw" ? cs.panel.raw : k === "wip" ? cs.panel.wip : cs.fields.finished;
   return (
     <div className="wc-insights">
       <section className="panel wc-panel">
@@ -140,8 +144,7 @@ export function Insights({
       <section className="panel wc-panel">
         <h2 className="wc-h3">{txt.calcIfShorter}</h2>
         <p className="wc-note">
-          Каждый день денежного цикла стоит вам одной дневной выручки — {money(result.dailyRevenue, currency)}.
-          Единая система сокращает цикл за счёт точных остатков, нормативов запаса и контроля сроков оплаты.
+          {cs.panel.dailyCost1} {money(result.dailyRevenue, currency)}. {cs.panel.dailyCost2}
         </p>
         <table className="wc-table">
           <thead>
@@ -154,9 +157,9 @@ export function Insights({
           <tbody>
             {result.scenarios.map((s) => (
               <tr key={s.days}>
-                <td className="sim-mono">{s.days} дн.</td>
+                <td className="sim-mono">{s.days} {cs.fields.days}</td>
                 <td className="sim-mono">{money(s.released, currency)}</td>
-                <td className="sim-mono wc-good">{money(s.profit, currency)}/год</td>
+                <td className="sim-mono wc-good">{money(s.profit, currency)}/${cs.panel.perYear}</td>
               </tr>
             ))}
           </tbody>
@@ -167,17 +170,16 @@ export function Insights({
         <section className="panel wc-panel">
           <h2 className="wc-h3">{txt.calcWhereProduction}</h2>
           <p className="wc-note">
-            Запасы разложены на три стадии — каждая делится на свою базу: сырьё на потребление, незавершёнка на
-            выпуск, готовая продукция на себестоимость продаж.
+            {cs.panel.stagesNote}
           </p>
           <div className="wc-stages">
-            <Stage label="Сырьё" value={result.dioRaw} share={result.stageShare.raw} />
-            <Stage label="Незавершённое производство" value={result.dioWip} share={result.stageShare.wip} />
-            <Stage label="Готовая продукция" value={result.dioFinished} share={result.stageShare.finished} />
+            <Stage label={cs.panel.raw} value={result.dioRaw} share={result.stageShare.raw} unit={cs.panel.ofAllStock} />
+            <Stage label={cs.panel.wip} value={result.dioWip} share={result.stageShare.wip} unit={cs.panel.ofAllStock} />
+            <Stage label={cs.fields.finished} value={result.dioFinished} share={result.stageShare.finished} unit={cs.panel.ofAllStock} />
           </div>
           <p className="wc-note">
-            Дольше всего деньги стоят на стадии «{result.longestStage}». Операционный цикл от сырья до денег —{" "}
-            {days(result.operatingCycle)}.
+            {cs.panel.longestStage1} «{stageName(result.longestStage)}». {cs.panel.longestStage2}{" "}
+            {days(result.operatingCycle, cs.fields.days)}.
           </p>
         </section>
       ) : null}
@@ -185,7 +187,7 @@ export function Insights({
   );
 }
 
-function Stage({ label, value, share }: { label: string; value: number; share: number }) {
+function Stage({ label, value, share, unit }: { label: string; value: number; share: number; unit: string }) {
   return (
     <div className="wc-stage">
       <div className="rr-top">
@@ -195,7 +197,7 @@ function Stage({ label, value, share }: { label: string; value: number; share: n
       <div className="rbar">
         <i style={{ width: `${Math.round(share * 100)}%` }} />
       </div>
-      <span className="dim wc-small">{percent(share)} всего запаса</span>
+      <span className="dim wc-small">{percent(share)} {unit}</span>
     </div>
   );
 }
