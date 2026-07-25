@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import "./factory-stage.css";
+import { ui } from "@/content/ui";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 /**
  * Точки привязаны к объектам на кадре в процентах от него же (2000×1562).
@@ -39,7 +41,8 @@ function Icon({ name }: { name: (typeof SPOTS)[number]["icon"] }) {
  * камера в нём зафиксирована, поэтому одна статичная маска подходит ко всем
  * кадрам. Постер — тот же кадр с уже вшитой альфой, подмены не видно.
  */
-export function FactoryStage() {
+export function FactoryStage({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
   const [active, setActive] = useState(0); // первая точка раскрыта сразу — она же показывает, что точки живые
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -67,7 +70,7 @@ export function FactoryStage() {
         poster="/design/factory.webp"
         width={2000}
         height={1562}
-        aria-label="Производство, объединённое в одну систему SAP: склад, цех, конвейер и аналитика"
+        aria-label={txt.factoryAlt}
       >
         <source src="/design/factory.webm" type="video/webm" />
         <source src="/design/factory.mp4" type="video/mp4" />

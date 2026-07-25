@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { process } from "@/content/blocks";
 import { em } from "../emphasis";
+import { content } from "@/content";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 /**
  * Шесть фаз внедрения, закреплённые на экране.
@@ -19,7 +20,9 @@ import { em } from "../emphasis";
  * Как и в «караоке», за кадр в DOM уходит одно число: прогресс кладётся в
  * CSS-переменную, а всё остальное считает CSS.
  */
-export function PinnedRoadmap() {
+export function PinnedRoadmap({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { process } = site.blocks;
   const wrapRef = useRef<HTMLDivElement>(null);
   const steps = process.steps.length;
 

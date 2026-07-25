@@ -1,5 +1,3 @@
-import { academy } from "@/content/academy";
-import { careers } from "@/content/careers";
 import { GlassIcon, type IconName } from "./icon";
 import { PageHero } from "./page-hero";
 import { Reveal } from "./reveal";
@@ -9,19 +7,27 @@ import "./schemes/schemes.css";
 import "./inner.css";
 import { em } from "./emphasis";
 import { LeadButton } from "./lead-popup";
+import { content } from "@/content";
+import { ui } from "@/content/ui";
+import { DEFAULT_LOCALE, localePath, type Locale } from "@/content/locale";
 
-const HOME = { label: "Главная", href: "/" };
+
 
 /* ─────────────── SAP Академия ─────────────── */
 
 const ACADEMY_ICONS: IconName[] = ["people", "shield"];
 
-export function AcademyView() {
+export function AcademyView({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const txt = ui(locale);
+  const home = { label: txt.home, href: lp("/") };
+  const { academy } = site;
   const { hero, why, formats, materials, cta } = academy;
   return (
     <>
       <PageHero
-        crumbs={[HOME, { label: "SAP Академия" }]}
+        crumbs={[home, { label: "SAP Академия" }]}
         eyebrow={hero.kicker}
         h1={hero.h1}
         lead={hero.lead}
@@ -82,7 +88,7 @@ export function AcademyView() {
           <p className="d-lead">{cta.text}</p>
           <div className="dh-cta-row">
             <LeadButton source="audit" variant="light">{cta.primary}</LeadButton>
-            <TextLink href="/#lead">{cta.secondary}</TextLink>
+            <TextLink href={lp("/#lead")}>{cta.secondary}</TextLink>
           </div>
         </Reveal>
       </Section>
@@ -92,11 +98,16 @@ export function AcademyView() {
 
 /* ─────────────── Вакансии ─────────────── */
 
-export function CareersView() {
+export function CareersView({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const home = { label: txt.home, href: lp("/") };
+  const { careers } = site;
   const { hero, why, positions, process, cta } = careers;
   return (
     <>
-      <PageHero crumbs={[HOME, { label: "Вакансии" }]} eyebrow={hero.kicker} h1={hero.h1} lead={hero.lead} />
+      <PageHero crumbs={[home, { label: txt.crumbCareers }]} eyebrow={hero.kicker} h1={hero.h1} lead={hero.lead} />
 
       <Section tone="tint">
         <Reveal>
@@ -129,7 +140,7 @@ export function CareersView() {
                   <p className="di-case-scale">{p.about}</p>
                 </div>
                 <div>
-                  <span className="d-footer-cap" style={{ color: "var(--dim)" }}>Что нужно</span>
+                  <span className="d-footer-cap" style={{ color: "var(--dim)" }}>{txt.whatNeeded}</span>
                   <ul className="di-before">
                     {p.need.map((n) => (
                       <li key={n}>{n}</li>
@@ -137,7 +148,7 @@ export function CareersView() {
                   </ul>
                   {p.plus?.length ? (
                     <>
-                      <span className="d-footer-cap" style={{ color: "var(--dim)", marginTop: "1.4rem" }}>Будет плюсом</span>
+                      <span className="d-footer-cap" style={{ color: "var(--dim)", marginTop: "1.4rem" }}>{txt.niceToHave}</span>
                       <ul className="di-before">
                         {p.plus.map((n) => (
                           <li key={n}>{n}</li>

@@ -107,6 +107,25 @@ const RU = {
   calcCashFreed: "Высвободится денег",
   calcProfitOnTop: "Прибыль сверху",
   calcWhereProduction: "Где стоит производство",
+
+  // Крошки и подписи схем, добавленные при переводе
+  crumbCases: "Кейсы",
+  crumbBlog: "Блог",
+  crumbContacts: "Контакты",
+  crumbCareers: "Вакансии",
+  crumbAcademy: "Академия",
+  baDistribution: "Дистрибуция",
+  baProduction: "Производство",
+  baRetail: "Розница",
+  baMargin: "Маржинальность",
+  baFrozenShare: "Доля выручки, замороженная в неликвиде",
+  baDiscountShare: "Доля сделок со скидкой «из головы»",
+  baMarginLoss: "Средняя потеря маржи на такой сделке",
+  baLostOrders: "Доля упущенных заказов",
+  baPeopleManual: "Людей на ручном сведении отчётов",
+  baTimeManual: "Их времени уходит на сведение",
+  baSalary: "Зарплата такого сотрудника",
+  baMoneyCost: "Стоимость денег для компании",
 };
 
 const UZ: typeof RU = {
@@ -198,6 +217,24 @@ const UZ: typeof RU = {
   calcCashFreed: "Boʻshaydigan pul",
   calcProfitOnTop: "Ustama foyda",
   calcWhereProduction: "Ishlab chiqarish qayerda turadi",
+
+  crumbCases: "Loyihalar",
+  crumbBlog: "Blog",
+  crumbContacts: "Aloqa",
+  crumbCareers: "Vakansiyalar",
+  crumbAcademy: "Akademiya",
+  baDistribution: "Distribyutsiya",
+  baProduction: "Ishlab chiqarish",
+  baRetail: "Chakana savdo",
+  baMargin: "Marjinallik",
+  baFrozenShare: "Harakatsiz tovarda muzlagan tushum ulushi",
+  baDiscountShare: "«Boshdan chiqarilgan» chegirmali bitimlar ulushi",
+  baMarginLoss: "Bunday bitimda oʻrtacha marja yoʻqotishi",
+  baLostOrders: "Qoʻldan ketgan buyurtmalar ulushi",
+  baPeopleManual: "Hisobotlarni qoʻlda yigʻadigan odamlar",
+  baTimeManual: "Yigʻishga ketadigan vaqtlari",
+  baSalary: "Bunday xodimning ish haqi",
+  baMoneyCost: "Kompaniya uchun pulning qiymati",
 };
 
 export type UiStrings = typeof RU;

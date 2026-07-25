@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { products, solution } from "@/content/blocks";
 import { Reveal } from "../reveal";
 import { ProcessChain } from "../schemes/chain";
 import { ScrollText } from "../schemes/scroll-text";
@@ -8,6 +7,9 @@ import { SapMark } from "../marks";
 import { PixelArrow } from "../marks";
 import { Section, SectionHead } from "../ui";
 import { em } from "../emphasis";
+import { content } from "@/content";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
+import { ui } from "@/content/ui";
 
 /**
  * Решение. Текст плюс сравнение «как было / как стало».
@@ -16,7 +18,10 @@ import { em } from "../emphasis";
  * старый способ приглушён, новый набран основным цветом. Читатель сравнивает
  * построчно, а не разбирает сетку из ячеек.
  */
-export function Solution() {
+export function Solution({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const { solution } = site.blocks;
   return (
     <Section id="solution">
       <div className="d-solution-top">
@@ -48,7 +53,7 @@ export function Solution() {
         {/* Логотипы вместо подписей: сравнение читается с одного взгляда,
             ещё до чтения строк. */}
         <div className="d-compare-legend">
-          <span>Задача</span>
+          <span>{txt.task}</span>
           <span className="d-cmp-brand">
             <img src="/design/excel.svg" alt="Microsoft Excel" width={20} height={20} />
             <img src="/design/onec.svg" alt="1С" width={34} height={20} />
@@ -107,7 +112,10 @@ const PRODUCT_HREFS = ["/sap-business-one", "/sap-s4hana"];
  * Строка во всю ширину даёт место назвать, кому продукт подходит, и оставляет
  * иерархию: первый читается первым.
  */
-export function Products() {
+export function Products({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const { products } = site.blocks;
   return (
     <Section id="products" tone="tint">
       <Reveal>

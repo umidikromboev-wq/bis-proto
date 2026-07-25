@@ -7,6 +7,8 @@
 
 import { money, days, percent, type Currency } from "./format";
 import type { CalcInput, CalcResult } from "./model";
+import { ui } from "@/content/ui";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 export function ResultPanel({
   result,
@@ -14,13 +16,16 @@ export function ResultPanel({
   currency,
   onRequest,
   onShare,
+  locale = DEFAULT_LOCALE,
 }: {
   result: CalcResult;
   input: CalcInput;
   currency: Currency;
   onRequest: () => void;
   onShare: () => void;
+  locale?: Locale;
 }) {
+  const txt = ui(locale);
   const stockPart = Math.max(result.excessStock, 0);
   const receivablePart = Math.max(result.excessReceivables, 0);
   const max = Math.max(stockPart, receivablePart, 1);
@@ -31,7 +36,7 @@ export function ResultPanel({
 
   return (
     <div className="sim-result">
-      <p className="wc-eyebrow">Заморожено в обороте</p>
+      <p className="wc-eyebrow">{txt.calcFrozen}</p>
       <div className="sim-big">{money(result.frozen, currency)}</div>
       <p className="dim wc-under">
         Это ваши деньги, которые уже вложены и не работают. Чтобы их вернуть, инвестор не нужен.
@@ -64,7 +69,7 @@ export function ResultPanel({
       </div>
 
       <div className="green wc-green">
-        <p className="wc-eyebrow">Что даёт возврат этих денег</p>
+        <p className="wc-eyebrow">{txt.calcReturnGives}</p>
         <GreenRow label="Дополнительная прибыль в год" value={`${money(result.extraProfit, currency)}/год`} />
         <GreenRow label="Отдача капитала станет" value={percent(result.newRoi)} />
         <GreenRow label="Бесплатные деньги поставщика" value={`${money(result.cheapMoney, currency)}/год`} />
@@ -79,7 +84,7 @@ export function ResultPanel({
       <button className="btn wc-cta" onClick={onShare}>
         Отправить расчёт себе в Telegram
       </button>
-      <p className="dim wc-foot">Без звонка · ссылка сохраняет все цифры · можно переслать финдиректору</p>
+      <p className="dim wc-foot">{txt.calcNoCall}</p>
     </div>
   );
 }
@@ -106,15 +111,18 @@ export function Insights({
   result,
   input,
   currency,
+  locale = DEFAULT_LOCALE,
 }: {
   result: CalcResult;
   input: CalcInput;
   currency: Currency;
+  locale?: Locale;
 }) {
+  const txt = ui(locale);
   return (
     <div className="wc-insights">
       <section className="panel wc-panel">
-        <h2 className="wc-h3">Диагностика</h2>
+        <h2 className="wc-h3">{txt.calcDiagnosis}</h2>
         <div className="wc-signals">
           {result.signals.map((s) => (
             <div key={s.label} className={`wc-signal is-${s.verdict}`}>
@@ -127,7 +135,7 @@ export function Insights({
       </section>
 
       <section className="panel wc-panel">
-        <h2 className="wc-h3">Если цикл сократится</h2>
+        <h2 className="wc-h3">{txt.calcIfShorter}</h2>
         <p className="wc-note">
           Каждый день денежного цикла стоит вам одной дневной выручки — {money(result.dailyRevenue, currency)}.
           Единая система сокращает цикл за счёт точных остатков, нормативов запаса и контроля сроков оплаты.
@@ -135,9 +143,9 @@ export function Insights({
         <table className="wc-table">
           <thead>
             <tr>
-              <th>Цикл короче на</th>
-              <th>Высвободится денег</th>
-              <th>Прибыль сверху</th>
+              <th>{txt.calcCycleShorter}</th>
+              <th>{txt.calcCashFreed}</th>
+              <th>{txt.calcProfitOnTop}</th>
             </tr>
           </thead>
           <tbody>
@@ -154,7 +162,7 @@ export function Insights({
 
       {input.industry === "production" ? (
         <section className="panel wc-panel">
-          <h2 className="wc-h3">Где стоит производство</h2>
+          <h2 className="wc-h3">{txt.calcWhereProduction}</h2>
           <p className="wc-note">
             Запасы разложены на три стадии — каждая делится на свою базу: сырьё на потребление, незавершёнка на
             выпуск, готовая продукция на себестоимость продаж.

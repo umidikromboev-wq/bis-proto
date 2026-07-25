@@ -1,13 +1,12 @@
 import Image from "next/image";
-import { industries } from "@/content/blocks";
-import { clientLogos } from "@/content/client-logos";
-import { effect, logoStrip, roles, unifiedBase } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { GlassIcon, type IconName } from "../icon";
 
 import { FlowScheme } from "../schemes/flow";
 import { Section, SectionHead } from "../ui";
 import { em } from "../emphasis";
+import { content } from "@/content";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 /**
  * Лента клиентов сразу под первым экраном.
@@ -17,7 +16,10 @@ import { em } from "../emphasis";
  * пёстром виде ряд читался бы как свалка, а не как список клиентов.
  * Лента едет сама — двадцать восемь знаков в статичный ряд не встают.
  */
-export function LogoStrip() {
+export function LogoStrip({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { logoStrip } = site.playbook;
+  const { clientLogos } = site;
   return (
     <section className="d-strip" aria-label={logoStrip.title}>
       <div className="d-wrap">
@@ -52,7 +54,9 @@ export function LogoStrip() {
  * же цепочка в двух состояниях. Фраза «единая система» ничем не отличается от
  * такой же фразы у конкурента — а разорванная и сплошная цепочка отличаются.
  */
-export function UnifiedBase() {
+export function UnifiedBase({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { unifiedBase } = site.playbook;
   return (
     <Section id="unified">
       <Reveal>
@@ -80,7 +84,9 @@ export function UnifiedBase() {
  * длина кодирует величину эффекта, значение стоит рядом, источник — под ним.
  * Никаких осей и легенд: они здесь ничего не добавили бы.
  */
-export function Effect() {
+export function Effect({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { effect } = site.playbook;
   return (
     <Section id="effect" tone="tint">
       {/* Две колонки: шапка держится слева, пока справа идут показатели.
@@ -137,7 +143,9 @@ const INDUSTRY_PHOTOS = ["production", "distribution", "retail"];
  * Снимки документальные и намеренно неглянцевые: сайт продаёт учёт на
  * реальном производстве, и вылизанный сток здесь работал бы против доверия.
  */
-export function Industries() {
+export function Industries({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { industries } = site.blocks;
   return (
     <Section id="industries">
       <Reveal>
@@ -182,7 +190,9 @@ const ROLE_ICONS: IconName[] = ["analytics", "finance", "production", "warehouse
  * приглушена, выгода набрана основным цветом — читается как переход из «до»
  * в «после» внутри одной строки.
  */
-export function Roles() {
+export function Roles({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { roles } = site.playbook;
   return (
     <Section id="roles" tone="tint">
       <Reveal>

@@ -1,11 +1,12 @@
 import Image from "next/image";
-import { faq, finalCta, pricing } from "@/content/blocks";
-import { leadMagnet } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { ScrollText } from "../schemes/scroll-text";
 import { PixelArrow } from "../marks";
 import { Btn, Kicker, Section, SectionHead, TextLink } from "../ui";
 import { DocButton, LeadButton, LeadTextLink, type LeadSource } from "../lead-popup";
+import { content } from "@/content";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
+import { ui } from "@/content/ui";
 
 /** Порядок документов в контенте задаёт, какой попап открывает каждая плитка. */
 const DOC_SOURCES: LeadSource[] = ["checklist", "guide", "estimate"];
@@ -17,7 +18,10 @@ const DOC_SOURCES: LeadSource[] = ["checklist", "guide", "estimate"];
  * консультанта, который его делает: «оставьте заявку» и «вам ответит Жасур» —
  * разные по весу обещания.
  */
-export function LeadMagnet() {
+export function LeadMagnet({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const { leadMagnet } = site.playbook;
   return (
     <Section id="lead" tone="ink">
       <div className="d-lead-grid">
@@ -42,7 +46,7 @@ export function LeadMagnet() {
           <Image
             className="d-lead-photo"
             src="/design/photos/audit.webp"
-            alt="Разбор процессов на встрече с консультантом BIS"
+            alt={txt.meetingAlt}
             width={2000}
             height={1116}
             sizes="(max-width: 1000px) 100vw, 34vw"
@@ -103,7 +107,10 @@ export function LeadMagnet() {
  * Рекомендуемый пакет выделен не заливкой, а брендовой вертикалью и меткой —
  * заливка сделала бы соседние пакеты похожими на отбракованные.
  */
-export function Pricing() {
+export function Pricing({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const { pricing } = site.blocks;
   return (
     <Section id="pricing">
       <Reveal>
@@ -113,14 +120,14 @@ export function Pricing() {
       <div className="d-tariffs">
         {pricing.tariffs.map((t, i) => (
           <Reveal key={t.id} delay={i * 90} className={`d-tariff${t.popular ? " is-popular" : ""}`}>
-            {t.popular ? <span className="d-tariff-flag">Чаще всего выбирают</span> : null}
+            {t.popular ? <span className="d-tariff-flag">{txt.mostChosen}</span> : null}
             <h3 className="d-h3">{t.name}</h3>
             <p className="d-tariff-for">{t.for}</p>
             <div className="d-tariff-price">
               <b>{t.price}</b>
               <span>{t.priceNote}</span>
             </div>
-            <p className="d-tariff-term"><span>Срок</span>{t.term}</p>
+            <p className="d-tariff-term"><span>{txt.term}</span>{txt.term}</p>
             <ul className="d-tariff-includes">
               {t.includes.map((inc) => (
                 <li key={inc}>{inc}</li>
@@ -146,7 +153,10 @@ export function Pricing() {
  * Вопросы. Нативный details — раскрытие без единой строки скрипта,
  * работает с клавиатуры и доступно скринридерам по умолчанию.
  */
-export function Faq() {
+export function Faq({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const { faq } = site.blocks;
   return (
     <Section id="faq" tone="tint">
       {/* Заголовок залипает, пока справа прокручиваются вопросы: читатель не
@@ -185,7 +195,10 @@ export function Faq() {
  * решением, — это то, что он получит. Обещание «покажем систему» становится
  * показом системы.
  */
-export function FinalCta() {
+export function FinalCta({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const { finalCta } = site.blocks;
   return (
     <Section id="audit" className="d-final">
       <div className="d-final-grid">
@@ -209,7 +222,7 @@ export function FinalCta() {
         <Reveal delay={120} className="d-final-art">
           <Image
             src="/design/photos/dashboard.webp"
-            alt="Дашборд SAP Business One: выручка, денежный поток, складские остатки и статусы заказов"
+            alt={txt.dashboardAlt}
             width={2200}
             height={1643}
             sizes="(max-width: 1000px) 100vw, 52vw"

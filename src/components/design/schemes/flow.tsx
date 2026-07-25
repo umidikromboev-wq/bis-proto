@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { unifiedBase } from "@/content/playbook";
 import { GlassIcon, type IconName } from "../icon";
 import { em } from "../emphasis";
+import { content } from "@/content";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
+import { ui } from "@/content/ui";
 
 /**
  * Схема сквозного потока — приём «Модель потока» из каталога смысловых приёмов
@@ -26,13 +28,16 @@ const NODES: { icon: IconName; short: string }[] = [
   { icon: "analytics", short: "Аналитика" },
 ];
 
-export function FlowScheme() {
+export function FlowScheme({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const { unifiedBase } = site.playbook;
   const [live, setLive] = useState(true);
   const links = unifiedBase.links;
 
   return (
     <div className="sc-flow">
-      <div className="sc-switch" role="group" aria-label="Состояние процесса">
+      <div className="sc-switch" role="group" aria-label={txt.processState}>
         <button
           type="button"
           className={!live ? "is-on" : ""}

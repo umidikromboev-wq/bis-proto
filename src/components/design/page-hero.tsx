@@ -4,6 +4,8 @@ import { SapMark } from "./marks";
 import { SplitHeading } from "./split-text";
 import "./page-hero.css";
 import { em } from "./emphasis";
+import { ui } from "@/content/ui";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 type Crumb = { label: string; href?: string };
 
@@ -22,6 +24,7 @@ export function PageHero({
   lead,
   facts,
   children,
+  locale = DEFAULT_LOCALE,
 }: {
   crumbs?: Crumb[];
   eyebrow?: string;
@@ -32,12 +35,14 @@ export function PageHero({
   lead?: string;
   facts?: { value: string; label: string }[];
   children?: ReactNode;
+  locale?: Locale;
 }) {
+  const txt = ui(locale);
   return (
     <header className="dp">
       <div className="d-wrap">
         {crumbs?.length ? (
-          <nav className="dp-crumbs" aria-label="Хлебные крошки">
+          <nav className="dp-crumbs" aria-label={txt.breadcrumbs}>
             {crumbs.map((c, i) => (
               <span key={c.label}>
                 {c.href ? <Link href={c.href}>{c.label}</Link> : <b>{c.label}</b>}

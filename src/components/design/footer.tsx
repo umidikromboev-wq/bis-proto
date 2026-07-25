@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { contacts, footer, nav, navSecondary } from "@/content/blocks";
+import { content } from "@/content";
+import { DEFAULT_LOCALE, localePath, type Locale } from "@/content/locale";
+import { ui } from "@/content/ui";
 import { PixelArrow, SapMark } from "./marks";
 import { FooterCallButton } from "./footer-cta";
 import "./footer.css";
-
-/** Дизайн-версия переведена на основной домен: маршруты живут в корне. */
-const base = (href: string) => href;
 
 /**
  * Подвал.
@@ -16,19 +15,23 @@ const base = (href: string) => href;
  * строка. Логика та же, что у первого экрана: человек, дочитавший до конца,
  * должен упереться в действие, а не в мелкий список ссылок.
  */
-export function SiteFooter() {
+export function SiteFooter({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const { contacts, footer, nav, navSecondary } = content(locale).blocks;
+  const txt = ui(locale);
+  const href = (path: string) => localePath(locale, path);
+
   return (
     <footer className="df">
       <div className="d-wrap">
         {/* Призыв во всю ширину: подвал начинается с действия, а не со ссылок */}
         <div className="df-call">
           <div>
-            <span className="df-cap">Следующий шаг</span>
+            <span className="df-cap">{txt.nextStep}</span>
             <p className="df-call-h">
-              Разберём ваши процессы<br />и покажем систему на них
+              {txt.footerCallH[0]}<br />{txt.footerCallH[1]}
             </p>
           </div>
-          <FooterCallButton />
+          <FooterCallButton label={txt.bookAudit} />
         </div>
 
         <div className="df-grid">
@@ -37,26 +40,26 @@ export function SiteFooter() {
             <p>{contacts.legal}</p>
             <span className="df-partner">
               <SapMark />
-              Внедряем SAP в Узбекистане с 2019 года
+              {txt.partnerLine}
             </span>
           </div>
 
-          <nav className="df-col" aria-label="Разделы сайта">
+          <nav className="df-col" aria-label={txt.navSections}>
             <span className="df-cap">{footer.navTitle}</span>
             <ul>
               {nav.map((n) => (
-                <li key={n.href}><Link href={base(n.href)}>{n.label}</Link></li>
+                <li key={n.href}><Link href={href(n.href)}>{n.label}</Link></li>
               ))}
             </ul>
           </nav>
 
-          <nav className="df-col" aria-label="Дополнительные разделы">
-            <span className="df-cap">Ещё</span>
+          <nav className="df-col" aria-label={txt.navSecondary}>
+            <span className="df-cap">{txt.more}</span>
             <ul>
               {navSecondary.map((n) => (
-                <li key={n.href}><Link href={base(n.href)}>{n.label}</Link></li>
+                <li key={n.href}><Link href={href(n.href)}>{n.label}</Link></li>
               ))}
-              <li><Link href="/simulator">Калькулятор оборотного капитала</Link></li>
+              <li><Link href={href("/simulator")}>{txt.workingCapital}</Link></li>
               {footer.legal.map((n) => (
                 <li key={n.label}><a href={n.href}>{n.label}</a></li>
               ))}
@@ -64,7 +67,7 @@ export function SiteFooter() {
           </nav>
 
           <div className="df-col df-contacts">
-            <span className="df-cap">Контакты</span>
+            <span className="df-cap">{txt.contacts}</span>
             {/* Телефон набран крупно: в B2B это самый частый способ первого касания */}
             <a className="df-phone" href={contacts.phoneHref}>{contacts.phone}</a>
             <a className="df-mail" href={`mailto:${contacts.email}`}>{contacts.email}</a>
@@ -74,7 +77,7 @@ export function SiteFooter() {
 
         <div className="df-bottom">
           <span>© {new Date().getFullYear()} BIS · Business Intelligence Solutions</span>
-          <span>Ташкент · внедрение и поддержка SAP</span>
+          <span>{txt.tagline}</span>
         </div>
       </div>
     </footer>

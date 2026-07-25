@@ -3,6 +3,8 @@ import { SapMark } from "./marks";
 import { Btn, TextLink } from "./ui";
 import { SplitHeading } from "./split-text";
 import "./hero.css";
+import { ui } from "@/content/ui";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 /** Доказательства компании. Живут на первом экране — их не нужно искать скроллом. */
 const STATS = [
@@ -16,7 +18,8 @@ const STATS = [
  * Раскладка — колонка на всю высоту вьюпорта: шапка, герой, полоса цифр.
  * Полоса цифр входит в те же 100dvh, поэтому доказательства видно без скролла.
  */
-export function DesignHero() {
+export function DesignHero({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
   return (
     <header className="dh">
       <div className="dh-wrap">
@@ -37,13 +40,13 @@ export function DesignHero() {
             {/* Полужирным выделены только механизм и результат — то, что должно
                 считываться при беглом взгляде. Больше выделений убивают само выделение. */}
             <p className="dh-lead dh-fade dh-fade-2">
-              Когда заказов и людей всё больше, таблицы перестают справляться. SAP собирает финансы, склад, закупки и продажи <strong>в одну систему</strong> — и вы видите <strong>реальную прибыль в любой момент</strong>, а не в конце месяца.
+              Когда заказов и людей всё больше, таблицы перестают справляться. SAP собирает финансы, склад, закупки и продажи <strong>{txt.heroInto}</strong> — и вы видите <strong>{txt.heroProfit}</strong>, а не в конце месяца.
             </p>
             <div className="dh-cta-row dh-fade dh-fade-3">
-              <Btn href="#lead">Получить расчёт за 1 день</Btn>
+              <Btn href="#lead">{txt.getEstimate}</Btn>
               {/* Второе действие намеренно без рамки: две одинаково весомые
                   кнопки конкурируют и размывают главный шаг. */}
-              <TextLink href="/simulator">Посчитать замороженные деньги</TextLink>
+              <TextLink href="/simulator">{txt.countFrozen}</TextLink>
             </div>
           </div>
 

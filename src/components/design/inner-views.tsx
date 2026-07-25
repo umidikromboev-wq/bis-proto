@@ -1,8 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { cases, casesMeta } from "@/content/blocks";
-import { blogMeta, posts } from "@/content/blog";
-import { contactsPage } from "@/content/contacts-page";
 import type { BlogBlock } from "@/content/types";
 import { PageHero } from "./page-hero";
 import { Reveal } from "./reveal";
@@ -11,20 +8,28 @@ import "./sections/sections.css";
 import "./inner.css";
 import { em } from "./emphasis";
 import { LeadButton } from "./lead-popup";
+import { content } from "@/content";
+import { ui } from "@/content/ui";
+import { DEFAULT_LOCALE, localePath, type Locale } from "@/content/locale";
 
-const HOME = { label: "Главная", href: "/" };
+
 
 /* ─────────────── кейсы ─────────────── */
 
-export function CasesList() {
+export function CasesList({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const txt = ui(locale);
+  const home = { label: txt.home, href: lp("/") };
+  const { cases, casesMeta } = site.blocks;
   return (
     <>
-      <PageHero crumbs={[HOME, { label: "Кейсы" }]} h1={casesMeta.h2} lead={casesMeta.lead} />
+      <PageHero crumbs={[home, { label: txt.crumbCases }]} h1={casesMeta.h2} lead={casesMeta.lead} />
       <Section>
         <div className="di-cases">
           {cases.map((c, i) => (
             <Reveal key={c.slug} delay={(i % 3) * 70}>
-              <Link href={`/cases/${c.slug}`} className="di-case-card">
+              <Link href={lp(`/cases/${c.slug}`)} className="di-case-card">
                 <div>
                   <div className="di-case-client">
                     <span className="d-case-idx">{String(i + 1).padStart(2, "0")}</span>
@@ -50,7 +55,12 @@ export function CasesList() {
   );
 }
 
-export function CaseView({ slug }: { slug: string }) {
+export function CaseView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; locale?: Locale }) {
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const txt = ui(locale);
+  const home = { label: txt.home, href: lp("/") };
+  const { cases } = site.blocks;
   const c = cases.find((x) => x.slug === slug);
   if (!c) notFound();
   const others = cases.filter((x) => x.slug !== slug);
@@ -58,7 +68,7 @@ export function CaseView({ slug }: { slug: string }) {
   return (
     <>
       <PageHero
-        crumbs={[HOME, { label: "Кейсы", href: "/cases" }, { label: c.client }]}
+        crumbs={[home, { label: txt.crumbCases, href: "/cases" }, { label: c.client }]}
         h1={c.client}
         lead={c.intro}
         facts={c.after.slice(0, 3).map((a) => ({ value: a.value, label: a.label }))}
@@ -106,11 +116,11 @@ export function CaseView({ slug }: { slug: string }) {
 
       <Section tone="ink">
         <Reveal className="d-final-inner">
-          <h2 className="d-h2">Хотите такой же разбор по своей компании?</h2>
-          <p className="d-lead">Бесплатный аудит: покажем, где вы теряете деньги, и что из этого закрывает система.</p>
+          <h2 className="d-h2">{txt.sameReviewH2}</h2>
+          <p className="d-lead">{txt.sameReviewLead}</p>
           <div className="dh-cta-row">
-            <LeadButton source="audit" variant="light">Записаться на аудит</LeadButton>
-            <TextLink href="/cases">Другие кейсы</TextLink>
+            <LeadButton source="audit" variant="light">{txt.bookAudit}</LeadButton>
+            <TextLink href={lp("/cases")}>{txt.otherCases}</TextLink>
           </div>
         </Reveal>
       </Section>
@@ -122,7 +132,7 @@ export function CaseView({ slug }: { slug: string }) {
         <div className="di-cases">
           {others.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80}>
-              <Link href={`/cases/${o.slug}`} className="di-case-card">
+              <Link href={lp(`/cases/${o.slug}`)} className="di-case-card">
                 <div>
                   <div className="di-case-client">
                     <h3 className="d-h3">{o.client}</h3>
@@ -148,15 +158,20 @@ export function CaseView({ slug }: { slug: string }) {
 
 /* ─────────────── блог ─────────────── */
 
-export function BlogList() {
+export function BlogList({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const txt = ui(locale);
+  const home = { label: txt.home, href: lp("/") };
+  const { blogMeta, posts } = site.blog;
   return (
     <>
-      <PageHero crumbs={[HOME, { label: "Блог" }]} eyebrow={undefined} h1={blogMeta.h2} lead={blogMeta.lead} />
+      <PageHero crumbs={[home, { label: txt.crumbBlog }]} eyebrow={undefined} h1={blogMeta.h2} lead={blogMeta.lead} />
       <Section>
         <div className="di-posts">
           {posts.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 3) * 70}>
-              <Link href={`/blog/${p.slug}`} className="di-post-card">
+              <Link href={lp(`/blog/${p.slug}`)} className="di-post-card">
                 <div className="di-post-meta">
                   <span className="di-post-cat">{p.category}</span>
                   <span>{p.date}</span>
@@ -197,7 +212,12 @@ function Block({ b }: { b: BlogBlock }) {
   return null;
 }
 
-export function PostView({ slug }: { slug: string }) {
+export function PostView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; locale?: Locale }) {
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const txt = ui(locale);
+  const home = { label: txt.home, href: lp("/") };
+  const { posts } = site.blog;
   const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();
   const others = posts.filter((p) => p.slug !== slug);
@@ -205,7 +225,7 @@ export function PostView({ slug }: { slug: string }) {
   return (
     <>
       <PageHero
-        crumbs={[HOME, { label: "Блог", href: "/blog" }, { label: post.category }]}
+        crumbs={[home, { label: txt.crumbBlog, href: "/blog" }, { label: post.category }]}
         h1={post.title}
         lead={post.excerpt}
       >
@@ -231,7 +251,7 @@ export function PostView({ slug }: { slug: string }) {
         <div className="di-posts">
           {others.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80}>
-              <Link href={`/blog/${o.slug}`} className="di-post-card">
+              <Link href={lp(`/blog/${o.slug}`)} className="di-post-card">
                 <div className="di-post-meta">
                   <span className="di-post-cat">{o.category}</span>
                   <span>{o.readingTime}</span>
@@ -251,11 +271,16 @@ export function PostView({ slug }: { slug: string }) {
 
 /* ─────────────── контакты ─────────────── */
 
-export function ContactsView() {
+export function ContactsView({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const home = { label: txt.home, href: lp("/") };
+  const { contactsPage } = site;
   const { hero, channels, office, formats, requisites, vacancies } = contactsPage;
   return (
     <>
-      <PageHero crumbs={[HOME, { label: "Контакты" }]} eyebrow={hero.kicker} h1={hero.h1} lead={hero.lead} />
+      <PageHero crumbs={[home, { label: txt.crumbContacts }]} eyebrow={hero.kicker} h1={hero.h1} lead={hero.lead} />
 
       <Section>
         <div className="di-channels">
@@ -291,11 +316,11 @@ export function ContactsView() {
             <SectionHead h2={office.h2} />
             <dl style={{ marginTop: "2rem" }}>
               <div>
-                <dt>Адрес</dt>
+                <dt>{txt.address}</dt>
                 <dd>{office.address}</dd>
               </div>
               <div>
-                <dt>Часы работы</dt>
+                <dt>{txt.hours}</dt>
                 <dd>{office.hours}</dd>
               </div>
             </dl>
@@ -320,7 +345,7 @@ export function ContactsView() {
           <h2 className="d-h2">{vacancies.h2}</h2>
           <p className="d-lead">{vacancies.text}</p>
           <div className="dh-cta-row">
-            <Btn href="mailto:info@bis-pro.com" variant="light">Написать на почту</Btn>
+            <Btn href="mailto:info@bis-pro.com" variant="light">{txt.writeEmail}</Btn>
           </div>
         </Reveal>
       </Section>

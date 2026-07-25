@@ -2,26 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { PixelArrow, SapMark } from "./marks";
+import { DEFAULT_LOCALE, LOCALES, LOCALE_LABEL, localePath, type Locale } from "@/content/locale";
+import { menuNav } from "@/content/nav";
+import { ui } from "@/content/ui";
 import "./menu.css";
-
-/** Дизайн-версия переведена на основной домен: маршруты живут в корне. */
-const base = (href: string) => href;
-
-const PRIMARY = [
-  { label: "SAP Business One", href: "/sap-business-one", note: "Для растущего бизнеса" },
-  { label: "SAP S/4HANA", href: "/sap-s4hana", note: "Для крупного предприятия" },
-  { label: "Кейсы", href: "/cases", note: "Внедрения в Узбекистане" },
-  { label: "Блог", href: "/blog", note: "Разборы и сравнения" },
-  { label: "Контакты", href: "/contacts", note: "Поговорить с командой" },
-];
-
-const SECONDARY = [
-  { label: "Калькулятор оборотного капитала", href: "/simulator" },
-  { label: "SAP Академия", href: "/academy" },
-  { label: "Вакансии", href: "/careers" },
-];
 
 /**
  * Шапка и полноэкранное меню.
@@ -32,7 +18,10 @@ const SECONDARY = [
  * компонентам значило бы поднимать состояние вверх и делать клиентским весь
  * первый экран.
  */
-export function SiteHeader() {
+export function SiteHeader({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const { primary: PRIMARY, secondary: SECONDARY } = menuNav(locale);
+  const base = (href: string) => localePath(locale, href);
   const [open, setOpen] = useState(false);
   const [stuck, setStuck] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -85,8 +74,8 @@ export function SiteHeader() {
 
   return (
     <>
-      <nav className={`dh-nav${stuck ? " is-stuck" : ""}${open ? " is-menu-open" : ""}`} aria-label="Основная навигация">
-        <Link href="/" className="dh-logo" aria-label="BIS — Business Intelligence Solutions">
+      <nav className={`dh-nav${stuck ? " is-stuck" : ""}${open ? " is-menu-open" : ""}`} aria-label={txt.navMain}>
+        <Link href={base("/")} className="dh-logo" aria-label="BIS — Business Intelligence Solutions">
           <Image src="/design/bis-logo.png" alt="BIS — Business Intelligence Solutions" width={1012} height={782} priority />
           <Image src="/design/bis-logo-white.png" alt="" aria-hidden width={1012} height={782} />
         </Link>
@@ -102,8 +91,8 @@ export function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
           >
             <span className="dh-burger-label">
-              <span aria-hidden={open}>Меню</span>
-              <span aria-hidden={!open}>Закрыть</span>
+              <span aria-hidden={open}>{txt.menu}</span>
+              <span aria-hidden={!open}>{txt.close}</span>
             </span>
             <span className="dh-burger-icon" aria-hidden>
               <i />
@@ -122,13 +111,22 @@ export function SiteHeader() {
       >
         <div className="dh-menu-inner">
           {/* Языки стоят выше навигации: выбор языка предшествует выбору
-              раздела. Узбекская версия ещё не собрана, поэтому это не ссылка
-              — кнопка-заглушка честнее ссылки в никуда. */}
+              раздела. Узбекская подпись латиницей — официальная письменность.
+              Переключение ведёт на главную нужного языка, а не на текущий
+              адрес: перевод адресов у разделов совпадает, но не у статей. */}
           <div className="dh-menu-lang" style={{ ["--i" as string]: 0 }}>
-            <span className="dh-lang is-active" aria-current="true">Рус</span>
-            <span className="dh-lang-sep" aria-hidden />
-            {/* Латиница, а не «Ўзб»: официальная письменность узбекского. */}
-            <span className="dh-lang is-soon">O‘zb<i>скоро</i></span>
+            {LOCALES.map((l, i) => (
+              <Fragment key={l}>
+                {i > 0 ? <span className="dh-lang-sep" aria-hidden /> : null}
+                {l === locale ? (
+                  <span className="dh-lang is-active" aria-current="true">{LOCALE_LABEL[l]}</span>
+                ) : (
+                  <Link href={localePath(l, "/")} className="dh-lang" onClick={close} hrefLang={l}>
+                    {LOCALE_LABEL[l]}
+                  </Link>
+                )}
+              </Fragment>
+            ))}
           </div>
 
           <ul className="dh-menu-list">
@@ -145,7 +143,7 @@ export function SiteHeader() {
 
           <div className="dh-menu-side">
             <div className="dh-menu-block" style={{ ["--i" as string]: 5 }}>
-              <span className="dh-menu-cap">Ещё</span>
+              <span className="dh-menu-cap">{txt.more}</span>
               <ul className="dh-menu-sub">
                 {SECONDARY.map((s) => (
                   <li key={s.href}>
@@ -156,10 +154,10 @@ export function SiteHeader() {
             </div>
 
             <div className="dh-menu-block" style={{ ["--i" as string]: 6 }}>
-              <span className="dh-menu-cap">Связаться</span>
+              <span className="dh-menu-cap">{txt.contact}</span>
               <a className="dh-menu-phone" href="tel:+998908231012">+998 90 823 10 12</a>
               <a className="dh-menu-cta" href="#lead" onClick={close}>
-                Получить расчёт за 1 день
+                {txt.getEstimate}
                 <span className="dh-menu-cta-icon"><PixelArrow /></span>
               </a>
             </div>
@@ -168,9 +166,9 @@ export function SiteHeader() {
           <div className="dh-menu-foot" style={{ ["--i" as string]: 7 }}>
             <span className="dh-menu-foot-mark">
               <SapMark />
-              Внедряем SAP в Узбекистане с 2019 года
+              {txt.partnerLine}
             </span>
-            <span>Ташкент · внедрение и поддержка SAP</span>
+            <span>{txt.tagline}</span>
           </div>
         </div>
       </div>

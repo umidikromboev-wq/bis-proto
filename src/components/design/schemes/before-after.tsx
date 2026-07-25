@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { GlassIcon, type IconName } from "../icon";
+import { ui } from "@/content/ui";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 /**
  * Инструмент «до / после» на цифрах самого посетителя.
@@ -15,27 +17,31 @@ import { GlassIcon, type IconName } from "../icon";
  * изменений: цифры уже согласованы, менять их в дизайн-версии нельзя.
  */
 const PRESETS = {
-  prod: { label: "Производство", revenue: 4_000_000, margin: 25, frozen: 10, wacc: 22, blindShare: 40, blindLoss: 3, people: 2, salary: 700, time: 60, lost: 3 },
-  distrib: { label: "Дистрибуция", revenue: 6_000_000, margin: 18, frozen: 12, wacc: 22, blindShare: 35, blindLoss: 2.5, people: 2, salary: 600, time: 55, lost: 4 },
-  retail: { label: "Розница", revenue: 3_000_000, margin: 30, frozen: 8, wacc: 22, blindShare: 25, blindLoss: 2, people: 1, salary: 550, time: 50, lost: 3 },
+  prod: { labelKey: "baProduction", revenue: 4_000_000, margin: 25, frozen: 10, wacc: 22, blindShare: 40, blindLoss: 3, people: 2, salary: 700, time: 60, lost: 3 },
+  distrib: { labelKey: "baDistribution", revenue: 6_000_000, margin: 18, frozen: 12, wacc: 22, blindShare: 35, blindLoss: 2.5, people: 2, salary: 600, time: 55, lost: 4 },
+  retail: { labelKey: "baRetail", revenue: 3_000_000, margin: 30, frozen: 8, wacc: 22, blindShare: 25, blindLoss: 2, people: 1, salary: 550, time: 50, lost: 3 },
 } as const;
 
 type PresetKey = keyof typeof PRESETS;
 
+/** Единицы измерения у ползунков — короткие подписи, тоже переводятся. */
+const UNIT = { perYear: { ru: "% в год", uz: "% yiliga" }, people: { ru: "чел.", uz: "kishi" }, perMonth: { ru: "$ / мес", uz: "$ / oyda" } };
+
 /** Параметры расчёта — те же, что в проверенном симуляторе прототипа. */
 const SLIDERS = [
-  { k: "margin", label: "Маржинальность", unit: "%", min: 5, max: 60, step: 1 },
-  { k: "frozen", label: "Доля выручки, замороженная в неликвиде", unit: "%", min: 1, max: 30, step: 1 },
-  { k: "wacc", label: "Стоимость денег для компании", unit: "% в год", min: 8, max: 40, step: 1 },
-  { k: "blindShare", label: "Доля сделок со скидкой «из головы»", unit: "%", min: 0, max: 80, step: 5 },
-  { k: "blindLoss", label: "Средняя потеря маржи на такой сделке", unit: "%", min: 0.5, max: 10, step: 0.5 },
-  { k: "people", label: "Людей на ручном сведении отчётов", unit: "чел.", min: 0, max: 10, step: 1 },
-  { k: "salary", label: "Зарплата такого сотрудника", unit: "$ / мес", min: 200, max: 3000, step: 50 },
-  { k: "time", label: "Их времени уходит на сведение", unit: "%", min: 10, max: 100, step: 5 },
-  { k: "lost", label: "Доля упущенных заказов", unit: "%", min: 0, max: 15, step: 0.5 },
+  { k: "margin", labelKey: "baMargin", unit: "%", min: 5, max: 60, step: 1 },
+  { k: "frozen", labelKey: "baFrozenShare", unit: "%", min: 1, max: 30, step: 1 },
+  { k: "wacc", labelKey: "baMoneyCost", unit: UNIT.perYear, min: 8, max: 40, step: 1 },
+  { k: "blindShare", labelKey: "baDiscountShare", unit: "%", min: 0, max: 80, step: 5 },
+  { k: "blindLoss", labelKey: "baMarginLoss", unit: "%", min: 0.5, max: 10, step: 0.5 },
+  { k: "people", labelKey: "baPeopleManual", unit: UNIT.people, min: 0, max: 10, step: 1 },
+  { k: "salary", labelKey: "baSalary", unit: UNIT.perMonth, min: 200, max: 3000, step: 50 },
+  { k: "time", labelKey: "baTimeManual", unit: "%", min: 10, max: 100, step: 5 },
+  { k: "lost", labelKey: "baLostOrders", unit: "%", min: 0, max: 15, step: 0.5 },
 ] as const;
 
 type SliderKey = (typeof SLIDERS)[number]["k"];
+type LabelKey = keyof ReturnType<typeof ui>;
 type Params = Record<SliderKey, number>;
 
 function paramsOf(k: PresetKey): Params {
@@ -54,7 +60,10 @@ function money(usd: number) {
   return "$" + Math.round(usd).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
-export function BeforeAfter() {
+export function BeforeAfter({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
+  const labelOf = (key: string) => txt[key as LabelKey] as string;
+  const unitOf = (u: string | { ru: string; uz: string }) => (typeof u === "string" ? u : u[locale]);
   const [preset, setPreset] = useState<PresetKey | null>("prod");
   const [revenue, setRevenue] = useState<number>(PRESETS.prod.revenue);
   const [p, setP] = useState<Params>(paramsOf("prod"));
@@ -94,8 +103,8 @@ export function BeforeAfter() {
     <div className="ba">
       <div className="ba-controls">
         <div className="ba-field">
-          <span className="ba-cap">Тип бизнеса</span>
-          <div className="ba-presets" role="group" aria-label="Тип бизнеса">
+          <span className="ba-cap">{txt.businessType}</span>
+          <div className="ba-presets" role="group" aria-label={txt.businessType}>
             {(Object.keys(PRESETS) as PresetKey[]).map((k) => (
               <button
                 key={k}
@@ -104,7 +113,7 @@ export function BeforeAfter() {
                 aria-pressed={preset === k}
                 onClick={() => applyPreset(k)}
               >
-                {PRESETS[k].label}
+                {labelOf(PRESETS[k].labelKey)}
               </button>
             ))}
           </div>
@@ -135,8 +144,8 @@ export function BeforeAfter() {
           {SLIDERS.map((s) => (
             <label key={s.k}>
               <span className="ba-param-head">
-                <span>{s.label}</span>
-                <b>{p[s.k]}<i>{s.unit}</i></b>
+                <span>{labelOf(s.labelKey)}</span>
+                <b>{p[s.k]}<i>{unitOf(s.unit)}</i></b>
               </span>
               <input
                 type="range"
@@ -153,9 +162,9 @@ export function BeforeAfter() {
 
       {/* Переключатель состояний — тот же приём, что и в схеме потока:
           один и тот же бизнес показан дважды. */}
-      <div className="sc-switch ba-switch" role="group" aria-label="Состояние бизнеса">
-        <button type="button" className={!after ? "is-on" : ""} aria-pressed={!after} onClick={() => setAfter(false)}>Сейчас</button>
-        <button type="button" className={after ? "is-on" : ""} aria-pressed={after} onClick={() => setAfter(true)}>С системой</button>
+      <div className="sc-switch ba-switch" role="group" aria-label={txt.businessState}>
+        <button type="button" className={!after ? "is-on" : ""} aria-pressed={!after} onClick={() => setAfter(false)}>{txt.now}</button>
+        <button type="button" className={after ? "is-on" : ""} aria-pressed={after} onClick={() => setAfter(true)}>{txt.withSystem}</button>
         <span className="sc-switch-thumb" data-side={after ? "right" : "left"} aria-hidden />
       </div>
 

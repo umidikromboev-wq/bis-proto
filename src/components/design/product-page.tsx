@@ -1,5 +1,4 @@
 import type { ProductPage as ProductPageData } from "@/content/types";
-import { cases } from "@/content/blocks";
 import { PageHero } from "./page-hero";
 import { Reveal } from "./reveal";
 import { Btn, Section, SectionHead, TextLink } from "./ui";
@@ -7,13 +6,20 @@ import "./sections/sections.css";
 import "./product-page.css";
 import { em } from "./emphasis";
 import { LeadButton } from "./lead-popup";
+import { content } from "@/content";
+import { DEFAULT_LOCALE, localePath, type Locale } from "@/content/locale";
+import { ui } from "@/content/ui";
 
 /**
  * Один шаблон на обе страницы продукта: у Business One и S/4HANA одинаковая
  * структура данных, и расхождение вёрстки между ними означало бы, что два
  * одинаковых по смыслу раздела выглядят по-разному без причины.
  */
-export function ProductPageView({ data }: { data: ProductPageData }) {
+export function ProductPageView({ data, locale = DEFAULT_LOCALE }: { data: ProductPageData ; locale?: Locale }) {
+  const txt = ui(locale);
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const { cases } = site.blocks;
   const related = cases.filter((c) => data.caseSlugs.includes(c.slug));
 
   return (
@@ -27,7 +33,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
       >
         <div className="dh-cta-row">
           <Btn href="#lead">{data.hero.cta}</Btn>
-          <TextLink href="/#pricing">{data.hero.ctaSecondary}</TextLink>
+          <TextLink href={lp("/#pricing")}>{data.hero.ctaSecondary}</TextLink>
         </div>
       </PageHero>
 
@@ -48,7 +54,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
           </div>
 
           <Reveal delay={140} className="dp-fit-no">
-            <span className="d-footer-cap">Когда не нужно</span>
+            <span className="d-footer-cap">{txt.whenNotNeeded}</span>
             <ul>
               {data.fit.no.map((n) => (
                 <li key={n}>{n}</li>
@@ -119,7 +125,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         </ol>
 
         <Reveal className="dp-budget">
-          <span className="d-footer-cap dp-budget-cap">Из чего складывается бюджет</span>
+          <span className="d-footer-cap dp-budget-cap">{txt.budgetOf}</span>
           <div className="dp-budget-rows">
             {data.project.budget.map((b) => (
               <div key={b.label}>
@@ -158,7 +164,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
                       <span>{a.label}</span>
                     </div>
                   ))}
-                  <TextLink href={`/cases/${c.slug}`}>Смотреть кейс полностью</TextLink>
+                  <TextLink href={lp(`/cases/${c.slug}`)}>{txt.viewCase}</TextLink>
                 </div>
               </Reveal>
             ))}
@@ -187,13 +193,13 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
 
       <Section id="lead" className="d-final">
         <Reveal className="d-final-inner">
-          <h2 className="d-h2">Разберём ваш процесс на бесплатном аудите</h2>
+          <h2 className="d-h2">{txt.auditProcessH2}</h2>
           <p className="d-lead">
             За одну встречу покажем, где вы теряете деньги сейчас, и как это закрывает {data.title}. Письменное заключение остаётся у вас в любом случае.
           </p>
           <div className="dh-cta-row">
-            <LeadButton source="audit">Записаться на аудит</LeadButton>
-            <TextLink href="/simulator">Сначала посчитать оборотный капитал</TextLink>
+            <LeadButton source="audit">{txt.bookAudit}</LeadButton>
+            <TextLink href={lp("/simulator")}>{txt.countCapitalFirst}</TextLink>
           </div>
         </Reveal>
       </Section>

@@ -21,6 +21,8 @@ import { GroupTitle, MoneyField, SliderField } from "./fields";
 import { Insights, ResultPanel } from "./result-panel";
 import "../simulator.css";
 import "./working-capital.css";
+import { ui } from "@/content/ui";
+import { DEFAULT_LOCALE, type Locale } from "@/content/locale";
 
 const MONEY_KEYS = [
   "revenue", "cogs", "purchases", "ebit", "netProfit",
@@ -30,7 +32,8 @@ const MONEY_KEYS = [
 
 const PLAIN_KEYS = ["leadTime", "safetyStock", "termDays", "bankRate", "supplierTerm"] as const;
 
-export function WorkingCapitalCalculator() {
+export function WorkingCapitalCalculator({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const txt = ui(locale);
   const { openLead } = useLeadPopup();
   const [currency, setCurrency] = useState<Currency>("usd");
   const [preset, setPreset] = useState<PresetKey | null>(DEFAULT_PRESET);
@@ -95,15 +98,15 @@ export function WorkingCapitalCalculator() {
 
   return (
     <div className="sim sim-page wc">
-      <nav className="dp-crumbs sim-crumbs" aria-label="Хлебные крошки">
-        <span><Link href="/">Главная</Link><i aria-hidden>/</i></span>
-        <span><b>Калькулятор оборотного капитала</b></span>
+      <nav className="dp-crumbs sim-crumbs" aria-label={txt.breadcrumbs}>
+        <span><Link href="/">{txt.home}</Link><i aria-hidden>/</i></span>
+        <span><b>{txt.workingCapital}</b></span>
       </nav>
 
       <section className="section wc-section">
         <div className="wrap">
-          <p className="kicker">Калькулятор · оборотный капитал</p>
-          <h1 className="h1 wc-h1">Сколько ваших денег стоит в обороте без движения</h1>
+          <p className="kicker">{txt.calcKicker}</p>
+          <h1 className="h1 wc-h1">{txt.calcH1}</h1>
           <p className="lead wc-lead">
             Тот самый расчёт, который консультант BIS делает на первой встрече. Возьмите готовый пример или
             подставьте свои цифры: сколько дней живёт товар, когда возвращаются деньги от клиентов и сколько из
@@ -114,7 +117,7 @@ export function WorkingCapitalCalculator() {
             <div className="panel wc-inputs">
               <div className="wc-top">
                 <div className="wc-top-col">
-                  <span className="wc-eyebrow">Пример бизнеса</span>
+                  <span className="wc-eyebrow">{txt.calcPreset}</span>
                   <div className="wc-chips">
                     {PRESET_LABELS.map((p) => (
                       <button key={p.key} className={`pbtn ${preset === p.key ? "active" : ""}`} onClick={() => applyPreset(p.key)}>
@@ -124,28 +127,28 @@ export function WorkingCapitalCalculator() {
                   </div>
                 </div>
                 <div className="wc-top-col">
-                  <span className="wc-eyebrow">Валюта</span>
+                  <span className="wc-eyebrow">{txt.calcCurrency}</span>
                   <div className="ctoggle">
                     <button className={currency === "usd" ? "active" : ""} onClick={() => setCurrency("usd")}>$</button>
-                    <button className={currency === "uzs" ? "active" : ""} onClick={() => setCurrency("uzs")}>сум</button>
+                    <button className={currency === "uzs" ? "active" : ""} onClick={() => setCurrency("uzs")}>{txt.calcSum}</button>
                   </div>
                 </div>
               </div>
 
               <div className="wc-top">
                 <div className="wc-top-col">
-                  <span className="wc-eyebrow">Тип бизнеса</span>
+                  <span className="wc-eyebrow">{txt.businessType}</span>
                   <div className="wc-chips">
-                    <button className={`pbtn ${!isProduction ? "active" : ""}`} onClick={() => setIndustry("trade")}>Торговля</button>
-                    <button className={`pbtn ${isProduction ? "active" : ""}`} onClick={() => setIndustry("production")}>Производство</button>
+                    <button className={`pbtn ${!isProduction ? "active" : ""}`} onClick={() => setIndustry("trade")}>{txt.calcTrade}</button>
+                    <button className={`pbtn ${isProduction ? "active" : ""}`} onClick={() => setIndustry("production")}>{txt.calcProduction}</button>
                   </div>
                 </div>
                 {!isProduction ? (
                   <div className="wc-top-col">
-                    <span className="wc-eyebrow">Точность</span>
+                    <span className="wc-eyebrow">{txt.calcPrecision}</span>
                     <div className="wc-chips">
-                      <button className={`pbtn ${input.basis === "simple" ? "active" : ""}`} onClick={() => set("basis", "simple" as Basis)}>Просто</button>
-                      <button className={`pbtn ${input.basis === "exact" ? "active" : ""}`} onClick={() => set("basis", "exact" as Basis)}>Точно</button>
+                      <button className={`pbtn ${input.basis === "simple" ? "active" : ""}`} onClick={() => set("basis", "simple" as Basis)}>{txt.calcSimple}</button>
+                      <button className={`pbtn ${input.basis === "exact" ? "active" : ""}`} onClick={() => set("basis", "exact" as Basis)}>{txt.calcExact}</button>
                     </div>
                   </div>
                 ) : null}
@@ -159,7 +162,7 @@ export function WorkingCapitalCalculator() {
                     : "Простой режим: всё считается от выручки. Нужны только четыре суммы, точность ниже."}
               </p>
 
-              <GroupTitle>Обороты за год</GroupTitle>
+              <GroupTitle>{txt.calcYearTurnover}</GroupTitle>
               <MoneyField label="Выручка" hint="продажи за 12 месяцев" value={input.revenue} currency={currency} onChange={(v) => set("revenue", v)} />
               {(isProduction || input.basis === "exact") && (
                 <MoneyField label="Себестоимость проданного" hint="COGS" value={input.cogs} currency={currency} onChange={(v) => set("cogs", v)} />
@@ -177,7 +180,7 @@ export function WorkingCapitalCalculator() {
               <MoneyField label="Операционная прибыль" hint="EBITDA за год" value={input.ebit} currency={currency} onChange={(v) => set("ebit", v)} />
               <MoneyField label="Чистая прибыль" hint="после налогов и процентов" value={input.netProfit} currency={currency} onChange={(v) => set("netProfit", v)} />
 
-              <GroupTitle>Что сейчас в обороте</GroupTitle>
+              <GroupTitle>{txt.calcInCirculation}</GroupTitle>
               {isProduction ? (
                 <>
                   <MoneyField label="Сырьё на складе" value={input.raw} currency={currency} onChange={(v) => set("raw", v)} />
@@ -192,7 +195,7 @@ export function WorkingCapitalCalculator() {
               <MoneyField label="Кредиторка" hint="ваш долг поставщикам" value={input.payables} currency={currency} onChange={(v) => set("payables", v)} />
               <MoneyField label="Основные средства" hint="оборудование, транспорт, здания" value={input.fixedAssets} currency={currency} onChange={(v) => set("fixedAssets", v)} />
 
-              <GroupTitle>Нормативы и сроки</GroupTitle>
+              <GroupTitle>{txt.calcNormsTerms}</GroupTitle>
               <div className="wc-sliders">
                 <SliderField label="Срок поставки" hint="от заказа до склада" value={input.leadTime} display={`${input.leadTime} дн.`} min={1} max={90} step={1} onChange={(v) => set("leadTime", v)} />
                 <SliderField label="Страховой запас" hint="на случай сбоя поставки" value={input.safetyStock} display={`${input.safetyStock} дн.`} min={0} max={60} step={1} onChange={(v) => set("safetyStock", v)} />
@@ -202,7 +205,7 @@ export function WorkingCapitalCalculator() {
               </div>
 
               <div className="manual wc-manual">
-                <p className="wc-h3">Норматив запаса — главный рычаг</p>
+                <p className="wc-h3">{txt.calcStockLever}</p>
                 <p className="wc-note">
                   {isProduction ? "Здоровый запас сырья" : "Здоровый склад"} — это срок поставки плюс страховой
                   запас: {result.healthyStockDays} дн. и {money(result.healthyStock, currency)}. Всё, что лежит
@@ -218,9 +221,9 @@ export function WorkingCapitalCalculator() {
           <Insights result={result} input={input} currency={currency} />
 
           <div className="panel-2 wc-disclaimer">
-            <b>Чего расчёт не видит:</b> упущенных сделок из-за неназванного срока, скидок вслепую без точной
+            <b>{txt.calcBlindSpots}</b> упущенных сделок из-за неназванного срока, скидок вслепую без точной
             себестоимости и часов, которые люди тратят на ручную сверку. Поэтому реальная цена текущей схемы{" "}
-            <b>выше расчётной</b>, а не ниже.
+            <b>{txt.calcAboveCalc}</b>, а не ниже.
           </div>
           <p className="note wc-source">
             Методика и формулы — рабочий расчёт консультантов BIS: денежный цикл (DIO + DSO − DPO), нормативы запаса
@@ -231,10 +234,10 @@ export function WorkingCapitalCalculator() {
 
       <div className="msticky">
         <div>
-          <div className="dim sim-mono wc-sticky-label">Заморожено в обороте</div>
+          <div className="dim sim-mono wc-sticky-label">{txt.calcFrozen}</div>
           <div className="wc-sticky-value">{money(result.frozen, currency)}</div>
         </div>
-        <button className="btn btn-solid wc-sticky-btn" onClick={() => openLead("calc")}>Разобрать расчёт</button>
+        <button className="btn btn-solid wc-sticky-btn" onClick={() => openLead("calc")}>{txt.calcBreakdown}</button>
       </div>
     </div>
   );

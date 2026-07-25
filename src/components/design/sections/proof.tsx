@@ -1,13 +1,12 @@
 import Image from "next/image";
-import { cases, casesMeta, process, readiness, team, why } from "@/content/blocks";
-import { designTeam } from "@/content/design-team";
-import { trust } from "@/content/playbook";
 import { Reveal } from "../reveal";
 import { GlassIcon, type IconName } from "../icon";
 import { DragMarquee } from "../schemes/marquee";
 import { ScrollText } from "../schemes/scroll-text";
 import { Btn, Section, SectionHead, TextLink } from "../ui";
 import { em } from "../emphasis";
+import { content } from "@/content";
+import { DEFAULT_LOCALE, localePath, type Locale } from "@/content/locale";
 
 /**
  * Доверие. Регалии и цитата основателя.
@@ -15,7 +14,10 @@ import { em } from "../emphasis";
  * Тёмная секция: цитата — единственное место на сайте, где говорит человек,
  * а не компания, и смена среды выделяет её сильнее любой рамки.
  */
-export function Trust() {
+export function Trust({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { team } = site.blocks;
+  const { trust } = site.playbook;
   return (
     <Section id="trust" tone="ink">
       <Reveal>
@@ -54,7 +56,10 @@ export function Trust() {
  * Кейсы. Цифры «после» — главное, поэтому они крупные и идут сеткой,
  * а список «до» приглушён: он нужен для контекста, а не для чтения целиком.
  */
-export function Cases() {
+export function Cases({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const { cases, casesMeta } = site.blocks;
   return (
     <Section id="cases">
       <Reveal>
@@ -99,7 +104,7 @@ export function Cases() {
                   <span>{a.label}</span>
                 </div>
               ))}
-              <Btn href={`/cases/${c.slug}`} variant="ghost" small>{casesMeta.cta}</Btn>
+              <Btn href={lp(`/cases/${c.slug}`)} variant="ghost" small>{casesMeta.cta}</Btn>
             </div>
           </Reveal>
         ))}
@@ -116,7 +121,9 @@ export function Cases() {
  * приходится собирать его из шести отдельных карточек. Каждая фаза
  * заканчивается документом, который заказчик подписывает.
  */
-export function Process() {
+export function Process({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { process } = site.blocks;
   return (
     <Section id="process" tone="tint">
       <Reveal>
@@ -151,7 +158,9 @@ const WHY_ICONS: IconName[] = ["shield", "people", "settings", "support"];
  * в блоке материалов, и два входа к одному файлу на одной странице делят
  * внимание вместо того, чтобы вести к заявке.
  */
-export function Readiness() {
+export function Readiness({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { readiness } = site.blocks;
   return (
     <Section id="readiness">
       <Reveal>
@@ -173,7 +182,9 @@ export function Readiness() {
 }
 
 /** Почему BIS. Цифры компании плюс четыре аргумента. */
-export function Why() {
+export function Why({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { why } = site.blocks;
   return (
     <Section id="why" tone="tint">
       <Reveal>
@@ -219,7 +230,10 @@ export function Why() {
  * пятеро, чьи лица и роли удалось сверить с блоком команды на действующем
  * сайте BIS; додумывать остальных по фотографиям было бы выдумкой.
  */
-export function Team() {
+export function Team({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const { team } = site.blocks;
+  const { designTeam } = site;
   return (
     <Section id="team">
       <Reveal>
@@ -260,10 +274,13 @@ export function Team() {
  * действия, и как ссылка на узком экране терялась. Иконочная плитка обязательна
  * — без неё разметка кнопки на мобильном разъезжается.
  */
-export function AllCasesLink() {
+export function AllCasesLink({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
+  const site = content(locale);
+  const lp = (path: string) => localePath(locale, path);
+  const { cases } = site.blocks;
   return (
     <div className="d-wrap d-allcases">
-      <Btn href="/cases" variant="ghost">
+      <Btn href={lp("/cases")} variant="ghost">
         Смотреть все кейсы внедрения
       </Btn>
     </div>

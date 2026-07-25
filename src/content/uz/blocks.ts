@@ -13,7 +13,11 @@ import * as ru from "../blocks";
  * Перевод смысловой, не дословный. Обращение — на «siz». Диакритика oʻ/gʻ.
  */
 
-export const contacts = ru.contacts;
+export const contacts = {
+  ...ru.contacts,
+  address: "Toshkent, Abdulla Qahhor koʻchasi 56A, Ventum Plaza biznes markazi, 6-qavat, 602-ofis",
+  legal: "BIS · 2019 yildan SAP joriy etish va qoʻllab-quvvatlash",
+};
 
 export const nav = [
   { label: "SAP Business One", href: "/sap-business-one" },
