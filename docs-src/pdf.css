@@ -1,0 +1,363 @@
+/*
+  Общий слой для PDF-материалов (лид-магниты в блоке «заберите материалы без
+  разговора»). Токены те же, что у сайта — файл и страница должны читаться как
+  одна среда, иначе документ выглядит скачанным с чужого сайта.
+
+  Печать: A4, нулевые поля страницы, отступы держит сама .page — так контент
+  не зависит от полей, которые подставит браузер.
+*/
+
+:root {
+  --paper: #ffffff;
+  --paper-2: #eef2f8;
+  --callout: #e7ecf6;
+  --line: #d3dfec;
+  --line-soft: #e4ebf4;
+  --ink: #0c2137;
+  --text: #12304c;
+  --muted: #5a7590;
+  --dim: #8aa0b6;
+  --brand: #1c86d6;
+  --cyan: #33c7ea;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  font-family: "Manrope", "Helvetica Neue", sans-serif;
+  font-size: 9pt;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--paper);
+}
+
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  padding: 22mm 18mm 20mm;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+/* ─── обложка ───────────────────────────────────────────────────────────── */
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 0.72);
+  background:
+    radial-gradient(120% 90% at 15% 0%, #12293f 0%, rgba(12, 33, 55, 0) 60%),
+    #0c2137;
+}
+
+.cover-top { display: flex; align-items: center; gap: 6mm; }
+.cover-logo { width: 17mm; }
+.cover-eyebrow {
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Заголовок стоит на ~40% высоты, а не по центру и не у нижнего края: обложка
+   должна читаться как титул, а не как подпись под пустотой. */
+.cover-body { margin-top: 84mm; }
+.cover-h1 {
+  font-size: 26pt;
+  font-weight: 300;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+.cover-h1 em { font-style: normal; color: var(--cyan); }
+.cover-lead {
+  margin-top: 6mm;
+  max-width: 108mm;
+  font-size: 9.5pt;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.cover-facts {
+  display: flex;
+  gap: 14mm;
+  margin-top: auto;
+  padding-top: 6mm;
+  border-top: 0.4pt solid rgba(255, 255, 255, 0.16);
+}
+.cover-fact b {
+  display: block;
+  font-size: 14pt;
+  font-weight: 400;
+  color: #ffffff;
+}
+.cover-fact span {
+  display: block;
+  margin-top: 1.5mm;
+  font-size: 6pt;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ─── внутренняя страница ───────────────────────────────────────────────── */
+
+.kicker {
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+h1.h {
+  margin-top: 4mm;
+  font-size: 17pt;
+  font-weight: 300;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 150mm;
+}
+
+.lead {
+  margin-top: 4mm;
+  max-width: 155mm;
+  color: var(--muted);
+}
+.lead + .lead { margin-top: 3.5mm; color: var(--text); }
+
+strong { font-weight: 600; color: var(--ink); }
+
+.foot {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 14mm;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3mm;
+  border-top: 0.4pt solid var(--line-soft);
+  font-size: 7pt;
+  color: var(--dim);
+}
+
+/* ─── врезка ────────────────────────────────────────────────────────────── */
+
+.callout {
+  margin-top: 8mm;
+  padding: 5mm 6mm;
+  background: var(--callout);
+  border-left: 1.2pt solid var(--brand);
+}
+.callout .kicker { display: block; margin-bottom: 2mm; }
+.callout p { color: var(--text); }
+
+/* ─── карточки-шкала ────────────────────────────────────────────────────── */
+
+.score {
+  display: flex;
+  gap: 4mm;
+  margin-top: 8mm;
+}
+.score-item {
+  flex: 1;
+  padding: 4.5mm 5mm;
+  background: var(--paper-2);
+  border: 0.4pt solid var(--line);
+}
+.score-item b {
+  display: block;
+  font-size: 13pt;
+  font-weight: 300;
+  color: var(--ink);
+}
+.score-item span {
+  display: block;
+  margin-top: 2mm;
+  font-size: 8pt;
+  color: var(--muted);
+}
+
+/* ─── нумерованные пункты ───────────────────────────────────────────────── */
+
+.items { margin-top: 7mm; border-top: 0.4pt solid var(--line); }
+.item {
+  display: flex;
+  gap: 6mm;
+  padding: 4mm 0;
+  border-bottom: 0.4pt solid var(--line-soft);
+}
+.item-no {
+  flex: none;
+  width: 8mm;
+  font-size: 8.5pt;
+  color: var(--dim);
+  padding-top: 0.4mm;
+}
+.item-t {
+  display: flex;
+  align-items: baseline;
+  gap: 2.5mm;
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--ink);
+}
+.item-t i {
+  flex: none;
+  width: 2.8mm;
+  height: 2.8mm;
+  border: 0.6pt solid var(--brand);
+}
+.item-d { margin-top: 1.5mm; color: var(--muted); font-size: 8.5pt; }
+.items--tight .item { padding: 3mm 0; }
+
+/* ─── таблица ───────────────────────────────────────────────────────────── */
+
+table { width: 100%; border-collapse: collapse; margin-top: 7mm; }
+th {
+  text-align: left;
+  padding: 0 4mm 2.5mm 0;
+  border-bottom: 0.4pt solid var(--line);
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+td {
+  padding: 3.5mm 4mm 3.5mm 0;
+  border-bottom: 0.4pt solid var(--line-soft);
+  vertical-align: top;
+  font-size: 8.5pt;
+  color: var(--muted);
+}
+td:first-child { font-weight: 500; color: var(--ink); }
+td:last-child, th:last-child { padding-right: 0; }
+
+/* ─── два продукта ──────────────────────────────────────────────────────── */
+
+.duo { display: flex; gap: 5mm; margin-top: 7mm; }
+.duo-card {
+  flex: 1;
+  padding: 6mm;
+  border: 0.4pt solid var(--line);
+}
+.duo-card > .kicker { font-size: 6pt; }
+.duo-card h2 {
+  margin-top: 2.5mm;
+  font-size: 13pt;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.duo-card p { margin-top: 2.5mm; font-size: 8pt; color: var(--muted); }
+.duo-list { list-style: none; margin-top: 4mm; }
+.duo-list li {
+  position: relative;
+  padding: 3mm 0 3mm 5mm;
+  border-top: 0.4pt solid var(--line-soft);
+  font-size: 8.5pt;
+  color: var(--text);
+}
+.duo-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5.2mm;
+  width: 2.2mm;
+  height: 0.6pt;
+  background: var(--brand);
+}
+
+/* ─── шкалы бюджета ────────────────────────────────────────────────────── */
+
+.bars { margin-top: 8mm; border-top: 0.4pt solid var(--line); }
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+  padding: 3.2mm 0;
+  border-bottom: 0.4pt solid var(--line-soft);
+}
+.bar-l { flex: none; width: 38mm; font-size: 8.5pt; color: var(--ink); }
+.bar-track { flex: 1; display: block; height: 2.2mm; background: var(--paper-2); }
+/* block, а не inline: у строчного элемента height не работает и заливка шкалы
+   исчезает — остаётся пустой трек. */
+.bar-fill { display: block; height: 100%; background: var(--brand); }
+.bar-fill--soft { background: var(--cyan); }
+.bar-v { flex: none; width: 22mm; text-align: right; font-size: 8.5pt; font-weight: 500; color: var(--ink); }
+.bars-note { margin-top: 3mm; font-size: 7.5pt; color: var(--dim); }
+
+/* ─── бланк ─────────────────────────────────────────────────────────────── */
+
+.form { width: 100%; border-collapse: collapse; margin-top: 7mm; }
+.form th {
+  padding: 3mm 5mm;
+  background: var(--paper-2);
+  border: 0.4pt solid var(--line);
+}
+.form td {
+  padding: 4mm 5mm;
+  border: 0.4pt solid var(--line);
+  color: var(--dim);
+  font-size: 8pt;
+}
+.form td:first-child { color: var(--ink); font-weight: 500; font-size: 8.5pt; }
+.form .blank {
+  display: block;
+  height: 3.5mm;
+  border-bottom: 0.4pt solid var(--line);
+}
+.form td .blank { margin-top: 1.5mm; width: 60%; }
+
+/* ─── финальный блок ────────────────────────────────────────────────────── */
+
+.final {
+  position: absolute;
+  left: 18mm;
+  right: 18mm;
+  bottom: 18mm;
+  padding: 9mm 10mm 7mm;
+  background: #0c2137;
+  color: rgba(255, 255, 255, 0.68);
+}
+.final h2 {
+  font-size: 14pt;
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+}
+.final p { margin-top: 3.5mm; max-width: 140mm; font-size: 8.5pt; }
+.final-row { display: flex; gap: 4mm; margin-top: 7mm; }
+.btn {
+  display: block;
+  padding: 3.6mm 6mm;
+  font-size: 9pt;
+  font-weight: 500;
+  text-decoration: none;
+  color: #ffffff;
+  background: var(--brand);
+}
+.btn--ghost { background: transparent; border: 0.5pt solid rgba(255, 255, 255, 0.3); }
+.final-contacts {
+  display: flex;
+  gap: 8mm;
+  margin-top: 7mm;
+  padding-top: 4mm;
+  border-top: 0.4pt solid rgba(255, 255, 255, 0.14);
+  font-size: 8pt;
+}
+.final-contacts a { color: rgba(255, 255, 255, 0.6); text-decoration: none; }

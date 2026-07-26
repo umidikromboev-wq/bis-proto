@@ -160,19 +160,21 @@ export const leadMagnet = {
         name: "Joriy etishga tayyorlik chek-listi",
         format: "PDF · 12 band",
         text: "Har qanday integrator bilan gaplashishdan oldin oʻzingizni tekshirib koʻring — faqat biz bilan emas.",
-        file: "/docs/bis-chek-list-gotovnosti.pdf",
+        file: "/docs/uz/bis-joriy-etishga-tayyorlik-chek-listi.pdf",
       },
       {
         name: "Qoʻllanma: Business One yoki S/4HANA",
-        format: "PDF · 14 bet",
+        // Bet soni haqiqiy fayl boʻyicha: vaʼda plitkada turadi, yuklab
+        // olingandan keyin tekshiriladi.
+        format: "PDF · 5 bet",
         text: "Mahsulotlar orasidagi chegara qayerdan oʻtadi va kerak boʻlmagan miqyos uchun ortiqcha toʻlamaslik yoʻli.",
-        file: "/docs/bis-guide-business-one-ili-s4hana.pdf",
+        file: "/docs/uz/bis-business-one-yoki-s4hana.pdf",
       },
       {
         name: "Joriy etish smetasining tuzilishi",
         format: "PDF · shablon",
         text: "Budjet qanday moddalardan yigʻiladi va odatda qaysi ikkitasini hisobga olishni unutadilar.",
-        file: "/docs/bis-struktura-smety.pdf",
+        file: "/docs/uz/bis-smeta-tuzilmasi.pdf",
       },
     ],
   },
