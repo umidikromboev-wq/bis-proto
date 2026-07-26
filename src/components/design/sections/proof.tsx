@@ -76,7 +76,7 @@ export function Cases({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
                 самого объекта заказчика. */}
             <Image
               className="d-case-photo"
-              src={`/cases/${c.slug}.webp`}
+              src={`/design/cases/${c.slug}.webp`}
               alt={`${txt.clientIndustry}: ${c.industry.toLowerCase()}`}
               width={1600}
               height={1195}
