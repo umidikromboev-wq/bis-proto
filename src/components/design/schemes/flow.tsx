@@ -74,9 +74,7 @@ export function FlowScheme({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
       </ol>
 
       <p className="sc-caption">
-        {live
-          ? "{fl.after}"
-          : "{fl.before}"}
+        {live ? fl.after : fl.before}
       </p>
     </div>
   );
