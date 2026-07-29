@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/design/footer";
 import { SiteHeader } from "@/components/design/menu";
 import { LeadPopupProvider } from "@/components/design/lead-popup";
+import { Analytics } from "@/components/seo/analytics";
 import { OrganizationJsonLd } from "@/components/seo/json-ld";
 import "../globals.css";
 import "@/components/design/site.css";
@@ -45,6 +46,8 @@ export default function UzLayout({ children }: Readonly<{ children: React.ReactN
           <SiteHeader locale="uz" />
           <main>{children}</main>
           <SiteFooter locale="uz" />
+          <Analytics />
+
         </LeadPopupProvider>
       </body>
     </html>

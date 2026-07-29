@@ -26,7 +26,7 @@ export const LOCALE_LANG: Record<Locale, string> = {
 
 /**
  * Приводит внутреннюю ссылку к нужному языку.
- * localePath("uz", "/cases") → "/uz/cases", localePath("ru", "/cases") → "/cases".
+ * localePath("uz", "/portfolio") → "/uz/portfolio", localePath("ru", "/portfolio") → "/portfolio".
  * Внешние ссылки, телефоны, почта и анкоря возвращаются без изменений.
  */
 export function localePath(locale: Locale, href: string): string {

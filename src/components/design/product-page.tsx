@@ -164,7 +164,7 @@ export function ProductPageView({ data, locale = DEFAULT_LOCALE }: { data: Produ
                       <span>{a.label}</span>
                     </div>
                   ))}
-                  <TextLink href={lp(`/cases/${c.slug}`)}>{txt.viewCase}</TextLink>
+                  <TextLink href={lp(`/portfolio/${c.slug}`)}>{txt.viewCase}</TextLink>
                 </div>
               </Reveal>
             ))}

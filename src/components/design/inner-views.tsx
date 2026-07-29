@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { BlogBlock } from "@/content/types";
@@ -29,7 +30,7 @@ export function CasesList({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
         <div className="di-cases">
           {cases.map((c, i) => (
             <Reveal key={c.slug} delay={(i % 3) * 70}>
-              <Link href={lp(`/cases/${c.slug}`)} className="di-case-card">
+              <Link href={lp(`/portfolio/${c.slug}`)} className="di-case-card">
                 <div>
                   <div className="di-case-client">
                     <span className="d-case-idx">{String(i + 1).padStart(2, "0")}</span>
@@ -68,7 +69,7 @@ export function CaseView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
   return (
     <>
       <PageHero
-        crumbs={[home, { label: txt.crumbCases, href: "/cases" }, { label: c.client }]}
+        crumbs={[home, { label: txt.crumbCases, href: lp("/portfolio") }, { label: c.client }]}
         h1={c.client}
         lead={c.intro}
         facts={c.after.slice(0, 3).map((a) => ({ value: a.value, label: a.label }))}
@@ -120,7 +121,7 @@ export function CaseView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
           <p className="d-lead">{txt.sameReviewLead}</p>
           <div className="dh-cta-row">
             <LeadButton source="audit" variant="light">{txt.bookAudit}</LeadButton>
-            <TextLink href={lp("/cases")}>{txt.otherCases}</TextLink>
+            <TextLink href={lp("/portfolio")}>{txt.otherCases}</TextLink>
           </div>
         </Reveal>
       </Section>
@@ -132,7 +133,7 @@ export function CaseView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
         <div className="di-cases">
           {others.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80}>
-              <Link href={lp(`/cases/${o.slug}`)} className="di-case-card">
+              <Link href={lp(`/portfolio/${o.slug}`)} className="di-case-card">
                 <div>
                   <div className="di-case-client">
                     <h3 className="d-h3">{o.client}</h3>
@@ -171,10 +172,20 @@ export function BlogList({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
         <div className="di-posts">
           {posts.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 3) * 70}>
-              <Link href={lp(`/blog/${p.slug}`)} className="di-post-card">
+              <Link href={lp(`/post/${p.slug}`)} className="di-post-card">
+                {p.image ? (
+                  <Image
+                    src={p.image}
+                    alt=""
+                    width={640}
+                    height={360}
+                    className="di-post-cover"
+                    sizes="(max-width: 700px) 100vw, 33vw"
+                  />
+                ) : null}
                 <div className="di-post-meta">
                   <span className="di-post-cat">{p.category}</span>
-                  <span>{p.date}</span>
+                  {p.date ? <span>{p.date}</span> : null}
                   <span>{p.readingTime}</span>
                 </div>
                 <div>
@@ -220,23 +231,37 @@ export function PostView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
   const { posts } = site.blog;
   const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();
-  const others = posts.filter((p) => p.slug !== slug);
+  // Подборка «читайте также»: три материала, иначе блок разрастается на весь блог.
+  const others = posts.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <>
       <PageHero
-        crumbs={[home, { label: txt.crumbBlog, href: "/blog" }, { label: post.category }]}
+        crumbs={[home, { label: txt.crumbBlog, href: lp("/blog") }, { label: post.category }]}
         h1={post.title}
         lead={post.excerpt}
       >
         <p className="di-post-meta" style={{ flexDirection: "row", gap: "1.2rem", marginTop: "1.6rem" }}>
-          <span>{post.author}</span>
-          <span>{post.date}</span>
+          {post.author ? <span>{post.author}</span> : null}
+          {post.date ? <span>{post.date}</span> : null}
           <span>{post.readingTime}</span>
         </p>
       </PageHero>
 
       <Section>
+        {post.image ? (
+          <Reveal>
+            <Image
+              src={post.image}
+              alt=""
+              width={1200}
+              height={675}
+              className="di-article-cover"
+              sizes="(max-width: 900px) 100vw, 900px"
+              priority
+            />
+          </Reveal>
+        ) : null}
         <Reveal className="di-article">
           {post.body.map((b, i) => (
             <Block key={i} b={b} />
@@ -251,7 +276,17 @@ export function PostView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
         <div className="di-posts">
           {others.map((o, i) => (
             <Reveal key={o.slug} delay={i * 80}>
-              <Link href={lp(`/blog/${o.slug}`)} className="di-post-card">
+              <Link href={lp(`/post/${o.slug}`)} className="di-post-card">
+                {o.image ? (
+                  <Image
+                    src={o.image}
+                    alt=""
+                    width={640}
+                    height={360}
+                    className="di-post-cover"
+                    sizes="(max-width: 700px) 100vw, 33vw"
+                  />
+                ) : null}
                 <div className="di-post-meta">
                   <span className="di-post-cat">{o.category}</span>
                   <span>{o.readingTime}</span>

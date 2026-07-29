@@ -45,11 +45,22 @@
 .di-posts > *:last-child .di-post-card { border-bottom: 1px solid var(--line); }
 @media (hover: hover) { .di-post-card:hover { padding-left: clamp(0.5rem, 1.2vw, 1.2rem); } }
 .di-post-card:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+/* Карточка с обложкой получает третью колонку. Статьи без обложки остаются двухколоночными. */
+.di-post-card:has(.di-post-cover) {
+  grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.22fr) minmax(0, 1fr);
+  align-items: start;
+}
+.di-post-cover { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
 .di-post-meta { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.78rem; color: var(--dim); }
 .di-post-cat { color: var(--brand); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.66rem; }
 .di-post-excerpt { margin: 0.8rem 0 0; font-size: 0.95rem; color: var(--muted); max-width: 60ch; }
 
 /* ─── статья ─── */
+.di-article-cover {
+  width: 100%; max-width: 44rem; height: auto;
+  aspect-ratio: 16 / 9; object-fit: cover; display: block;
+  margin-bottom: clamp(2rem, 4vw, 3.2rem);
+}
 .di-article { max-width: 44rem; }
 .di-article p { font-size: clamp(1rem, 0.96rem + 0.28vw, 1.12rem); line-height: 1.75; color: var(--text); margin: 0 0 1.5rem; }
 .di-article h3 { font-size: clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem); font-weight: 400; letter-spacing: -0.018em; color: var(--ink); margin: clamp(2.5rem, 4vw, 3.5rem) 0 1.2rem; }
@@ -96,4 +107,34 @@
 }
 @media (max-width: 700px) {
   .di-channels, .di-formats, .di-requisites, .di-after, .di-case-nums { grid-template-columns: 1fr; }
+}
+
+/* ─── восстановленные страницы: о нас, услуги, отрасли ─── */
+.di-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.di-col { padding-top: 1.3rem; border-top: 2px solid var(--line); }
+.di-col:first-child { border-top-color: var(--brand); }
+.di-col p { margin: 0.7rem 0 0; font-size: 0.95rem; color: var(--muted); }
+
+.di-team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.4rem, 3vw, 2.6rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.di-person { padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.di-person h3 { margin: 0; font-size: 1.05rem; font-weight: 500; color: var(--ink); }
+.di-person-role { margin: 0.3rem 0 0.7rem; font-size: 0.8rem; color: var(--brand); }
+.di-person-note { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+.di-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.8rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.di-step { padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.di-step-n { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; color: var(--brand); margin-bottom: 0.8rem; }
+.di-step p { margin: 0.6rem 0 0; font-size: 0.93rem; color: var(--muted); }
+.di-step-out { font-size: 0.83rem; color: var(--dim); border-left: 2px solid var(--line); padding-left: 0.8rem; margin-top: 0.9rem; }
+
+.di-industry-photo { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+
+.di-tags { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: clamp(1.8rem, 3vw, 2.6rem); }
+.di-tag { display: inline-block; padding: 0.62rem 1.1rem; border: 1px solid var(--line); font-size: 0.9rem; color: var(--text); }
+
+@media (max-width: 1000px) {
+  .di-cols, .di-team, .di-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .di-cols, .di-team, .di-steps { grid-template-columns: 1fr; }
 }

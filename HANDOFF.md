@@ -1,4 +1,4 @@
-# BIS · дизайн-версия — состояние на 2026-07-25
+# BIS · дизайн-версия — состояние на 2026-07-29
 
 Файл для продолжения работы в новой сессии. Читать первым.
 
@@ -12,9 +12,32 @@
 
 ## Готовые страницы (все отдают 200)
 
-`/design` · `/design/sap-business-one` · `/design/sap-s4hana` · `/design/cases` ·
-`/design/cases/[slug]` · `/design/blog` · `/design/blog/[slug]` ·
-`/design/contacts` · `/design/simulator` · `/design/academy` · `/design/careers`
+Адреса приведены к прежнему сайту bis-pro.com — подробности в `MIGRATION.md`.
+
+`/` · `/sap-business-one` · `/sap-s-4hana` · `/services` · `/aboutus` ·
+`/portfolio` · `/portfolio/[slug]` · `/blog` · `/post/[slug]` · `/contacts` ·
+`/simulator` · `/courses` · `/vacancy` · `/production` · `/retail-trade` ·
+`/wholesale-trade` · `/distribution` — и то же самое под `/uz`. Всего 56 адресов,
+все перечислены в `sitemap.xml`.
+
+## Переезд с bis-pro.com
+
+**Читать `MIGRATION.md` перед любой правкой адресов, заголовков и описаний.**
+
+Коротко: 14 статей прежнего сайта перенесены дословно и лежат по прежним адресам
+`/post/<slug>`; маршруты нового сайта переименованы под проиндексированные
+(`academy → courses`, `careers → vacancy`, `cases → portfolio`,
+`sap-s4hana → sap-s-4hana`); `title` и `description` возвращены к прежним
+формулировкам — в них ключевые слова, по которым страницы ранжируются.
+
+Что нельзя менять не подумав:
+- адреса страниц и слаги статей — они совпадают с проиндексированными;
+- `title` и `description` в `src/content/seo.ts` — это формулировки прежнего сайта;
+- карту языковых пар `src/content/post-slugs.ts` — у статей слаги в RU и UZ разные;
+- редиректы в `next.config.ts`.
+
+Перед переключением домена задать в Vercel `NEXT_PUBLIC_SITE_URL` и
+`NEXT_PUBLIC_GA_ID` — без первой сайт остаётся закрытым от индексации.
 
 ## Дизайн-система
 

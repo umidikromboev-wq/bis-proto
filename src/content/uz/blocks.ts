@@ -21,8 +21,10 @@ export const contacts = {
 
 export const nav = [
   { label: "SAP Business One", href: "/sap-business-one" },
-  { label: "SAP S/4HANA", href: "/sap-s4hana" },
-  { label: "Loyihalar", href: "/cases" },
+  { label: "SAP S/4HANA", href: "/sap-s-4hana" },
+  { label: "Xizmatlar", href: "/services" },
+  { label: "Loyihalar", href: "/portfolio" },
+  { label: "Kompaniya haqida", href: "/aboutus" },
   { label: "Blog", href: "/blog" },
   { label: "Aloqa", href: "/contacts" },
 ];
@@ -37,8 +39,12 @@ export const navHome = [
 ];
 
 export const navSecondary = [
-  { label: "SAP Akademiya", href: "/academy" },
-  { label: "Vakansiyalar", href: "/careers" },
+  { label: "SAP Akademiya", href: "/courses" },
+  { label: "Vakansiyalar", href: "/vacancy" },
+  { label: "Ishlab chiqarish uchun ERP", href: "/production" },
+  { label: "Ulgurji savdo uchun ERP", href: "/wholesale-trade" },
+  { label: "Distribyutsiya uchun ERP", href: "/distribution" },
+  { label: "Chakana savdo uchun ERP", href: "/retail-trade" },
 ];
 
 // ── 01. ОФФЕР ───────────────────────────────────────────────────────────────

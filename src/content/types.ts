@@ -82,14 +82,24 @@ export type ProductPage = {
 
 export type BlogPost = {
   slug: string;
+  /** Заголовок статьи — то, что стоит в <h1> на странице */
   title: string;
+  /**
+   * Заголовок для поисковой выдачи, если он отличается от <h1>.
+   * У статей, перенесённых с прежнего сайта, это разные строки, и обе
+   * набирали позиции — сокращать их до одной нельзя.
+   */
+  metaTitle?: string;
   /** Подзаголовок в списке и лид в статье */
   excerpt: string;
-  date: string;
+  /** Дата публикации. У перенесённых статей отсутствует: прежний сайт её не хранил. */
+  date?: string;
   readingTime: string;
   category: string;
-  author: string;
-  cover: Img;
+  author?: string;
+  /** Готовый файл обложки в public. У статей, написанных под новый сайт, вместо него cover-бриф. */
+  image?: string;
+  cover?: Img;
   /** Тело статьи: простые блоки, без markdown-парсера */
   body: BlogBlock[];
 };

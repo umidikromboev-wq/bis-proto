@@ -19,8 +19,10 @@ export const contacts = {
 
 export const nav = [
   { label: "SAP Business One", href: "/sap-business-one" },
-  { label: "SAP S/4HANA", href: "/sap-s4hana" },
-  { label: "Кейсы", href: "/cases" },
+  { label: "SAP S/4HANA", href: "/sap-s-4hana" },
+  { label: "Услуги", href: "/services" },
+  { label: "Кейсы", href: "/portfolio" },
+  { label: "О компании", href: "/aboutus" },
   { label: "Блог", href: "/blog" },
   { label: "Контакты", href: "/contacts" },
 ];
@@ -39,8 +41,14 @@ export const navHome = [
  * покупателя ERP с пути к заявке. Живут в подвале и блоке «Ещё» мобильного меню.
  */
 export const navSecondary = [
-  { label: "SAP Академия", href: "/academy" },
-  { label: "Вакансии", href: "/careers" },
+  { label: "SAP Академия", href: "/courses" },
+  { label: "Вакансии", href: "/vacancy" },
+  // Отраслевые посадочные: ссылка из подвала есть на каждой странице, поэтому
+  // они не остаются сиротами и обходятся поиском наравне с остальными.
+  { label: "ERP для производства", href: "/production" },
+  { label: "ERP для оптовой торговли", href: "/wholesale-trade" },
+  { label: "ERP для дистрибуции", href: "/distribution" },
+  { label: "ERP для розницы", href: "/retail-trade" },
 ];
 
 // ── 01. ОФФЕР ───────────────────────────────────────────────────────────────

@@ -132,7 +132,13 @@ export function BreadcrumbJsonLd({
   );
 }
 
-/** Статья блога. */
+/**
+ * Статья блога.
+ *
+ * Дата и автор проставляются, только если они действительно известны: у статей,
+ * перенесённых с прежнего сайта, их не было, а выдуманная дата публикации в
+ * разметке — прямой повод для поиска перестать доверять ей целиком.
+ */
 export function ArticleJsonLd({
   locale,
   title,
@@ -140,13 +146,15 @@ export function ArticleJsonLd({
   slug,
   date,
   author,
+  image,
 }: {
   locale: Locale;
   title: string;
   description: string;
   slug: string;
-  date: string;
-  author: string;
+  date?: string;
+  author?: string;
+  image?: string;
 }) {
   return (
     <JsonLd
@@ -155,12 +163,12 @@ export function ArticleJsonLd({
         "@type": "Article",
         headline: title,
         description,
-        datePublished: date,
-        dateModified: date,
+        ...(date ? { datePublished: date, dateModified: date } : {}),
         inLanguage: locale,
-        author: { "@type": "Person", name: author },
+        ...(author ? { author: { "@type": "Person", name: author } } : {}),
+        ...(image ? { image: SITE_URL + image } : {}),
         publisher: { "@id": `${SITE_URL}/#organization` },
-        mainEntityOfPage: absoluteUrl(locale, `/blog/${slug}`),
+        mainEntityOfPage: absoluteUrl(locale, `/post/${slug}`),
       }}
     />
   );

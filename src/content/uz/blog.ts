@@ -1,5 +1,6 @@
 import type { BlogPost } from "../types";
 import { posts as ru, blogMeta as blogMetaRu } from "../blog";
+import { importedPosts } from "./blog-imported";
 
 /** Узбекская версия блога. Обложки и slug общие с русской версией. */
 export const blogMeta = {
@@ -10,7 +11,7 @@ export const blogMeta = {
     "Loyihalarni haqiqatda nima buzayotgani haqida yozamiz: maʼlumotlar, odamlar va biznes egasining qarorlari. Materiallar oxir-oqibat SAPni ham, bizni ham tanlamasangiz ham foydali.",
 };
 
-export const posts: BlogPost[] = [
+const ownPosts: BlogPost[] = [
   {
     ...ru[0],
     title: "Nega ERP joriy etish barbod boʻladi — va deyarli hech qachon dastur sababli emas",
@@ -99,6 +100,12 @@ export const posts: BlogPost[] = [
     ],
   },
 ];
+
+/**
+ * У перенесённых статей узбекские адреса свои, поэтому они не наследуются
+ * от русских через спред, а лежат отдельными записями.
+ */
+export const posts: BlogPost[] = [...ownPosts, ...importedPosts];
 
 export function getPost(slug: string): BlogPost | undefined {
   return posts.find((p) => p.slug === slug);

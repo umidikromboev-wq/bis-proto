@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DEFAULT_LOCALE, LOCALES, localePath, type Locale } from "@/content/locale";
+import { postSlugIn } from "@/content/post-slugs";
 import { seo, type SeoKey } from "@/content/seo";
 
 /**
@@ -30,11 +31,27 @@ export function absoluteUrl(locale: Locale, path: string): string {
   return SITE_URL + localePath(locale, path);
 }
 
-/** Языковые версии страницы: hreflang для каждой локали плюс x-default. */
-export function languageAlternates(path: string): Record<string, string> {
+/**
+ * Тот же адрес на другом языке.
+ *
+ * У большинства страниц путь общий и меняется только префикс. Исключение —
+ * статьи: их слаги в двух языках разные, поэтому подставляются по карте.
+ */
+export function translatePath(from: Locale, to: Locale, path: string): string {
+  const post = path.match(/^\/post\/([^/]+)$/);
+  return post ? `/post/${postSlugIn(from, to, post[1])}` : path;
+}
+
+/**
+ * Языковые версии страницы: hreflang для каждой локали плюс x-default.
+ *
+ * `path` — путь страницы на её собственном языке, `from` — этот язык. Без него
+ * узбекская статья получила бы русский слаг в атрибуте hreflang.
+ */
+export function languageAlternates(path: string, from: Locale = DEFAULT_LOCALE): Record<string, string> {
   const map: Record<string, string> = {};
-  for (const l of LOCALES) map[l] = absoluteUrl(l, path);
-  map["x-default"] = absoluteUrl(DEFAULT_LOCALE, path);
+  for (const l of LOCALES) map[l] = absoluteUrl(l, translatePath(from, l, path));
+  map["x-default"] = absoluteUrl(DEFAULT_LOCALE, translatePath(from, DEFAULT_LOCALE, path));
   return map;
 }
 
@@ -45,6 +62,8 @@ type Options = {
   /** Тип для соцсетей: у статей блога — article. */
   type?: "website" | "article";
   publishedTime?: string;
+  /** Картинка для соцсетей: путь в public, например /design/blog/foo.webp */
+  image?: string;
 };
 
 export function pageMetadata(locale: Locale, path: string, options: Options = {}): Metadata {
@@ -60,7 +79,7 @@ export function pageMetadata(locale: Locale, path: string, options: Options = {}
     description,
     alternates: {
       canonical: url,
-      languages: languageAlternates(path),
+      languages: languageAlternates(path, locale),
     },
     robots: IS_INDEXABLE
       ? { index: true, follow: true }
@@ -74,11 +93,13 @@ export function pageMetadata(locale: Locale, path: string, options: Options = {}
       locale: OG_LOCALE[locale],
       alternateLocale: LOCALES.filter((l) => l !== locale).map((l) => OG_LOCALE[l]),
       ...(options.publishedTime ? { publishedTime: options.publishedTime } : {}),
+      ...(options.image ? { images: [{ url: options.image }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      ...(options.image ? { images: [options.image] } : {}),
     },
   };
 }

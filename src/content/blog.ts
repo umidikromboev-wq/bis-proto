@@ -1,4 +1,5 @@
 import type { BlogPost } from "./types";
+import { importedPosts } from "./blog-imported";
 
 export const blogMeta = {
   kicker: "Блог",
@@ -12,7 +13,8 @@ export const blogMeta = {
  * Статьи блога. Тело статьи — массив простых блоков, без markdown-парсера:
  * так текст правится в одном месте и не ломает вёрстку.
  */
-export const posts: BlogPost[] = [
+/** Статьи, написанные под новый сайт. Порядок важен: узбекская версия ссылается на них по индексу. */
+const ownPosts: BlogPost[] = [
   {
     slug: "pochemu-vnedreniya-erp-provalivayutsya",
     title: "Почему внедрения ERP проваливаются — и почти никогда из-за софта",
@@ -119,6 +121,12 @@ export const posts: BlogPost[] = [
     ],
   },
 ];
+
+/**
+ * Свои статьи идут первыми, перенесённые с прежнего сайта — следом.
+ * Порядок влияет только на вывод в списке; адреса статей от него не зависят.
+ */
+export const posts: BlogPost[] = [...ownPosts, ...importedPosts];
 
 export function getPost(slug: string): BlogPost | undefined {
   return posts.find((p) => p.slug === slug);

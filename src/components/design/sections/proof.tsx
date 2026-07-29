@@ -106,7 +106,7 @@ export function Cases({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
                   <span>{a.label}</span>
                 </div>
               ))}
-              <Btn href={lp(`/cases/${c.slug}`)} variant="ghost" small>{casesMeta.cta}</Btn>
+              <Btn href={lp(`/portfolio/${c.slug}`)} variant="ghost" small>{casesMeta.cta}</Btn>
             </div>
           </Reveal>
         ))}
@@ -284,7 +284,7 @@ export function AllCasesLink({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const { cases } = site.blocks;
   return (
     <div className="d-wrap d-allcases">
-      <Btn href={lp("/cases")} variant="ghost">
+      <Btn href={lp("/portfolio")} variant="ghost">
         {txt.allCases}
       </Btn>
     </div>

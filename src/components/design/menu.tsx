@@ -20,7 +20,7 @@ import "./menu.css";
  */
 export function SiteHeader({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const txt = ui(locale);
-  const { primary: PRIMARY, secondary: SECONDARY } = menuNav(locale);
+  const { primary: PRIMARY, secondary: SECONDARY, industries: INDUSTRIES, industriesLabel } = menuNav(locale);
   const base = (href: string) => localePath(locale, href);
   const [open, setOpen] = useState(false);
   const [stuck, setStuck] = useState(false);
@@ -154,6 +154,17 @@ export function SiteHeader({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
             </div>
 
             <div className="dh-menu-block" style={{ ["--i" as string]: 6 }}>
+              <span className="dh-menu-cap">{industriesLabel}</span>
+              <ul className="dh-menu-sub">
+                {INDUSTRIES.map((s) => (
+                  <li key={s.href}>
+                    <Link href={base(s.href)} onClick={close}>{s.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="dh-menu-block" style={{ ["--i" as string]: 7 }}>
               <span className="dh-menu-cap">{txt.contact}</span>
               <a className="dh-menu-phone" href="tel:+998908231012">+998 90 823 10 12</a>
               <a className="dh-menu-cta" href="#lead" onClick={close}>

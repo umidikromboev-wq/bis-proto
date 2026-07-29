@@ -17,6 +17,8 @@ import { productB1 as productB1Uz } from "./uz/product-b1";
 import { productS4 as productS4Ru } from "./product-s4";
 import { productS4 as productS4Uz } from "./uz/product-s4";
 import { designTeam as designTeamRu } from "./design-team";
+import { aboutPage as aboutPageRu, industryCommon as industryCommonRu, industryPages as industryPagesRu, servicesPage as servicesPageRu } from "./pages-extra";
+import { aboutPage as aboutPageUz, industryCommon as industryCommonUz, industryPages as industryPagesUz, servicesPage as servicesPageUz } from "./uz/pages-extra";
 import { designTeam as designTeamUz } from "./uz/design-team";
 import { clientLogos } from "./client-logos";
 
@@ -40,6 +42,10 @@ const RU = {
   productB1: productB1Ru,
   productS4: productS4Ru,
   designTeam: designTeamRu,
+  aboutPage: aboutPageRu,
+  servicesPage: servicesPageRu,
+  industryPages: industryPagesRu,
+  industryCommon: industryCommonRu,
   clientLogos,
 };
 
@@ -53,6 +59,10 @@ const UZ: typeof RU = {
   productB1: productB1Uz,
   productS4: productS4Uz,
   designTeam: designTeamUz,
+  aboutPage: aboutPageUz,
+  servicesPage: servicesPageUz,
+  industryPages: industryPagesUz,
+  industryCommon: industryCommonUz,
   // Логотипы клиентов — файлы и названия брендов, переводить нечего.
   clientLogos,
 };
