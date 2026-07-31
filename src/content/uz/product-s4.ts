@@ -148,12 +148,6 @@ export const productS4: ProductPage = {
       { name: "Guruh konsolidatsiyasi va hisoboti", term: "4–8 hafta", text: "Konsolidatsiyalangan hisobotni sozlash, guruh ichidagi aylanmalarni yopish, egalar va banklar uchun hisobotlar." },
       { name: "Qoʻllab-quvvatlash va rivojlantirish", term: "doimiy", text: "Ajratilgan kuzatib borish guruhi, guruh tuzilmasi oʻzgarishlariga moslashtirish." },
     ],
-    budget: [
-      { label: "SAP litsenziyalari", value: "$150 000 dan", note: "foydalanuvchilar soni va modullar toʻplamiga bogʻliq" },
-      { label: "Joriy etish ishlari", value: "hisob-kitob boʻyicha", note: "smeta Discover fazasidan keyin shakllanadi" },
-      { label: "Infratuzilma", value: "$25 000 – $80 000", note: "SAP buluti, xususiy bulut yoki oʻz serverlaringiz" },
-      { label: "Oʻqitish", value: "15% dan", note: "rollar boʻyicha, har bir yuridik shaxs uchun alohida" },
-    ],
   },
 
   faq: [

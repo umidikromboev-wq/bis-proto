@@ -158,12 +158,6 @@ export const productB1: ProductPage = {
       { name: "Rollar boʻyicha oʻqitish", term: "2 hafta", text: "Omborchi oʻzining, buxgalter oʻzining ishini oʻrganadi. Har bir boʻlimda superfoydalanuvchi tayyorlaymiz." },
       { name: "Ishga tushirish va barqarorlashtirish", term: "2–4 hafta", text: "Ishchi rejimga oʻtish, birinchi haftalarni kuzatib borish, birinchi oyni yopishdagi xatolar tahlili." },
     ],
-    budget: [
-      { label: "SAP litsenziyalari", value: "$1 800 – $3 200", note: "bitta foydalanuvchi uchun: Limited arzonroq, Professional qimmatroq" },
-      { label: "Joriy etish ishlari", value: "$18 000 – $45 000", note: "budjetning asosiy qismi, konturlar soniga bogʻliq" },
-      { label: "Maʼlumotlarni koʻchirish", value: "10–15%", note: "loyiha budjetidagi ulush" },
-      { label: "Oʻqitish", value: "15% dan", note: "bu yerda tejash joriy etishga qarshilikka aylanadi" },
-    ],
   },
 
   faq: [

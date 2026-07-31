@@ -34,7 +34,7 @@ export const navHome = [
   { label: "Yechim", href: "/#solution" },
   { label: "Qanday joriy etamiz", href: "/#process" },
   { label: "Loyihalar", href: "/#cases" },
-  { label: "Narxlar", href: "/#pricing" },
+  { label: "Formatlar", href: "/#pricing" },
   { label: "Savollar", href: "/#faq" },
 ];
 
@@ -481,18 +481,15 @@ export const team = {
 // ── 12. ТАРИФЫ ──────────────────────────────────────────────────────────────
 export const pricing = {
   ...ru.pricing,
-  note: "Paket narx oraliqlari dastlabki — nashrdan oldin mijoz bilan tasdiqlash kerak",
-  kicker: "Narx",
-  h2: "Joriy etish budjeti soʻrov qoldirishdan va qoʻngʻiroqdan oldin maʼlum",
+  kicker: "Ish formatlari",
+  h2: "Loyiha hajmi soʻrov qoldirishdan va qoʻngʻiroqdan oldin ayon",
   lead:
-    "Aniq summa foydalanuvchilar soni, tarmoq xususiyatlari va integratsiyalar hajmiga bogʻliq. Quyidagi oraliqlar — BIS loyihalarining haqiqiy chegaralari. Bepul auditdan keyin qatʼiy smeta olasiz.",
+    "Ishlar tarkibi foydalanuvchilar soni, tarmoq xususiyatlari va integratsiyalar hajmiga bogʻliq. Quyida — BIS loyihalarni olib boradigan uchta format. Bepul auditdan keyin oʻz konturingiz uchun qatʼiy smeta olasiz.",
   tariffs: [
     {
       id: "start",
       name: "Start",
       for: "Distribyutsiya va savdo, 15 foydalanuvchigacha. Ombor, xarid, sotuv va moliya kerak.",
-      price: "$24 000 dan",
-      priceNote: "litsenziyalar + joriy etish",
       term: "3–4 oy",
       includes: [
         "Tekshiruv va kontseptual loyiha",
@@ -506,8 +503,6 @@ export const pricing = {
       id: "production",
       name: "Ishlab chiqarish",
       for: "Ishlab chiqarish kompaniyalari. Tannarx, ishlab chiqarish buyurtmalari va xomashyo rejasi kerak.",
-      price: "$45 000 dan",
-      priceNote: "litsenziyalar + joriy etish",
       term: "4–6 oy",
       popular: true,
       includes: [
@@ -523,8 +518,6 @@ export const pricing = {
       id: "holding",
       name: "Holding",
       for: "Bir nechta yuridik shaxs, maydoncha yoki hudud. Konsolidatsiya va uzluksiz tahlil kerak.",
-      price: "hisob-kitob boʻyicha",
-      priceNote: "smeta auditdan keyin",
       term: "6 oydan",
       includes: [
         "«Ishlab chiqarish» paketidagi hammasi",

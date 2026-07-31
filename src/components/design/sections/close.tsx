@@ -130,11 +130,7 @@ export function Pricing({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
             {t.popular ? <span className="d-tariff-flag">{txt.mostChosen}</span> : null}
             <h3 className="d-h3">{t.name}</h3>
             <p className="d-tariff-for">{t.for}</p>
-            <div className="d-tariff-price">
-              <b>{t.price}</b>
-              <span>{t.priceNote}</span>
-            </div>
-            <p className="d-tariff-term"><span>{txt.term}</span>{txt.term}</p>
+            <p className="d-tariff-term"><span>{txt.term}</span>{t.term}</p>
             <ul className="d-tariff-includes">
               {t.includes.map((inc) => (
                 <li key={inc}>{inc}</li>

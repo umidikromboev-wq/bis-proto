@@ -124,19 +124,6 @@ export function ProductPageView({ data, locale = DEFAULT_LOCALE }: { data: Produ
           ))}
         </ol>
 
-        <Reveal className="dp-budget">
-          <span className="d-footer-cap dp-budget-cap">{txt.budgetOf}</span>
-          <div className="dp-budget-rows">
-            {data.project.budget.map((b) => (
-              <div key={b.label}>
-                <span className="dp-budget-label">{b.label}</span>
-                <b>{b.value}</b>
-                <span className="dp-budget-note">{b.note}</span>
-              </div>
-            ))}
-          </div>
-          {data.project.note ? <p className="d-note">{data.project.note}</p> : null}
-        </Reveal>
       </Section>
 
       {related.length ? (

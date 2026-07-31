@@ -72,7 +72,6 @@ export type ProductPage = {
     h2: string;
     lead: string;
     phases: { name: string; term: string; text: string }[];
-    budget: { label: string; value: string; note: string }[];
     note?: string;
   };
   faq: Faq[];
@@ -116,8 +115,6 @@ export type Tariff = {
   id: string;
   name: string;
   for: string;
-  price: string;
-  priceNote: string;
   term: string;
   includes: string[];
   popular?: boolean;
