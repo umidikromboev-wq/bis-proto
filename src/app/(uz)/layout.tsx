@@ -4,46 +4,117 @@ import { SiteFooter } from "@/components/design/footer";
 import { SiteHeader } from "@/components/design/menu";
 import { LeadPopupProvider } from "@/components/design/lead-popup";
 import { OrganizationJsonLd } from "@/components/seo/json-ld";
+
 import "../globals.css";
 import "@/components/design/site.css";
 import "@/components/design/lead-popup.css";
 
-/**
- * Корневая раскладка узбекской версии.
- *
- * Своя, а не общая с русской, по одной причине: атрибут lang у <html> должен
- * называть настоящий язык страницы — иначе браузер предлагает перевести
- * узбекский текст с русского, а скринридер читает его русскими правилами.
- * Поэтому у каждого языка своя root layout, а группы (ru) и (uz) не влияют
- * на адреса.
- */
 const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
+  variable: "--font-manrope",
 });
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#ffffff",
 };
+
+const baseUrl = "https://www.bis-pro.com";
 
 export const metadata: Metadata = {
-  title: "BIS — Oʻzbekistonda SAP joriy etish",
+  metadataBase: new URL(baseUrl),
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+
+  title: {
+    default:
+      "SAP Business One Uzbekistan — Biznes Avtomatlashtirish va ERP Tizimi",
+    template: "%s | BIS",
+  },
+
   description:
-    "2019 yildan Oʻzbekistonda SAP Business One va S/4HANA joriy etamiz: moliya, ombor, xarid, ishlab chiqarish va tannarx bitta tizimda.",
-  robots: { index: false, follow: false },
+    "2019-yildan beri O‘zbekistonda SAP joriy etish. Excel va 1C o‘rniga bitta ERP tizim: ombor, moliya va ishlab chiqarish nazorati. Loihangiz narxini 1 kunda hisoblang!",
+
+  keywords: [
+    "SAP Business One Uzbekistan",
+    "ERP tizimini joriy etish",
+    "biznesni avtomatlashtirish Toshkent",
+    "ishlab chiqarish uchun ERP",
+    "korxona boshqaruv dasturi",
+    "SAP Business One narxi",
+    "ombor avtomatlashtirish",
+    "1C va Excel o'rniga ERP",
+  ],
+
+  alternates: {
+    canonical: "https://www.bis-pro.com/uz",
+    languages: {
+      "uz-UZ": "https://www.bis-pro.com/uz",
+      "ru-RU": "https://www.bis-pro.com/",
+    },
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  openGraph: {
+    title:
+      "SAP Business One Uzbekistan — Biznes Avtomatlashtirish va ERP Tizimi",
+    description:
+      "2019-yildan beri O‘zbekistonda SAP joriy etish. Excel va 1C o‘rniga bitta ERP tizim: ombor, moliya va ishlab chiqarish nazorati. Loihangiz narxini 1 kunda hisoblang!",
+    url: "https://www.bis-pro.com/uz",
+    siteName: "BIS",
+    locale: "uz_UZ",
+    type: "website",
+    images: [
+      {
+        url: "/photos/dashboard.webp",
+        width: 1200,
+        height: 630,
+        alt: "SAP Business One Uzbekistan",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "SAP Business One Uzbekistan — Biznes Avtomatlashtirish va ERP Tizimi",
+    description:
+      "2019-yildan beri O‘zbekistonda SAP joriy etish. Excel va 1C o‘rniga bitta ERP tizim: ombor, moliya va ishlab chiqarish nazorati. Loihangiz narxini 1 kunda hisoblang!",
+    images: ["/photos/dashboard.webp"],
+  },
 };
 
-export default function UzLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function UzLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="uz" className="h-full antialiased">
-      <body className={`d ${manrope.className}`}>
+    <html lang="uz" className={`h-full antialiased ${manrope.variable}`}>
+      <body className={`d ${manrope.className} flex min-h-full flex-col`}>
         <OrganizationJsonLd locale="uz" />
         <LeadPopupProvider locale="uz">
           <SiteHeader locale="uz" />
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
           <SiteFooter locale="uz" />
         </LeadPopupProvider>
       </body>
