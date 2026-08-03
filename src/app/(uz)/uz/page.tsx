@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { FaqJsonLd } from "@/components/seo/json-ld";
 import { content } from "@/content";
 import { DesignHero } from "@/components/design/hero";
@@ -30,11 +31,9 @@ import {
 import "@/components/design/sections/sections.css";
 import "@/components/design/schemes/schemes.css";
 
-export const metadata: Metadata = {
-  title: "SAP Business One Uzbekistan — Biznes Avtomatlashtirish va ERP Tizimi",
-  description:
-    "2019-yildan beri O‘zbekistonda SAP joriy etish. Excel va 1C o‘rniga bitta ERP tizim: ombor, moliya va ishlab chiqarish nazorati. Loihangiz narxini 1 kunda hisoblang!",
-};
+// Заголовок и описание — из справочника src/content/seo.ts:
+// у главной они перенесены с прежнего сайта, по ним набраны позиции.
+export const metadata: Metadata = pageMetadata("uz", "/");
 
 export default function DesignHome() {
   const faq = content("uz").blocks.faq;
