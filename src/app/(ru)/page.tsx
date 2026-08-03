@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
 import { FaqJsonLd } from "@/components/seo/json-ld";
 import { content } from "@/content";
 import { DesignHero } from "@/components/design/hero";
@@ -31,9 +30,12 @@ import {
 import "@/components/design/sections/sections.css";
 import "@/components/design/schemes/schemes.css";
 
-// Заголовок и описание — из справочника src/content/seo.ts:
-// у главной они перенесены с прежнего сайта, по ним набраны позиции.
-export const metadata: Metadata = pageMetadata("ru", "/");
+export const metadata: Metadata = {
+  title:
+    "SAP Business One в Узбекистане — Внедрение ERP и Автоматизация Бизнеса",
+  description:
+    "Внедрение SAP Business One в Ташкенте с 2019 года. Единая ERP система вместо Excel и 1С: контроль склада, финансов и производства. Узнайте стоимость проекта!",
+};
 
 export default function DesignHome() {
   const faq = content("ru").blocks.faq;
