@@ -27,6 +27,19 @@ export const IS_INDEXABLE = !SITE_URL.includes("vercel.app");
 
 const OG_LOCALE: Record<Locale, string> = { ru: "ru_RU", uz: "uz_UZ" };
 
+/**
+ * Картинка для соцсетей по умолчанию — своя на каждый язык.
+ *
+ * Через файловую конвенцию opengraph-image её ставить нельзя: страницы задают
+ * собственный openGraph через pageMetadata, и он перекрывает картинку
+ * родительского сегмента — в итоге ссылка на любую внутреннюю страницу
+ * расшаривалась бы без превью. Поэтому подставляем здесь, для всех разом.
+ */
+const OG_IMAGE: Record<Locale, string> = {
+  ru: "/og/bis-ru.png",
+  uz: "/og/bis-uz.png",
+};
+
 export function absoluteUrl(locale: Locale, path: string): string {
   return SITE_URL + localePath(locale, path);
 }
@@ -72,11 +85,16 @@ export function pageMetadata(locale: Locale, path: string, options: Options = {}
   const title = options.title ?? entry?.title ?? table["/"].title;
   const description = options.description ?? entry?.description ?? table["/"].description;
   const url = absoluteUrl(locale, path);
+  const image = options.image ?? OG_IMAGE[locale];
 
   return {
     metadataBase: new URL(SITE_URL),
     title,
     description,
+    // Ключевые слова заводятся в справочнике и только там, где согласованы:
+    // выдумывать их на каждую страницу смысла нет, а расхождение с текстом
+    // страницы поиск считает спамом.
+    ...(entry?.keywords ? { keywords: entry.keywords } : {}),
     alternates: {
       canonical: url,
       languages: languageAlternates(path, locale),
@@ -93,13 +111,13 @@ export function pageMetadata(locale: Locale, path: string, options: Options = {}
       locale: OG_LOCALE[locale],
       alternateLocale: LOCALES.filter((l) => l !== locale).map((l) => OG_LOCALE[l]),
       ...(options.publishedTime ? { publishedTime: options.publishedTime } : {}),
-      ...(options.image ? { images: [{ url: options.image }] } : {}),
+      images: [{ url: image, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      ...(options.image ? { images: [options.image] } : {}),
+      images: [image],
     },
   };
 }

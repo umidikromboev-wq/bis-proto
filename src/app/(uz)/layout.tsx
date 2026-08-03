@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/design/menu";
 import { LeadPopupProvider } from "@/components/design/lead-popup";
 import { Analytics } from "@/components/seo/analytics";
 import { OrganizationJsonLd } from "@/components/seo/json-ld";
+import { pageMetadata } from "@/lib/seo";
 import "../globals.css";
 import "@/components/design/site.css";
 import "@/components/design/lead-popup.css";
@@ -22,29 +23,27 @@ const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
+  variable: "--font-manrope",
 });
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#ffffff",
 };
 
-export const metadata: Metadata = {
-  title: "BIS — Oʻzbekistonda SAP joriy etish",
-  description:
-    "2019 yildan Oʻzbekistonda SAP Business One va S/4HANA joriy etamiz: moliya, ombor, xarid, ishlab chiqarish va tannarx bitta tizimda.",
-  robots: { index: false, follow: false },
-};
+/** Запасные метаданные каркаса — см. пояснение в русской раскладке. */
+export const metadata: Metadata = pageMetadata("uz", "/");
 
 export default function UzLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="uz" className="h-full antialiased">
-      <body className={`d ${manrope.className}`}>
+    <html lang="uz" className={`h-full antialiased ${manrope.variable}`}>
+      <body className={`d ${manrope.className} flex min-h-full flex-col`}>
         <OrganizationJsonLd locale="uz" />
         <LeadPopupProvider locale="uz">
           <SiteHeader locale="uz" />
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
           <SiteFooter locale="uz" />
           <Analytics />
 

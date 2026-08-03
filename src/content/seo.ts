@@ -18,7 +18,12 @@ import type { Locale } from "./locale";
  * Исключения, где взяты новые формулировки, перечислены рядом с записями:
  * прежние там были непригодны (заголовок из одного слова, пустое описание).
  */
-export type SeoEntry = { title: string; description: string };
+export type SeoEntry = {
+  title: string;
+  description: string;
+  /** Ключевые слова страницы. Необязательны: заводим там, где они согласованы. */
+  keywords?: string[];
+};
 
 /** Ключ — путь без языкового префикса. */
 export type SeoKey =
@@ -41,12 +46,27 @@ export type SeoKey =
 
 const RU: Record<SeoKey, SeoEntry> = {
   "/": {
+    // Разделитель «|» сохранён с прежнего сайта — по этому заголовку страница
+    // набирала позиции. Меняли только описание.
     title: "SAP Business One в Узбекистане | Внедрение ERP и Автоматизация Бизнеса",
-    // Из прежнего описания убрано «Официальный партнёр SAP Business One»:
-    // статуса нет, SAP его не выдаёт (правка заказчика 2026-07-22). Остальная
-    // формулировка сохранена — в ней ключевые слова главной страницы.
+    // Описание обновлено 2026-08-01: добавлены «вместо Excel и 1С» и призыв.
+    // Прежнее (на случай отката позиций):
+    // "Внедрение SAP Business One в Узбекистане. ERP система для управления
+    //  предприятием и автоматизации бизнеса в Ташкенте. Бесплатная консультация!"
     description:
-      "Внедрение SAP Business One в Узбекистане. ERP система для управления предприятием и автоматизации бизнеса в Ташкенте. Бесплатная консультация!",
+      "Внедрение SAP Business One в Ташкенте с 2019 года. Единая ERP система вместо Excel и 1С: контроль склада, финансов и производства. Узнайте стоимость проекта!",
+    // «Официальный партнёр SAP» намеренно НЕ включён: статуса нет, SAP его не
+    // выдаёт (правка заказчика 2026-07-22).
+    keywords: [
+      "SAP Business One в Узбекистане",
+      "внедрение SAP Ташкент",
+      "ERP система для производства",
+      "автоматизация бизнеса Узбекистан",
+      "SAP Business One цена",
+      "внедрение ERP системы",
+      "автоматизация склада и учета",
+      "замена 1С на SAP",
+    ],
   },
   "/sap-business-one": {
     title: "SAP Business One Uzbekistan | ERP платформа и система управления бизнесом",
@@ -131,8 +151,20 @@ const RU: Record<SeoKey, SeoEntry> = {
 const UZ: Record<SeoKey, SeoEntry> = {
   "/": {
     title: "SAP Business One Uzbekistan | ERP tizimi joriy etish va biznesni avtomatlashtirish",
+    // Обновлено 2026-08-01. У программиста было «Loihangiz» — опечатка,
+    // и прямые апострофы; приведено к oʻ/gʻ.
     description:
-      "SAP Business One Uzbekistan bilan ERP tizimi joriy eting. Biznesni avtomatlashtiring, xarajatlarni kamaytiring va daromadni oshiring. Bepul konsultatsiya oling!",
+      "2019-yildan beri Oʻzbekistonda SAP joriy etish. Excel va 1C oʻrniga bitta ERP tizim: ombor, moliya va ishlab chiqarish nazorati. Loyihangiz narxini 1 kunda hisoblang!",
+    keywords: [
+      "SAP Business One Uzbekistan",
+      "ERP tizimini joriy etish",
+      "biznesni avtomatlashtirish Toshkent",
+      "ishlab chiqarish uchun ERP",
+      "korxona boshqaruv dasturi",
+      "SAP Business One narxi",
+      "ombor avtomatlashtirish",
+      "1C va Excel oʻrniga ERP",
+    ],
   },
   "/sap-business-one": {
     title: "SAP Business One Uzbekistan | ERP platforma va biznes boshqaruv tizimi",
