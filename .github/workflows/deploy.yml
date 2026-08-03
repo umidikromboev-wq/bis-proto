@@ -1,0 +1,37 @@
+name: Deploy to production
+
+# Зачем этот файл.
+#
+# Vercel сам собирает `main`, но блокирует сборку, если автор коммита не состоит
+# в команде Vercel: деплой встаёт в статус BLOCKED и ждёт подтверждения владельца
+# вручную. Из-за этого правки разработчика не доезжали до сайта.
+#
+# Здесь деплой запускает не автор коммита, а сам репозиторий — по адресу
+# Deploy Hook. Такая сборка авторизована всегда, кто бы ни сделал push.
+# Ссылка на хук лежит в секретах репозитория (VERCEL_DEPLOY_HOOK), в коде её нет.
+
+on:
+  push:
+    branches: [main]
+  # Кнопка «запустить вручную» на вкладке Actions — на случай,
+  # когда нужно пересобрать сайт без нового коммита.
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Запустить сборку продакшена
+        run: |
+          if [ -z "${{ secrets.VERCEL_DEPLOY_HOOK }}" ]; then
+            echo "::error::Секрет VERCEL_DEPLOY_HOOK не задан в настройках репозитория"
+            exit 1
+          fi
+          code=$(curl -s -o /tmp/out.json -w '%{http_code}' -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}")
+          cat /tmp/out.json
+          echo
+          if [ "$code" != "200" ] && [ "$code" != "201" ]; then
+            echo "::error::Vercel ответил $code — сборка не запущена"
+            exit 1
+          fi
+          echo "Сборка запущена. Ход и логи — на vercel.com, проект bis-proto."
