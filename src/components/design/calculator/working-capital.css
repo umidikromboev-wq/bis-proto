@@ -64,7 +64,9 @@
 .d .wc .wc-foot { font-size: 0.74rem; text-align: center; margin-top: 0.7rem; }
 
 /* ── Диагностика и сценарии ─────────────────────────────────────────────── */
-.d .wc .wc-insights { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+/* min() обязателен: на экране 320 px колонка minmax(320px, …) шире контейнера
+   с полями, поэтому панели вылезали за край и вся страница ехала вбок на 20 px. */
+.d .wc .wc-insights { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
 .d .wc .wc-panel { padding: 1.4rem; }
 .d .wc .wc-panel .wc-h3 { font-size: 1.05rem; margin-bottom: 1rem; }
 .d .wc .wc-signals { display: grid; gap: 0.75rem; }

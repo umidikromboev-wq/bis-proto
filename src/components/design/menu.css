@@ -175,4 +175,13 @@
 @media (max-width: 540px) {
   .dh-burger { padding-left: 0.85rem; font-size: 0.85rem; gap: 0.6rem; }
   .dh-burger-icon { width: 1.9rem; height: 1.9rem; }
+  /* Телефон в шапке прятался только на главной (правило жило в hero.css), поэтому
+     на внутренних страницах логотип + номер + кнопка не помещались в 320-360 px
+     и кнопку срезало правым краем. Прячем номер на всех страницах разом —
+     он остаётся в меню, в подвале и в блоке контактов. */
+  .dh-phone { display: none; }
+}
+@media (max-width: 380px) {
+  .dh-nav { padding-inline: 1rem; gap: 0.6rem; }
+  .dh-logo img { height: 2rem; }
 }
