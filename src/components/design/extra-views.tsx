@@ -168,7 +168,10 @@ export function CareersView({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
           <SectionHead kicker={process.kicker} h2={process.h2} />
         </Reveal>
         <div className="sc-road">
-          <ol style={{ gridTemplateColumns: "repeat(4, minmax(0, 1fr))" }}>
+          {/* Раньше здесь стоял инлайновый grid на 4 колонки — инлайн бьёт медиазапросы
+              из schemes.css, поэтому на телефоне колонки оставались по 52 px и текст
+              вставал лесенкой. Число колонок задаётся модификатором и падает до одной. */}
+          <ol className="sc-road-4">
             {process.steps.map((s, i) => (
               <Reveal as="li" key={s.n} delay={i * 70}>
                 <span className="sc-road-dot" aria-hidden />
