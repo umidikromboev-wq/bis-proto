@@ -28,6 +28,10 @@ const baseUrl = "https://www.bis-pro.com";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
 
+  verification: {
+    google: "ln6Yrq1iRfETgOgGY_byx_envzFXRQDCZk6gnFUAeYQ",
+  },
+
   icons: {
     icon: [
       { url: "/favicon.ico" },
