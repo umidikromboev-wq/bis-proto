@@ -50,7 +50,7 @@
   gap: clamp(2rem, 4vw, 4rem);
   padding-block: clamp(2.5rem, 5vw, 4rem);
 }
-.df-brand img { width: auto; height: clamp(2.6rem, 3.4vw, 3.4rem); }
+.df-brand img { width: auto; height: clamp(2.0rem, 2.0vw, 2.4rem); }
 .df-brand p { margin: 1.4rem 0 0; font-size: 0.84rem; line-height: 1.6; max-width: 32ch; }
 .df-partner { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 1.6rem; font-size: 0.78rem; color: rgba(255, 255, 255, 0.7); }
 .df-partner svg { width: 2.3rem; height: auto; border-radius: 3px; flex: none; }

@@ -1023,8 +1023,8 @@ export const importedPosts: BlogPost[] = [
   {
     slug: "integraciya-sap-v-biznes-klyuch-k-cifrovoy-transformacii-w7g89w",
     title: "SAP biznesga integratsiyasi: raqamli transformatsiya va ERP tizimi imkoniyatlari",
-    metaTitle: "Интеграция SAP в бизнес: ключ к цифровой трансформации",
-    excerpt: "Интеграция SAP в бизнес является стратегически важным направлением, позволяющим организациям оптимизировать внутренние операции и обеспечить единое информационное пространство для принятия оперативных управленческих решений. Этот процесс охватывает не только внедрение передовых ERP-систем, но и глубокий анализ существующих процессов, позволяющий адаптировать функционал SAP под конкретные нужды компании.",
+    metaTitle: "SAP tizimini biznesga integratsiya qilish — raqamli transformatsiyaning muhim kaliti.",
+    excerpt: "SAP tizimini biznesga integratsiya qilish tashkilotlar uchun strategik jihatdan muhim yo‘nalish hisoblanadi. U korxonalarga ichki biznes jarayonlarini optimallashtirish, shuningdek, tezkor va samarali boshqaruv qarorlarini qabul qilish uchun yagona axborot makonini yaratish imkonini beradi. Ushbu jarayon nafaqat zamonaviy ERP tizimlarini joriy etishni, balki mavjud biznes jarayonlarini chuqur tahlil qilishni ham o‘z ichiga oladi. Bu esa SAP tizimining funksional imkoniyatlarini kompaniyaning o‘ziga xos ehtiyojlariga moslashtirishga xizmat qiladi.",
     readingTime: "2 daqiqa",
     category: "Joriy etish",
     image: "/design/blog/integraciya-sap-v-biznes-klyuch-k-cifrovoy-transformacii-w7g89w.webp",
@@ -1828,8 +1828,8 @@ export const importedPosts: BlogPost[] = [
   {
     slug: "sap-business-one-ombor-nazorati",
     title: "Omborda 400 000$ pul muzlab yotgan bo‘lishi mumkin | SAP Business One orqali ombor nazorati",
-    metaTitle: "На складе могут быть заморожены 400 000$ | Контроль склада через SAP Business One",
-    excerpt: "SAP Business One Uzbekistan помогает автоматизировать складской учёт, inventory analytics и контроль товарооборота через ERP систему в реальном времени.",
+    metaTitle: "Omborda 400 000$ muzlab qolishi mumkin | SAP Business One orqali ombor nazorati",
+    excerpt: "SAP Business One Uzbekistan ombor hisobini avtomatlashtirishga yordam beradi: qoldiqlar, inventory analytics va tovar aylanmasi nazorati ERP tizimida real vaqtda ko‘rinadi.",
     readingTime: "3 daqiqa",
     category: "Ombor",
     image: "/design/blog/sap-business-one-ombor-nazorati.webp",
