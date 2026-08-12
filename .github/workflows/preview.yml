@@ -1,0 +1,68 @@
+name: Preview deploy
+
+# Зачем этот файл.
+#
+# Vercel не собирает ветку, если автор коммита не состоит в команде Vercel:
+# сборка встаёт в BLOCKED и ждёт подтверждения владельца. Продакшен эту проблему
+# уже обошёл через deploy.yml (Deploy Hook), но превью на ветках оставались
+# заблокированными — разработчик не мог посмотреть свою правку до мержа.
+#
+# Здесь превью собирает не автор коммита, а сам репозиторий: Vercel CLI
+# запускается с токеном из секретов, и такая сборка авторизована всегда.
+#
+# Триггер — push в ветку, а НЕ pull_request. Репозиторий публичный, и на
+# pull_request из форка GitHub секреты не отдаёт: workflow молча падал бы.
+# Push в ветку внутри репозитория секреты получает, а форки сюда не попадают.
+#
+# Что нужно один раз завести в Settings → Secrets and variables → Actions:
+#   VERCEL_TOKEN — https://vercel.com/account/tokens, скоуп «Umid's projects»
+# ID проекта и команды секретами не являются и лежат ниже открыто.
+
+on:
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+env:
+  VERCEL_ORG_ID: team_Xzk9kCAFdGd48k7Asz52qAJM
+  VERCEL_PROJECT_ID: prj_HS3TdA1CJ5TINd5vL9pR40AOP0zG
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Проверить, что токен заведён
+        run: |
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "::error::Секрет VERCEL_TOKEN не задан. Заведите его в настройках репозитория, иначе превью собрать нечем."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Поставить Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Забрать настройки окружения preview
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Собрать
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Выложить превью
+        id: deploy
+        run: |
+          url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Превью: $url"
+
+      - name: Написать адрес в сводку сборки
+        run: |
+          echo "### Превью ветки \`${GITHUB_REF_NAME}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "${{ steps.deploy.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"
