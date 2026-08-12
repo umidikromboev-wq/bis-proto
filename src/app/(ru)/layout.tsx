@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon.ico", sizes: "192x192", type: "image/png" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/favicon.ico", sizes: "180x180", type: "image/png" }],
   },
 
   title: {
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image-ru.png",
+        url: "/og/bis-ru.png",
         width: 1200,
         height: 630,
         alt: "SAP Business One в Узбекистане",
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
       "SAP Business One в Узбекистане — Внедрение ERP и Автоматизация Бизнеса",
     description:
       "Внедрение SAP Business One в Ташкенте с 2019 года. Единая ERP система вместо Excel и 1С: контроль склада, финансов и производства. Узнайте стоимость проекта!",
-    images: ["/og-image-ru.png"],
+    images: ["/og/bis-ru.png"],
   },
 };
 

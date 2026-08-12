@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon.ico", sizes: "192x192", type: "image/png" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/favicon.ico", sizes: "180x180", type: "image/png" }],
   },
 
   title: {
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/photos/dashboard.webp",
+        url: "/og/bis-uz.png",
         width: 1200,
         height: 630,
         alt: "SAP Business One Uzbekistan",
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
       "SAP Business One Uzbekistan — Biznes Avtomatlashtirish va ERP Tizimi",
     description:
       "2019-yildan beri O‘zbekistonda SAP joriy etish. Excel va 1C o‘rniga bitta ERP tizim: ombor, moliya va ishlab chiqarish nazorati. Loihangiz narxini 1 kunda hisoblang!",
-    images: ["/photos/dashboard.webp"],
+    images: ["/og/bis-uz.png"],
   },
 };
 
