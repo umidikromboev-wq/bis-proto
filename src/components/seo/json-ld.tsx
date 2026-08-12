@@ -36,7 +36,7 @@ export function OrganizationJsonLd({ locale }: { locale: Locale }) {
             name: "BIS",
             alternateName: "Business Intelligence Solutions",
             url: SITE_URL,
-            logo: `${SITE_URL}/design/bis-logo.png`,
+            logo: `${SITE_URL}/design/bis-mark.png`,
             telephone: contacts.phone,
             email: contacts.email,
             foundingDate: "2019",

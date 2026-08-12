@@ -76,8 +76,8 @@ export function SiteHeader({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
     <>
       <nav className={`dh-nav${stuck ? " is-stuck" : ""}${open ? " is-menu-open" : ""}`} aria-label={txt.navMain}>
         <Link href={base("/")} className="dh-logo" aria-label="BIS — Business Intelligence Solutions">
-          <Image  src="/design/bis-logo3.png" alt="BIS — Business Intelligence Solutions" width={1012} height={782} priority />
-          <Image src="/design/bis-white-logo.png" alt="" aria-hidden width={1012} height={782} />
+          <Image src="/design/bis-mark.png" alt="BIS — Business Intelligence Solutions" width={1200} height={408} priority />
+          <Image src="/design/bis-mark-white.png" alt="" aria-hidden width={1200} height={408} />
         </Link>
 
         <div className="dh-navcta">

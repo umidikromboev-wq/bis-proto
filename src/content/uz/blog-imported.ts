@@ -1828,8 +1828,8 @@ export const importedPosts: BlogPost[] = [
   {
     slug: "sap-business-one-ombor-nazorati",
     title: "Omborda 400 000$ pul muzlab yotgan bo‘lishi mumkin | SAP Business One orqali ombor nazorati",
-    metaTitle: "На складе могут быть заморожены 400 000$ | Контроль склада через SAP Business One",
-    excerpt: "SAP Business One Uzbekistan помогает автоматизировать складской учёт, inventory analytics и контроль товарооборота через ERP систему в реальном времени.",
+    metaTitle: "Omborda 400 000$ muzlab qolishi mumkin | SAP Business One orqali ombor nazorati",
+    excerpt: "SAP Business One Uzbekistan ombor hisobini avtomatlashtirishga yordam beradi: qoldiqlar, inventory analytics va tovar aylanmasi nazorati ERP tizimida real vaqtda ko‘rinadi.",
     readingTime: "3 daqiqa",
     category: "Ombor",
     image: "/design/blog/sap-business-one-ombor-nazorati.webp",

@@ -36,7 +36,7 @@ export function SiteFooter({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
 
         <div className="df-grid">
           <div className="df-brand">
-            <Image src="/design/bis-white-logoo.png" alt="BIS — Business Intelligence Solutions" width={1012} height={782} />
+            <Image src="/design/bis-mark-white.png" alt="BIS — Business Intelligence Solutions" width={1200} height={408} />
             <p>{contacts.legal}</p>
             <span className="df-partner">
               <SapMark />
