@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
+import Script from "next/script";
 import { SiteFooter } from "@/components/design/footer";
 import { SiteHeader } from "@/components/design/menu";
 import { LeadPopupProvider } from "@/components/design/lead-popup";
@@ -173,6 +174,22 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter locale="ru" />
         </LeadPopupProvider>
+
+        {/* Global telefon bosilishini kuzatish */}
+        <Script id="phone-click-tracker" strategy="afterInteractive">
+          {`
+            document.addEventListener("click", function(e) {
+              var link = e.target.closest('a[href^="tel:"]');
+              if (link && typeof window.gtag === 'function') {
+                window.gtag('event', 'phone_click', {
+                  'event_category': 'Contact',
+                  'event_label': link.href,
+                  'transport_type': 'beacon'
+                });
+              }
+            });
+          `}
+        </Script>
       </body>
     </html>
   );
