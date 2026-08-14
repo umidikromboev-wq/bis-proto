@@ -30,13 +30,6 @@ import {
 import "@/components/design/sections/sections.css";
 import "@/components/design/schemes/schemes.css";
 
-export const metadata: Metadata = {
-  title:
-    "SAP Business One в Узбекистане — Внедрение ERP и Автоматизация Бизнеса",
-  description:
-    "Внедрение SAP Business One в Ташкенте с 2019 года. Единая ERP система вместо Excel и 1С: контроль склада, финансов и производства. Узнайте стоимость проекта!",
-};
-
 export default function DesignHome() {
   const faq = content("ru").blocks.faq;
   return (
