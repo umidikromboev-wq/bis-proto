@@ -221,13 +221,9 @@
   .di-cols, .di-team, .di-steps { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 640px) {
-  .di-cols, .di-team, .di-steps { grid-template-columns: 1fr; }
-}
-
-
-/* ─── FAQAT MOBIL BLOG ─── */
-/* ─── FAQAT MOBIL BLOG ─── */
+/* ─── блог на мобильном ─── */
+/* Карточка с обложкой: правило выше задаёт три колонки через :has(), поэтому
+   сбросить её на одну колонку можно только селектором той же специфичности. */
 @media (max-width: 700px) {
 
   .di-post-card:has(.di-post-cover) {
