@@ -328,6 +328,59 @@ export const cases: Case[] = [
       author: "Lutfillo, BRAUF Wood rahbari",
     },
   },
+  {
+    ...ru.cases[3],
+    industry: "Antiradarlar chakana va B2B distribyutsiyasi",
+    scale: "B2B mijozlar bilan ishlaydigan doʻkonlar tarmogʻi va ombor",
+    intro:
+      "Neoline bilan trening dasturi doirasida tanishib qoldik, bir muncha vaqtdan soʻng esa kompaniya oʻzi aloqaga chiqdi. Antiradarlar bozori kengayib, koʻchalar kameraga toʻlib borayotgan davr edi. Bozor oʻsib, eski tizim yangi jarayonlar va biznes talablariga javob berolmay qolayotgandi.",
+    before: [
+      "Doʻkonlar boshqa doʻkonlardan buyurtma qabul qilib, ularni omborga Telegram orqali qoʻlda uzatishardi",
+      "Omborchi oʻnlab buyurtmani tahlil qilib, oʻzining dasturiga qoʻlda kiritishga majbur edi — bu koʻp vaqt olardi va xatolarga olib kelardi",
+      "B2B mijozlar uchun bonuslarni rahbarlar oʻzlari hisoblashardi, bu koʻp vaqt olib, bilinar-bilinmas xatoliklarga sabab boʻlardi",
+      "Bozor va buyurtmalar hajmi oʻsgani sari eski tizim bunga bardosh berolmay qolayotgandi",
+    ],
+    after: [
+      { value: "Veb-ilova", label: "doʻkon xodimlari uchun, SAP bilan integratsiyalangan" },
+      { value: "Mobil ilova", label: "ombor xodimlari uchun, SAP bilan integratsiyalangan" },
+      { value: "Avto", label: "mijozlar bonusi boʻyicha hisobotlar shakllanishi" },
+      { value: "Tezlashdi", label: "buyurtmalarni qayta ishlash va savdo tezligi" },
+    ],
+    quote: {
+      text:
+        "Korxona rahbarlari qoʻlga kiritgan yutuqlari orasida xotirjamlik va vaqtdan yutganlarini alohida taʼkidlashdi.",
+      author: "Neoline rahbarlari",
+    },
+    img: {
+      brief:
+        "Neoline doʻkoni yoki ombori manzarasi — smartfon yoki planshet bilan ishlayotgan xodim, tovar javonlari fonida, tabiiy yorugʻlik, jonli chakana savdo hissi.",
+    },
+  },
+  {
+    ...ru.cases[4],
+    client: "Krupasnab",
+    industry: "Rossiyadan don-dun oziq-ovqat mahsulotlarini import qilish",
+    scale: "Oʻz bozorining 70% ulushini egallagan yetakchi kompaniya",
+    intro:
+      "Rahbar Murodjon aka BIS haqida «Raqamlashtirish» podkastidan eshitib, oʻzi aloqaga chiqdi. Bir-ikki uchrashuvdan soʻng loyihani boshlashga kelishdik.",
+    before: [
+      "Hisob-kitoblarni Google Sheets’da oʻzlari yuritishardi — bu koʻp vaqt olardi va strategik ishlarga vaqt qolmasdi",
+      "Rahbar safarda boʻlganda ham hisob-kitob uchun noutbukdan judo boʻlolmasdi",
+      "Oʻsayotgan korxonaning maʼlumotlari kattalashgan sari jadvalga ishonmay, kattalashishdan xavotirlanishardi",
+      "Taʼminot, ombor va moliya boʻyicha yagona koʻrinish yoʻq edi — sotuvchilar buyurtmani toʻliq ishonch bilan qabul qila olmasdi",
+    ],
+    after: [
+      { value: "Mobil ilova", label: "orqali omborchi tovarni vaqtida kirim qiladi" },
+      { value: "Avto", label: "Rossiyaga buyurtmalar va qoʻshimcha xarajatlar hisobi" },
+      { value: "Bir zumda", label: "Balans va Foyda-zarar hisobotlari" },
+      { value: "70%", label: "bozor ulushiga ega yetakchi kompaniya" },
+    ],
+    quote: {
+      text:
+        "Dastur hayotimizda nimani oʻzgartirdi desangiz — birinchi navbatda xotirjamlik va boʻsh vaqt berdi.",
+      author: "Murodjon aka, Krupasnab rahbari",
+    },
+  },
 ];
 
 export const casesMeta = {
