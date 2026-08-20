@@ -328,9 +328,9 @@ export const cases: Case[] = [
       author: "Lutfillo, BRAUF Wood rahbari",
     },
   },
-   {
+  {
     ...ru.cases[3],
-   industry: "Antiradarlar chakana va B2B distribyutsiyasi",
+    industry: "Antiradarlar chakana va B2B distribyutsiyasi",
     scale: "B2B mijozlar bilan ishlaydigan doʻkonlar tarmogʻi va ombor",
     intro:
       "Neoline bilan trening dasturi doirasida tanishib qoldik, bir muncha vaqtdan soʻng esa kompaniya oʻzi aloqaga chiqdi. Antiradarlar bozori kengayib, koʻchalar kameraga toʻlib borayotgan davr edi. Bozor oʻsib, eski tizim yangi jarayonlar va biznes talablariga javob berolmay qolayotgandi.",
@@ -356,8 +356,7 @@ export const cases: Case[] = [
         "Neoline doʻkoni yoki ombori manzarasi — smartfon yoki planshet bilan ishlayotgan xodim, tovar javonlari fonida, tabiiy yorugʻlik, jonli chakana savdo hissi.",
     },
   },
-
-    {
+  {
     ...ru.cases[4],
     client: "Krupasnab",
     industry: "Rossiyadan don-dun oziq-ovqat mahsulotlarini import qilish",
