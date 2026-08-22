@@ -166,6 +166,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(geoAiJsonLd) }}
         />
+        {/* Google Analytics Global Site Tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-NF74XSJ06L"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NF74XSJ06L');
+          `}
+        </Script>
       </head>
       <body className={`d ${manrope.className} flex min-h-full flex-col`}>
         <OrganizationJsonLd locale="ru" />
