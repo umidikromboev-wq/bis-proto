@@ -423,10 +423,13 @@
 /* портрет у цитаты основателя */
 /* Портрет тянется на всю высоту цитаты: маленький квадрат рядом с крупным
    набором читался как случайная миниатюра, а не как автор слов. */
-.d-quote { display: grid; grid-template-columns: clamp(9rem, 15vw, 14rem) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: stretch; }
+/* Двухколоночная сетка нужна только там, где рядом с цитатой стоит фото
+   (proof.tsx). На странице кейса фото нет, единственный ребёнок попадал
+   в узкую колонку под фото и текст схлопывался в столбик по одному слову. */
+.d-quote:has(.d-quote-photo) { display: grid; grid-template-columns: clamp(9rem, 15vw, 14rem) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: stretch; }
 .d-quote-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; border-radius: 16px; }
 @media (max-width: 620px) {
-  .d-quote { grid-template-columns: 1fr; }
+  .d-quote:has(.d-quote-photo) { grid-template-columns: 1fr; }
   .d-quote-photo { width: 5.5rem; }
 }
 

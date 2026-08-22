@@ -176,7 +176,7 @@ export function BlogList({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
                 {p.image ? (
                   <Image
                     src={p.image}
-                    alt=""
+                    alt={p.title}
                     width={640}
                     height={360}
                     className="di-post-cover"
@@ -280,7 +280,7 @@ export function PostView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
                 {o.image ? (
                   <Image
                     src={o.image}
-                    alt=""
+                    alt={o.title}
                     width={640}
                     height={360}
                     className="di-post-cover"
