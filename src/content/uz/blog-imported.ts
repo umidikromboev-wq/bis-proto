@@ -2307,4 +2307,305 @@ export const importedPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "crm-va-erp-tizimlarining-farqi",
+    title: "CRM va ERP Tizimlarining Farqi Nimada? Oddiy Tilda Tushuntiramiz",
+    metaTitle: "CRM va ERP Tizimlarining Farqi: Oddiy Tilda | BIS-PRO",
+    excerpt: "CRM va ERP nima? Ularning asosiy farqini futbol misolida tushuntiramiz. Sotuv, ombor, ishlab chiqarish va moliyani boshqarish haqida bilib oling.",
+    readingTime: "4 daqiqa",
+    category: "Tizim tanlash",
+    image: "/design/blog/crm-va-erp-tiziming-farqi.webp",
+    body: [
+      {
+        type: "p",
+        text: "Biznes egalari korxonani raqamlashtirish haqida o‘ylaganda eng ko‘p beriladigan savollardan biri: 'Bizga CRM kerakmi yoki ERP?'",
+      },
+      {
+        type: "p",
+        text: "Ko‘pincha bu ikki tushuncha bir-biri bilan adashtiriladi. Keling, bu ikki tizimning farqini oddiy va tushunarli misol orqali ko‘rib chiqamiz.",
+      },
+      {
+        type: "h3",
+        text: "Futbol Misolida: Jamoada Kim Qayerda O‘ynaydi?",
+      },
+      {
+        type: "p",
+        text: "Tasavvur qiling, biznes — bu yaxlit bitta futbol jamoasi, kompaniyadagi xodimlar esa maydondagi o‘yinchilardir. Futbolda hujumchilar, yarim himoyachilar va himoya chizig‘i bo‘ladi.",
+      },
+      {
+        type: "h3",
+        text: "Ushbu maydonda:",
+      },
+      {
+        type: "p",
+        text: " **•** CRM tizimi — bu jamoaning hujum qismi (Oldingi chiziq).",
+      },
+      {
+        type: "p",
+        text: " **•** ERP tizimi — bu jamoaning yarim himoyasi, himoyasi va darvozaboni (Orqa chiziq va tayanch).",
+      },
+      {
+        type: "p",
+        text: "G‘alaba qozonish uchun faqat hujum qilish yetarli emas. Gol urilganidan keyin orqa chiziq mustahkam turmasa, jamoa o‘yinni boy beradi. Biznesda ham xuddi shunday.",
+      },
+      
+      {
+        type: "h3",
+        text: "CRM Vazifasi: Hujum va Gol Urish (Sotuv Chizig‘i)",
+      },
+      {
+        type: "p",
+        text: "CRM (Customer Relationship Management) to‘liq mijozlar bilan munosabatlarni boshqarishga xizmat qiladi.",
+      },
+      {
+        type: "p",
+        text: "Marketing bo‘limi olib kelayotgan lidlarni ushlab qolish va ularni xaridorga aylantirish — sotuvchilarning asosiy vazifasi. Barcha lidlarni 100% yopish qiyin, lekin CRM orqali ularning maksimal qismini saqlab qolish mumkin.",
+      },
+      {
+        type: "p",
+        text: "Moliyachi oylik hisobotni yig‘ish uchun kunlab omborchiga telefon qiladi va qoldiqlarni aniqlashtiradi.",
+      },
+      {
+        type: "h3",
+        text: "CRM tizimi nimalarni nazorat qiladi:",
+      },
+      {
+        type: "p",
+        text: " **•** Bo‘lajak mijozlarning kontaktlari va ular bilan yozishmalar tarixi;",
+      },
+      {
+        type: "p",
+        text: " **•** Lidlar qaysi kanaldan kelgani va muzokaralar qaysi bosqichda turgani;",
+      },
+       {
+        type: "p",
+        text: " **•** Sotuv voronkasi (Sales Funnel) va menejerlarning faolligi.",
+      },
+
+      {
+        type: "p",
+        text: "Ya'ni, CRM tizimi yangi mijozni topadi, muzokara olib boradi va gol uradi — shartnoma tuzadi.",
+      },
+      {
+        type: "h3",
+        text: "ERP Vazifasi: Himoya, Resurslar va G‘alabani Saqlab Qolish",
+      },
+      {
+        type: "p",
+        text: "Mijoz bilan shartnoma tuzilgach, haqiqiy operatsion ish boshlanadi. Mijozga mahsulotni va’da qilingan vaqtda, sifatli va to‘g‘ri miqdorda yetkazib berish kerak. Aynan shu yerda maydonga ERP (Enterprise Resource Planning) tushadi.",
+      },
+      {
+        type: "h3",
+        text: "ERP tizimi quyidagi vazifalarni bajaradi:",
+      },
+      
+      {
+        type: "p",
+        text: "**•** **Buyurtma va ishlab chiqarish:** Qabul qilingan buyurtmani sexga uzatish, ishlab chiqarish jarayonini tezlashtirish va har bir mahsulot tannarxini aniq hisoblash.",
+      },
+
+      {
+        type: "p",
+        text: "**•** **Ta’minot va xarid:** Omborda yetishmayotgan tovar yoki xomashyoni ortiqcha zaxirasiz, eng optimal hajmda va qulay narxlarda ta’minotchiga buyurtma qilish.",
+      },
+
+       {
+        type: "p",
+        text: "**•** **Ombor hisobi:** Mahsulotlarning harakatini, qaysi tovarlar ko‘proq sotilayotgani va qaysilari harakatsiz yotganini (nelikvid) ko‘rsatish.",
+      },
+      {
+        type: "p",
+        text: " **•** **Moliya va tahlil:** Qaysi tovardan haqiqiy foyda ko‘rilayotganini aniqlash, pul oqimlarini nazorat qilish va umumiy boshqaruv balansini shakllantirish.",
+      },
+      {
+        type: "p",
+        text: "Agar kompaniyada faqat CRM bo‘lsa-yu, ERP bo‘lmasa — sotuvchilar ko‘p buyurtma oladi, lekin ishlab chiqarish ulgurmaydi, omborda kerakli tovar topilmaydi yoki mahsulot o‘z tannarxidan arzon sotilib, kompaniya zarar ko‘radi.",
+      },
+      {
+        type: "h3",
+        text: "Xulosa: Biznesga Qaysi Biri Kerak?",
+      },
+      {
+        type: "p",
+        text: "Agar kompaniyaning maqsadi faqat mijozlar bazasini yig‘ish va qo‘ng‘iroqlarni nazorat qilish bo‘lsa, CRM kifoya qilishi mumkin.",
+      },
+      {
+        type: "p",
+        text: "Biroq biznesda xarid, ombor, logistika, ishlab chiqarish va moliya bo‘limlari mavjud bo‘lsa, barcha jarayonlarni bitta joyda boshqarish uchun yaxlit ERP tizimi zarur. SAP Business One tizimi esa o‘z ichiga CRM modulini ham olgan to‘liq ERP platformasi bo‘lib, biznesning ham hujum, ham himoya chizig‘ini yagona tizimda mustahkamlaydi.",
+      },
+      {
+        type: "h3",
+        text: "Foydali Havolalar:",
+      },
+      {
+        type: "p",
+        text: " **•** Aylanmada qancha mablag‘ingiz harakatsiz turganini Aylanma kapital kalkulyatori orqali hisoblab ko‘ring.",
+      },
+    
+      {
+        type: "p",
+        text: " **•** Ishlab chiqarish va sotuvni yagona tizimga birlashtirgan korxonalar tajribasini Benefit zavodi keysi orqali o‘rganing.",
+      },
+      {
+        type: "p",
+        text: " **•** Tizimlarning imkoniyatlari haqida batafsil ma’lumot olish uchun SAP va 1C solishtiruvi maqolasini o‘qing.",
+      },
+      {
+        type: "p",
+        text: " **•** Kompaniyangiz uchun to‘g‘ri dasturiy yechimni tanlash bo‘yicha Mutaxassislarimiz bilan bog‘laning.",
+      },
+    
+    ],
+  },
+
+  {
+    slug: "erp-tizimini-tanlash-axborot-uzilishi",
+    title: "Korxonani Avtomatlashtirish Uchun ERP Tizimi Tanlash: Axborot Uzilishiga Barham Berish",
+    metaTitle: "ERP Tizimini Tanlash: Korxonani Avtomatlashtirish | BIS-PRO",
+    excerpt: "Biznesda bo‘limlar o‘rtasidagi uzilishlarni yo‘qotish va boshqaruv hisobini tartibga solish uchun to‘g‘ri ERP tizimini tanlash bo‘yicha amaliy qo‘llanma.",
+    readingTime: "4 daqiqa",
+    category: "Tizim tanlash",
+    image: "/design/blog/erp-tizimini-tanlash-axborot-uzilishi.webp",
+    body: [
+      {
+        type: "p",
+        text: "Biznes o‘sgani sari uni faqat sotuvlar yoki mijozlar bilan aloqani boshqarish orqali ushlab turish imkonsiz bo‘lib qoladi. Ko‘plab rahbarlar dastlab faqat CRM tizimi haqida o‘ylashadi, ammo kompaniyaning asosiy muammolari va xarajatlari sotuv ortida — back-ofisda yashiringan bo‘ladi. Korxonani to‘liq nazoratga olish uchun esa tor doiradagi dasturlar emas, balki yaxlit ERP (Enterprise Resource Planning) tizimi zarur.",
+      },
+      {
+        type: "h3",
+        text: "ERP Tizimi Nima va U Back-Ofisda Qanday Ishlaydi?",
+      },
+     
+      {
+        type: "p",
+        text: "Kompaniyaning haqiqiy foydasi va barqarorligi back-ofis xodimlarining aniq ishlashiga tayanadi. Bu yerda ta’minotchi, omborchi, rejalashtiruvchi (planirovshik), ishlab chiqarish brigadirlari, tahlilchilar va moliyachilar faoliyat yuritadi.",
+      },
+      {
+        type: "p",
+        text: "Ularning bosh maqsadi — mahsulot yoki xizmatni sifatli, optimal tannarxda va o‘z vaqtida mijozga yetkazishdir.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Ta’minotchi: **  Omborda tugayotgan tovarlarni ortiqcha zaxira hosil qilmasdan, eng maqbul narxlarda sotib oladi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Planirovshik va Ishlab chiqarish: ** Xomashyo sarfini, sex quvvatini va buyurtma tayyor bo‘lish muddatini hisoblaydi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Moliyachi: ** Bo‘limlar kiritayotgan har bir ko‘rsatkichni tahlil qilib, pul uzilishlarining (kassoviy razriv) oldini oladi va aylanma mablag‘larni to‘g‘ri taqsimlaydi.",
+      },
+      
+      {
+        type: "p",
+        text: "Lekin ko‘plab korxonalarda bu tizim soat kabi aniq ishlamaydi. Asosiy sabab — bo‘limlarning bir-biridan uzilib qolganidir.",
+      },
+      {
+        type: "h3",
+        text: "Axborot Uzilishi (Информационный разрыв) Qanday Paydo Bo‘ladi?",
+      },
+      {
+        type: "p",
+        text: "Amaliyotda deyarli barcha bo‘limlar alohida dasturlarda ishlaydi. Sotuv bo‘limi kontaktlarni messenjer yoki alohida CRMda saqlaydi, omborchi qoldiqlarni Excel jadvalida yuritadi, buxgalteriya dasturga faqat o‘tgan oylik hujjatlarni kiritadi, sex boshliqlari esa hisobotni qog‘oz daftarga yozadi.",
+      },
+      {
+        type: "p",
+        text: "Natijada kompaniyada katta axborot uzilishi yuzaga keladi:",
+      },
+      {
+        type: "p",
+        text: " **•** Moliyachi oylik hisobotni yig‘ish uchun kunlab omborchiga telefon qiladi va qoldiqlarni aniqlashtiradi.",
+      },
+      {
+        type: "p",
+        text: " **•** Sotuvchi mijozga aniq yetkazib berish muddatini aytish uchun ta’minotchi ortidan yuguradi.",
+      },
+      {
+        type: "p",
+        text: " **•** Sex omborda xomashyo bor-yo‘qligini bilmay turib ishlab chiqarishni boshlay olmaydi.",
+      },
+       {
+        type: "p",
+        text: "Bu uzilish nafaqat ishlarni sekinlashtiradi, balki rahbar stoliga noto‘g‘ri va eskirgan ma’lumotlar chiqishiga olib keladi. Noto‘g‘ri ma’lumot asosida qabul qilingan qaror esa kompaniyaga katta moliyaviy zarar keltiradi.",
+      },
+
+      {
+        type: "h3",
+        text: "Oddiy Dasturlar va ERP Tizimi O‘rtasidagi Farq",
+      },
+      
+      {
+        type: "p",
+        text: "Oddiy dasturlar yoki tor doiradagi CRM faqat bitta yo‘nalishni — mijozlar bilan aloqa va sotuvni yopadi. Ammo ular ombor qoldig‘ini, tannarxni yoki ta’minot zanjirini to‘liq ko‘rsatib bera olmaydi.",
+      },
+
+      {
+        type: "p",
+        text: "ERP tizimi esa korxonaning barcha bo‘g‘inlarini qamrab oladi. U sotuv, xarid, ombor, ishlab chiqarish, moliya va HR bo‘limlarini yagona axborot maydoniga birlashtiradi. Tizimning vazifasi shunchaki ma’lumot yozib borish emas, balki resurslarni optimal rejalashtirish, ortiqcha xarajatlarni qisqartirish va har bir mahsulot tannarxini real vaqtda aniq chiqarishdir.",
+      },
+      {
+        type: "h3",
+        text: "Yagona Platforma Kompaniyaga Qanday Samara Beradi?",
+      },
+      
+      {
+        type: "p",
+        text: "SAP Business One tizimi korxonadagi barcha bo‘limlarni bitta platformaga ulaydi.",
+      },
+
+      {
+        type: "p",
+        text: "Yangi buyurtma qabul qilinganda jarayon avtomatik ishga tushadi:",
+      },
+
+       {
+        type: "p",
+        text: "**•** Ombordagi tayyor mahsulot va xomashyo qoldig‘i darhol tekshiriladi. ",
+      },
+      {
+        type: "p",
+        text: " **•** Yetishmayotgan materiallar bo‘yicha ta’minot bo‘limiga xarid talabnomasi yuboriladi. ",
+      },
+      {
+        type: "p",
+        text: " **•** Ishlab chiqarish sexiga aniq texnologik xarita va muddat biriktiriladi.",
+      },
+      {
+        type: "p",
+        text: " **•** Rejali va haqiqiy tannarx hamda kutilayotgan sof foyda real vaqtda hisoblanadi.",
+      },
+      {
+        type: "p",
+        text: "Buning natijasida bo‘limlar o‘rtasidagi ortiqcha telefon qo‘ng‘iroqlari to‘xtaydi, axborot uzilishi butunlay yo‘qoladi va korxonada to‘liq shaffoflik paydo bo‘ladi.",
+      },
+      {
+        type: "h3",
+        text: "Foydali Havolalar:",
+      },
+      {
+        type: "p",
+        text: " **•** Biznesingizdagi aylanma mablag‘lar samarasini Aylanma kapital kalkulyatori orqali hisoblang.",
+      },
+      {
+        type: "p",
+        text: " **•** Katta assortimentli zavodlarda ERP qanday ishlashini Benefit keysi orqali ko‘ring.",
+      },
+      {
+        type: "p",
+        text: " **•** Ishlab chiqarish va buyurtmalar integratsiyasini BRAUF Wood tajribasi misolida o‘rganing.",
+      },
+      {
+        type: "p",
+        text: " **•** Tizimlarning boshqaruvdagi farqlarini SAP va 1C tahlili maqolasidan bilib oling.",
+      },
+    
+      {
+        type: "p",
+        text: " **•** Kompaniyangiz jarayonlarini bepul tahlil qilish uchun Biz bilan bog‘laning.",
+      },
+    
+    ],
+  },
 ];
