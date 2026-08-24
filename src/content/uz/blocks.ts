@@ -271,7 +271,7 @@ export const cases: Case[] = [
     industry: "Injenerlik santexnikasi distribyutsiyasi",
     scale: "Climadens, Pilsa, Grundfos, Uterm, Warmhaus rasmiy dileri",
     intro:
-      "Isitish tizimlari, santexnika, issiq pol, nasos va radiatorlar savdosi. Kompaniya hisob-kitob yetib borishidan tezroq oʻsdi.",
+      "Isitish tizimlari va santexnika savdosida SAP orqali sotuvni +15% ga oshirish va hisobot muddatini 10 kunga qisqartirish keysi. Natijalar bilan tanishing!",
     before: [
       "Zaxiralarni qoʻlda boshqarish: xatolar, kechikishlar, foyda yoʻqotish",
       "Maʼlumot kiritish uzoq va noqulay, pozitsiyalar takrorlanadi",
@@ -290,7 +290,7 @@ export const cases: Case[] = [
     industry: "Qurilish materiallari ishlab chiqarish, toʻliq tsikl",
     scale: "15 000 xil mahsulot · 300 dan ortiq xodim · 2016 yildan",
     intro:
-      "Nomenklaturasi juda keng boʻlgan toʻliq tsiklli korxona. SKU qancha koʻp boʻlsa, hisobdagi har bir xato shuncha qimmatga tushadi.",
+      "Qurilish materiallari zavodida SAP orqali zaxira aylanishini 32% ga oshirish va ombor nelikvidini 28% ga kamaytirish keysi. Natijalarni ko‘ring!",
     before: [
       "15 000 nomenklatura pozitsiyasi yagona tizimdan tashqarida",
       "Har bir mahsulot turi boʻyicha tannarx shaffof emas",
@@ -309,7 +309,7 @@ export const cases: Case[] = [
     industry: "Mebel tarmogʻi uchun yarim tayyor mahsulot ishlab chiqarish",
     scale: "Shpon listlari va mijoz oʻlchamiga koʻra eshik ishlab chiqarish",
     intro:
-      "SAPgacha kompaniya boshqa programmalarda ishlagan: ofis va ishlab chiqarish bir-biridan ayri yashardi.",
+  "Mebel va eshik ishlab chiqarishda ofis va sexni SAP bilan birlashtirish, MRP hamda avto-tannarx hisobi keysi. 3 oyda olingan natijalar bilan tanishing!",
     before: [
       "Ofis va ishlab chiqarish bogʻlanmagan: buyurtma tsexga kechikib yetardi",
       "Buyurtma boʻyicha foyda shaffof emasdi",
@@ -363,12 +363,12 @@ export const cases: Case[] = [
     scale: "Oʻz bozorining 70% ulushini egallagan yetakchi kompaniya",
     intro:
       "Rahbar Murodjon aka BIS haqida «Raqamlashtirish» podkastidan eshitib, oʻzi aloqaga chiqdi. Bir-ikki uchrashuvdan soʻng loyihani boshlashga kelishdik.",
-    before: [
-      "Hisob-kitoblarni Google Sheets’da oʻzlari yuritishardi — bu koʻp vaqt olardi va strategik ishlarga vaqt qolmasdi",
-      "Rahbar safarda boʻlganda ham hisob-kitob uchun noutbukdan judo boʻlolmasdi",
-      "Oʻsayotgan korxonaning maʼlumotlari kattalashgan sari jadvalga ishonmay, kattalashishdan xavotirlanishardi",
-      "Taʼminot, ombor va moliya boʻyicha yagona koʻrinish yoʻq edi — sotuvchilar buyurtmani toʻliq ishonch bilan qabul qila olmasdi",
-    ],
+   before: [
+  "Hisob-kitoblarni Google Sheets’da oʻzlari yuritishardi — bu koʻp vaqt olardi va strategik ishlarga vaqt qolmasdi",
+  "Rahbar safarda boʻlganda ham hisob-kitob uchun noutbukdan judo boʻlolmasdi",
+  "Oʻsayotgan korxonaning maʼlumotlari kattalashgan sari jadvalga ishonmay, kattalashishdan xavotirlanishardi",
+  "Taʼminot, ombor va moliya boʻyicha yagona koʻrinish yoʻq edi — sotuvchilar buyurtmani toʻliq ishonch bilan qabul qila olmasdi",
+],
     after: [
       { value: "Mobil ilova", label: "orqali omborchi tovarni vaqtida kirim qiladi" },
       { value: "Avto", label: "Rossiyaga buyurtmalar va qoʻshimcha xarajatlar hisobi" },
