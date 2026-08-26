@@ -2200,7 +2200,7 @@ export const importedPosts: BlogPost[] = [
    {
     slug: "raznica-mezhdu-crm-i-erp-sistemami",
     title: "В чем Разница Между CRM и ERP Системой? Разбор Простыми Словами",
-    metaTitle: "CRM и ERP: в чем разница? Простое объяснение | BIS-PRO",
+    metaTitle: "CRM и ERP: в чем разница? Простое объяснение",
     excerpt: "Чем отличается CRM от ERP? Простое объяснение на примере футбола: роли продаж, склада, производства и финансового контура. Читайте статью!",
     readingTime: "4 минуты",
     category: "Выбор системы",
@@ -2336,7 +2336,7 @@ export const importedPosts: BlogPost[] = [
   {
     slug: "kak-vybrat-erp-sistemu-dlya-avtomatizatsii-biznesa",
     title: "Как Выбрать ERP Систему для Автоматизации Бизнеса: Устранение Информационного Разрыва",
-    metaTitle: "Как Выбрать ERP Систему для Автоматизации Бизнеса — BIS-PRO",
+    metaTitle: "Как выбрать ERP-систему для автоматизации бизнеса",
     excerpt: "Руководство по выбору ERP системы: как устранить информационный разрыв между складом, производством и финансами, внедрив единую платформу.",
     readingTime: "4 минуты",
     category: "Выбор системы",
