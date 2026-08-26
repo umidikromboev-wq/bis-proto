@@ -2311,7 +2311,7 @@ export const importedPosts: BlogPost[] = [
   {
     slug: "crm-va-erp-tizimlarining-farqi",
     title: "CRM va ERP Tizimlarining Farqi Nimada? Oddiy Tilda Tushuntiramiz",
-    metaTitle: "CRM va ERP Tizimlarining Farqi: Oddiy Tilda | BIS-PRO",
+    metaTitle: "CRM va ERP tizimlarining farqi: oddiy tilda",
     excerpt: "CRM va ERP nima? Ularning asosiy farqini futbol misolida tushuntiramiz. Sotuv, ombor, ishlab chiqarish va moliyani boshqarish haqida bilib oling.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
@@ -2462,7 +2462,7 @@ export const importedPosts: BlogPost[] = [
   {
     slug: "erp-tizimini-tanlash-axborot-uzilishi",
     title: "Korxonani Avtomatlashtirish Uchun ERP Tizimi Tanlash: Axborot Uzilishiga Barham Berish",
-    metaTitle: "ERP Tizimini Tanlash: Korxonani Avtomatlashtirish | BIS-PRO",
+    metaTitle: "ERP tizimini tanlash: korxonani avtomatlashtirish",
     excerpt: "Biznesda bo‘limlar o‘rtasidagi uzilishlarni yo‘qotish va boshqaruv hisobini tartibga solish uchun to‘g‘ri ERP tizimini tanlash bo‘yicha amaliy qo‘llanma.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
