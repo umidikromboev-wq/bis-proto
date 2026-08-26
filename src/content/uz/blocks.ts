@@ -271,7 +271,7 @@ export const cases: Case[] = [
     industry: "Injenerlik santexnikasi distribyutsiyasi",
     scale: "Climadens, Pilsa, Grundfos, Uterm, Warmhaus rasmiy dileri",
     intro:
-      "Isitish tizimlari, santexnika, issiq pol, nasos va radiatorlar savdosi. Kompaniya hisob-kitob yetib borishidan tezroq oʻsdi.",
+      "Isitish tizimlari va santexnika distribyutori savdoni SAPʻga oʻtkazdi: sotuv 15% ga oshdi, hisobot yopish muddati 10 kunga qisqardi.",
     before: [
       "Zaxiralarni qoʻlda boshqarish: xatolar, kechikishlar, foyda yoʻqotish",
       "Maʼlumot kiritish uzoq va noqulay, pozitsiyalar takrorlanadi",
@@ -290,7 +290,7 @@ export const cases: Case[] = [
     industry: "Qurilish materiallari ishlab chiqarish, toʻliq tsikl",
     scale: "15 000 xil mahsulot · 300 dan ortiq xodim · 2016 yildan",
     intro:
-      "Nomenklaturasi juda keng boʻlgan toʻliq tsiklli korxona. SKU qancha koʻp boʻlsa, hisobdagi har bir xato shuncha qimmatga tushadi.",
+      "15 000 nomdagi mahsulot chiqaradigan qurilish materiallari zavodi SAPʻga oʻtdi: zaxira aylanishi 32% ga oshdi, nelikvid 28% ga kamaydi.",
     before: [
       "15 000 nomenklatura pozitsiyasi yagona tizimdan tashqarida",
       "Har bir mahsulot turi boʻyicha tannarx shaffof emas",
@@ -309,7 +309,7 @@ export const cases: Case[] = [
     industry: "Mebel tarmogʻi uchun yarim tayyor mahsulot ishlab chiqarish",
     scale: "Shpon listlari va mijoz oʻlchamiga koʻra eshik ishlab chiqarish",
     intro:
-      "SAPgacha kompaniya boshqa programmalarda ishlagan: ofis va ishlab chiqarish bir-biridan ayri yashardi.",
+      "Eshik va shpon ishlab chiqarishda ofis bilan sex SAP orqali bogʻlandi: uch oyda MRP moduli va avtomatik tannarx hisobi ishga tushdi.",
     before: [
       "Ofis va ishlab chiqarish bogʻlanmagan: buyurtma tsexga kechikib yetardi",
       "Buyurtma boʻyicha foyda shaffof emasdi",
@@ -333,7 +333,7 @@ export const cases: Case[] = [
     industry: "Antiradarlar chakana va B2B distribyutsiyasi",
     scale: "B2B mijozlar bilan ishlaydigan doʻkonlar tarmogʻi va ombor",
     intro:
-      "Neoline bilan trening dasturi doirasida tanishib qoldik, bir muncha vaqtdan soʻng esa kompaniya oʻzi aloqaga chiqdi. Antiradarlar bozori kengayib, koʻchalar kameraga toʻlib borayotgan davr edi. Bozor oʻsib, eski tizim yangi jarayonlar va biznes talablariga javob berolmay qolayotgandi.",
+      "Antiradarlar bozori tez oʻsdi, eski tizim esa yetolmay qoldi: doʻkonlar buyurtmani omborga Telegram orqali yuborardi, bonuslar qoʻlda hisoblanardi.",
     before: [
       "Doʻkonlar boshqa doʻkonlardan buyurtma qabul qilib, ularni omborga Telegram orqali qoʻlda uzatishardi",
       "Omborchi oʻnlab buyurtmani tahlil qilib, oʻzining dasturiga qoʻlda kiritishga majbur edi — bu koʻp vaqt olardi va xatolarga olib kelardi",
