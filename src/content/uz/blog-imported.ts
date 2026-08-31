@@ -31,7 +31,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Lekin SAP nima? Nega u dunyoning 180 dan ortiq davlatida ishlatiladi? Va nima sababdan Apple, Mercedes-Benz, BMW kabi gigant kompaniyalar aynan shu ERP tizimini tanlaydi?",
+        text: "Lekin SAP nima? Nega u dunyoning 180 dan ortiq davlatida ishlatiladi? Va nima sababdan Apple, Mercedes-Benz, BMW kabi gigant kompaniyalar aynan shu [ERP tizimini](/uz/post/sap-erp-tizimi) tanlaydi?",
       },
       {
         type: "p",
@@ -70,7 +70,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Bugungi kunda SAP Business One, SAP S/4HANA va boshqa SAP dasturlari dunyo bo‘ylab 400 mingdan ortiq kompaniyalarda ishlatiladi.",
+        text: "Bugungi kunda [SAP Business One](/uz/sap-business-one), SAP S/4HANA va boshqa SAP dasturlari dunyo bo‘ylab 400 mingdan ortiq kompaniyalarda ishlatiladi.",
       },
       {
         type: "h3",
@@ -221,7 +221,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP S/4HANA — bu yirik korxonalar uchun mo‘ljallangan zamonaviy ERP platforma.",
+        text: "[SAP S/4HANA](/uz/sap-s-4hana) — bu yirik korxonalar uchun mo‘ljallangan zamonaviy ERP platforma.",
       },
       {
         type: "p",
@@ -352,7 +352,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "ishlab chiqarish",
+        text: "[ishlab chiqarish](/uz/production)",
       },
       {
         type: "p",
@@ -480,7 +480,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** ombor",
+        text: "**•** [ombor](/uz/post/sap-business-one-ombor-nazorati)",
       },
       {
         type: "p",
@@ -488,7 +488,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** ishlab chiqarish",
+        text: "**•** [ishlab chiqarish](/uz/production)",
       },
       {
         type: "p",
@@ -500,7 +500,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** CRM",
+        text: "**•** [CRM](/uz/post/crm-va-erp-tizimlarining-farqi)",
       },
       {
         type: "p",
@@ -592,7 +592,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP Business One — bu kichik va o‘rta biznes uchun yaratilgan ERP tizimi.",
+        text: "[SAP Business One](/uz/sap-business-one) — bu kichik va o‘rta biznes uchun yaratilgan ERP tizimi.",
       },
       {
         type: "p",
@@ -884,7 +884,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** ulgurji savdo",
+        text: "**•** [ulgurji](/uz/wholesale-trade) savdo",
       },
       {
         type: "p",
@@ -1031,11 +1031,11 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "**SAP biznesga integratsiyasi strategik jihatdan muhimdir**, tashkilotlarga ichki operatsiyalarni optimallashtirish va operativ boshqaruv qarorlarini qabul qilish uchun yagona axborot maydonini taqdim etish imkonini beradi. Ushbu jarayon nafaqat ilg'or ERP tizimlarini joriy etishni, balki SAP funksiyalarini kompaniyaning o'ziga xos ehtiyojlariga moslashtirishga imkon beruvchi mavjud jarayonlarni chuqur tahlil qilishni ham o'z ichiga oladi.",
+        text: "**SAP biznesga integratsiyasi strategik jihatdan muhimdir**, tashkilotlarga ichki operatsiyalarni optimallashtirish va operativ boshqaruv qarorlarini qabul qilish uchun yagona axborot maydonini taqdim etish imkonini beradi. Ushbu jarayon nafaqat ilg'or [ERP tizimlarini](/uz/post/sap-erp-tizimi) joriy etishni, balki SAP funksiyalarini kompaniyaning o'ziga xos ehtiyojlariga moslashtirishga imkon beruvchi mavjud jarayonlarni chuqur tahlil qilishni ham o'z ichiga oladi.",
       },
       {
         type: "p",
-        text: "**SAPni amalga oshirishning dastlabki bosqichi joriy biznes-jarayonlarning keng qamrovli auditini talab qiladi**. Batafsil tahlil qaysi faoliyat sohalarini eng ko'p optimallashtirishni talab qilishini va SAPdan foydalanish maksimal samaradorlikni qaerga keltirishini aniqlashga yordam beradi. Faqat bunday tahlil asosida tizimning alohida modullari o'rtasida vazifalarni to'g'ri taqsimlash mumkin, u moliyaviy boshqaruv, inson resurslari, logistika yoki ishlab chiqarish jarayonlari bo'lsin.",
+        text: "**SAPni amalga oshirishning dastlabki bosqichi joriy biznes-jarayonlarning keng qamrovli auditini talab qiladi**. Batafsil tahlil qaysi faoliyat sohalarini eng ko'p optimallashtirishni talab qilishini va SAPdan foydalanish maksimal samaradorlikni qaerga keltirishini aniqlashga yordam beradi. Faqat bunday tahlil asosida tizimning alohida modullari o'rtasida vazifalarni to'g'ri taqsimlash mumkin, u moliyaviy boshqaruv, inson resurslari, logistika yoki [ishlab chiqarish](/uz/production) jarayonlari bo'lsin.",
       },
       {
         type: "p",
@@ -1053,6 +1053,12 @@ export const importedPosts: BlogPost[] = [
         type: "p",
         text: "Shunday qilib, SAPning to'g'ri amalga oshirilishi va integratsiyasi raqamli biznesni transformatsiya qilish uchun ishonchli asosga aylanib, tashkilotlarga nafaqat ichki samaradorlikni oshirishga, balki kelajakda barqaror rivojlanish uchun moslashuvchan platforma yaratishga imkon beradi.",
       },
+      { type: "h3", text: "Shuningdek oʻqing" },
+      { type: "list", items: [
+        "[SAP nima va qanday ishlaydi](/uz/post/sap-nima-va-qanday-ishlaydi)",
+        "[SAP ERP tizimi](/uz/post/sap-erp-tizimi)",
+        "[Xizmatlar](/uz/services)"
+      ] }
     ],
   },
   {
@@ -1066,7 +1072,7 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "SAP Business One orqali assortiment boshqaruvi",
+        text: "[SAP Business One](/uz/sap-business-one) orqali assortiment boshqaruvi",
       },
       {
         type: "p",
@@ -1094,7 +1100,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** omborda katta miqdorda pul muzlab qolishiga",
+        text: "**•** [omborda](/uz/post/sap-business-one-ombor-nazorati) katta miqdorda pul muzlab qolishiga",
       },
       {
         type: "p",
@@ -1290,7 +1296,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP Business One — bu import kompaniyalar uchun yaratilgan ERP tizimi va biznes boshqaruvi platformasi.",
+        text: "SAP Business One — bu import kompaniyalar uchun yaratilgan [ERP tizimi](/uz/post/sap-erp-tizimi) va biznes boshqaruvi platformasi.",
       },
       {
         type: "p",
@@ -1609,11 +1615,11 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "Kompaniya o‘sib, ichki jarayonlarni boshqarish uchun professional ERP tizimi kerak bo‘lganda, rahbarlar ko‘pincha ikkita mashhur xalqaro platformaga duch kelishadi: SAP Business One va Odoo.",
+        text: "Kompaniya o‘sib, ichki jarayonlarni boshqarish uchun professional ERP tizimi kerak bo‘lganda, rahbarlar ko‘pincha ikkita mashhur xalqaro platformaga duch kelishadi: [SAP Business One](/uz/sap-business-one) va Odoo.",
       },
       {
         type: "p",
-        text: "Tashqi tomondan qaraganda, ikkala tizim ham ombor, moliya, savdo va ishlab chiqarishni avtomatlashtirishni va’da qiladi. Biroq, ularning ichki mantig‘i, arxitekturasi va qaysi turdagi biznesga ko‘proq mos kelishi mutlaqo farq qiladi. Keling, ushbu ikki platformani xolis va aniq biznes mezonlari asosida solishtiramiz.",
+        text: "Tashqi tomondan qaraganda, ikkala tizim ham [ombor](/uz/post/sap-business-one-ombor-nazorati), moliya, savdo va ishlab chiqarishni avtomatlashtirishni va’da qiladi. Biroq, ularning ichki mantig‘i, arxitekturasi va qaysi turdagi biznesga ko‘proq mos kelishi mutlaqo farq qiladi. Keling, ushbu ikki platformani xolis va aniq biznes mezonlari asosida solishtiramiz.",
       },
       {
         type: "h3",
@@ -1645,7 +1651,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP Business One qaysi holatda almashib bo‘lmas? Agar kompaniyangizda xodimlar soni 1000 tadan oshsa, filiallar tarmog‘i yiriklashsa va kunlik tranzaksiyalar millionlab operatsiyalarni tashkil qilsa, SAP Business One kabi og‘ir yuklamalarga chidamli tizim zarur bo‘ladi. SAP Business One yoki SAP S/4HANA tizimlari korxonada inson omili, ya’ni qaysidir xodimning \"tasodifan\" xato qilib qo‘yishi yoki ma’lumotlarni soxtalashtirish xavfini nolga tushirish uchun qurilgan. Katta zavodlar, transmilliy holdinglar va yirik logistika markazlari aynan SAP Business Onening barqaror arxitekturasiiga tayanadi.",
+        text: "SAP Business One qaysi holatda almashib bo‘lmas? Agar kompaniyangizda xodimlar soni 1000 tadan oshsa, filiallar tarmog‘i yiriklashsa va kunlik tranzaksiyalar millionlab operatsiyalarni tashkil qilsa, SAP Business One kabi og‘ir yuklamalarga chidamli tizim zarur bo‘ladi. SAP Business One yoki [SAP S/4HANA](/uz/sap-s-4hana) tizimlari korxonada inson omili, ya’ni qaysidir xodimning \"tasodifan\" xato qilib qo‘yishi yoki ma’lumotlarni soxtalashtirish xavfini nolga tushirish uchun qurilgan. Katta zavodlar, transmilliy holdinglar va yirik logistika markazlari aynan SAP Business Onening barqaror arxitekturasiiga tayanadi.",
       },
       {
         type: "h3",
@@ -1653,7 +1659,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Amaliyotga nazar tashlasak, O‘zbekiston bozorida chakana savdo va ishlab chiqarish bo‘yicha gigant hisoblangan Korzinka supermarketlar tarmog‘i hamda barchamiz biladigan Safia qandolatchilik uylari aynan SAP Business One tizimini tanlaganini ko‘ramiz.",
+        text: "Amaliyotga nazar tashlasak, O‘zbekiston bozorida chakana savdo va [ishlab chiqarish](/uz/production) bo‘yicha gigant hisoblangan Korzinka supermarketlar tarmog‘i hamda barchamiz biladigan Safia qandolatchilik uylari aynan SAP Business One tizimini tanlaganini ko‘ramiz.",
       },
       {
         type: "p",
@@ -1665,7 +1671,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Dastlabki bosqichda Odoo litsenziyalari va uni joriy etish ancha tejamkor va hamyonbop ko‘rinadi. Bu o‘rta biznes uchun boshlang‘ich xarajatlarni kamaytirish imkonini beradi. Biroq, biznes juda yiriklashib ketganda, tizimni doimiy ravishda qo‘shimcha dasturlash va tashqi modullar yordamida rivojlantirish xarajatlari ham parallel ravishda o‘sib borishini hisobga olish kerak.",
+        text: "Dastlabki bosqichda Odoo litsenziyalari va uni [joriy etish](/uz/services) ancha tejamkor va hamyonbop ko‘rinadi. Bu o‘rta biznes uchun boshlang‘ich xarajatlarni kamaytirish imkonini beradi. Biroq, biznes juda yiriklashib ketganda, tizimni doimiy ravishda qo‘shimcha dasturlash va tashqi modullar yordamida rivojlantirish xarajatlari ham parallel ravishda o‘sib borishini hisobga olish kerak.",
       },
       {
         type: "p",
@@ -1941,7 +1947,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP Business One — bu biznesni avtomatlashtirish va ombor boshqaruvi uchun yaratilgan ERP tizimi.",
+        text: "[SAP Business One](/uz/sap-business-one) — bu biznesni avtomatlashtirish va ombor boshqaruvi uchun yaratilgan ERP tizimi.",
       },
       {
         type: "p",
@@ -1992,7 +1998,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Shu sababli import kompaniya uchun ERP tizimi biznesning eng muhim instrumentlaridan biri hisoblanadi.",
+        text: "Shu sababli import kompaniya uchun [ERP tizimi](/uz/post/sap-erp-tizimi) biznesning eng muhim instrumentlaridan biri hisoblanadi.",
       },
       {
         type: "p",
@@ -2198,6 +2204,12 @@ export const importedPosts: BlogPost[] = [
         type: "p",
         text: "Agar siz ham biznesingizdagi pul oqimini nazorat qilishni istasangiz, ERP tizimini joriy qilish haqida o‘ylab ko‘rishingiz kerak.",
       },
+      { type: "h3", text: "Shuningdek oʻqing" },
+      { type: "list", items: [
+        "[SAP yoki 1C](/uz/post/sap-yoki-1c-erp-tizimlar-taqoslash-biznes-uchun)",
+        "[CRM va ERP farqi](/uz/post/crm-va-erp-tizimlarining-farqi)",
+        "[Ishlab chiqarish](/uz/production)"
+      ] }
     ],
   },
   {
@@ -2211,7 +2223,7 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "Biznes o‘sib, Excel jadvallari va telegram-guruhlar monitoringga yetmay qolganda, har bir rahbar bitta savolga duch keladi: \"Endi qaysi ERP tizimini o‘rnatsak ekan? SAPmi yoki 1C?\"",
+        text: "Biznes o‘sib, Excel jadvallari va telegram-guruhlar monitoringga yetmay qolganda, har bir rahbar bitta savolga duch keladi: \"Endi qaysi [ERP tizimini](/uz/post/sap-erp-tizimi) o‘rnatsak ekan? SAPmi yoki 1C?\"",
       },
       {
         type: "p",
@@ -2231,7 +2243,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Qaysi birini ishlatish qulay? Bozordagi ko‘plab xodimlar, ayniqsa buxgalterlar va omborchilar uchun 1C interfeysi juda tanish. Uni o‘rganish uchun xodimlarni oylab qayta o‘qitish shart emas, tizim ichida harakat qilish ancha oson va tushunarli.",
+        text: "Qaysi birini ishlatish qulay? Bozordagi ko‘plab xodimlar, ayniqsa buxgalterlar va [omborchilar](/uz/post/sap-business-one-ombor-nazorati) uchun 1C interfeysi juda tanish. Uni o‘rganish uchun xodimlarni oylab qayta o‘qitish shart emas, tizim ichida harakat qilish ancha oson va tushunarli.",
       },
       {
         type: "p",
@@ -2247,7 +2259,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Endi vaziyatni boshqa tomondan tasavvur qilamiz: kompaniyada xodimlar soni 1000 tadan oshgan, ishlab chiqarish zanjiri murakkab, filiallar soni o‘nlab va har kuni millionlab tranzaksiyalar sodir bo‘ladi. Mana shu miqyosga yetganda, 1C tizimi yuklamani ko‘tarolmay qolishi yoki sekinlashishi mumkin. Sahnaga jahon giganti — SAP chiqadi.",
+        text: "Endi vaziyatni boshqa tomondan tasavvur qilamiz: kompaniyada xodimlar soni 1000 tadan oshgan, [ishlab chiqarish](/uz/production) zanjiri murakkab, filiallar soni o‘nlab va har kuni millionlab tranzaksiyalar sodir bo‘ladi. Mana shu miqyosga yetganda, 1C tizimi yuklamani ko‘tarolmay qolishi yoki sekinlashishi mumkin. Sahnaga jahon giganti — SAP chiqadi.",
       },
       {
         type: "p",
@@ -2267,7 +2279,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Buning isbotini uzoqdan qidirish shart emas. O‘zbekiston chakana savdo va ishlab chiqarish bozorida hammamiz har kuni ko‘radigan yirik brendlar — Korzinka supermarketlar tarmog‘i hamda Safia qandolatchilik uylari aynan SAP tizimida ishlaydi.",
+        text: "Buning isbotini uzoqdan qidirish shart emas. O‘zbekiston [chakana](/uz/retail-trade) savdo va ishlab chiqarish bozorida hammamiz har kuni ko‘radigan yirik brendlar — Korzinka supermarketlar tarmog‘i hamda Safia qandolatchilik uylari aynan SAP tizimida ishlaydi.",
       },
       {
         type: "p",
@@ -2299,7 +2311,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Kompaniyangiz uchun eng optimal yechimni topish va ERP tizimlarini joriy etish bosqichlarini aniq hisoblab chiqish uchun bizning professional konsultatsiyamizga yoziling. Ekspertlarimiz biznesingiz hajmi va maqsadlaridan kelib chiqib, aynan sizga mos keladigan strategiyani tuzib berishadi.",
+        text: "Kompaniyangiz uchun eng optimal yechimni topish va ERP tizimlarini [joriy etish](/uz/services) bosqichlarini aniq hisoblab chiqish uchun bizning professional konsultatsiyamizga yoziling. Ekspertlarimiz biznesingiz hajmi va maqsadlaridan kelib chiqib, aynan sizga mos keladigan strategiyani tuzib berishadi.",
       },
       {
         type: "p",
@@ -2343,7 +2355,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** ERP tizimi — bu jamoaning yarim himoyasi, himoyasi va darvozaboni (Orqa chiziq va tayanch).",
+        text: " **•** [ERP tizimi](/uz/post/sap-erp-tizimi) — bu jamoaning yarim himoyasi, himoyasi va darvozaboni (Orqa chiziq va tayanch).",
       },
       {
         type: "p",
@@ -2364,7 +2376,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Moliyachi oylik hisobotni yig‘ish uchun kunlab omborchiga telefon qiladi va qoldiqlarni aniqlashtiradi.",
+        text: "Moliyachi oylik hisobotni yig‘ish uchun kunlab [omborchiga](/uz/post/sap-business-one-ombor-nazorati) telefon qiladi va qoldiqlarni aniqlashtiradi.",
       },
       {
         type: "h3",
@@ -2402,7 +2414,7 @@ export const importedPosts: BlogPost[] = [
       
       {
         type: "p",
-        text: "**•** **Buyurtma va ishlab chiqarish:** Qabul qilingan buyurtmani sexga uzatish, ishlab chiqarish jarayonini tezlashtirish va har bir mahsulot tannarxini aniq hisoblash.",
+        text: "**•** **Buyurtma va [ishlab chiqarish](/uz/production):** Qabul qilingan buyurtmani sexga uzatish, ishlab chiqarish jarayonini tezlashtirish va har bir mahsulot tannarxini aniq hisoblash.",
       },
 
       {
@@ -2432,7 +2444,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Biroq biznesda xarid, ombor, logistika, ishlab chiqarish va moliya bo‘limlari mavjud bo‘lsa, barcha jarayonlarni bitta joyda boshqarish uchun yaxlit ERP tizimi zarur. SAP Business One tizimi esa o‘z ichiga CRM modulini ham olgan to‘liq ERP platformasi bo‘lib, biznesning ham hujum, ham himoya chizig‘ini yagona tizimda mustahkamlaydi.",
+        text: "Biroq biznesda xarid, ombor, logistika, ishlab chiqarish va moliya bo‘limlari mavjud bo‘lsa, barcha jarayonlarni bitta joyda boshqarish uchun yaxlit ERP tizimi zarur. [SAP Business One](/uz/sap-business-one) tizimi esa o‘z ichiga CRM modulini ham olgan to‘liq ERP platformasi bo‘lib, biznesning ham hujum, ham himoya chizig‘ini yagona tizimda mustahkamlaydi.",
       },
       {
         type: "h3",
@@ -2445,7 +2457,7 @@ export const importedPosts: BlogPost[] = [
     
       {
         type: "p",
-        text: " **•** Ishlab chiqarish va sotuvni yagona tizimga birlashtirgan korxonalar tajribasini Benefit zavodi keysi orqali o‘rganing.",
+        text: " **•** Ishlab chiqarish va sotuvni yagona tizimga birlashtirgan korxonalar tajribasini Benefit zavodi [keysi](/uz/portfolio) orqali o‘rganing.",
       },
       {
         type: "p",
@@ -2470,7 +2482,7 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "Biznes o‘sgani sari uni faqat sotuvlar yoki mijozlar bilan aloqani boshqarish orqali ushlab turish imkonsiz bo‘lib qoladi. Ko‘plab rahbarlar dastlab faqat CRM tizimi haqida o‘ylashadi, ammo kompaniyaning asosiy muammolari va xarajatlari sotuv ortida — back-ofisda yashiringan bo‘ladi. Korxonani to‘liq nazoratga olish uchun esa tor doiradagi dasturlar emas, balki yaxlit ERP (Enterprise Resource Planning) tizimi zarur.",
+        text: "Biznes o‘sgani sari uni faqat sotuvlar yoki mijozlar bilan aloqani boshqarish orqali ushlab turish imkonsiz bo‘lib qoladi. Ko‘plab rahbarlar dastlab faqat [CRM](/uz/post/crm-va-erp-tizimlarining-farqi) tizimi haqida o‘ylashadi, ammo kompaniyaning asosiy muammolari va xarajatlari sotuv ortida — back-ofisda yashiringan bo‘ladi. Korxonani to‘liq nazoratga olish uchun esa tor doiradagi dasturlar emas, balki yaxlit ERP (Enterprise Resource Planning) tizimi zarur.",
       },
       {
         type: "h3",
@@ -2479,7 +2491,7 @@ export const importedPosts: BlogPost[] = [
      
       {
         type: "p",
-        text: "Kompaniyaning haqiqiy foydasi va barqarorligi back-ofis xodimlarining aniq ishlashiga tayanadi. Bu yerda ta’minotchi, omborchi, rejalashtiruvchi (planirovshik), ishlab chiqarish brigadirlari, tahlilchilar va moliyachilar faoliyat yuritadi.",
+        text: "Kompaniyaning haqiqiy foydasi va barqarorligi back-ofis xodimlarining aniq ishlashiga tayanadi. Bu yerda ta’minotchi, [omborchi](/uz/post/sap-business-one-ombor-nazorati), rejalashtiruvchi (planirovshik), ishlab chiqarish brigadirlari, tahlilchilar va moliyachilar faoliyat yuritadi.",
       },
       {
         type: "p",
@@ -2524,7 +2536,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Sex omborda xomashyo bor-yo‘qligini bilmay turib ishlab chiqarishni boshlay olmaydi.",
+        text: " **•** Sex omborda xomashyo bor-yo‘qligini bilmay turib [ishlab chiqarishni](/uz/production) boshlay olmaydi.",
       },
        {
         type: "p",
@@ -2543,7 +2555,7 @@ export const importedPosts: BlogPost[] = [
 
       {
         type: "p",
-        text: "ERP tizimi esa korxonaning barcha bo‘g‘inlarini qamrab oladi. U sotuv, xarid, ombor, ishlab chiqarish, moliya va HR bo‘limlarini yagona axborot maydoniga birlashtiradi. Tizimning vazifasi shunchaki ma’lumot yozib borish emas, balki resurslarni optimal rejalashtirish, ortiqcha xarajatlarni qisqartirish va har bir mahsulot tannarxini real vaqtda aniq chiqarishdir.",
+        text: "[ERP tizimi](/uz/post/sap-erp-tizimi) esa korxonaning barcha bo‘g‘inlarini qamrab oladi. U sotuv, xarid, ombor, ishlab chiqarish, moliya va HR bo‘limlarini yagona axborot maydoniga birlashtiradi. Tizimning vazifasi shunchaki ma’lumot yozib borish emas, balki resurslarni optimal rejalashtirish, ortiqcha xarajatlarni qisqartirish va har bir mahsulot tannarxini real vaqtda aniq chiqarishdir.",
       },
       {
         type: "h3",
@@ -2552,7 +2564,7 @@ export const importedPosts: BlogPost[] = [
       
       {
         type: "p",
-        text: "SAP Business One tizimi korxonadagi barcha bo‘limlarni bitta platformaga ulaydi.",
+        text: "[SAP Business One](/uz/sap-business-one) tizimi korxonadagi barcha bo‘limlarni bitta platformaga ulaydi.",
       },
 
       {
