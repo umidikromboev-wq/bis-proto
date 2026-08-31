@@ -205,7 +205,7 @@ export function BlogList({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
 function Block({ b }: { b: BlogBlock }) {
   if (b.type === "p") return <p>{em(b.text)}</p>;
   if (b.type === "h3") return <h3>{b.text}</h3>;
-  if (b.type === "list") return <ul>{b.items.map((i) => <li key={i}>{i}</li>)}</ul>;
+  if (b.type === "list") return <ul>{b.items.map((i) => <li key={i}>{em(i)}</li>)}</ul>;
   if (b.type === "quote")
     return (
       <blockquote>
