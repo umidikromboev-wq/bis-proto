@@ -19,8 +19,8 @@ name: Preview deploy
 # что сломал код, хотя код даже не проверялся. Теперь работа разделена:
 #
 #   build   — настоящая проверка кода, токен не нужен, падает только по делу;
-#   preview — деплой превью, необязательный: без рабочего токена он пропускается
-#             или помечается как некритичный и галочку не красит.
+#   preview — деплой превью, необязательный: шаги Vercel помечены
+#             continue-on-error, поэтому протухший токен галочку не красит.
 #
 # Токен (когда нужны превью-ссылки): https://vercel.com/account/tokens,
 # скоуп «Umid's projects» → Settings → Secrets and variables → Actions →
@@ -58,7 +58,6 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     needs: build
-    continue-on-error: true
     steps:
       - name: Есть ли токен
         id: token
@@ -81,19 +80,23 @@ jobs:
 
       - name: Поставить Vercel CLI
         if: steps.token.outputs.has == 'true'
+        continue-on-error: true
         run: npm install --global vercel@latest
 
       - name: Забрать настройки окружения preview
         if: steps.token.outputs.has == 'true'
+        continue-on-error: true
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Собрать
         if: steps.token.outputs.has == 'true'
+        continue-on-error: true
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Выложить превью
         id: deploy
         if: steps.token.outputs.has == 'true'
+        continue-on-error: true
         run: |
           url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
           echo "url=$url" >> "$GITHUB_OUTPUT"
