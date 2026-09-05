@@ -2620,4 +2620,283 @@ export const importedPosts: BlogPost[] = [
     
     ],
   },
+
+  {
+    slug: "savdo-tarmogini-kengaytirish-avtomatlashtirish",
+    title: "Savdo Tarmog‘ini Kengaytirish va Avtomatlashtirish Yo‘llari",
+    metaTitle: "Savdo Tarmog‘ini Kengaytirish va Avtomatlashtirish | BIS-PRO",
+    excerpt: "Chakana savdo tarmog‘ini nazoratni yo‘qotmasdan kengaytirish sirlari. Kassadagi kamomad, o‘g‘irlik va ombor nazoratini SAP orqali boshqarish.",
+    readingTime: "4 daqiqa",
+    category: "Tizim tanlash",
+    image: "/design/blog/savdo-tarmogini-kengaytirish-avtomatlashtirish.webp",
+    body: [
+      {
+        type: "p",
+        text: "Chakana savdo va distribyutsiya sohasida faoliyat yuritayotgan har bir tadbirkor ertami-kechmi biznesni kengaytirish (masshtablashtirish) masalasiga to‘qnash keladi. Yangi savdo nuqtalarini ochish jozibador ko‘rinsa-da, bu biznes uchun eng xavfli bosqichlardan biridir.",
+      },
+      {
+        type: "p",
+        text: "Amaliyot shuni ko‘rsatadiki, hisob-kitob poydevori mustahkam bo‘lmagan kompaniyalar filiallar sonini oshirishi bilan foyda o‘rniga katta boshqaruv inqiroziga uchraydi.",
+      },
+      {
+        type: "h3",
+        text: "Shaffof Hisob-Kitobsiz Masshtablashtirish Xatarlari",
+      },
+     
+      {
+        type: "p",
+        text: "Agar tarmoqda 2–3 ta do‘kon bo‘lsa, nazoratni rahbarning shaxsiy ishtiroki yoki oddiy jadvallar orqali qisman ushlab turish mumkin. Ammo filiallar soni 10, 20 yoki 50 tadan oshganda quyidagi tizimli muammolar yuzaga keladi:",
+      },
+      {
+        type: "p",
+        text: " **•** ** Har bir mahsulotning real foydasi ko‘rinmaydi: ** Qaysi tovar tarmog‘ga haqiqiy marja keltirayotgani va qaysi biri pulni muzlatib turgani noma’lum bo‘lib qoladi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Kamomad va ichki o‘g‘irliklar ko‘payadi: **Kassa, ombor va logistika o‘rtasida to‘liq integratsiya bo‘lmagani sababli tovarlarning yo‘qolishi oddiy holga aylanadi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Pul oqimlarida uzilish (kassoviy razriv): ** Yetkazib beruvchilarga to‘lov qilish va yangi tovar sotib olish uchun naqd pul yetishmovchiligi boshlanadi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Omborda nelikvid tovarlar to‘planadi: ** Talab past mahsulotlar javonlarni band qiladi, aylanma kapital esa harakatsiz qoladi.",
+      },
+      {
+        type: "p",
+        text: "Bunday vaziyatda har bir yangi ochilgan filial daromad keltirish o‘rniga kompaniyani bankrotlik sari tortadi.",
+      },
+      {
+        type: "h3",
+        text: "Korzinka Supermarketlar Tarmog‘i Misolida Yondashuv",
+      },
+      {
+        type: "p",
+        text: "O‘zbekiston chakana savdo bozorida 'Korzinka' supermarketlar tarmog‘ining so‘nggi yillarda 2–3 barobarga tez va barqaror o‘sganini ko‘rishimiz mumkin.",
+      },
+      {
+        type: "p",
+        text: "Ushbu muvaffaqiyat zamirida tizimning qandaydir sehrliligi emas, balki SAP orqali yo‘lga qo‘yilgan aniq ma’lumotlar va mutlaq shaffoflik yotadi:",
+      },
+      {
+        type: "p",
+        text: " **•** Har bir do‘kon va har bir mahsulot bo‘yicha aniq tannarx va marja real vaqtda ko‘rinadi.",
+      },
+      {
+        type: "p",
+        text: " **•** Tovar qabul qilinishidan tortib kassada chek urilgunicha bo‘lgan barcha jarayonlar bitta tizimda yuritiladi, bu esa kamomad va o‘g‘irliklarni bartaraf etadi. ",
+      },
+      {
+        type: "p",
+        text: " **•** Xaridlar va ta’minot jarayoni taxminlarga emas, tizimdagi qoldiqlar va savdo tezligiga asoslanadi. ",
+      },
+       {
+        type: "p",
+        text: "Aynan mustahkam ERP poydevori mavjud bo‘lgandagina biznesni xavf-xatarsiz kengaytirish mumkin bo‘ladi.",
+      },
+
+      {
+        type: "h3",
+        text: "Chakana Savdoni Avtomatlashtirish Nimadan Boshlanadi?",
+      },
+      
+      {
+        type: "p",
+        text: "Savdo tarmog‘ini muvaffaqiyatli kengaytirish uchun quyidagi asosiy bosqichlarni bajarish lozim:",
+      },
+
+      {
+        type: "p",
+        text: "** 1.** ** Markazlashgan ma’lumotlar bazasi: ** Barcha filiallar, omborlar va kassa tizimlarini yagona ERP platformasiga ulash.",
+      },
+      {
+        type: "p",
+        text: "** 2.** ** Zaxiralarni avtomatlashtirilgan boshqaruvi: ** Omborda tovar qoldig‘i kamayganda ta’minotga avtomatik talabnoma shakllantirish tizimini yo‘lga qo‘yish.",
+      },
+      {
+        type: "p",
+        text: "** 3.** ** Haqiqiy foyda tahlili: ** Har bir aksiya, chegirma va mahsulot toifasining kompaniya umumiy daromadiga ta’sirini doimiy kuzatib borish.",
+      },
+
+      {
+        type: "p",
+        text: "[SAP Business One tizimi](/uz/sap-business-one) aynan o‘rta va rivojlanayotgan savdo tarmoqlari uchun barcha ushbu imkoniyatlarni o‘z ichiga olgan yechim hisoblanadi.",
+      },
+      {
+        type: "h3",
+        text: "Foydali Havolalar:",
+      },
+      
+      {
+        type: "p",
+        text: " **•** Tarmoq omborlarida muzlab turgan mablag‘ni [Aylanma kapital kalkulyatori](/uz/simulator) orqali hisoblang.",
+      },
+     {
+        type: "p",
+        text: " **•** Do‘konlar va savdo zanjirlari uchun [Chakana savdo moduli](/uz/retail-trade) imkoniyatlari bilan tanishing.",
+      },
+       {
+        type: "p",
+        text: " **•** Savdo kompaniyasida sotuvni +15% ga oshirish tajribasini [Climadens Pro keysi](/uz/portfolio/climadens) misolida ko‘ring.",
+      },
+      {
+        type: "p",
+        text: " **•** Savdo jarayonlaringizni tahlil qilish uchun [Mutaxassislarimiz bilan bog‘laning.](/uz/contacts)",
+      },
+    ],
+  },
+   {
+    slug: "avtomatizatsiya-skladov-i-biznesa-1c-odoo-sap",
+    title: "Ombor va Biznesni Avtomatlashtirish: 1C, Odoo Yoki SAP? Qaysi Biri To‘g‘ri?",
+    metaTitle: "Ombor Avtomatlashtirish: 1C, Odoo yoki SAP | BIS-PRO",
+    excerpt: "Ombor va biznes jarayonlarini avtomatlashtirish: 1C, Odoo va SAP Business One tizimlarining haqiqiy farqlari, afzalliklari va cheklovlari tahlili.",
+    readingTime: "4 daqiqa",
+    category: "Tizim tanlash",
+    image: "/design/blog/avtomatizatsiya-skladov-i-biznesa-1c-odoo-sap.webp",
+    body: [
+      {
+        type: "p",
+        text: "Kompaniyada tovar aylanmasi va filiallar soni oshgani sari qog‘oz daftarlar va Excel jadvallariga tayanib ishlash imkonsiz bo‘lib qoladi. Zamonaviy bozorda raqobatda qolish uchun to‘g‘ri va mustahkam ombor va biznesni avtomatlashtirish tizimi zarur.",
+      },
+      {
+        type: "p",
+        text: "O‘zbekistonda tadbirkorlar boshqaruv tizimini tanlashda asosan uchta yo‘nalishga to‘xtalishadi: 1C, Odoo va SAP Business One. Ushbu maqolada har bir tizimning afzalliklari, cheklovlari va korxona hajmiga mosligini tahlil qilamiz.",
+      },
+      {
+        type: "h3",
+        text: "Nega Omborni Alohida Avtomatlashtirish Yetarli Emas?",
+      },
+     
+      {
+        type: "p",
+        text: "Ko‘p korxonalarda uchraydigan odatiy xato — faqat omborni qolgan bo‘limlardan ajratib avtomatlashtirishga urinishdir. Omborga yangi dastur o‘rnatiladi, lekin sotuv, xarid va moliya bo‘limlari boshqa dasturlarda qolib ketadi.",
+      },
+       {
+        type: "p",
+        text: "Bu quyidagi jiddiy muammolarni keltirib chiqaradi:",
+      },
+      {
+        type: "p",
+        text: " **•** ** Qoldiqlar chalkashligi: ** omborchi qabul qilingan tovarni kiritguncha, sotuvchilar mavjud bo‘lmagan mahsulotga shartnoma tuzib qo‘yadi. ",
+      },
+      {
+        type: "p",
+        text: " **•** ** Mablag‘larning muzlashi: ** xarid bo‘limi talabni hisoblamasdan buyurtma beradi, oqibatda ombor harakatsiz tovarlarga to‘ladi, xaridorgir mahsulotlar esa tugab qoladi. ",
+      },
+      {
+        type: "p",
+        text: " **•** ** Axborot uzilishi: ** moliya direktori ombordagi real holatni haftalab kutaveradi, bu esa to‘lov inqirozlariga (kassoviy razriv) sabab bo‘ladi.",
+      },
+      {
+        type: "p",
+        text: "Haqiqiy samara beradigan ombor hisobi faqat sotuv, ta’minot va moliya bitta markazlashgan ERP tizimida birlashgandagina ishlaydi.",
+      },
+      {
+        type: "h3",
+        text: "1C Tizimi: Lokal Buxgalteriya va Uning Cheklovlari",
+      },
+      {
+        type: "p",
+        text: "1C — O‘zbekiston bozorida soliq va buxgalteriya hisobi uchun eng keng tarqalgan dastur.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Afzalliklari: ** Mahalliy buxgalteriya qonunchiligiga to‘liq moslashtirilgan. Bozorida dasturni biladigan buxgalter va mutaxassislar ko‘p.",
+      },
+       {
+        type: "p",
+        text: " **•** ** Cheklovlari: ** Tovar nomenklaturasi va filiallar soni ko‘paygan sari ma’lumotlar bazasi og‘irlashadi va tizim sekinlashadi. Cheksiz dasturiy o‘zgartirishlar (dorabotkalar) biznesni bitta dasturchiga qaram qilib qo‘yadi. Ishlab chiqarish va xalqaro boshqaruv hisobini real vaqt rejimida yuritish murakkab.",
+      },
+      {
+        type: "p",
+        text: "1C buxgalteriya uchun qulay, ammo yirik savdo tarmoqlari va murakkab logistika uchun torlik qilishi mumkin.",
+      },
+      {
+        type: "h3",
+        text: "Odoo: Ochiq Kod va Moslashuvchanlik",
+      },
+      {
+        type: "p",
+        text: "Odoo — xalqaro modulli platforma bo‘lib, qulay veb-interfeysi bilan ajralib turadi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Afzalliklari: ** Modulli tuzilish: biznes faqat o‘ziga kerakli bo‘limlarni (CRM, ombor yoki sotuv) bosqichma-bosqich ulashi mumkin. Zamonaviy dizayn va moslashuvchanlikka ega.",
+      },
+       {
+        type: "p",
+        text: " **•** ** Cheklovlari: ** Boshlang‘ich modullar bepul bo‘lsa-da, O‘zbekiston sharoitiga moslashtirish, fiskallashtirish va chuqur ishlab chiqarish modullarini yaratish uchun katta dasturlash xarajatlari talab etiladi. Mahalliy bozorda yirik va tajribali integratyorlarning kamligi loyiha xavfini oshiradi.",
+      },
+      {
+        type: "h3",
+        text: "SAP Business One: Resurslar Nazorati va Barqaror O‘sish",
+      },
+      
+      {
+        type: "p",
+        text: "[SAP Business One tizimi](/uz/sap-business-one) xomashyo, tovar va moliyani aniq nazorat qilishni istagan o‘rta va rivojlanayotgan bizneslar uchun maxsus yaratilgan.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Yagona axborot maydoni: ** Buyurtma, xarid, ombor qoldig‘i va kassa balansi bir soniya ichida sinxronlashadi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Avtomatlashtirilgan MRP moduli: **  Tizim zaxiralarni tahlil qilib, qaysi xomashyo qachon tugashini oldindan ko‘rsatadi va xaridga buyurtma shakllantiradi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Manzilli ombor va partiyalar hisobi: ** Yaroqlilik muddati, seriya raqamlari va yacheykalarda saqlash qat’iy nazorat qilinadi, bu esa kamomad va o‘g‘irlikni bartaraf etadi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Aniq boshqaruv hisobi: ** Rahbar har bir tovar birligining real tannarxini va har bir filialning sof foydasini o‘z vaqtida ko‘rib turadi.",
+      },
+      {
+        type: "p",
+        text: " SAP Business One korxonani shunchaki hisobga oluvchi emas, balki resurslarni tejamkor boshqaruvchi xalqaro darajadagi platformadir.",
+      },
+     {
+        type: "h3",
+        text: " Xulosa: Qaysi Tizim Maqsadga Muvofiq? ",
+      },
+       {
+        type: "p",
+        text: " **•** Agar asosiy maqsad soliq hisoboti va bitta do‘konning oddiy hisobi bo‘lsa — 1C yechimi yetarli.",
+      },
+      {
+        type: "p",
+        text: " **•** Agar startap bo‘lib, ochiq kodli dasturlarni sinab ko‘rishga tayyor bo‘lsangiz — Odoo ko‘rib chiqilishi mumkin.",
+      },
+      {
+        type: "p",
+        text: " **•** Agar kengayayotgan savdo zanjiri, yirik distribyutsiya yoki ishlab chiqarish korxonasi bo‘lib, ombor qoldiqlari, tannarx va aylanma kapitalni yo‘qotishlarsiz boshqarmoqchi bo‘lsangiz — SAP Business One eng ishonchli poydevor hisoblanadi.",
+      },
+      {
+        type: "h3",
+        text: " Foydali Havolalar: ",
+      },
+      {
+        type: "p",
+        text: " **•** Omboringizda qancha aylanma mablag‘ muzlab yotganini [Aylanma kapital kalkulyatori](/uz/simulator) orqali hisoblang.",
+      },
+      {
+        type: "p",
+        text: " **•** Ombor va ishlab chiqarishni yagona tizimga bog‘lagan korxona keysini [BRAUF Wood tajribasi](/uz/portfolio/brauf) orqali o‘rganing.",
+      },
+      {
+        type: "p",
+        text: " **•** Katta assortimentli savdoda olingan natijalarni [Climadens Pro keysi](/uz/portfolio/climadens) misolida ko‘ring.",
+      },
+      {
+        type: "p",
+        text: " **•** Tizimlarning boshqaruvdagi farqlari haqida [SAP va 1C solishtiruvi](/uz/post/sap-yoki-1c-erp-tizimlar-taqoslash-biznes-uchun) maqolasidan bilib oling.",
+      },
+        {
+        type: "p",
+        text: " **•** Ombor va biznes jarayonlarini tahlil qilish uchun [Audit va konsultatsiya](/uz/contacts) sahifasi orqali mutaxassislarimizga murojaat qiling.",
+      },
+    ],
+  },
 ];
