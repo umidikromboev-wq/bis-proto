@@ -253,7 +253,9 @@ export function PostView({ slug, locale = DEFAULT_LOCALE }: { slug: string ; loc
           <Reveal>
             <Image
               src={post.image}
-              alt=""
+              /* Обложка несёт тему статьи, а не украшает страницу: пустой alt
+                 оставил бы её невидимой и для читалки, и для поиска. */
+              alt={post.title}
               width={1200}
               height={675}
               className="di-article-cover"
