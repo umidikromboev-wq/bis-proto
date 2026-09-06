@@ -2624,7 +2624,7 @@ export const importedPosts: BlogPost[] = [
   {
     slug: "savdo-tarmogini-kengaytirish-avtomatlashtirish",
     title: "Savdo tarmog‘ini kengaytirish va avtomatlashtirish yo‘llari",
-    metaTitle: "Savdo tarmog‘ini kengaytirish va avtomatlashtirish | BIS-PRO",
+    metaTitle: "Savdo tarmog‘ini kengaytirish va avtomatlashtirish",
     excerpt: "Chakana savdo tarmog‘ini nazoratni yo‘qotmasdan kengaytirish sirlari. Kassadagi kamomad, o‘g‘irlik va ombor nazoratini SAP orqali boshqarish.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
@@ -2749,7 +2749,7 @@ export const importedPosts: BlogPost[] = [
    {
     slug: "ombor-va-biznesni-avtomatlashtirish-1c-odoo-sap",
     title: "Ombor va biznesni avtomatlashtirish: 1C, Odoo yoki SAP? Qaysi biri to‘g‘ri?",
-    metaTitle: "Ombor avtomatlashtirish: 1C, Odoo yoki SAP | BIS-PRO",
+    metaTitle: "Ombor avtomatlashtirish: 1C, Odoo yoki SAP",
     excerpt: "Ombor va biznes jarayonlarini avtomatlashtirish: 1C, Odoo va SAP Business One tizimlarining haqiqiy farqlari, afzalliklari va cheklovlari tahlili.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
