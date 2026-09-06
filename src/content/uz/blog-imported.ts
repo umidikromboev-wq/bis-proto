@@ -2623,8 +2623,8 @@ export const importedPosts: BlogPost[] = [
 
   {
     slug: "savdo-tarmogini-kengaytirish-avtomatlashtirish",
-    title: "Savdo Tarmog‘ini Kengaytirish va Avtomatlashtirish Yo‘llari",
-    metaTitle: "Savdo Tarmog‘ini Kengaytirish va Avtomatlashtirish | BIS-PRO",
+    title: "Savdo tarmog‘ini kengaytirish va avtomatlashtirish yo‘llari",
+    metaTitle: "Savdo tarmog‘ini kengaytirish va avtomatlashtirish | BIS-PRO",
     excerpt: "Chakana savdo tarmog‘ini nazoratni yo‘qotmasdan kengaytirish sirlari. Kassadagi kamomad, o‘g‘irlik va ombor nazoratini SAP orqali boshqarish.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
@@ -2640,7 +2640,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Shaffof Hisob-Kitobsiz Masshtablashtirish Xatarlari",
+        text: "Shaffof hisob-kitobsiz masshtablashtirish xatarlari",
       },
      
       {
@@ -2669,7 +2669,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Korzinka Supermarketlar Tarmog‘i Misolida Yondashuv",
+        text: "Korzinka supermarketlar tarmog‘i misolida yondashuv",
       },
       {
         type: "p",
@@ -2698,7 +2698,7 @@ export const importedPosts: BlogPost[] = [
 
       {
         type: "h3",
-        text: "Chakana Savdoni Avtomatlashtirish Nimadan Boshlanadi?",
+        text: "Chakana savdoni avtomatlashtirish nimadan boshlanadi?",
       },
       
       {
@@ -2725,7 +2725,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Foydali Havolalar:",
+        text: "Foydali havolalar:",
       },
       
       {
@@ -2747,9 +2747,9 @@ export const importedPosts: BlogPost[] = [
     ],
   },
    {
-    slug: "avtomatizatsiya-skladov-i-biznesa-1c-odoo-sap",
-    title: "Ombor va Biznesni Avtomatlashtirish: 1C, Odoo Yoki SAP? Qaysi Biri To‘g‘ri?",
-    metaTitle: "Ombor Avtomatlashtirish: 1C, Odoo yoki SAP | BIS-PRO",
+    slug: "ombor-va-biznesni-avtomatlashtirish-1c-odoo-sap",
+    title: "Ombor va biznesni avtomatlashtirish: 1C, Odoo yoki SAP? Qaysi biri to‘g‘ri?",
+    metaTitle: "Ombor avtomatlashtirish: 1C, Odoo yoki SAP | BIS-PRO",
     excerpt: "Ombor va biznes jarayonlarini avtomatlashtirish: 1C, Odoo va SAP Business One tizimlarining haqiqiy farqlari, afzalliklari va cheklovlari tahlili.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
@@ -2765,7 +2765,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Nega Omborni Alohida Avtomatlashtirish Yetarli Emas?",
+        text: "Nega omborni alohida avtomatlashtirish yetarli emas?",
       },
      
       {
@@ -2794,7 +2794,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "1C Tizimi: Lokal Buxgalteriya va Uning Cheklovlari",
+        text: "1C tizimi: lokal buxgalteriya va uning cheklovlari",
       },
       {
         type: "p",
@@ -2814,7 +2814,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Odoo: Ochiq Kod va Moslashuvchanlik",
+        text: "Odoo: ochiq kod va moslashuvchanlik",
       },
       {
         type: "p",
@@ -2830,7 +2830,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "SAP Business One: Resurslar Nazorati va Barqaror O‘sish",
+        text: "SAP Business One: resurslar nazorati va barqaror o‘sish",
       },
       
       {
@@ -2859,7 +2859,7 @@ export const importedPosts: BlogPost[] = [
       },
      {
         type: "h3",
-        text: " Xulosa: Qaysi Tizim Maqsadga Muvofiq? ",
+        text: "Xulosa: qaysi tizim maqsadga muvofiq?",
       },
        {
         type: "p",
@@ -2875,7 +2875,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: " Foydali Havolalar: ",
+        text: "Foydali havolalar:",
       },
       {
         type: "p",
