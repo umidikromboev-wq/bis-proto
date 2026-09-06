@@ -2483,7 +2483,7 @@ export const importedPosts: BlogPost[] = [
    {
     slug: "masshtabirovanie-roznichnoy-seti-avtomatizatsiya",
     title: "Масштабирование розничной сети: как автоматизировать учёт и избежать потерь",
-    metaTitle: "Масштабирование розничной сети и автоматизация учёта | BIS-PRO",
+    metaTitle: "Масштабирование розничной сети и автоматизация учёта",
     excerpt: "Как масштабировать розничную сеть магазинов без кассовых разрывов и потерь. Опыт наведения прозрачного учета и контроля остатков на базе SAP.",
     readingTime: "4 минуты",
     category: "Выбор системы",
@@ -2603,7 +2603,7 @@ export const importedPosts: BlogPost[] = [
   {
     slug: "avtomatizatsiya-skladov-i-biznesa-1c-odoo-sap",
     title: "Автоматизация складов и бизнеса: 1С, Odoo или SAP? Что выбрать компании",
-    metaTitle: "Автоматизация складов и бизнеса: 1С, Odoo, SAP | BIS-PRO",
+    metaTitle: "Автоматизация складов и бизнеса: 1С, Odoo, SAP",
     excerpt: "Какую систему выбрать для комплексной автоматизации склада и бизнеса: 1С, Odoo или SAP Business One? Реальные отличия, плюсы и ограничения систем.",
     readingTime: "4 минуты",
     category: "Выбор системы",
