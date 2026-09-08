@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Контакты BIS-PRO — Офис Внедрения SAP и ERP в Ташкенте",
     description:
       "Приезжайте в офис BIS-PRO в Ташкенте или начните с онлайн-анализа! Консультации по внедрению SAP и автоматизации бизнеса по всему Узбекистану.",
-    url: "/ru/contacts",
+    url: "/contacts",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

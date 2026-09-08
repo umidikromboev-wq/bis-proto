@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "SAP для Оптовой Торговли и Дистрибуции в Ташкенте — BIS-PRO",
     description:
       "Автоматизация оптовой торговли и дистрибуции на базе SAP в Узбекистане. Контроль дебиторской задолженности, склада и неликвидов онлайн. Узнайте больше!",
-    url: "/ru/wholesale-trade",
+    url: "/wholesale-trade",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

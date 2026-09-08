@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Вакансии SAP Ташкент — Работа для ERP Консультантов в BIS-PRO",
     description:
       "Вакансии для сертифицированных консультантов SAP Business One и руководителей ERP проектов в Ташкенте. Присоединяйтесь к команде BIS-PRO и отправьте резюме!",
-    url: "/ru/vacancy",
+    url: "/vacancy",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

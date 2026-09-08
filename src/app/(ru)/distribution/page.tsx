@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Автоматизация Дистрибуции с SAP Business One в Ташкенте",
     description:
       "Единая система SAP Business One для дистрибьюторов в Узбекистане: управление закупками, складом, отгрузкой и взаиморасчетами. Узнайте подробности!",
-    url: "/ru/distribution",
+    url: "/distribution",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

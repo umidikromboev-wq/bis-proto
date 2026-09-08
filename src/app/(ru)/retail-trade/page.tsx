@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "SAP для Розничной Торговли и Магазинов в Ташкенте",
     description:
       "Автоматизация розничной торговли и сетей магазинов на базе SAP в Узбекистане. Сведение кассы, склада и закупок в единую систему. Узнайте подробности!",
-    url: "/ru/retail-trade",
+    url: "/retail-trade",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

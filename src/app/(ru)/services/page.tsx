@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Услуги SAP в Узбекистане — Внедрение, Аудит и Поддержка SAP",
     description:
       "Услуги по внедрению SAP Business One и S/4HANA от 3 месяцев. Комплексный аудит текущей ERP системы, настройка и техническая поддержка в Ташкенте. Рассчитайте смету!",
-    url: "/ru/services",
+    url: "/services",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Академия SAP в Ташкенте — Курсы Обучения Сотрудников | BIS-PRO",
     description:
       "Обучение сотрудников работе в SAP по ролям в Ташкенте. Сократите время освоения системы на 30% и снимите риски внедрения. Запишитесь на курс!",
-    url: "/ru/courses",
+    url: "/courses",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",
