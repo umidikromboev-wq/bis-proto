@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Кейсы и Проекты Внедрения SAP в Узбекистане — Портфолио BIS-PRO",
     description:
       "Результаты и кейсы внедрения SAP Business One в Узбекистане. Реальные цифры снижения издержек и роста продаж наших клиентов в сфере производства и торговли.",
-    url: "/ru/portfolio",
+    url: "/portfolio",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

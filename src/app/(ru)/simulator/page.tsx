@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Калькулятор Оборотного Капитала — Расчет Замороженных Денег | BIS-PRO",
     description:
       "Сколько ваших денег стоит в обороте без движения? Бесплатный калькулятор оборотного капитала для дистрибуции, розницы и производства. Рассчитайте сейчас!",
-    url: "/ru/simulator",
+    url: "/simulator",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

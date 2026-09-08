@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Внедрение SAP S/4HANA в Узбекистане — ERP для Холдингов и Заводов",
     description:
       "Внедрение SAP S/4HANA в Ташкенте для крупных предприятий и холдингов. Единый учет нескольких юрлиц, консолидация финансов и автоматизация производства. Запросите демо!",
-    url: "/ru/sap-s-4hana",
+    url: "/sap-s-4hana",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

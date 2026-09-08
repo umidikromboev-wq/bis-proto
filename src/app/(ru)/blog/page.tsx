@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Блог о ERP и SAP — Практика и Руководства по Автоматизации Бизнеса",
     description:
       "Практические статьи о выборе и внедрении ERP систем без рекламы. Как избежать ошибок при автоматизации склада, учета и производства. Читайте опыт BIS-PRO!",
-    url: "/ru/blog",
+    url: "/blog",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

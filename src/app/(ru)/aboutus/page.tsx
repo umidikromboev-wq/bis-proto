@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "О Компании BIS-PRO — Эксперты по Внедрению SAP в Узбекистане",
     description:
       "Команда BIS-PRO: внедряем SAP в Ташкенте с 2019 года. Более 35 успешных проектов с бюджетом $2M+. Проводим бесплатный аудит бизнес-процессов перед стартом!",
-    url: "/ru/aboutus",
+    url: "/aboutus",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Внедрение и Настройка SAP Business One в Ташкенте — BIS-PRO",
     description:
       "Полный цикл внедрения SAP Business One: от аудита до настройки модулей склада, закупок и производства. Консалтинг и поддержка от официального партнёра.",
-    url: "/ru/sap-business-one",
+    url: "/sap-business-one",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",

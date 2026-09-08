@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "SAP для Производства в Узбекистане — Расчет Фактической Себестоимости",
     description:
       "Автоматизация производства на базе SAP Business One в Ташкенте. Точный расчет себестоимости по каждому заказу, учет сырья и брака. Узнайте стоимость!",
-    url: "/ru/production",
+    url: "/production",
     siteName: "BIS-PRO",
     locale: "ru_RU",
     type: "website",
