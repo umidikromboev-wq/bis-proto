@@ -2483,7 +2483,7 @@ export const importedPosts: BlogPost[] = [
    {
     slug: "masshtabirovanie-roznichnoy-seti-avtomatizatsiya",
     title: "Масштабирование розничной сети: как автоматизировать учёт и избежать потерь",
-    metaTitle: "Масштабирование розничной сети и автоматизация учёта",
+    metaTitle: "Масштабирование розничной сети и автоматизация учёта | BIS-PRO",
     excerpt: "Как масштабировать розничную сеть магазинов без кассовых разрывов и потерь. Опыт наведения прозрачного учета и контроля остатков на базе SAP.",
     readingTime: "4 минуты",
     category: "Выбор системы",
@@ -2499,6 +2499,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
+        text: "Риски масштабирования без прозрачного учёта",
         text: "Риски масштабирования без прозрачного учёта",
       },
       {
@@ -2528,6 +2529,7 @@ export const importedPosts: BlogPost[] = [
       {
         type: "h3",
         text: "Пример сети супермаркетов Korzinka",
+        text: "Пример сети супермаркетов Korzinka",
       },
       {
         type: "p",
@@ -2556,6 +2558,7 @@ export const importedPosts: BlogPost[] = [
       {
         type: "h3",
         text: "Ключевые шаги автоматизации торговой сети",
+        text: "Ключевые шаги автоматизации торговой сети",
       },
       {
         type: "p",
@@ -2580,6 +2583,7 @@ export const importedPosts: BlogPost[] = [
       {
         type: "h3",
         text: "Полезные ссылки:",
+        text: "Полезные ссылки:",
       },
       {
         type: "p",
@@ -2603,7 +2607,7 @@ export const importedPosts: BlogPost[] = [
   {
     slug: "avtomatizatsiya-skladov-i-biznesa-1c-odoo-sap",
     title: "Автоматизация складов и бизнеса: 1С, Odoo или SAP? Что выбрать компании",
-    metaTitle: "Автоматизация складов и бизнеса: 1С, Odoo, SAP",
+    metaTitle: "Автоматизация складов и бизнеса: 1С, Odoo, SAP | BIS-PRO",
     excerpt: "Какую систему выбрать для комплексной автоматизации склада и бизнеса: 1С, Odoo или SAP Business One? Реальные отличия, плюсы и ограничения систем.",
     readingTime: "4 минуты",
     category: "Выбор системы",
@@ -2619,6 +2623,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
+        text: "Почему автоматизация склада не работает без автоматизации бизнеса?",
         text: "Почему автоматизация склада не работает без автоматизации бизнеса?",
       },
       {
@@ -2647,6 +2652,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
+        text: "1С: локальный стандарт и его ограничения",
         text: "1С: локальный стандарт и его ограничения",
       },
       {
@@ -2688,6 +2694,7 @@ export const importedPosts: BlogPost[] = [
       {
         type: "h3",
         text: "Odoo: гибкая модульность и скрытые затраты",
+        text: "Odoo: гибкая модульность и скрытые затраты",
       },
       {
         type: "p",
@@ -2724,6 +2731,7 @@ export const importedPosts: BlogPost[] = [
       {
         type: "h3",
         text: "SAP Business One: прозрачный фундамент для роста",
+        text: "SAP Business One: прозрачный фундамент для роста",
       },
       
       {
@@ -2757,6 +2765,7 @@ export const importedPosts: BlogPost[] = [
       {
         type: "h3",
         text: "Итог: что выбрать вашей компании?",
+        text: "Итог: что выбрать вашей компании?",
       },
       {
         type: "p",
@@ -2772,6 +2781,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
+        text: "Полезные ссылки:",
         text: "Полезные ссылки:",
       },
        {
