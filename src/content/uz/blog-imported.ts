@@ -2901,8 +2901,8 @@ export const importedPosts: BlogPost[] = [
   },
   {
     slug: "biznesda-pul-aylanish-sikli-cash-flow-boshqaruvi",
-    title: "Oborot Bor, Lekin Pul Qani? Pul Aylanish Sikli (CCC) va Kassadagi Taqqislik Sabablari",
-    metaTitle: "Oborot Bor, Pul Qani? Pul Aylanish Sikli (CCC) | BIS-PRO",
+    title: "Oborot bor, lekin pul qani? Pul aylanish sikli (CCC) va kassadagi taqchillik sabablari",
+    metaTitle: "Oborot bor, pul qani? Pul aylanish sikli (CCC)",
     excerpt: "Savdo o‘syapti, lekin kassada pul yo‘qmi? CCC formulasi va ombor hamda debitorda muzlagan aylanma kapitalni bo‘shatish yo‘llari.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
@@ -2918,7 +2918,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Kapitalning Aylanish Zanjiri Qayerda Buziladi?",
+        text: "Kapitalning aylanish zanjiri qayerda buziladi?",
       },
      
       {
@@ -2947,7 +2947,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Pul Aylanish Sikli (Cash Conversion Cycle — CCC) Formulasi",
+        text: "Pul aylanish sikli (Cash Conversion Cycle — CCC) formulasi",
       },
       {
         type: "p",
@@ -2987,7 +2987,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "CCC Siklini Qisqartirish Orqali Investitsiyasiz Pul Chiqarish",
+        text: "CCC siklini qisqartirish orqali investitsiyasiz pul chiqarish",
       },
       {
         type: "p",
@@ -3011,7 +3011,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "ERP Tizimisiz Buni Nega Nazorat Qilib Bo‘lmaydi?",
+        text: "ERP tizimisiz buni nega nazorat qilib bo‘lmaydi?",
       },
 
       {
@@ -3037,7 +3037,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Foydali Havolalar: ",
+        text: "Foydali havolalar:",
       },
       {
         type: "p",

@@ -1,5 +1,18 @@
 # BIS · журнал работ
 
+## 2026-09-13 — PR #16 Бахтиёра: статья о цикле оборачиваемости (CCC), RU + UZ
+
+Сделано:
+- Ветка `Baxtiyor` конфликтовала с `main` в `blog-imported.ts` (RU/UZ): в его копии
+  остались `| BIS-PRO` в metaTitle и закомментированные дубли заголовков, снятые в PR #12.
+  Конфликты разрешены в пользу `main`, новые статьи взяты из его ветки.
+- Новая статья: RU `/post/oborot-rastet-a-deneg-net-ccc`,
+  UZ `/uz/post/biznesda-pul-aylanish-sikli-cash-flow-boshqaruvi`, обложка
+  `public/design/blog/oborot-rastet-a-deneg-net-ccc.webp`.
+- Приведено к правилам блога: обычный регистр в заголовках и h3 (у него был Title Case),
+  без второго бренда в metaTitle, опечатка «taqqislik» → «taqchillik».
+- Пара слагов RU↔UZ добавлена в `post-slugs.ts` — иначе hreflang у статьи не сойдётся.
+
 Обратная хронология: свежее сверху. Формат: дата → сделано → решения → грабли → осталось.
 Состояние проекта — `HANDOFF.md`, регламент SEO-переезда — `MIGRATION.md`.
 

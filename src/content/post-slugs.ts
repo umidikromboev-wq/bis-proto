@@ -24,6 +24,8 @@ const RU_TO_UZ: Record<string, string> = {
     "sap-business-one-vs-odoo-qaysi-erp-platformasi-mos",
   "sap-business-one-kontrol-sklada": "sap-business-one-ombor-nazorati",
   "sap-vs-1c-sravnenie-erp-sistem-dlya-biznesa": "sap-yoki-1c-erp-tizimlar-taqoslash-biznes-uchun",
+  // Статья Бахтиёра о CCC (PR #16): слаги на двух языках разные.
+  "oborot-rastet-a-deneg-net-ccc": "biznesda-pul-aylanish-sikli-cash-flow-boshqaruvi",
 };
 
 const UZ_TO_RU: Record<string, string> = Object.fromEntries(
