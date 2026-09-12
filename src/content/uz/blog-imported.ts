@@ -2899,4 +2899,163 @@ export const importedPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "biznesda-pul-aylanish-sikli-cash-flow-boshqaruvi",
+    title: "Oborot bor, lekin pul qani? Pul aylanish sikli (CCC) va kassadagi taqchillik sabablari",
+    metaTitle: "Oborot bor, pul qani? Pul aylanish sikli (CCC)",
+    excerpt: "Savdo o‘syapti, lekin kassada pul yo‘qmi? CCC formulasi va ombor hamda debitorda muzlagan aylanma kapitalni bo‘shatish yo‘llari.",
+    readingTime: "4 daqiqa",
+    category: "Tizim tanlash",
+    image: "/design/blog/oborot-rastet-a-deneg-net-ccc.webp",
+    body: [
+      {
+        type: "p",
+        text: "Ko‘plab savdo, distribyutsiya va ishlab chiqarish kompaniyalari rahbarlari har oy oxirida bitta og‘riqli savolga duch kelishadi: 'Hisobotlarda savdo o‘syapti, qog‘ozda foyda bor, lekin kassada nega pul yo‘q?'",
+      },
+      {
+        type: "p",
+        text: "Buning asosiy sababi — biznes faqat aylanma (oborot) va qog‘ozdagi foydaga tayanib boshqarilayotganida. Aslida kompaniyaning tirikligi aylanma bilan emas, balki real pul oqimi (Cash Flow) va kapitalning aylanish tezligi bilan belgilanadi. Agar pul oqimi nazoratsiz qolsa, korxona to‘lov inqiroziga (kassoviy razriv) tushib, aylanmasi katta bo‘lishiga qaramay to‘xtab qoladi.",
+      },
+      {
+        type: "h3",
+        text: "Kapitalning aylanish zanjiri qayerda buziladi?",
+      },
+     
+      {
+        type: "p",
+        text: "Har qanday operatsion biznesda pul harakati klassik zanjir bo‘ylab harakatlanadi: Pul ➔ Tovar ➔ Debitorlik qarzi ➔ Qayta Pulga aylanish.",
+      },
+       {
+        type: "p",
+        text: "Ushbu zanjirda kapital ikki joyda eng ko‘p 'muzlaydi':",
+      },
+      {
+        type: "p",
+        text: " **•** ** Omborda : ** Yetkazib berish muddati va talab to‘g‘ri hisoblanmagani sababli sotilmay yotgan ortiqcha zaxiralar. ",
+      },
+      {
+        type: "p",
+        text: " **•** ** Mablag‘larning muzlashi: ** xarid bo‘limi talabni hisoblamasdan buyurtma beradi, oqibatda ombor harakatsiz tovarlarga to‘ladi, xaridorgir mahsulotlar esa tugab qoladi. ",
+      },
+      {
+        type: "p",
+        text: " **•** ** Debitorlikda: ** Xaridorlarga muddatli to‘lov (otstrochka) berilgan, lekin o‘z vaqtida yig‘ib olinmayotgan pullar.",
+      },
+      {
+        type: "p",
+        text: "Agar kapital tovardan debitorga o‘tgan bo‘lsa, bu tovar sotilganini bildiradi. Ammo debitorlik nazoratsiz shishib ketsa, biznes tovar sotishni to‘xtatib, o‘z hisobidan mijozlarini tekinga moliyalashtirishni boshlaydi.",
+      },
+      {
+        type: "h3",
+        text: "Pul aylanish sikli (Cash Conversion Cycle — CCC) formulasi",
+      },
+      {
+        type: "p",
+        text: "Biznes o‘z sarmoyasini qanchalik tez qaytarayotganini aniqlash uchun moliya olamida CCC (Cash Conversion Cycle) ko‘rsatkichi ishlatiladi.",
+      },
+      {
+        type: "p",
+        text: "Formula quyidagicha hisoblanadi:",
+      },
+      {
+        type: "p",
+        text: " CCC = DIO (Ombor kunlari) + DSO (Debitor kunlari) – DPO (Kreditor kunlari) ",
+      },
+      {
+        type: "p",
+        text: " Keling, yillik aylanmasi $12 mln bo‘lgan korxona misolida ko‘rib chiqamiz: ",
+      },
+       {
+        type: "p",
+        text: " **•** Kunlik savdo: $12,000,000 / 365 = $32,877.",
+      },
+      {
+        type: "p",
+        text: " **•** Debitorlik qarzi: $500,000 bo‘lsa, debitor kunlari (DSO) = 15 kun. ",
+      },
+       {
+        type: "p",
+        text: " **•** Yetkazib beruvchilar oldidagi qarz (Kreditor): $700,000 bo‘lsa, kreditor kunlari (DPO) = 21 kun. ",
+      },
+      {
+        type: "p",
+        text: "Demak, pul aylanish sikli: 18 + 15 – 21 = 12 kun.",
+      },
+      {
+        type: "p",
+        text: "Bu korxona o‘z puliga emas, asosan yetkazib beruvchining to‘lov muhlatiga (otstrochkasiga) tayanib, aylanma tezligi hisobiga ishlamoqda. Agar bu sikl cho‘zilib, 60–90 kunga chiqib ketsa, biznes tashqaridan doimiy kredit olishga majbur bo‘ladi.",
+      },
+      {
+        type: "h3",
+        text: "CCC siklini qisqartirish orqali investitsiyasiz pul chiqarish",
+      },
+      {
+        type: "p",
+        text: "Kassada erkin naqd pul paydo qilish uchun darhol foizli bank krediti yoki investor qidirish shart emas. Birinchi navbatda biznes ichidagi 3 ta dastakni (lever) ishlatish zarur:",
+      },
+      {
+        type: "p",
+        text: " ** 1. ** ** Ombor aylanmasini tezlashtirish: **  Harakatsiz yotgan (slow-moving) tovarlarni chegirma bilan sotib yuborish va zaxiralarni me’yorga keltirish.",
+      },
+       {
+        type: "p",
+        text: " **2.** ** Debitorlikni qat’iy limitlash: ** Har bir mijozga limit belgilash va to‘lov muddati o‘tgan zahoti yuk yuklashni avtomatik to‘xtatish (stop-ship).",
+      },
+      {
+        type: "p",
+        text: " **3.** ** DYetkazib beruvchilar bilan to‘lov muddatini uzaytirish: **  Mahsulot yetkazib beruvchilar beradigan 30–60 kunlik muddat amalda foizsiz kredit liniyasidir.",
+      },
+      {
+        type: "p",
+        text: "Agar kompaniya o‘z pul aylanish siklini bor-yo‘g‘i 10 kunga qisqartira olsa, kunlik savdosi $33,000 bo‘lgan biznesda kassaga qo‘shimcha $330,000 erkin naqd pul bo‘shaydi.",
+      },
+      {
+        type: "h3",
+        text: "ERP tizimisiz buni nega nazorat qilib bo‘lmaydi?",
+      },
+
+      {
+        type: "p",
+        text: "Excel yoki bir-biriga ulanmagan dasturlarda ishlayotgan korxonada kunlik qoldiq, muddati o‘tgan qarzdorlik va to‘lov jadvallari bir-biridan uzilgan bo‘ladi.",
+      },
+      
+      {
+        type: "p",
+        text: "[SAP Business One tizimi](/uz/sap-business-one) xarid, ombor, sotuv va moliyani yagona bazada birlashtiradi. Tizim avtomatik ravishda:",
+      },
+      {
+        type: "p",
+        text: " **•** Qaysi tovar necha kundan beri omborda yotganini (Inventory Aging) real vaqtda ko‘rsatadi;",
+      },
+      {
+        type: "p",
+        text: " **•** To‘lov muddati o‘tgan mijozlarga sotuvchilar qayta tovar chiqara olmasligi uchun blok qo‘yadi;",
+      },
+      {
+        type: "p",
+        text: " **•** Kassoviy razriv xavfini oldindan hisoblab, to‘lovlar kalendarini shakllantiradi.",
+      },
+      {
+        type: "h3",
+        text: "Foydali havolalar:",
+      },
+      {
+        type: "p",
+        text: "Kompaniyangizda aylanma kapital qanchalik samarali ishlayotganini [Aylanma kapital kalkulyatori](/uz/simulator) orqali hisoblang.",
+      },
+      {
+        type: "p",
+        text: "Ombor va sotuvni yagona tizimga ulab pul aylanmasini tezlashtirgan korxona tajribasini [Climadens Pro keysi](/uz/portfolio/climadens) misolida ko‘ring.",
+      },
+       {
+        type: "p",
+        text: "Tizimlarning boshqaruv imkoniyatlarini [SAP va 1C solishtiruvi](/uz/post/sap-yoki-1c-erp-tizimlar-taqoslash-biznes-uchun) maqolasidan bilib oling.",
+      },
+        {
+        type: "p",
+        text: "Biznesingizdagi pul oqimlarini professional audit qilish uchun [ Biz bilan bog‘laning](/uz/contacts)",
+      },
+    
+    ],
+  },
 ];
