@@ -81,6 +81,18 @@
   margin: 0 0 1.5rem;
 }
 
+.di-article a {
+  color: var(--brand, #0057ff);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--brand, #0057ff) 40%, transparent);
+  text-underline-offset: 0.15em;
+  transition: text-decoration-color 0.2s var(--ease);
+}
+
+.di-article a:hover {
+  text-decoration-color: var(--brand, #0057ff);
+}
+
 .di-article h3 {
   font-size: clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem);
   font-weight: 400;
