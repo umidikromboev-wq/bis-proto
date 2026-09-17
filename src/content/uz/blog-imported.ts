@@ -3058,4 +3058,166 @@ export const importedPosts: BlogPost[] = [
     
     ],
   },
+
+  {
+    slug: "ombor-zaxiralarini-boshqarish-soglom-ombor-formulasi",
+    title: "Ombor Zaxiralarini Boshqarish: Korxonada 'Sog‘lom Ombor' Formulasi Qanday Ishlaydi?",
+    metaTitle: "Ombor Zaxiralarini Boshqarish: Sog‘lom Ombor",
+    excerpt: "Omborda qancha pul muzlab yotganini qanday hisoblash mumkin? Lead time, safety stock va ABC tahlil orqali sog‘lom ombor zaxirasini hisoblash qo‘llanmasi.",
+    readingTime: "4 daqiqa",
+    category: "Tizim tanlash",
+    image: "/design/blog/ombor-zaxiralarini-boshqarish-soglom-ombor-formulasi.webp",
+    body: [
+      {
+        type: "p",
+        text: "Savdo va ishlab chiqarish kompaniyalarida eng katta mablag‘ aynan omborga ko‘milgan bo‘ladi. Ko‘plab tadbirkorlar 'Omborda tovar qancha ko‘p bo‘lsa, shuncha yaxshi, xaridor kelganda yo‘q demaymiz' degan qarash bilan ish yuritishadi.",
+      },
+      {
+        type: "p",
+        text: "Biroq hisob-kitob qilinmagan ortiqcha zaxira — bu omborda shunchaki chang bosib yotgan qutilar emas, balki biznesdan sug‘urib olingan va uxlab yotgan jonli naqd puldir.",
+      },
+      {
+        type: "h3",
+        text: "Tovar Qoldig‘ining 'Sog‘lom Miqdori' Nimaga Bog‘liq?",
+      },
+     
+      {
+        type: "p",
+        text: "Ombordagi zaxiraning yetarliligi pul summasi bilan emas, balki ushbu qoldiq hozirgi savdo tezligida necha kunga yetishi bilan o‘lchanadi.",
+      },
+       {
+        type: "p",
+        text: "Sog‘lom zaxira 3 ta asosiy omilga tayanadi:",
+      },
+      {
+        type: "p",
+        text: " **1.** ** Yetkazib berish muddati (Lead Time) ** Xaridga buyurtma berilgan kundan tovar omborga kelib tushguncha necha kun o‘tadi? ",
+      },
+      {
+        type: "p",
+        text: " **2.** ** Savdo barqarorligi: ** Mahsulot bir kunda o‘rtacha necha dona yoki necha dollarga sotilmoqda?  ",
+      },
+      {
+        type: "p",
+        text: " **3.** ** Xavfsizlik zaxirasi (Safety Stock):  ** Yo‘ldagi kutilmagan kechikishlar yoki talab sakrashini yopish uchun necha kunlik zaxira zarur?",
+      },
+      {
+        type: "p",
+        text: "Sog‘lom Ombor Zaxirasi = Yetkazib berish muddati (Lead Time) + Xavfsizlik zaxirasi (Safety Stock)",
+      },
+      {
+        type: "h3",
+        text: "Amaliy Misol: Omborda Uxlayotgan $1,000,000",
+      },
+      {
+        type: "p",
+        text: "Tasavvur qiling, kompaniyaning yillik savdosi $12 mln tashkil etadi.",
+      },
+      {
+        type: "p",
+        text: " **•** Kunlik savdo: $12,000,000 / 365 = $33,000.",
+      },
+      {
+        type: "p",
+        text: " **•** Yetkazib beruvchidan yuk kelish vaqti: 20 kun. ",
+      },
+      {
+        type: "p",
+        text: " **•** Xavfsizlik zaxirasi: 10 kun. ",
+      },
+       {
+        type: "p",
+        text: " Ushbu biznes uchun me’yordagi ombor muddati: 20 + 10 = 30 kunlik savdo zaxirasi. ",
+      },
+      {
+        type: "p",
+        text: " Pul ko‘rinishida: 30 kun × $33,000 = $990,000 (taxminan $1 mln). ",
+      },
+       {
+        type: "p",
+        text: " Endi real holatni tekshiramiz:  ",
+      },
+      {
+        type: "p",
+        text: " **•** **Agar omborda $1 mln lik tovar bo‘lsa: ** Bu ideal holat. Pul haddan tashqari muzlamagan, savdo uzluksiz ta’minlanadi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Agar omborda $2 mln lik tovar yotgan bo‘lsa ** Bu 60 kunlik zaxira degani. Kompaniyaning $1,000,000 puli omborda keraksiz ravishda uxlab yotibdi. Bu mablag‘ni yangi filiallarga, marketingga tikish yoki bank kreditlaridan qutulish uchun ishlatish mumkin edi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Agar omborda $500,000 lik tovar bo‘lsa: ** Bu bor-yo‘g‘i 15 kunlik zaxira. Mahsulot kelishiga esa 20 kun kerak. Demak, 5 kundan keyin omborda tovar tugaydi (stockout), xaridor qaytib ketadi va biznes savdoni boy beradi.",
+      },
+      
+      {
+        type: "h3",
+        text: "Xavfni Qanday Aniqlash Kerak? Jami Ombor Emas, SKU Tahlili",
+      },
+      {
+        type: "p",
+        text: "Ko‘p rahbarlar umumiy ombor balansiga qarab xotirjam bo‘lishadi. Ammo ombor ichiga kirilganda xavfli nomutanosiblik ochiladi:",
+      },
+      {
+        type: "p",
+        text: " **•** ** TOP SKU (Lokomotiv tovarlar): **  Umumiy aylanmaning 80% qismini beradigan tovarlar zaxirasi atigi 10 kunga yetadi. Ular har doim tugab qolish arafasida turadi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Slow SKU (O‘lik tovarlar): **  Savdosi sust bo‘lgan, omborda 180 kundan beri yotgan mahsulotlar ombor maydonini va millionlab aylanma mablag‘ni egallab turadi.",
+      },
+       {
+        type: "p",
+        text: " Bunday hollarda sekin sotilayotgan tovarlarni zudlik bilan chegirma va aksiyalar orqali sotib, naqd pulni bo‘shatish, tushgan pulni esa lokomotiv mahsulotlar ta’minotiga yo‘naltirish kerak.",
+      },
+     
+      {
+        type: "h3",
+        text: "SAP Business One Zaxiralarni Qanday Avtomatlashtiradi?",
+      },
+
+      {
+        type: "p",
+        text: "Omborni Excel jadvallarida boshqarish tovarlar soni bir necha yuztadan oshganda samarasiz bo‘lib qoladi.",
+      },
+      
+      {
+        type: "p",
+        text: "[SAP Business One MRP (Material Requirements Planning)](/uz/sap-business-one) moduli zaxiralarni inson omilisiz nazorat qiladi: ",
+      },
+      {
+        type: "p",
+        text: " **•** Har bir tovar birligi (SKU) bo‘yicha savdo tezligi va xarid muddatini hisoblab boradi;",
+      },
+      {
+        type: "p",
+        text: " **•** Qoldiq belgilangan xavfsizlik chegarasiga (Safety Stock) tushishi bilan ta’minot bo‘limiga avtomatik xarid talabnomasini chiqaradi; ",
+      },
+      {
+        type: "p",
+        text: " **•** Harakatsiz yotgan tovarlarni (Inventory Aging) tahlil qilib, kapital muzlashining oldini oladi. ",
+      },
+      {
+        type: "h3",
+        text: "Foydali havolalar:",
+      },
+      {
+        type: "p",
+        text: "Omboringizdagi muzlagan mablag‘ni aniqlash uchun Aylanma kapital [kalkulyatoridan foydalaning.](/uz/simulator)",
+      },
+      {
+        type: "p",
+        text: "Ishlab chiqarish va xomashyo omborini sinxronlashtirgan korxona keysini [BRAUF Wood](/uz/portfolio/brauf) tajribasi orqali o‘rganing.",
+      },
+       {
+        type: "p",
+        text: "Ulgurji savdoda ombor nazorati bo‘yicha batafsil [Ulgurji savdo yechimlari](/uz/wholesale-trade) ahifasida tanishing.",
+      },
+        {
+        type: "p",
+        text: "Ombor zaxiralarini to‘g‘ri audit qilish uchun [BIS-PRO mutaxassislariga murojaat qiling.](/uz/contacts)",
+      },
+    
+    ],
+  },
 ];
