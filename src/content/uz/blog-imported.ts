@@ -3061,16 +3061,16 @@ export const importedPosts: BlogPost[] = [
 
   {
     slug: "ombor-zaxiralarini-boshqarish-soglom-ombor-formulasi",
-    title: "Ombor Zaxiralarini Boshqarish: Korxonada 'Sog‘lom Ombor' Formulasi Qanday Ishlaydi?",
-    metaTitle: "Ombor Zaxiralarini Boshqarish: Sog‘lom Ombor",
+    title: "Ombor zaxiralarini boshqarish: korxonada «sog‘lom ombor» formulasi qanday ishlaydi?",
+    metaTitle: "Ombor zaxiralarini boshqarish: sog‘lom ombor",
     excerpt: "Omborda qancha pul muzlab yotganini qanday hisoblash mumkin? Lead time, safety stock va ABC tahlil orqali sog‘lom ombor zaxirasini hisoblash qo‘llanmasi.",
     readingTime: "4 daqiqa",
-    category: "Tizim tanlash",
+    category: "Ombor",
     image: "/design/blog/ombor-zaxiralarini-boshqarish-soglom-ombor-formulasi.webp",
     body: [
       {
         type: "p",
-        text: "Savdo va ishlab chiqarish kompaniyalarida eng katta mablag‘ aynan omborga ko‘milgan bo‘ladi. Ko‘plab tadbirkorlar 'Omborda tovar qancha ko‘p bo‘lsa, shuncha yaxshi, xaridor kelganda yo‘q demaymiz' degan qarash bilan ish yuritishadi.",
+        text: "Savdo va ishlab chiqarish kompaniyalarida eng katta mablag‘ aynan omborga ko‘milgan bo‘ladi. Ko‘plab tadbirkorlar «Omborda tovar qancha ko‘p bo‘lsa, shuncha yaxshi, xaridor kelganda yo‘q demaymiz» degan qarash bilan ish yuritishadi.",
       },
       {
         type: "p",
@@ -3078,7 +3078,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Tovar Qoldig‘ining 'Sog‘lom Miqdori' Nimaga Bog‘liq?",
+        text: "Tovar qoldig‘ining «sog‘lom miqdori» nimaga bog‘liq?",
       },
      
       {
@@ -3091,7 +3091,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **1.** ** Yetkazib berish muddati (Lead Time) ** Xaridga buyurtma berilgan kundan tovar omborga kelib tushguncha necha kun o‘tadi? ",
+        text: " **1.** ** Yetkazib berish muddati (Lead Time): ** Xaridga buyurtma berilgan kundan tovar omborga kelib tushguncha necha kun o‘tadi? ",
       },
       {
         type: "p",
@@ -3107,7 +3107,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Amaliy Misol: Omborda Uxlayotgan $1,000,000",
+        text: "Amaliy misol: omborda uxlayotgan $1,000,000",
       },
       {
         type: "p",
@@ -3143,16 +3143,16 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** ** Agar omborda $2 mln lik tovar yotgan bo‘lsa ** Bu 60 kunlik zaxira degani. Kompaniyaning $1,000,000 puli omborda keraksiz ravishda uxlab yotibdi. Bu mablag‘ni yangi filiallarga, marketingga tikish yoki bank kreditlaridan qutulish uchun ishlatish mumkin edi.",
+        text: " **•** ** Agar omborda $2 mln lik tovar yotgan bo‘lsa: ** Bu 60 kunlik zaxira degani. Kompaniyaning $1,000,000 puli omborda keraksiz ravishda uxlab yotibdi. Bu mablag‘ni yangi filiallarga, marketingga tikish yoki bank kreditlaridan qutulish uchun ishlatish mumkin edi.",
       },
       {
         type: "p",
-        text: " **•** ** Agar omborda $500,000 lik tovar bo‘lsa: ** Bu bor-yo‘g‘i 15 kunlik zaxira. Mahsulot kelishiga esa 20 kun kerak. Demak, 5 kundan keyin omborda tovar tugaydi (stockout), xaridor qaytib ketadi va biznes savdoni boy beradi.",
+        text: " **•** ** Agar omborda $500,000 lik tovar bo‘lsa: ** Bu bor-yo‘g‘i 15 kunlik zaxira. Mahsulot kelishiga esa 20 kun kerak. Demak, 15 kundan keyin omborda tovar tugaydi (stockout), xaridor qaytib ketadi va biznes savdoni boy beradi.",
       },
       
       {
         type: "h3",
-        text: "Xavfni Qanday Aniqlash Kerak? Jami Ombor Emas, SKU Tahlili",
+        text: "Xavfni qanday aniqlash kerak? Jami ombor emas, SKU tahlili",
       },
       {
         type: "p",
@@ -3173,7 +3173,7 @@ export const importedPosts: BlogPost[] = [
      
       {
         type: "h3",
-        text: "SAP Business One Zaxiralarni Qanday Avtomatlashtiradi?",
+        text: "SAP Business One zaxiralarni qanday avtomatlashtiradi?",
       },
 
       {
@@ -3211,7 +3211,7 @@ export const importedPosts: BlogPost[] = [
       },
        {
         type: "p",
-        text: "Ulgurji savdoda ombor nazorati bo‘yicha batafsil [Ulgurji savdo yechimlari](/uz/wholesale-trade) ahifasida tanishing.",
+        text: "Ulgurji savdoda ombor nazorati bo‘yicha batafsil [Ulgurji savdo yechimlari](/uz/wholesale-trade) sahifasida tanishing.",
       },
         {
         type: "p",
