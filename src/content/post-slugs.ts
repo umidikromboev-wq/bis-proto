@@ -26,6 +26,8 @@ const RU_TO_UZ: Record<string, string> = {
   "sap-vs-1c-sravnenie-erp-sistem-dlya-biznesa": "sap-yoki-1c-erp-tizimlar-taqoslash-biznes-uchun",
   // Статья Бахтиёра о CCC (PR #16): слаги на двух языках разные.
   "oborot-rastet-a-deneg-net-ccc": "biznesda-pul-aylanish-sikli-cash-flow-boshqaruvi",
+  // Статья Бахтиёра о здоровом складе (PR #18).
+  "upravlenie-zapasami-formula-zdorovogo-sklada": "ombor-zaxiralarini-boshqarish-soglom-ombor-formulasi",
 };
 
 const UZ_TO_RU: Record<string, string> = Object.fromEntries(
