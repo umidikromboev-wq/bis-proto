@@ -27,7 +27,7 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "Bugungi kunda biznesni avtomatlashtirish va korxona boshqaruv tizimi haqida gap ketganda eng ko‘p tilga olinadigan platformalardan biri — bu SAP hisoblanadi.",
+        text: "Bugungi kunda biznesni avtomatlashtirish va korxona boshqaruv tizimi haqida gap ketganda eng koʻp tilga olinadigan platformalardan biri — bu SAP hisoblanadi.",
       },
       {
         type: "p",
@@ -35,7 +35,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Keling, batafsil ko‘rib chiqamiz.",
+        text: "Keling, batafsil koʻrib chiqamiz.",
       },
       {
         type: "h3",
@@ -43,7 +43,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP — bu Germaniyada 1972-yilda tashkil topgan xalqaro IT kompaniya bo‘lib, bizneslarni boshqarish uchun ERP tizimi (Enterprise Resource Planning) ishlab chiqadi.",
+        text: "SAP — bu Germaniyada 1972-yilda tashkil topgan xalqaro IT kompaniya boʻlib, bizneslarni boshqarish uchun ERP tizimi (Enterprise Resource Planning) ishlab chiqadi.",
       },
       {
         type: "p",
@@ -70,7 +70,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Bugungi kunda [SAP Business One](/uz/sap-business-one), SAP S/4HANA va boshqa SAP dasturlari dunyo bo‘ylab 400 mingdan ortiq kompaniyalarda ishlatiladi.",
+        text: "Bugungi kunda [SAP Business One](/uz/sap-business-one), SAP S/4HANA va boshqa SAP dasturlari dunyo boʻylab 400 mingdan ortiq kompaniyalarda ishlatiladi.",
       },
       {
         type: "h3",
@@ -78,24 +78,24 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "ERP tizimi (Enterprise Resource Planning) — bu kompaniyaning barcha bo‘limlarini yagona tizimga birlashtiruvchi boshqaruv platformasi.",
+        text: "ERP tizimi (Enterprise Resource Planning) — bu kompaniyaning barcha boʻlimlarini yagona tizimga birlashtiruvchi boshqaruv platformasi.",
       },
       {
         type: "p",
-        text: "Ko‘plab bizneslarda:",
+        text: "Koʻplab bizneslarda:",
       },
       {
         type: "list",
         items: [
           "hisobotlar Excel’da yuritiladi",
-          "bo‘limlar bir-biri bilan bog‘lanmagan bo‘ladi",
+          "boʻlimlar bir-biri bilan bogʻlanmagan boʻladi",
           "inventarizatsiyada xatolar uchraydi",
-          "foyda va zarar aniq ko‘rinmaydi",
+          "foyda va zarar aniq koʻrinmaydi",
         ],
       },
       {
         type: "p",
-        text: "ERP tizimi esa barcha ma’lumotlarni bitta platformaga yig‘adi va real vaqt rejimida nazorat qilish imkonini beradi.",
+        text: "ERP tizimi esa barcha ma’lumotlarni bitta platformaga yigʻadi va real vaqt rejimida nazorat qilish imkonini beradi.",
       },
       {
         type: "p",
@@ -118,7 +118,7 @@ export const importedPosts: BlogPost[] = [
         items: [
           "savdo avtomatlashtiriladi",
           "moliyaviy nazorat kuchayadi",
-          "ishlab chiqarish avtomatlashtirish yo‘lga qo‘yiladi",
+          "ishlab chiqarish avtomatlashtirish yoʻlga qoʻyiladi",
           "ombor nazorati yaxshilanadi",
           "qarzdorlik monitoringi amalga oshiriladi",
         ],
@@ -130,14 +130,14 @@ export const importedPosts: BlogPost[] = [
       {
         type: "list",
         items: [
-          "shaffoflik paydo bo‘ladi",
+          "shaffoflik paydo boʻladi",
           "xatolar kamayadi",
           "boshqaruv tezlashadi",
         ],
       },
       {
         type: "p",
-        text: "Bu esa biznesning tezroq o‘sishiga yordam beradi.",
+        text: "Bu esa biznesning tezroq oʻsishiga yordam beradi.",
       },
       {
         type: "h3",
@@ -174,7 +174,7 @@ export const importedPosts: BlogPost[] = [
         type: "list",
         items: [
           "kichik biznes",
-          "o‘rta biznes",
+          "oʻrta biznes",
           "ishlab chiqarish korxonalari",
           "distribyutor kompaniyalar",
           "savdo bizneslari",
@@ -182,7 +182,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "ham o‘z biznesini avtomatlashtirib kelmoqda.",
+        text: "ham oʻz biznesini avtomatlashtirib kelmoqda.",
       },
       {
         type: "h3",
@@ -190,7 +190,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP Business One — bu kichik va o‘rta biznes uchun yaratilgan ERP dastur hisoblanadi.",
+        text: "SAP Business One — bu kichik va oʻrta biznes uchun yaratilgan ERP dastur hisoblanadi.",
       },
       {
         type: "p",
@@ -213,7 +213,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Bugungi kunda O‘zbekistonda ham SAP Business One Uzbekistan yechimlariga talab oshib bormoqda.",
+        text: "Bugungi kunda Oʻzbekistonda ham SAP Business One Uzbekistan yechimlariga talab oshib bormoqda.",
       },
       {
         type: "h3",
@@ -221,7 +221,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "[SAP S/4HANA](/uz/sap-s-4hana) — bu yirik korxonalar uchun mo‘ljallangan zamonaviy ERP platforma.",
+        text: "[SAP S/4HANA](/uz/sap-s-4hana) — bu yirik korxonalar uchun moʻljallangan zamonaviy ERP platforma.",
       },
       {
         type: "p",
@@ -241,7 +241,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ko‘plab xalqaro korporatsiyalar aynan SAP S/4HANA’dan foydalanadi.",
+        text: "Koʻplab xalqaro korporatsiyalar aynan SAP S/4HANA’dan foydalanadi.",
       },
       {
         type: "h3",
@@ -264,7 +264,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "imkoniyatiga ega bo‘ladi.",
+        text: "imkoniyatiga ega boʻladi.",
       },
       {
         type: "p",
@@ -273,7 +273,7 @@ export const importedPosts: BlogPost[] = [
       {
         type: "list",
         items: [
-          "foyda aniq ko‘rinadi",
+          "foyda aniq koʻrinadi",
           "jarayonlar tezlashadi",
           "boshqaruv shaffoflashadi",
           "xodimlar samaradorligi oshadi",
@@ -289,11 +289,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Bu hatto ayrim davlatlar iqtisodiyotidan ham katta ko‘rsatkich hisoblanadi.",
+        text: "Bu hatto ayrim davlatlar iqtisodiyotidan ham katta koʻrsatkich hisoblanadi.",
       },
       {
         type: "p",
-        text: "Bu esa SAP tizimi dunyo biznesida naqadar muhim o‘rin egallashini ko‘rsatadi.",
+        text: "Bu esa SAP tizimi dunyo biznesida naqadar muhim oʻrin egallashini koʻrsatadi.",
       },
       {
         type: "h3",
@@ -301,7 +301,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Yo‘q.",
+        text: "Yoʻq.",
       },
       {
         type: "p",
@@ -330,7 +330,7 @@ export const importedPosts: BlogPost[] = [
           "ishlab chiqarish korxonalari",
           "distribyutorlar",
           "importyorlar",
-          "o‘rta biznes",
+          "oʻrta biznes",
           "kichik biznes",
         ],
       },
@@ -340,7 +340,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "SAP O‘zbekistonda ishlatiladimi?",
+        text: "SAP Oʻzbekistonda ishlatiladimi?",
       },
       {
         type: "p",
@@ -348,7 +348,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Hozirgi kunda O‘zbekistonda:",
+        text: "Hozirgi kunda Oʻzbekistonda:",
       },
       {
         type: "p",
@@ -368,7 +368,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "yo‘nalishidagi ko‘plab kompaniyalar SAP Business One Uzbekistan yechimlaridan foydalanmoqda.",
+        text: "yoʻnalishidagi koʻplab kompaniyalar SAP Business One Uzbekistan yechimlaridan foydalanmoqda.",
       },
       {
         type: "h3",
@@ -397,13 +397,13 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "istagida bo‘lsangiz, SAP Business One Uzbekistan kabi zamonaviy ERP yechimlari biznesingizni yangi bosqichga olib chiqishi mumkin.",
+        text: "istagida boʻlsangiz, SAP Business One Uzbekistan kabi zamonaviy ERP yechimlari biznesingizni yangi bosqichga olib chiqishi mumkin.",
       },
     ],
   },
   {
     slug: "sap-erp-tizimi",
-    title: "SAP nima va u qanday ishlaydi? | Bizneslar nega SAP tizimiga o‘tmoqda",
+    title: "SAP nima va u qanday ishlaydi? | Bizneslar nega SAP tizimiga oʻtmoqda",
     metaTitle: "ERP integratsiya nima va u qanday ishlaydi?",
     excerpt: "ERP integratsiyasi sotuv, ombor va moliya jarayonlarini yagona tizimga birlashtiradi. Biznes jarayonlarini avtomatlashtirish va boshqaruv samaradorligini oshiring.",
     readingTime: "5 daqiqa",
@@ -412,11 +412,11 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "Bugungi kunda biznesni avtomatlashtirish va korxona boshqaruv tizimi haqida gap ketganda eng ko‘p tilga olinadigan platformalardan biri — bu SAP hisoblanadi.",
+        text: "Bugungi kunda biznesni avtomatlashtirish va korxona boshqaruv tizimi haqida gap ketganda eng koʻp tilga olinadigan platformalardan biri — bu SAP hisoblanadi.",
       },
       {
         type: "p",
-        text: "Dunyo bo‘ylab minglab kompaniyalar:",
+        text: "Dunyo boʻylab minglab kompaniyalar:",
       },
       {
         type: "p",
@@ -444,11 +444,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Lekin SAP o‘zi nima?",
+        text: "Lekin SAP oʻzi nima?",
       },
       {
         type: "p",
-        text: "Va nega kompaniyalar SAP tizimiga o‘tmoqda?",
+        text: "Va nega kompaniyalar SAP tizimiga oʻtmoqda?",
       },
       {
         type: "p",
@@ -508,7 +508,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "jarayonlarini bitta tizimga bog‘laydi.",
+        text: "jarayonlarini bitta tizimga bogʻlaydi.",
       },
       {
         type: "p",
@@ -520,11 +520,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ko‘plab kompaniyalarda:",
+        text: "Koʻplab kompaniyalarda:",
       },
       {
         type: "p",
-        text: "**•** sotuv bo‘limi alohida ishlaydi",
+        text: "**•** sotuv boʻlimi alohida ishlaydi",
       },
       {
         type: "p",
@@ -536,7 +536,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** ishlab chiqarish boshqa tizimda bo‘ladi",
+        text: "**•** ishlab chiqarish boshqa tizimda boʻladi",
       },
       {
         type: "p",
@@ -544,15 +544,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** ma’lumotlar tarqoq bo‘ladi",
+        text: "**•** ma’lumotlar tarqoq boʻladi",
       },
       {
         type: "p",
-        text: "**•** xatolar ko‘payadi",
+        text: "**•** xatolar koʻpayadi",
       },
       {
         type: "p",
-        text: "**•** real foyda ko‘rinmaydi",
+        text: "**•** real foyda koʻrinmaydi",
       },
       {
         type: "p",
@@ -560,7 +560,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP ERP tizimi esa barcha bo‘limlarni birlashtiradi.",
+        text: "SAP ERP tizimi esa barcha boʻlimlarni birlashtiradi.",
       },
       {
         type: "p",
@@ -592,7 +592,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "[SAP Business One](/uz/sap-business-one) — bu kichik va o‘rta biznes uchun yaratilgan ERP tizimi.",
+        text: "[SAP Business One](/uz/sap-business-one) — bu kichik va oʻrta biznes uchun yaratilgan ERP tizimi.",
       },
       {
         type: "p",
@@ -652,27 +652,27 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Nega bizneslar SAP tizimiga o‘tmoqda?",
+        text: "Nega bizneslar SAP tizimiga oʻtmoqda?",
       },
       {
         type: "p",
-        text: "Ko‘plab kompaniyalarda:",
+        text: "Koʻplab kompaniyalarda:",
       },
       {
         type: "p",
-        text: "**•** hisobotlar qo‘lda yuritiladi",
+        text: "**•** hisobotlar qoʻlda yuritiladi",
       },
       {
         type: "p",
-        text: "**•** bo‘limlar bir-biri bilan bog‘lanmagan bo‘ladi",
+        text: "**•** boʻlimlar bir-biri bilan bogʻlanmagan boʻladi",
       },
       {
         type: "p",
-        text: "**•** foyda va zarar aniq ko‘rinmaydi",
+        text: "**•** foyda va zarar aniq koʻrinmaydi",
       },
       {
         type: "p",
-        text: "**•** inventarizatsiyada tafovutlar paydo bo‘ladi",
+        text: "**•** inventarizatsiyada tafovutlar paydo boʻladi",
       },
       {
         type: "p",
@@ -704,7 +704,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** biznesni to‘liq ko‘radi",
+        text: "**•** biznesni toʻliq koʻradi",
       },
       {
         type: "p",
@@ -792,7 +792,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** kichik va o‘rta bizneslar",
+        text: "**•** kichik va oʻrta bizneslar",
       },
       {
         type: "p",
@@ -808,7 +808,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** ko‘p SKU",
+        text: "**•** koʻp SKU",
       },
       {
         type: "p",
@@ -816,7 +816,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "bo‘lgan kompaniyalarda SAP juda katta samara beradi.",
+        text: "boʻlgan kompaniyalarda SAP juda katta samara beradi.",
       },
       {
         type: "h3",
@@ -840,7 +840,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** savdo avtomatlashtirishni yo‘lga qo‘yadi",
+        text: "**•** savdo avtomatlashtirishni yoʻlga qoʻyadi",
       },
       {
         type: "p",
@@ -852,7 +852,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** tezroq o‘sadi",
+        text: "**•** tezroq oʻsadi",
       },
       {
         type: "p",
@@ -860,7 +860,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** foydani aniq ko‘ra boshlaydi",
+        text: "**•** foydani aniq koʻra boshlaydi",
       },
       {
         type: "h3",
@@ -896,7 +896,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** pul oqimi katta bo‘ladi",
+        text: "**•** pul oqimi katta boʻladi",
       },
       {
         type: "p",
@@ -904,7 +904,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** real vaqt analytics juda muhim bo‘ladi",
+        text: "**•** real vaqt analytics juda muhim boʻladi",
       },
       {
         type: "p",
@@ -912,7 +912,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "SAP tizimi biznesni qanday o‘zgartiradi?",
+        text: "SAP tizimi biznesni qanday oʻzgartiradi?",
       },
       {
         type: "p",
@@ -920,7 +920,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** barcha bo‘limlar birlashadi",
+        text: "**•** barcha boʻlimlar birlashadi",
       },
       {
         type: "p",
@@ -928,7 +928,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** rahbar real vaqt statistikani ko‘radi",
+        text: "**•** rahbar real vaqt statistikani koʻradi",
       },
       {
         type: "p",
@@ -944,7 +944,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP ERP tizimi haqida ko‘p beriladigan savollar",
+        text: "SAP ERP tizimi haqida koʻp beriladigan savollar",
       },
       {
         type: "p",
@@ -960,7 +960,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP Business One kichik va o‘rta biznes, import kompaniyalar va ishlab chiqarish korxonalari uchun mos ERP tizimidir.",
+        text: "SAP Business One kichik va oʻrta biznes, import kompaniyalar va ishlab chiqarish korxonalari uchun mos ERP tizimidir.",
       },
       {
         type: "p",
@@ -1012,11 +1012,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "imkoniyatlarini yo‘lga qo‘yish mumkin.",
+        text: "imkoniyatlarini yoʻlga qoʻyish mumkin.",
       },
       {
         type: "p",
-        text: "Agar siz ham biznesingizni tizimlashtirish va boshqaruvni kuchaytirishni istasangiz, SAP ERP tizimi bu yo‘lda katta yordam beradi.",
+        text: "Agar siz ham biznesingizni tizimlashtirish va boshqaruvni kuchaytirishni istasangiz, SAP ERP tizimi bu yoʻlda katta yordam beradi.",
       },
     ],
   },
@@ -1065,7 +1065,7 @@ export const importedPosts: BlogPost[] = [
     slug: "import-kompaniyalar-foydasini-oshirish",
     title: "Import kompaniyalar foydani qanday 2-3 barobarga oshirishi mumkin?",
     metaTitle: "SAP Business One joriy etish | ERP avtomatlashtirish",
-    excerpt: "SAP Business One joriy etish va biznes jarayonlarini avtomatlashtirish. Kichik va o‘rta biznes uchun ERP tizimi, narx va konsalting haqida.",
+    excerpt: "SAP Business One joriy etish va biznes jarayonlarini avtomatlashtirish. Kichik va oʻrta biznes uchun ERP tizimi, narx va konsalting haqida.",
     readingTime: "4 daqiqa",
     category: "Import",
     image: "/design/blog/kak-uvelichit-pribyl-importa.webp",
@@ -1076,11 +1076,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ko‘plab import kompaniyalar bir xil xatoni qiladi:",
+        text: "Koʻplab import kompaniyalar bir xil xatoni qiladi:",
       },
       {
         type: "p",
-        text: "“Assortiment qancha katta bo‘lsa, foyda ham shuncha katta bo‘ladi”",
+        text: "“Assortiment qancha katta boʻlsa, foyda ham shuncha katta boʻladi”",
       },
       {
         type: "p",
@@ -1088,11 +1088,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ko‘p mahsulot — ko‘p mijoz — ko‘p savdo.",
+        text: "Koʻp mahsulot — koʻp mijoz — koʻp savdo.",
       },
       {
         type: "p",
-        text: "Lekin amalda ko‘pincha buning aksi bo‘ladi.",
+        text: "Lekin amalda koʻpincha buning aksi boʻladi.",
       },
       {
         type: "p",
@@ -1108,11 +1108,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** sekin aylanadigan SKU’larning ko‘payishiga",
+        text: "**•** sekin aylanadigan SKU’larning koʻpayishiga",
       },
       {
         type: "p",
-        text: "**•** sotuv bo‘limi samaradorligining pasayishiga",
+        text: "**•** sotuv boʻlimi samaradorligining pasayishiga",
       },
       {
         type: "p",
@@ -1128,7 +1128,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Import kompaniyalarda eng muhim ko‘rsatkichlar:",
+        text: "Import kompaniyalarda eng muhim koʻrsatkichlar:",
       },
       {
         type: "p",
@@ -1152,7 +1152,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ko‘pchilik biznes egalari faqat savdo hajmiga qaraydi.",
+        text: "Koʻpchilik biznes egalari faqat savdo hajmiga qaraydi.",
       },
       {
         type: "p",
@@ -1176,7 +1176,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** foyda marjasi past bo‘ladi",
+        text: "**•** foyda marjasi past boʻladi",
       },
       {
         type: "p",
@@ -1184,7 +1184,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Nega tor assortiment ko‘proq foyda beradi?",
+        text: "Nega tor assortiment koʻproq foyda beradi?",
       },
       {
         type: "p",
@@ -1204,7 +1204,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** sotuv bo‘limi samaradorligini oshiradi",
+        text: "**•** sotuv boʻlimi samaradorligini oshiradi",
       },
       {
         type: "p",
@@ -1220,15 +1220,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** ko‘proq foyda olish",
+        text: "**•** koʻproq foyda olish",
       },
       {
         type: "p",
-        text: "**•** tashqaridan investitsiya jalb qilmasdan o‘sish",
+        text: "**•** tashqaridan investitsiya jalb qilmasdan oʻsish",
       },
       {
         type: "p",
-        text: "imkoniyati paydo bo‘ladi.",
+        text: "imkoniyati paydo boʻladi.",
       },
       {
         type: "h3",
@@ -1236,15 +1236,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ko‘plab importyorlarda:",
+        text: "Koʻplab importyorlarda:",
       },
       {
         type: "p",
-        text: "**•** minglab SKU mavjud bo‘ladi",
+        text: "**•** minglab SKU mavjud boʻladi",
       },
       {
         type: "p",
-        text: "**•** qaysi mahsulot foydali ekanligi aniq ko‘rinmaydi",
+        text: "**•** qaysi mahsulot foydali ekanligi aniq koʻrinmaydi",
       },
       {
         type: "p",
@@ -1252,7 +1252,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** omborda ortiqcha qoldiqlar yig‘iladi",
+        text: "**•** omborda ortiqcha qoldiqlar yigʻiladi",
       },
       {
         type: "p",
@@ -1268,11 +1268,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** pulni muzlatib qo‘yadi",
+        text: "**•** pulni muzlatib qoʻyadi",
       },
       {
         type: "p",
-        text: "Lekin ko‘pchilik kompaniyalar:",
+        text: "Lekin koʻpchilik kompaniyalar:",
       },
       {
         type: "p",
@@ -1332,7 +1332,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** eng ko‘p foyda olib keladigan mahsulotlarga fokus qiladi",
+        text: "**•** eng koʻp foyda olib keladigan mahsulotlarga fokus qiladi",
       },
       {
         type: "p",
@@ -1352,7 +1352,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** qaysi mahsulot kapitalga nisbatan ko‘proq foyda berayotganini ko‘radi",
+        text: "**•** qaysi mahsulot kapitalga nisbatan koʻproq foyda berayotganini koʻradi",
       },
       {
         type: "p",
@@ -1360,7 +1360,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** qaysi tovarni ko‘proq import qilish kerakligini biladi",
+        text: "**•** qaysi tovarni koʻproq import qilish kerakligini biladi",
       },
       {
         type: "p",
@@ -1384,7 +1384,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Sotuv bo‘limi nega samaraliroq ishlaydi?",
+        text: "Sotuv boʻlimi nega samaraliroq ishlaydi?",
       },
       {
         type: "p",
@@ -1392,7 +1392,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** menejerlar mahsulotlarni chuqurroq o‘rganadi",
+        text: "**•** menejerlar mahsulotlarni chuqurroq oʻrganadi",
       },
       {
         type: "p",
@@ -1424,7 +1424,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "imkoniyati paydo bo‘ladi.",
+        text: "imkoniyati paydo boʻladi.",
       },
       {
         type: "p",
@@ -1440,11 +1440,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** assortiment katta bo‘ladi",
+        text: "**•** assortiment katta boʻladi",
       },
       {
         type: "p",
-        text: "**•** SKU soni yuqori bo‘ladi",
+        text: "**•** SKU soni yuqori boʻladi",
       },
       {
         type: "p",
@@ -1512,7 +1512,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "orqali eng kuchli mahsulotlarni ko‘rsatadi.",
+        text: "orqali eng kuchli mahsulotlarni koʻrsatadi.",
       },
       {
         type: "p",
@@ -1532,7 +1532,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** sof foydani ko‘paytiradi",
+        text: "**•** sof foydani koʻpaytiradi",
       },
       {
         type: "h3",
@@ -1540,7 +1540,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Import kompaniyalarning eng katta xatolaridan biri — keng assortiment katta foyda olib keladi deb o‘ylashidir.",
+        text: "Import kompaniyalarning eng katta xatolaridan biri — keng assortiment katta foyda olib keladi deb oʻylashidir.",
       },
       {
         type: "p",
@@ -1600,7 +1600,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Agar siz ham import biznesingiz foydasini oshirmoqchi bo‘lsangiz, SAP Business One asosidagi ERP tizimi bu jarayonda katta yordam beradi.",
+        text: "Agar siz ham import biznesingiz foydasini oshirmoqchi boʻlsangiz, SAP Business One asosidagi ERP tizimi bu jarayonda katta yordam beradi.",
       },
     ],
   },
@@ -1608,18 +1608,18 @@ export const importedPosts: BlogPost[] = [
     slug: "sap-business-one-vs-odoo-qaysi-erp-platformasi-mos",
     title: "SAP Business One yoki Odoo: Biznesni tizimlashtirishda qaysi ERP platformasi sizga mos keladi?",
     metaTitle: "SAP va Odoo farqi | Qaysi ERP platformasi yaxshiroq?",
-    excerpt: "SAP va Odoo afzalliklari, arxitekturasi va miqyosini solishtiring. O‘zbekiston kompaniyalari uchun qaysi ERP platformasi mosligini bilib oling.",
+    excerpt: "SAP va Odoo afzalliklari, arxitekturasi va miqyosini solishtiring. Oʻzbekiston kompaniyalari uchun qaysi ERP platformasi mosligini bilib oling.",
     readingTime: "5 daqiqa",
     category: "Tizim tanlash",
     image: "/design/blog/sap-business-one-ili-odoo-chto-vybrat-dlya-avtomatizacii-biznesa.webp",
     body: [
       {
         type: "p",
-        text: "Kompaniya o‘sib, ichki jarayonlarni boshqarish uchun professional ERP tizimi kerak bo‘lganda, rahbarlar ko‘pincha ikkita mashhur xalqaro platformaga duch kelishadi: [SAP Business One](/uz/sap-business-one) va Odoo.",
+        text: "Kompaniya oʻsib, ichki jarayonlarni boshqarish uchun professional ERP tizimi kerak boʻlganda, rahbarlar koʻpincha ikkita mashhur xalqaro platformaga duch kelishadi: [SAP Business One](/uz/sap-business-one) va Odoo.",
       },
       {
         type: "p",
-        text: "Tashqi tomondan qaraganda, ikkala tizim ham [ombor](/uz/post/sap-business-one-ombor-nazorati), moliya, savdo va ishlab chiqarishni avtomatlashtirishni va’da qiladi. Biroq, ularning ichki mantig‘i, arxitekturasi va qaysi turdagi biznesga ko‘proq mos kelishi mutlaqo farq qiladi. Keling, ushbu ikki platformani xolis va aniq biznes mezonlari asosida solishtiramiz.",
+        text: "Tashqi tomondan qaraganda, ikkala tizim ham [ombor](/uz/post/sap-business-one-ombor-nazorati), moliya, savdo va ishlab chiqarishni avtomatlashtirishni va’da qiladi. Biroq, ularning ichki mantigʻi, arxitekturasi va qaysi turdagi biznesga koʻproq mos kelishi mutlaqo farq qiladi. Keling, ushbu ikki platformani xolis va aniq biznes mezonlari asosida solishtiramiz.",
       },
       {
         type: "h3",
@@ -1627,15 +1627,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Bu ikki platformaning eng asosiy farqi ularning biznes jarayonlariga yondashuvida ko‘rinadi:",
+        text: "Bu ikki platformaning eng asosiy farqi ularning biznes jarayonlariga yondashuvida koʻrinadi:",
       },
       {
         type: "p",
-        text: "Odoo (Gibrid va moslanuvchan yondashuv): Odoo — bu ochiq kodli (open-source) platforma bo‘lib, u turli xil modullardan yig‘iladi. Uning eng katta ustunligi — yuqori darajadagi moslanuvchanligida. Agar sizning biznesingiz noyob, tez o‘zgaruvchan yoki o‘ziga xos standartlarga ega bo‘lsa, Odooni aynan siz xohlagandek shaklga keltirish, yangi funksiyalarni tezda qo‘shish juda oson.",
+        text: "Odoo (Gibrid va moslanuvchan yondashuv): Odoo — bu ochiq kodli (open-source) platforma boʻlib, u turli xil modullardan yigʻiladi. Uning eng katta ustunligi — yuqori darajadagi moslanuvchanligida. Agar sizning biznesingiz noyob, tez oʻzgaruvchan yoki oʻziga xos standartlarga ega boʻlsa, Odooni aynan siz xohlagandek shaklga keltirish, yangi funksiyalarni tezda qoʻshish juda oson.",
       },
       {
         type: "p",
-        text: "SAP Business One (Jahon standartlaridagi qat’iy tizim): SAP Business One — bu shunchaki dastur emas, balki dunyoning eng muvaffaqiyatli korporatsiyalari (Apple, Amazon, Mercedes-Benz) yillar davomida sinovdan o‘tkazgan tayyor va qat’iy biznes-protsesslar to‘plamidir. SAP Business One o‘rnatilganda, tizim biznesga moslab emas, balki biznes dunyo tan olgan eng mukammal boshqaruv standartlariga (Best Practices) muvofiq tartibga solinadi.",
+        text: "SAP Business One (Jahon standartlaridagi qat’iy tizim): SAP Business One — bu shunchaki dastur emas, balki dunyoning eng muvaffaqiyatli korporatsiyalari (Apple, Amazon, Mercedes-Benz) yillar davomida sinovdan oʻtkazgan tayyor va qat’iy biznes-protsesslar toʻplamidir. SAP Business One oʻrnatilganda, tizim biznesga moslab emas, balki biznes dunyo tan olgan eng mukammal boshqaruv standartlariga (Best Practices) muvofiq tartibga solinadi.",
       },
       {
         type: "h3",
@@ -1643,35 +1643,35 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Biznesingiz bugun qayerda va kelgusi 5-10 yildan keyin qaysi miqyosda bo‘lishini rejalashtiryapsiz? ERP tanlashda aynan shu savol hal qiluvchi rol o‘ynaydi.",
+        text: "Biznesingiz bugun qayerda va kelgusi 5-10 yildan keyin qaysi miqyosda boʻlishini rejalashtiryapsiz? ERP tanlashda aynan shu savol hal qiluvchi rol oʻynaydi.",
       },
       {
         type: "p",
-        text: "Odoo qaysi holatda kuchli? Kompaniyada xodimlar soni o‘rtacha bo‘lsa, dinamik o‘sish va jarayonlarni doimiy ravishda \"boshqacharoq\" sinab ko‘rish talab etilsa, Odoo biznes bilan birga moslashib o‘sa oladi. U kichik va o‘rta biznes bosqichidan tezkor o‘tish davrida o‘zining qulayligi bilan ajralib turadi.",
+        text: "Odoo qaysi holatda kuchli? Kompaniyada xodimlar soni oʻrtacha boʻlsa, dinamik oʻsish va jarayonlarni doimiy ravishda \"boshqacharoq\" sinab koʻrish talab etilsa, Odoo biznes bilan birga moslashib oʻsa oladi. U kichik va oʻrta biznes bosqichidan tezkor oʻtish davrida oʻzining qulayligi bilan ajralib turadi.",
       },
       {
         type: "p",
-        text: "SAP Business One qaysi holatda almashib bo‘lmas? Agar kompaniyangizda xodimlar soni 1000 tadan oshsa, filiallar tarmog‘i yiriklashsa va kunlik tranzaksiyalar millionlab operatsiyalarni tashkil qilsa, SAP Business One kabi og‘ir yuklamalarga chidamli tizim zarur bo‘ladi. SAP Business One yoki [SAP S/4HANA](/uz/sap-s-4hana) tizimlari korxonada inson omili, ya’ni qaysidir xodimning \"tasodifan\" xato qilib qo‘yishi yoki ma’lumotlarni soxtalashtirish xavfini nolga tushirish uchun qurilgan. Katta zavodlar, transmilliy holdinglar va yirik logistika markazlari aynan SAP Business Onening barqaror arxitekturasiiga tayanadi.",
+        text: "SAP Business One qaysi holatda almashib boʻlmas? Agar kompaniyangizda xodimlar soni 1000 tadan oshsa, filiallar tarmogʻi yiriklashsa va kunlik tranzaksiyalar millionlab operatsiyalarni tashkil qilsa, SAP Business One kabi ogʻir yuklamalarga chidamli tizim zarur boʻladi. SAP Business One yoki [SAP S/4HANA](/uz/sap-s-4hana) tizimlari korxonada inson omili, ya’ni qaysidir xodimning \"tasodifan\" xato qilib qoʻyishi yoki ma’lumotlarni soxtalashtirish xavfini nolga tushirish uchun qurilgan. Katta zavodlar, transmilliy holdinglar va yirik logistika markazlari aynan SAP Business Onening barqaror arxitekturasiiga tayanadi.",
       },
       {
         type: "h3",
-        text: "3. O‘zbekiston bozoridagi yirik brendlar tajribasi",
+        text: "3. Oʻzbekiston bozoridagi yirik brendlar tajribasi",
       },
       {
         type: "p",
-        text: "Amaliyotga nazar tashlasak, O‘zbekiston bozorida chakana savdo va [ishlab chiqarish](/uz/production) bo‘yicha gigant hisoblangan Korzinka supermarketlar tarmog‘i hamda barchamiz biladigan Safia qandolatchilik uylari aynan SAP Business One tizimini tanlaganini ko‘ramiz.",
+        text: "Amaliyotga nazar tashlasak, Oʻzbekiston bozorida chakana savdo va [ishlab chiqarish](/uz/production) boʻyicha gigant hisoblangan Korzinka supermarketlar tarmogʻi hamda barchamiz biladigan Safia qandolatchilik uylari aynan SAP Business One tizimini tanlaganini koʻramiz.",
       },
       {
         type: "p",
-        text: "Nega ular ma’lum bir miqyosga yetganda ushbu tizimga o‘tishdi? Chunki yirik biznes miqyosida xatolikning narxi millionlab dollarga teng bo‘lishi mumkin. Jarayonlarni 100% xatosiz nazorat qilish, omborda pullar muzlab qolishining oldini olish va real vaqtda butun tarmoq bo‘yicha aniq moliya hisobotlarini ko‘rish uchun aynan SAP Business One taqdim etadigan global barqarorlik talab etiladi.",
+        text: "Nega ular ma’lum bir miqyosga yetganda ushbu tizimga oʻtishdi? Chunki yirik biznes miqyosida xatolikning narxi millionlab dollarga teng boʻlishi mumkin. Jarayonlarni 100% xatosiz nazorat qilish, omborda pullar muzlab qolishining oldini olish va real vaqtda butun tarmoq boʻyicha aniq moliya hisobotlarini koʻrish uchun aynan SAP Business One taqdim etadigan global barqarorlik talab etiladi.",
       },
       {
         type: "h3",
-        text: "4. Investitsiyalarning o‘zini oqlashi va narx siyosati",
+        text: "4. Investitsiyalarning oʻzini oqlashi va narx siyosati",
       },
       {
         type: "p",
-        text: "Dastlabki bosqichda Odoo litsenziyalari va uni [joriy etish](/uz/services) ancha tejamkor va hamyonbop ko‘rinadi. Bu o‘rta biznes uchun boshlang‘ich xarajatlarni kamaytirish imkonini beradi. Biroq, biznes juda yiriklashib ketganda, tizimni doimiy ravishda qo‘shimcha dasturlash va tashqi modullar yordamida rivojlantirish xarajatlari ham parallel ravishda o‘sib borishini hisobga olish kerak.",
+        text: "Dastlabki bosqichda Odoo litsenziyalari va uni [joriy etish](/uz/services) ancha tejamkor va hamyonbop koʻrinadi. Bu oʻrta biznes uchun boshlangʻich xarajatlarni kamaytirish imkonini beradi. Biroq, biznes juda yiriklashib ketganda, tizimni doimiy ravishda qoʻshimcha dasturlash va tashqi modullar yordamida rivojlantirish xarajatlari ham parallel ravishda oʻsib borishini hisobga olish kerak.",
       },
       {
         type: "p",
@@ -1679,15 +1679,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "SAP Business One tizimining mavjudligi yirik kompaniyalarning shaffofligini ta’minlaydi va ularning bozor qiymatini (kapitalizatsiyasini) investorlar ko‘z o‘ngida sezilarli darajada oshiradi.",
+        text: "SAP Business One tizimining mavjudligi yirik kompaniyalarning shaffofligini ta’minlaydi va ularning bozor qiymatini (kapitalizatsiyasini) investorlar koʻz oʻngida sezilarli darajada oshiradi.",
       },
       {
         type: "h3",
-        text: "5. O‘zbekistonda kimlar BIS-PRO bilan SAP Business One tizimini tanladi?",
+        text: "5. Oʻzbekistonda kimlar BIS-PRO bilan SAP Business One tizimini tanladi?",
       },
       {
         type: "p",
-        text: "Biznes miqyosidan qat’iy nazar, jarayonlarni tizimlashtirish va xalqaro standartlarga o‘tish har doim o‘z mevasini beradi. Bugungi kunda O‘zbekiston bozorida savdo, ishlab chiqarish, logistika va xizmat ko‘rsatish sohalarida yetakchi bo‘lgan 26 ta yirik va o‘rta kompaniyalar o‘z biznes boshqaruvini aynan BIS-PRO jamoasiga ishonib topshirishdi va muvaffaqiyatli ravishda SAP Business One tizimiga o‘tishdi:",
+        text: "Biznes miqyosidan qat’iy nazar, jarayonlarni tizimlashtirish va xalqaro standartlarga oʻtish har doim oʻz mevasini beradi. Bugungi kunda Oʻzbekiston bozorida savdo, ishlab chiqarish, logistika va xizmat koʻrsatish sohalarida yetakchi boʻlgan 26 ta yirik va oʻrta kompaniyalar oʻz biznes boshqaruvini aynan BIS-PRO jamoasiga ishonib topshirishdi va muvaffaqiyatli ravishda SAP Business One tizimiga oʻtishdi:",
       },
       {
         type: "p",
@@ -1795,7 +1795,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ushbu kompaniyalarning har biri o‘z yo‘nalishida shaffof moliya, aniq ombor nazorati va inson omilisiz boshqaruv tizimini yo‘lga qo‘yib, bozorda mashtablanishda davom etmoqda.",
+        text: "Ushbu kompaniyalarning har biri oʻz yoʻnalishida shaffof moliya, aniq ombor nazorati va inson omilisiz boshqaruv tizimini yoʻlga qoʻyib, bozorda mashtablanishda davom etmoqda.",
       },
       {
         type: "h3",
@@ -1803,23 +1803,23 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ikkala platforma ham o‘z vazifasini mukammal bajaradi, shunchaki ularning har birining o‘z o‘rni bor:",
+        text: "Ikkala platforma ham oʻz vazifasini mukammal bajaradi, shunchaki ularning har birining oʻz oʻrni bor:",
       },
       {
         type: "p",
-        text: "Odoo — agar siz o‘rta biznes bosqichida bo‘lsangiz, jarayonlaringiz hali qat’iy qoliplarga tushmagan bo‘lsa, sizga yuqori darajadagi moslanuvchanlik va boshlang‘ich bosqichda hamyonbop, qulay yechim kerak bo‘lsa — bu platforma juda yaxshi tanlov.",
+        text: "Odoo — agar siz oʻrta biznes bosqichida boʻlsangiz, jarayonlaringiz hali qat’iy qoliplarga tushmagan boʻlsa, sizga yuqori darajadagi moslanuvchanlik va boshlangʻich bosqichda hamyonbop, qulay yechim kerak boʻlsa — bu platforma juda yaxshi tanlov.",
       },
       {
         type: "p",
-        text: "SAP Business One — agar siz allaqachon yirik biznes yoki korporatsiya darajasiga yetgan bo‘lsangiz, xodimlaringiz soni 1000 tadan oshgan bo‘lsa, oldingizga global mashtablash va xalqaro boshqaruv standartlarini, qat’iy ichki tartib-intizom va 100% xavfsizlikni o‘rnatishni maqsad qilgan bo‘lsangiz — sizning to‘g‘ri yo‘lingiz faqat SAP Business Onedir.",
+        text: "SAP Business One — agar siz allaqachon yirik biznes yoki korporatsiya darajasiga yetgan boʻlsangiz, xodimlaringiz soni 1000 tadan oshgan boʻlsa, oldingizga global mashtablash va xalqaro boshqaruv standartlarini, qat’iy ichki tartib-intizom va 100% xavfsizlikni oʻrnatishni maqsad qilgan boʻlsangiz — sizning toʻgʻri yoʻlingiz faqat SAP Business Onedir.",
       },
       {
         type: "h3",
-        text: "Biznesingiz uchun eng to‘g‘ri ERP strategiyasini aniqlang",
+        text: "Biznesingiz uchun eng toʻgʻri ERP strategiyasini aniqlang",
       },
       {
         type: "p",
-        text: "ERP tizimini tanlash — bu shunchaki dastur sotib olish emas, bu biznesingizning kelgusi 10 yillik boshqaruv poydevorini qo‘yishdir. Tanlovda adashmaslik uchun har bir kompaniyaning ichki holati individual tahlil qilinishi shart.",
+        text: "ERP tizimini tanlash — bu shunchaki dastur sotib olish emas, bu biznesingizning kelgusi 10 yillik boshqaruv poydevorini qoʻyishdir. Tanlovda adashmaslik uchun har bir kompaniyaning ichki holati individual tahlil qilinishi shart.",
       },
       {
         type: "p",
@@ -1827,22 +1827,22 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Konsultatsiyaga ariza qoldirish uchun [kontakt ma'lumotlarimiz](/uz/contacts) sahifasiga o‘ting. Biznesingizni xalqaro standartlar asosida raqamlashtirish vaqti keldi!",
+        text: "Konsultatsiyaga ariza qoldirish uchun [kontakt ma'lumotlarimiz](/uz/contacts) sahifasiga oʻting. Biznesingizni xalqaro standartlar asosida raqamlashtirish vaqti keldi!",
       },
     ],
   },
   {
     slug: "sap-business-one-ombor-nazorati",
-    title: "Omborda 400 000$ pul muzlab yotgan bo‘lishi mumkin | SAP Business One orqali ombor nazorati",
+    title: "Omborda 400 000$ pul muzlab yotgan boʻlishi mumkin | SAP Business One orqali ombor nazorati",
     metaTitle: "Ombor nazorati | SAP Business One ERP",
-    excerpt: "SAP Business One orqali ombor nazorati, inventory analytics va savdoni avtomatlashtiring. ERP yordamida ombordagi muzlab qolgan mablag‘larni aniqlang.",
+    excerpt: "SAP Business One orqali ombor nazorati, inventory analytics va savdoni avtomatlashtiring. ERP yordamida ombordagi muzlab qolgan mablagʻlarni aniqlang.",
     readingTime: "3 daqiqa",
     category: "Ombor",
     image: "/design/blog/sap-business-one-ombor-nazorati.webp",
     body: [
       {
         type: "p",
-        text: "Ko‘plab import kompaniyalari bitta katta muammoni sezmaydi:",
+        text: "Koʻplab import kompaniyalari bitta katta muammoni sezmaydi:",
       },
       {
         type: "p",
@@ -1850,15 +1850,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ba’zi hollarda bu summa 400 000$ va undan ham ko‘p bo‘lishi mumkin.",
+        text: "Ba’zi hollarda bu summa 400 000$ va undan ham koʻp boʻlishi mumkin.",
       },
       {
         type: "p",
-        text: "Ayniqsa yiliga 10 million dollardan ortiq aylanma qiladigan import va distribyutor kompaniyalarda bu holat juda ko‘p uchraydi.",
+        text: "Ayniqsa yiliga 10 million dollardan ortiq aylanma qiladigan import va distribyutor kompaniyalarda bu holat juda koʻp uchraydi.",
       },
       {
         type: "p",
-        text: "Muammo shundaki, ko‘pchilik biznes egalari bu pul “muzlab” qolganini juda kech sezadi.",
+        text: "Muammo shundaki, koʻpchilik biznes egalari bu pul “muzlab” qolganini juda kech sezadi.",
       },
       {
         type: "h3",
@@ -1866,19 +1866,19 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ko‘plab kompaniyalar:",
+        text: "Koʻplab kompaniyalar:",
       },
       {
         type: "p",
-        text: "“Assortiment qancha ko‘p bo‘lsa, foyda ham shuncha ko‘p bo‘ladi”",
+        text: "“Assortiment qancha koʻp boʻlsa, foyda ham shuncha koʻp boʻladi”",
       },
       {
         type: "p",
-        text: "deb o‘ylaydi.",
+        text: "deb oʻylaydi.",
       },
       {
         type: "p",
-        text: "Lekin amalda buning teskarisi bo‘lishi mumkin.",
+        text: "Lekin amalda buning teskarisi boʻlishi mumkin.",
       },
       {
         type: "p",
@@ -1887,8 +1887,8 @@ export const importedPosts: BlogPost[] = [
       {
         type: "list",
         items: [
-          "sekin aylanadigan mahsulotlar ko‘payadi",
-          "ortiqcha zaxiralar yig‘iladi",
+          "sekin aylanadigan mahsulotlar koʻpayadi",
+          "ortiqcha zaxiralar yigʻiladi",
           "ombordagi pul aylanishi sekinlashadi",
           "ombor xarajatlari oshadi",
         ],
@@ -1903,7 +1903,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ko‘plab kompaniyalarda:",
+        text: "Koʻplab kompaniyalarda:",
       },
       {
         type: "list",
@@ -1915,7 +1915,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "aniq ko‘rinmaydi.",
+        text: "aniq koʻrinmaydi.",
       },
       {
         type: "p",
@@ -1960,12 +1960,12 @@ export const importedPosts: BlogPost[] = [
           "ombor qoldiqlari",
           "inventory analytics",
           "sekin sotilayotgan mahsulotlar",
-          "eng ko‘p foyda berayotgan mahsulotlar",
+          "eng koʻp foyda berayotgan mahsulotlar",
         ],
       },
       {
         type: "p",
-        text: "real vaqt rejimida ko‘rinadi.",
+        text: "real vaqt rejimida koʻrinadi.",
       },
       {
         type: "p",
@@ -1991,8 +1991,8 @@ export const importedPosts: BlogPost[] = [
       {
         type: "list",
         items: [
-          "assortiment juda katta bo‘ladi",
-          "SKU soni ko‘p bo‘ladi",
+          "assortiment juda katta boʻladi",
+          "SKU soni koʻp boʻladi",
           "mahsulot aylanish tezligi juda muhim hisoblanadi",
         ],
       },
@@ -2034,9 +2034,9 @@ export const importedPosts: BlogPost[] = [
         type: "list",
         items: [
           "har kuni tovar aylanishini kuzatadi",
-          "qaysi mahsulot muzlab qolayotganini ko‘radi",
-          "qaysi tovar ko‘proq foyda berayotganini biladi",
-          "qaysi mahsulotni ko‘proq import qilish kerakligini tushunadi",
+          "qaysi mahsulot muzlab qolayotganini koʻradi",
+          "qaysi tovar koʻproq foyda berayotganini biladi",
+          "qaysi mahsulotni koʻproq import qilish kerakligini tushunadi",
         ],
       },
       {
@@ -2075,7 +2075,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "bo‘yicha tahlil qiladi.",
+        text: "boʻyicha tahlil qiladi.",
       },
       {
         type: "p",
@@ -2086,7 +2086,7 @@ export const importedPosts: BlogPost[] = [
         items: [
           "foydasiz mahsulotlarni aniqlaydi",
           "ortiqcha zaxirani kamaytiradi",
-          "pulni “muzlatib” qo‘ymaslikni boshlaydi",
+          "pulni “muzlatib” qoʻymaslikni boshlaydi",
         ],
       },
       {
@@ -2110,7 +2110,7 @@ export const importedPosts: BlogPost[] = [
         items: [
           "sekin aylanayotgan mahsulotlar",
           "ortiqcha qoldiqlar",
-          "noto‘g‘ri xaridlar",
+          "notoʻgʻri xaridlar",
         ],
       },
       {
@@ -2119,7 +2119,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Bu esa ombor bilan bog‘liq moliyaviy zararlarni kamaytiradi.",
+        text: "Bu esa ombor bilan bogʻliq moliyaviy zararlarni kamaytiradi.",
       },
       {
         type: "h3",
@@ -2164,7 +2164,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "bo‘lishi kerak.",
+        text: "boʻlishi kerak.",
       },
       {
         type: "p",
@@ -2176,7 +2176,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Agar omborda katta miqdorda pul muzlab qolayotgan bo‘lsa, muammo ko‘pincha nazorat instrumentlarining yetishmasligida bo‘ladi.",
+        text: "Agar omborda katta miqdorda pul muzlab qolayotgan boʻlsa, muammo koʻpincha nazorat instrumentlarining yetishmasligida boʻladi.",
       },
       {
         type: "p",
@@ -2194,15 +2194,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "to‘liq yo‘lga qo‘yiladi.",
+        text: "toʻliq yoʻlga qoʻyiladi.",
       },
       {
         type: "p",
-        text: "Bugungi kunda ko‘plab yirik kompaniyalar aynan shu sabab SAP Business One Uzbekistan yechimlarini tanlamoqda.",
+        text: "Bugungi kunda koʻplab yirik kompaniyalar aynan shu sabab SAP Business One Uzbekistan yechimlarini tanlamoqda.",
       },
       {
         type: "p",
-        text: "Agar siz ham biznesingizdagi pul oqimini nazorat qilishni istasangiz, ERP tizimini joriy qilish haqida o‘ylab ko‘rishingiz kerak.",
+        text: "Agar siz ham biznesingizdagi pul oqimini nazorat qilishni istasangiz, ERP tizimini joriy qilish haqida oʻylab koʻrishingiz kerak.",
       },
       { type: "h3", text: "Shuningdek oʻqing" },
       { type: "list", items: [
@@ -2214,7 +2214,7 @@ export const importedPosts: BlogPost[] = [
   },
   {
     slug: "sap-yoki-1c-erp-tizimlar-taqoslash-biznes-uchun",
-    title: "SAP yoki 1C: Katta biznes gigantlari va o‘rta biznes o‘rtasidagi haqiqiy tanlov",
+    title: "SAP yoki 1C: Katta biznes gigantlari va oʻrta biznes oʻrtasidagi haqiqiy tanlov",
     metaTitle: "SAP va 1C farqi | Qaysi ERP tizimi yaxshiroq?",
     excerpt: "SAP va 1C tizimlarining farqi, narxi va imkoniyatlarini solishtiring. Yirik biznes uchun qaysi ERP tizimi mosligini va kompaniyalar nega SAPni tanlashini bilib oling.",
     readingTime: "4 daqiqa",
@@ -2223,35 +2223,35 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "Biznes o‘sib, Excel jadvallari va telegram-guruhlar monitoringga yetmay qolganda, har bir rahbar bitta savolga duch keladi: \"Endi qaysi [ERP tizimini](/uz/post/sap-erp-tizimi) o‘rnatsak ekan? SAPmi yoki 1C?\"",
+        text: "Biznes oʻsib, Excel jadvallari va telegram-guruhlar monitoringga yetmay qolganda, har bir rahbar bitta savolga duch keladi: \"Endi qaysi [ERP tizimini](/uz/post/sap-erp-tizimi) oʻrnatsak ekan? SAPmi yoki 1C?\"",
       },
       {
         type: "p",
-        text: "Ikkala tizim ham o‘z vazifasini a’lo darajada bajaradi, lekin ularning falsafasi va imkoniyatlari mutlaqo har xil. Keling, buni quruq texnik gaplarsiz, hayotiy savollar va aniq misollar bilan tahlil qilamiz.",
+        text: "Ikkala tizim ham oʻz vazifasini a’lo darajada bajaradi, lekin ularning falsafasi va imkoniyatlari mutlaqo har xil. Keling, buni quruq texnik gaplarsiz, hayotiy savollar va aniq misollar bilan tahlil qilamiz.",
       },
       {
         type: "h3",
-        text: "Kichik va o‘rta biznes uchun: Nega ko‘pchilik 1C ni tanlaydi?",
+        text: "Kichik va oʻrta biznes uchun: Nega koʻpchilik 1C ni tanlaydi?",
       },
       {
         type: "p",
-        text: "Agar kompaniyada jarayonlar hali shakllanish bosqichida bo‘lsa, qarorlar tezkorlik bilan o‘zgartirib turilsa va eng muhimi — byudjetni tejash birinchi o‘rinda tursa, bu vaziyatda 1C yaqqol ustunlikka ega bo‘ladi.",
+        text: "Agar kompaniyada jarayonlar hali shakllanish bosqichida boʻlsa, qarorlar tezkorlik bilan oʻzgartirib turilsa va eng muhimi — byudjetni tejash birinchi oʻrinda tursa, bu vaziyatda 1C yaqqol ustunlikka ega boʻladi.",
       },
       {
         type: "p",
-        text: "Qaysi birini o‘rnatish arzon? Albatta, 1C. Loyihani litsenziyalash, uni serverga o‘rnatish va ishga tushirish xarajatlari SAPga qaraganda ancha arzon va yengil bitadi.",
+        text: "Qaysi birini oʻrnatish arzon? Albatta, 1C. Loyihani litsenziyalash, uni serverga oʻrnatish va ishga tushirish xarajatlari SAPga qaraganda ancha arzon va yengil bitadi.",
       },
       {
         type: "p",
-        text: "Qaysi birini ishlatish qulay? Bozordagi ko‘plab xodimlar, ayniqsa buxgalterlar va [omborchilar](/uz/post/sap-business-one-ombor-nazorati) uchun 1C interfeysi juda tanish. Uni o‘rganish uchun xodimlarni oylab qayta o‘qitish shart emas, tizim ichida harakat qilish ancha oson va tushunarli.",
+        text: "Qaysi birini ishlatish qulay? Bozordagi koʻplab xodimlar, ayniqsa buxgalterlar va [omborchilar](/uz/post/sap-business-one-ombor-nazorati) uchun 1C interfeysi juda tanish. Uni oʻrganish uchun xodimlarni oylab qayta oʻqitish shart emas, tizim ichida harakat qilish ancha oson va tushunarli.",
       },
       {
         type: "p",
-        text: "O‘zbekistonga qaysi biri moslashgan? Milliy bozor qoidalari, soliq qonunchiligi, hisobotlar va davlat standartlaridagi o‘zgarishlarga moslashish bo‘yicha 1C tizimiga yetadigani yo‘q. Yangilanishlar tezkorlik bilan tizimga kiritiladi.",
+        text: "Oʻzbekistonga qaysi biri moslashgan? Milliy bozor qoidalari, soliq qonunchiligi, hisobotlar va davlat standartlaridagi oʻzgarishlarga moslashish boʻyicha 1C tizimiga yetadigani yoʻq. Yangilanishlar tezkorlik bilan tizimga kiritiladi.",
       },
       {
         type: "p",
-        text: "Shuning uchun ham O‘zbekistondagi kichik va o‘rta biznes subyektlari uchun 1C — eng oqilona va hamyonbop yechim hisoblanadi.",
+        text: "Shuning uchun ham Oʻzbekistondagi kichik va oʻrta biznes subyektlari uchun 1C — eng oqilona va hamyonbop yechim hisoblanadi.",
       },
       {
         type: "h3",
@@ -2259,27 +2259,27 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Endi vaziyatni boshqa tomondan tasavvur qilamiz: kompaniyada xodimlar soni 1000 tadan oshgan, [ishlab chiqarish](/uz/production) zanjiri murakkab, filiallar soni o‘nlab va har kuni millionlab tranzaksiyalar sodir bo‘ladi. Mana shu miqyosga yetganda, 1C tizimi yuklamani ko‘tarolmay qolishi yoki sekinlashishi mumkin. Sahnaga jahon giganti — SAP chiqadi.",
+        text: "Endi vaziyatni boshqa tomondan tasavvur qilamiz: kompaniyada xodimlar soni 1000 tadan oshgan, [ishlab chiqarish](/uz/production) zanjiri murakkab, filiallar soni oʻnlab va har kuni millionlab tranzaksiyalar sodir boʻladi. Mana shu miqyosga yetganda, 1C tizimi yuklamani koʻtarolmay qolishi yoki sekinlashishi mumkin. Sahnaga jahon giganti — SAP chiqadi.",
       },
       {
         type: "p",
-        text: "Cheksiz mashtablash (kengayish): SAP tizimi biznesingiz bilan birga cheksiz o‘sa oladi. Yangi zavodlar qurasizmi, xalqaro logistika markazlari ochasizmi yoki transmilliy holdingga aylanasizmi — SAP hammasini bitta markaziy tizimga muammosiz bog‘laydi.",
+        text: "Cheksiz mashtablash (kengayish): SAP tizimi biznesingiz bilan birga cheksiz oʻsa oladi. Yangi zavodlar qurasizmi, xalqaro logistika markazlari ochasizmi yoki transmilliy holdingga aylanasizmi — SAP hammasini bitta markaziy tizimga muammosiz bogʻlaydi.",
       },
       {
         type: "p",
-        text: "Dunyo bo‘yicha mijozi eng ko‘p tizim: Global miqyosda yirik korporatsiyalar orasida SAP mutloq yetakchi. Apple, Mercedes-Benz, Amazon kabi brendlar bejiz uni tanlashmagan. Bu tizimni sotib olganda, tadbirkor shunchaki dastur emas, balki dunyoning eng muvaffaqiyatli kompaniyalari yillar davomida sinovdan o‘tkazgan tayyor biznes-modellarni ham qo‘lga kiritadi.",
+        text: "Dunyo boʻyicha mijozi eng koʻp tizim: Global miqyosda yirik korporatsiyalar orasida SAP mutloq yetakchi. Apple, Mercedes-Benz, Amazon kabi brendlar bejiz uni tanlashmagan. Bu tizimni sotib olganda, tadbirkor shunchaki dastur emas, balki dunyoning eng muvaffaqiyatli kompaniyalari yillar davomida sinovdan oʻtkazgan tayyor biznes-modellarni ham qoʻlga kiritadi.",
       },
       {
         type: "p",
-        text: "Tizim va qat’iy nazorat: SAP tizimi shunday qurilganki, unda inson omili tufayli xato qilib qo‘yish yoki tizim ma’lumotlarini soxtalashtirish deyarli imkonsiz. Tizim qat’iy tartib-intizom asosida ishlaydi va katta korporatsiyalarni ichkaridan tartibga soladi.",
+        text: "Tizim va qat’iy nazorat: SAP tizimi shunday qurilganki, unda inson omili tufayli xato qilib qoʻyish yoki tizim ma’lumotlarini soxtalashtirish deyarli imkonsiz. Tizim qat’iy tartib-intizom asosida ishlaydi va katta korporatsiyalarni ichkaridan tartibga soladi.",
       },
       {
         type: "h3",
-        text: "O‘zbekistonning eng yirik tarmoqlari nima ishlatadi?",
+        text: "Oʻzbekistonning eng yirik tarmoqlari nima ishlatadi?",
       },
       {
         type: "p",
-        text: "Buning isbotini uzoqdan qidirish shart emas. O‘zbekiston [chakana](/uz/retail-trade) savdo va ishlab chiqarish bozorida hammamiz har kuni ko‘radigan yirik brendlar — Korzinka supermarketlar tarmog‘i hamda Safia qandolatchilik uylari aynan SAP tizimida ishlaydi.",
+        text: "Buning isbotini uzoqdan qidirish shart emas. Oʻzbekiston [chakana](/uz/retail-trade) savdo va ishlab chiqarish bozorida hammamiz har kuni koʻradigan yirik brendlar — Korzinka supermarketlar tarmogʻi hamda Safia qandolatchilik uylari aynan SAP tizimida ishlaydi.",
       },
       {
         type: "p",
@@ -2287,27 +2287,27 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Xulosa: Biznesingiz uchun qaysi biri to‘g‘ri tanlov?",
+        text: "Xulosa: Biznesingiz uchun qaysi biri toʻgʻri tanlov?",
       },
       {
         type: "p",
-        text: "Xulosa qilib aytganda, tizimlarning yaxshi yoki yomonligi yo‘q, shunchaki har birining o‘z o‘rni bor:",
+        text: "Xulosa qilib aytganda, tizimlarning yaxshi yoki yomonligi yoʻq, shunchaki har birining oʻz oʻrni bor:",
       },
       {
         type: "p",
-        text: "1. Agar siz kichik yoki o‘rta biznes bosqichida bo‘lsangiz, jarayonlaringiz hali tez-tez o‘zgarib tursa va mahalliy qonunchilikka mos, arzonroq yechim qidirayotgan bo‘lsangiz — sizning tanlovingiz 1C.",
+        text: "1. Agar siz kichik yoki oʻrta biznes bosqichida boʻlsangiz, jarayonlaringiz hali tez-tez oʻzgarib tursa va mahalliy qonunchilikka mos, arzonroq yechim qidirayotgan boʻlsangiz — sizning tanlovingiz 1C.",
       },
       {
         type: "p",
-        text: "2. Agar siz yirik tadbirkor bo‘lsangiz, xodimlaringiz soni 1000 tadan oshgan bo‘lsa, oldingizga global miqyosga chiqish va biznesni tizimli xalqaro darajaga ko‘tarish maqsadini qo‘ygan bo‘lsangiz — sizga faqat SAP yordam bera oladi.",
+        text: "2. Agar siz yirik tadbirkor boʻlsangiz, xodimlaringiz soni 1000 tadan oshgan boʻlsa, oldingizga global miqyosga chiqish va biznesni tizimli xalqaro darajaga koʻtarish maqsadini qoʻygan boʻlsangiz — sizga faqat SAP yordam bera oladi.",
       },
       {
         type: "h3",
-        text: "To‘g‘ri tanlov qilishga ikkilanayapsizmi?",
+        text: "Toʻgʻri tanlov qilishga ikkilanayapsizmi?",
       },
       {
         type: "p",
-        text: "Biznesingiz uchun qaysi tizim ko‘proq foyda keltirishi, investitsiyalar o‘zini qanchalik tez oqlashi va jarayonlarni qaysi biri aniqroq raqamlashtira olishini aniqlash har doim ham oson emas. Noto‘g‘ri tanlov esa vaqt va millionlab mablag‘ yo‘qotilishiga olib kelishi mumkin.",
+        text: "Biznesingiz uchun qaysi tizim koʻproq foyda keltirishi, investitsiyalar oʻzini qanchalik tez oqlashi va jarayonlarni qaysi biri aniqroq raqamlashtira olishini aniqlash har doim ham oson emas. Notoʻgʻri tanlov esa vaqt va millionlab mablagʻ yoʻqotilishiga olib kelishi mumkin.",
       },
       {
         type: "p",
@@ -2315,7 +2315,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Konsultatsiyaga ariza qoldirish uchun [**kontakt ma'lumotlarimiz**](/uz/contacts) sahifasiga o‘ting yoki biz bilan darhol bog‘laning. Biznesingizni xalqaro standartlar asosida tizimlashtirish vaqti keldi!",
+        text: "Konsultatsiyaga ariza qoldirish uchun [**kontakt ma'lumotlarimiz**](/uz/contacts) sahifasiga oʻting yoki biz bilan darhol bogʻlaning. Biznesingizni xalqaro standartlar asosida tizimlashtirish vaqti keldi!",
       },
     ],
   },
@@ -2331,19 +2331,19 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "Biznes egalari korxonani raqamlashtirish haqida o‘ylaganda eng ko‘p beriladigan savollardan biri: 'Bizga CRM kerakmi yoki ERP?'",
+        text: "Biznes egalari korxonani raqamlashtirish haqida oʻylaganda eng koʻp beriladigan savollardan biri: 'Bizga CRM kerakmi yoki ERP?'",
       },
       {
         type: "p",
-        text: "Ko‘pincha bu ikki tushuncha bir-biri bilan adashtiriladi. Keling, bu ikki tizimning farqini oddiy va tushunarli misol orqali ko‘rib chiqamiz.",
+        text: "Koʻpincha bu ikki tushuncha bir-biri bilan adashtiriladi. Keling, bu ikki tizimning farqini oddiy va tushunarli misol orqali koʻrib chiqamiz.",
       },
       {
         type: "h3",
-        text: "Futbol Misolida: Jamoada Kim Qayerda O‘ynaydi?",
+        text: "Futbol Misolida: Jamoada Kim Qayerda Oʻynaydi?",
       },
       {
         type: "p",
-        text: "Tasavvur qiling, biznes — bu yaxlit bitta futbol jamoasi, kompaniyadagi xodimlar esa maydondagi o‘yinchilardir. Futbolda hujumchilar, yarim himoyachilar va himoya chizig‘i bo‘ladi.",
+        text: "Tasavvur qiling, biznes — bu yaxlit bitta futbol jamoasi, kompaniyadagi xodimlar esa maydondagi oʻyinchilardir. Futbolda hujumchilar, yarim himoyachilar va himoya chizigʻi boʻladi.",
       },
       {
         type: "h3",
@@ -2359,24 +2359,24 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "G‘alaba qozonish uchun faqat hujum qilish yetarli emas. Gol urilganidan keyin orqa chiziq mustahkam turmasa, jamoa o‘yinni boy beradi. Biznesda ham xuddi shunday.",
+        text: "Gʻalaba qozonish uchun faqat hujum qilish yetarli emas. Gol urilganidan keyin orqa chiziq mustahkam turmasa, jamoa oʻyinni boy beradi. Biznesda ham xuddi shunday.",
       },
       
       {
         type: "h3",
-        text: "CRM Vazifasi: Hujum va Gol Urish (Sotuv Chizig‘i)",
+        text: "CRM Vazifasi: Hujum va Gol Urish (Sotuv Chizigʻi)",
       },
       {
         type: "p",
-        text: "CRM (Customer Relationship Management) to‘liq mijozlar bilan munosabatlarni boshqarishga xizmat qiladi.",
+        text: "CRM (Customer Relationship Management) toʻliq mijozlar bilan munosabatlarni boshqarishga xizmat qiladi.",
       },
       {
         type: "p",
-        text: "Marketing bo‘limi olib kelayotgan lidlarni ushlab qolish va ularni xaridorga aylantirish — sotuvchilarning asosiy vazifasi. Barcha lidlarni 100% yopish qiyin, lekin CRM orqali ularning maksimal qismini saqlab qolish mumkin.",
+        text: "Marketing boʻlimi olib kelayotgan lidlarni ushlab qolish va ularni xaridorga aylantirish — sotuvchilarning asosiy vazifasi. Barcha lidlarni 100% yopish qiyin, lekin CRM orqali ularning maksimal qismini saqlab qolish mumkin.",
       },
       {
         type: "p",
-        text: "Moliyachi oylik hisobotni yig‘ish uchun kunlab [omborchiga](/uz/post/sap-business-one-ombor-nazorati) telefon qiladi va qoldiqlarni aniqlashtiradi.",
+        text: "Moliyachi oylik hisobotni yigʻish uchun kunlab [omborchiga](/uz/post/sap-business-one-ombor-nazorati) telefon qiladi va qoldiqlarni aniqlashtiradi.",
       },
       {
         type: "h3",
@@ -2384,7 +2384,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Bo‘lajak mijozlarning kontaktlari va ular bilan yozishmalar tarixi;",
+        text: " **•** Boʻlajak mijozlarning kontaktlari va ular bilan yozishmalar tarixi;",
       },
       {
         type: "p",
@@ -2401,11 +2401,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "ERP Vazifasi: Himoya, Resurslar va G‘alabani Saqlab Qolish",
+        text: "ERP Vazifasi: Himoya, Resurslar va Gʻalabani Saqlab Qolish",
       },
       {
         type: "p",
-        text: "Mijoz bilan shartnoma tuzilgach, haqiqiy operatsion ish boshlanadi. Mijozga mahsulotni va’da qilingan vaqtda, sifatli va to‘g‘ri miqdorda yetkazib berish kerak. Aynan shu yerda maydonga ERP (Enterprise Resource Planning) tushadi.",
+        text: "Mijoz bilan shartnoma tuzilgach, haqiqiy operatsion ish boshlanadi. Mijozga mahsulotni va’da qilingan vaqtda, sifatli va toʻgʻri miqdorda yetkazib berish kerak. Aynan shu yerda maydonga ERP (Enterprise Resource Planning) tushadi.",
       },
       {
         type: "h3",
@@ -2424,15 +2424,15 @@ export const importedPosts: BlogPost[] = [
 
        {
         type: "p",
-        text: "**•** **Ombor hisobi:** Mahsulotlarning harakatini, qaysi tovarlar ko‘proq sotilayotgani va qaysilari harakatsiz yotganini (nelikvid) ko‘rsatish.",
+        text: "**•** **Ombor hisobi:** Mahsulotlarning harakatini, qaysi tovarlar koʻproq sotilayotgani va qaysilari harakatsiz yotganini (nelikvid) koʻrsatish.",
       },
       {
         type: "p",
-        text: " **•** **Moliya va tahlil:** Qaysi tovardan haqiqiy foyda ko‘rilayotganini aniqlash, pul oqimlarini nazorat qilish va umumiy boshqaruv balansini shakllantirish.",
+        text: " **•** **Moliya va tahlil:** Qaysi tovardan haqiqiy foyda koʻrilayotganini aniqlash, pul oqimlarini nazorat qilish va umumiy boshqaruv balansini shakllantirish.",
       },
       {
         type: "p",
-        text: "Agar kompaniyada faqat CRM bo‘lsa-yu, ERP bo‘lmasa — sotuvchilar ko‘p buyurtma oladi, lekin ishlab chiqarish ulgurmaydi, omborda kerakli tovar topilmaydi yoki mahsulot o‘z tannarxidan arzon sotilib, kompaniya zarar ko‘radi.",
+        text: "Agar kompaniyada faqat CRM boʻlsa-yu, ERP boʻlmasa — sotuvchilar koʻp buyurtma oladi, lekin ishlab chiqarish ulgurmaydi, omborda kerakli tovar topilmaydi yoki mahsulot oʻz tannarxidan arzon sotilib, kompaniya zarar koʻradi.",
       },
       {
         type: "h3",
@@ -2440,11 +2440,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Agar kompaniyaning maqsadi faqat mijozlar bazasini yig‘ish va qo‘ng‘iroqlarni nazorat qilish bo‘lsa, CRM kifoya qilishi mumkin.",
+        text: "Agar kompaniyaning maqsadi faqat mijozlar bazasini yigʻish va qoʻngʻiroqlarni nazorat qilish boʻlsa, CRM kifoya qilishi mumkin.",
       },
       {
         type: "p",
-        text: "Biroq biznesda xarid, ombor, logistika, ishlab chiqarish va moliya bo‘limlari mavjud bo‘lsa, barcha jarayonlarni bitta joyda boshqarish uchun yaxlit ERP tizimi zarur. [SAP Business One](/uz/sap-business-one) tizimi esa o‘z ichiga CRM modulini ham olgan to‘liq ERP platformasi bo‘lib, biznesning ham hujum, ham himoya chizig‘ini yagona tizimda mustahkamlaydi.",
+        text: "Biroq biznesda xarid, ombor, logistika, ishlab chiqarish va moliya boʻlimlari mavjud boʻlsa, barcha jarayonlarni bitta joyda boshqarish uchun yaxlit ERP tizimi zarur. [SAP Business One](/uz/sap-business-one) tizimi esa oʻz ichiga CRM modulini ham olgan toʻliq ERP platformasi boʻlib, biznesning ham hujum, ham himoya chizigʻini yagona tizimda mustahkamlaydi.",
       },
       {
         type: "h3",
@@ -2452,20 +2452,20 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Aylanmada qancha mablag‘ingiz harakatsiz turganini Aylanma kapital kalkulyatori orqali hisoblab ko‘ring.",
+        text: " **•** Aylanmada qancha mablagʻingiz harakatsiz turganini Aylanma kapital kalkulyatori orqali hisoblab koʻring.",
       },
     
       {
         type: "p",
-        text: " **•** Ishlab chiqarish va sotuvni yagona tizimga birlashtirgan korxonalar tajribasini Benefit zavodi [keysi](/uz/portfolio) orqali o‘rganing.",
+        text: " **•** Ishlab chiqarish va sotuvni yagona tizimga birlashtirgan korxonalar tajribasini Benefit zavodi [keysi](/uz/portfolio) orqali oʻrganing.",
       },
       {
         type: "p",
-        text: " **•** Tizimlarning imkoniyatlari haqida batafsil ma’lumot olish uchun SAP va 1C solishtiruvi maqolasini o‘qing.",
+        text: " **•** Tizimlarning imkoniyatlari haqida batafsil ma’lumot olish uchun SAP va 1C solishtiruvi maqolasini oʻqing.",
       },
       {
         type: "p",
-        text: " **•** Kompaniyangiz uchun to‘g‘ri dasturiy yechimni tanlash bo‘yicha Mutaxassislarimiz bilan bog‘laning.",
+        text: " **•** Kompaniyangiz uchun toʻgʻri dasturiy yechimni tanlash boʻyicha Mutaxassislarimiz bilan bogʻlaning.",
       },
     
     ],
@@ -2475,14 +2475,14 @@ export const importedPosts: BlogPost[] = [
     slug: "erp-tizimini-tanlash-axborot-uzilishi",
     title: "Korxonani Avtomatlashtirish Uchun ERP Tizimi Tanlash: Axborot Uzilishiga Barham Berish",
     metaTitle: "ERP tizimini tanlash: korxonani avtomatlashtirish",
-    excerpt: "Biznesda bo‘limlar o‘rtasidagi uzilishlarni yo‘qotish va boshqaruv hisobini tartibga solish uchun to‘g‘ri ERP tizimini tanlash bo‘yicha amaliy qo‘llanma.",
+    excerpt: "Biznesda boʻlimlar oʻrtasidagi uzilishlarni yoʻqotish va boshqaruv hisobini tartibga solish uchun toʻgʻri ERP tizimini tanlash boʻyicha amaliy qoʻllanma.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
     image: "/design/blog/erp-tizimini-tanlash-axborot-uzilishi.webp",
     body: [
       {
         type: "p",
-        text: "Biznes o‘sgani sari uni faqat sotuvlar yoki mijozlar bilan aloqani boshqarish orqali ushlab turish imkonsiz bo‘lib qoladi. Ko‘plab rahbarlar dastlab faqat [CRM](/uz/post/crm-va-erp-tizimlarining-farqi) tizimi haqida o‘ylashadi, ammo kompaniyaning asosiy muammolari va xarajatlari sotuv ortida — back-ofisda yashiringan bo‘ladi. Korxonani to‘liq nazoratga olish uchun esa tor doiradagi dasturlar emas, balki yaxlit ERP (Enterprise Resource Planning) tizimi zarur.",
+        text: "Biznes oʻsgani sari uni faqat sotuvlar yoki mijozlar bilan aloqani boshqarish orqali ushlab turish imkonsiz boʻlib qoladi. Koʻplab rahbarlar dastlab faqat [CRM](/uz/post/crm-va-erp-tizimlarining-farqi) tizimi haqida oʻylashadi, ammo kompaniyaning asosiy muammolari va xarajatlari sotuv ortida — back-ofisda yashiringan boʻladi. Korxonani toʻliq nazoratga olish uchun esa tor doiradagi dasturlar emas, balki yaxlit ERP (Enterprise Resource Planning) tizimi zarur.",
       },
       {
         type: "h3",
@@ -2495,32 +2495,32 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ularning bosh maqsadi — mahsulot yoki xizmatni sifatli, optimal tannarxda va o‘z vaqtida mijozga yetkazishdir.",
+        text: "Ularning bosh maqsadi — mahsulot yoki xizmatni sifatli, optimal tannarxda va oʻz vaqtida mijozga yetkazishdir.",
       },
       {
         type: "p",
-        text: " **•** ** Ta’minotchi: **  Omborda tugayotgan tovarlarni ortiqcha zaxira hosil qilmasdan, eng maqbul narxlarda sotib oladi.",
+        text: " **•** **Ta’minotchi:**  Omborda tugayotgan tovarlarni ortiqcha zaxira hosil qilmasdan, eng maqbul narxlarda sotib oladi.",
       },
       {
         type: "p",
-        text: " **•** ** Planirovshik va Ishlab chiqarish: ** Xomashyo sarfini, sex quvvatini va buyurtma tayyor bo‘lish muddatini hisoblaydi.",
+        text: " **•** **Planirovshik va Ishlab chiqarish:** Xomashyo sarfini, sex quvvatini va buyurtma tayyor boʻlish muddatini hisoblaydi.",
       },
       {
         type: "p",
-        text: " **•** ** Moliyachi: ** Bo‘limlar kiritayotgan har bir ko‘rsatkichni tahlil qilib, pul uzilishlarining (kassoviy razriv) oldini oladi va aylanma mablag‘larni to‘g‘ri taqsimlaydi.",
+        text: " **•** **Moliyachi:** Boʻlimlar kiritayotgan har bir koʻrsatkichni tahlil qilib, pul uzilishlarining (kassoviy razriv) oldini oladi va aylanma mablagʻlarni toʻgʻri taqsimlaydi.",
       },
       
       {
         type: "p",
-        text: "Lekin ko‘plab korxonalarda bu tizim soat kabi aniq ishlamaydi. Asosiy sabab — bo‘limlarning bir-biridan uzilib qolganidir.",
+        text: "Lekin koʻplab korxonalarda bu tizim soat kabi aniq ishlamaydi. Asosiy sabab — boʻlimlarning bir-biridan uzilib qolganidir.",
       },
       {
         type: "h3",
-        text: "Axborot Uzilishi (Информационный разрыв) Qanday Paydo Bo‘ladi?",
+        text: "Axborot Uzilishi (Информационный разрыв) Qanday Paydo Boʻladi?",
       },
       {
         type: "p",
-        text: "Amaliyotda deyarli barcha bo‘limlar alohida dasturlarda ishlaydi. Sotuv bo‘limi kontaktlarni messenjer yoki alohida CRMda saqlaydi, omborchi qoldiqlarni Excel jadvalida yuritadi, buxgalteriya dasturga faqat o‘tgan oylik hujjatlarni kiritadi, sex boshliqlari esa hisobotni qog‘oz daftarga yozadi.",
+        text: "Amaliyotda deyarli barcha boʻlimlar alohida dasturlarda ishlaydi. Sotuv boʻlimi kontaktlarni messenjer yoki alohida CRMda saqlaydi, omborchi qoldiqlarni Excel jadvalida yuritadi, buxgalteriya dasturga faqat oʻtgan oylik hujjatlarni kiritadi, sex boshliqlari esa hisobotni qogʻoz daftarga yozadi.",
       },
       {
         type: "p",
@@ -2528,7 +2528,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Moliyachi oylik hisobotni yig‘ish uchun kunlab omborchiga telefon qiladi va qoldiqlarni aniqlashtiradi.",
+        text: " **•** Moliyachi oylik hisobotni yigʻish uchun kunlab omborchiga telefon qiladi va qoldiqlarni aniqlashtiradi.",
       },
       {
         type: "p",
@@ -2536,26 +2536,26 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Sex omborda xomashyo bor-yo‘qligini bilmay turib [ishlab chiqarishni](/uz/production) boshlay olmaydi.",
+        text: " **•** Sex omborda xomashyo bor-yoʻqligini bilmay turib [ishlab chiqarishni](/uz/production) boshlay olmaydi.",
       },
        {
         type: "p",
-        text: "Bu uzilish nafaqat ishlarni sekinlashtiradi, balki rahbar stoliga noto‘g‘ri va eskirgan ma’lumotlar chiqishiga olib keladi. Noto‘g‘ri ma’lumot asosida qabul qilingan qaror esa kompaniyaga katta moliyaviy zarar keltiradi.",
+        text: "Bu uzilish nafaqat ishlarni sekinlashtiradi, balki rahbar stoliga notoʻgʻri va eskirgan ma’lumotlar chiqishiga olib keladi. Notoʻgʻri ma’lumot asosida qabul qilingan qaror esa kompaniyaga katta moliyaviy zarar keltiradi.",
       },
 
       {
         type: "h3",
-        text: "Oddiy Dasturlar va ERP Tizimi O‘rtasidagi Farq",
+        text: "Oddiy Dasturlar va ERP Tizimi Oʻrtasidagi Farq",
       },
       
       {
         type: "p",
-        text: "Oddiy dasturlar yoki tor doiradagi CRM faqat bitta yo‘nalishni — mijozlar bilan aloqa va sotuvni yopadi. Ammo ular ombor qoldig‘ini, tannarxni yoki ta’minot zanjirini to‘liq ko‘rsatib bera olmaydi.",
+        text: "Oddiy dasturlar yoki tor doiradagi CRM faqat bitta yoʻnalishni — mijozlar bilan aloqa va sotuvni yopadi. Ammo ular ombor qoldigʻini, tannarxni yoki ta’minot zanjirini toʻliq koʻrsatib bera olmaydi.",
       },
 
       {
         type: "p",
-        text: "[ERP tizimi](/uz/post/sap-erp-tizimi) esa korxonaning barcha bo‘g‘inlarini qamrab oladi. U sotuv, xarid, ombor, ishlab chiqarish, moliya va HR bo‘limlarini yagona axborot maydoniga birlashtiradi. Tizimning vazifasi shunchaki ma’lumot yozib borish emas, balki resurslarni optimal rejalashtirish, ortiqcha xarajatlarni qisqartirish va har bir mahsulot tannarxini real vaqtda aniq chiqarishdir.",
+        text: "[ERP tizimi](/uz/post/sap-erp-tizimi) esa korxonaning barcha boʻgʻinlarini qamrab oladi. U sotuv, xarid, ombor, ishlab chiqarish, moliya va HR boʻlimlarini yagona axborot maydoniga birlashtiradi. Tizimning vazifasi shunchaki ma’lumot yozib borish emas, balki resurslarni optimal rejalashtirish, ortiqcha xarajatlarni qisqartirish va har bir mahsulot tannarxini real vaqtda aniq chiqarishdir.",
       },
       {
         type: "h3",
@@ -2564,7 +2564,7 @@ export const importedPosts: BlogPost[] = [
       
       {
         type: "p",
-        text: "[SAP Business One](/uz/sap-business-one) tizimi korxonadagi barcha bo‘limlarni bitta platformaga ulaydi.",
+        text: "[SAP Business One](/uz/sap-business-one) tizimi korxonadagi barcha boʻlimlarni bitta platformaga ulaydi.",
       },
 
       {
@@ -2574,11 +2574,11 @@ export const importedPosts: BlogPost[] = [
 
        {
         type: "p",
-        text: "**•** Ombordagi tayyor mahsulot va xomashyo qoldig‘i darhol tekshiriladi. ",
+        text: "**•** Ombordagi tayyor mahsulot va xomashyo qoldigʻi darhol tekshiriladi. ",
       },
       {
         type: "p",
-        text: " **•** Yetishmayotgan materiallar bo‘yicha ta’minot bo‘limiga xarid talabnomasi yuboriladi. ",
+        text: " **•** Yetishmayotgan materiallar boʻyicha ta’minot boʻlimiga xarid talabnomasi yuboriladi. ",
       },
       {
         type: "p",
@@ -2590,7 +2590,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Buning natijasida bo‘limlar o‘rtasidagi ortiqcha telefon qo‘ng‘iroqlari to‘xtaydi, axborot uzilishi butunlay yo‘qoladi va korxonada to‘liq shaffoflik paydo bo‘ladi.",
+        text: "Buning natijasida boʻlimlar oʻrtasidagi ortiqcha telefon qoʻngʻiroqlari toʻxtaydi, axborot uzilishi butunlay yoʻqoladi va korxonada toʻliq shaffoflik paydo boʻladi.",
       },
       {
         type: "h3",
@@ -2598,15 +2598,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Biznesingizdagi aylanma mablag‘lar samarasini Aylanma kapital kalkulyatori orqali hisoblang.",
+        text: " **•** Biznesingizdagi aylanma mablagʻlar samarasini Aylanma kapital kalkulyatori orqali hisoblang.",
       },
       {
         type: "p",
-        text: " **•** Katta assortimentli zavodlarda ERP qanday ishlashini Benefit keysi orqali ko‘ring.",
+        text: " **•** Katta assortimentli zavodlarda ERP qanday ishlashini Benefit keysi orqali koʻring.",
       },
       {
         type: "p",
-        text: " **•** Ishlab chiqarish va buyurtmalar integratsiyasini BRAUF Wood tajribasi misolida o‘rganing.",
+        text: " **•** Ishlab chiqarish va buyurtmalar integratsiyasini BRAUF Wood tajribasi misolida oʻrganing.",
       },
       {
         type: "p",
@@ -2615,7 +2615,7 @@ export const importedPosts: BlogPost[] = [
     
       {
         type: "p",
-        text: " **•** Kompaniyangiz jarayonlarini bepul tahlil qilish uchun Biz bilan bog‘laning.",
+        text: " **•** Kompaniyangiz jarayonlarini bepul tahlil qilish uchun Biz bilan bogʻlaning.",
       },
     
     ],
@@ -2623,20 +2623,20 @@ export const importedPosts: BlogPost[] = [
 
   {
     slug: "savdo-tarmogini-kengaytirish-avtomatlashtirish",
-    title: "Savdo tarmog‘ini kengaytirish va avtomatlashtirish yo‘llari",
-    metaTitle: "Savdo tarmog‘ini kengaytirish va avtomatlashtirish",
-    excerpt: "Chakana savdo tarmog‘ini nazoratni yo‘qotmasdan kengaytirish sirlari. Kassadagi kamomad, o‘g‘irlik va ombor nazoratini SAP orqali boshqarish.",
+    title: "Savdo tarmogʻini kengaytirish va avtomatlashtirish yoʻllari",
+    metaTitle: "Savdo tarmogʻini kengaytirish va avtomatlashtirish",
+    excerpt: "Chakana savdo tarmogʻini nazoratni yoʻqotmasdan kengaytirish sirlari. Kassadagi kamomad, oʻgʻirlik va ombor nazoratini SAP orqali boshqarish.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
     image: "/design/blog/savdo-tarmogini-kengaytirish-avtomatlashtirish.webp",
     body: [
       {
         type: "p",
-        text: "Chakana savdo va distribyutsiya sohasida faoliyat yuritayotgan har bir tadbirkor ertami-kechmi biznesni kengaytirish (masshtablashtirish) masalasiga to‘qnash keladi. Yangi savdo nuqtalarini ochish jozibador ko‘rinsa-da, bu biznes uchun eng xavfli bosqichlardan biridir.",
+        text: "Chakana savdo va distribyutsiya sohasida faoliyat yuritayotgan har bir tadbirkor ertami-kechmi biznesni kengaytirish (masshtablashtirish) masalasiga toʻqnash keladi. Yangi savdo nuqtalarini ochish jozibador koʻrinsa-da, bu biznes uchun eng xavfli bosqichlardan biridir.",
       },
       {
         type: "p",
-        text: "Amaliyot shuni ko‘rsatadiki, hisob-kitob poydevori mustahkam bo‘lmagan kompaniyalar filiallar sonini oshirishi bilan foyda o‘rniga katta boshqaruv inqiroziga uchraydi.",
+        text: "Amaliyot shuni koʻrsatadiki, hisob-kitob poydevori mustahkam boʻlmagan kompaniyalar filiallar sonini oshirishi bilan foyda oʻrniga katta boshqaruv inqiroziga uchraydi.",
       },
       {
         type: "h3",
@@ -2645,47 +2645,47 @@ export const importedPosts: BlogPost[] = [
      
       {
         type: "p",
-        text: "Agar tarmoqda 2–3 ta do‘kon bo‘lsa, nazoratni rahbarning shaxsiy ishtiroki yoki oddiy jadvallar orqali qisman ushlab turish mumkin. Ammo filiallar soni 10, 20 yoki 50 tadan oshganda quyidagi tizimli muammolar yuzaga keladi:",
+        text: "Agar tarmoqda 2–3 ta doʻkon boʻlsa, nazoratni rahbarning shaxsiy ishtiroki yoki oddiy jadvallar orqali qisman ushlab turish mumkin. Ammo filiallar soni 10, 20 yoki 50 tadan oshganda quyidagi tizimli muammolar yuzaga keladi:",
       },
       {
         type: "p",
-        text: " **•** ** Har bir mahsulotning real foydasi ko‘rinmaydi: ** Qaysi tovar tarmog‘ga haqiqiy marja keltirayotgani va qaysi biri pulni muzlatib turgani noma’lum bo‘lib qoladi.",
+        text: " **•** **Har bir mahsulotning real foydasi koʻrinmaydi:** Qaysi tovar tarmogʻga haqiqiy marja keltirayotgani va qaysi biri pulni muzlatib turgani noma’lum boʻlib qoladi.",
       },
       {
         type: "p",
-        text: " **•** ** Kamomad va ichki o‘g‘irliklar ko‘payadi: **Kassa, ombor va logistika o‘rtasida to‘liq integratsiya bo‘lmagani sababli tovarlarning yo‘qolishi oddiy holga aylanadi.",
+        text: " **•** **Kamomad va ichki oʻgʻirliklar koʻpayadi:** Kassa, ombor va logistika oʻrtasida toʻliq integratsiya boʻlmagani sababli tovarlarning yoʻqolishi oddiy holga aylanadi.",
       },
       {
         type: "p",
-        text: " **•** ** Pul oqimlarida uzilish (kassoviy razriv): ** Yetkazib beruvchilarga to‘lov qilish va yangi tovar sotib olish uchun naqd pul yetishmovchiligi boshlanadi.",
+        text: " **•** **Pul oqimlarida uzilish (kassoviy razriv):** Yetkazib beruvchilarga toʻlov qilish va yangi tovar sotib olish uchun naqd pul yetishmovchiligi boshlanadi.",
       },
       {
         type: "p",
-        text: " **•** ** Omborda nelikvid tovarlar to‘planadi: ** Talab past mahsulotlar javonlarni band qiladi, aylanma kapital esa harakatsiz qoladi.",
+        text: " **•** **Omborda nelikvid tovarlar toʻplanadi:** Talab past mahsulotlar javonlarni band qiladi, aylanma kapital esa harakatsiz qoladi.",
       },
       {
         type: "p",
-        text: "Bunday vaziyatda har bir yangi ochilgan filial daromad keltirish o‘rniga kompaniyani bankrotlik sari tortadi.",
+        text: "Bunday vaziyatda har bir yangi ochilgan filial daromad keltirish oʻrniga kompaniyani bankrotlik sari tortadi.",
       },
       {
         type: "h3",
-        text: "Korzinka supermarketlar tarmog‘i misolida yondashuv",
+        text: "Korzinka supermarketlar tarmogʻi misolida yondashuv",
       },
       {
         type: "p",
-        text: "O‘zbekiston chakana savdo bozorida 'Korzinka' supermarketlar tarmog‘ining so‘nggi yillarda 2–3 barobarga tez va barqaror o‘sganini ko‘rishimiz mumkin.",
+        text: "Oʻzbekiston chakana savdo bozorida 'Korzinka' supermarketlar tarmogʻining soʻnggi yillarda 2–3 barobarga tez va barqaror oʻsganini koʻrishimiz mumkin.",
       },
       {
         type: "p",
-        text: "Ushbu muvaffaqiyat zamirida tizimning qandaydir sehrliligi emas, balki SAP orqali yo‘lga qo‘yilgan aniq ma’lumotlar va mutlaq shaffoflik yotadi:",
+        text: "Ushbu muvaffaqiyat zamirida tizimning qandaydir sehrliligi emas, balki SAP orqali yoʻlga qoʻyilgan aniq ma’lumotlar va mutlaq shaffoflik yotadi:",
       },
       {
         type: "p",
-        text: " **•** Har bir do‘kon va har bir mahsulot bo‘yicha aniq tannarx va marja real vaqtda ko‘rinadi.",
+        text: " **•** Har bir doʻkon va har bir mahsulot boʻyicha aniq tannarx va marja real vaqtda koʻrinadi.",
       },
       {
         type: "p",
-        text: " **•** Tovar qabul qilinishidan tortib kassada chek urilgunicha bo‘lgan barcha jarayonlar bitta tizimda yuritiladi, bu esa kamomad va o‘g‘irliklarni bartaraf etadi. ",
+        text: " **•** Tovar qabul qilinishidan tortib kassada chek urilgunicha boʻlgan barcha jarayonlar bitta tizimda yuritiladi, bu esa kamomad va oʻgʻirliklarni bartaraf etadi. ",
       },
       {
         type: "p",
@@ -2693,7 +2693,7 @@ export const importedPosts: BlogPost[] = [
       },
        {
         type: "p",
-        text: "Aynan mustahkam ERP poydevori mavjud bo‘lgandagina biznesni xavf-xatarsiz kengaytirish mumkin bo‘ladi.",
+        text: "Aynan mustahkam ERP poydevori mavjud boʻlgandagina biznesni xavf-xatarsiz kengaytirish mumkin boʻladi.",
       },
 
       {
@@ -2703,25 +2703,25 @@ export const importedPosts: BlogPost[] = [
       
       {
         type: "p",
-        text: "Savdo tarmog‘ini muvaffaqiyatli kengaytirish uchun quyidagi asosiy bosqichlarni bajarish lozim:",
+        text: "Savdo tarmogʻini muvaffaqiyatli kengaytirish uchun quyidagi asosiy bosqichlarni bajarish lozim:",
       },
 
       {
         type: "p",
-        text: "** 1.** ** Markazlashgan ma’lumotlar bazasi: ** Barcha filiallar, omborlar va kassa tizimlarini yagona ERP platformasiga ulash.",
+        text: "**1.** **Markazlashgan ma’lumotlar bazasi:** Barcha filiallar, omborlar va kassa tizimlarini yagona ERP platformasiga ulash.",
       },
       {
         type: "p",
-        text: "** 2.** ** Zaxiralarni avtomatlashtirilgan boshqaruvi: ** Omborda tovar qoldig‘i kamayganda ta’minotga avtomatik talabnoma shakllantirish tizimini yo‘lga qo‘yish.",
+        text: "**2.** **Zaxiralarni avtomatlashtirilgan boshqaruvi:** Omborda tovar qoldigʻi kamayganda ta’minotga avtomatik talabnoma shakllantirish tizimini yoʻlga qoʻyish.",
       },
       {
         type: "p",
-        text: "** 3.** ** Haqiqiy foyda tahlili: ** Har bir aksiya, chegirma va mahsulot toifasining kompaniya umumiy daromadiga ta’sirini doimiy kuzatib borish.",
+        text: "**3.** **Haqiqiy foyda tahlili:** Har bir aksiya, chegirma va mahsulot toifasining kompaniya umumiy daromadiga ta’sirini doimiy kuzatib borish.",
       },
 
       {
         type: "p",
-        text: "[SAP Business One tizimi](/uz/sap-business-one) aynan o‘rta va rivojlanayotgan savdo tarmoqlari uchun barcha ushbu imkoniyatlarni o‘z ichiga olgan yechim hisoblanadi.",
+        text: "[SAP Business One tizimi](/uz/sap-business-one) aynan oʻrta va rivojlanayotgan savdo tarmoqlari uchun barcha ushbu imkoniyatlarni oʻz ichiga olgan yechim hisoblanadi.",
       },
       {
         type: "h3",
@@ -2730,25 +2730,25 @@ export const importedPosts: BlogPost[] = [
       
       {
         type: "p",
-        text: " **•** Tarmoq omborlarida muzlab turgan mablag‘ni [Aylanma kapital kalkulyatori](/uz/simulator) orqali hisoblang.",
+        text: " **•** Tarmoq omborlarida muzlab turgan mablagʻni [Aylanma kapital kalkulyatori](/uz/simulator) orqali hisoblang.",
       },
      {
         type: "p",
-        text: " **•** Do‘konlar va savdo zanjirlari uchun [Chakana savdo moduli](/uz/retail-trade) imkoniyatlari bilan tanishing.",
+        text: " **•** Doʻkonlar va savdo zanjirlari uchun [Chakana savdo moduli](/uz/retail-trade) imkoniyatlari bilan tanishing.",
       },
        {
         type: "p",
-        text: " **•** Savdo kompaniyasida sotuvni +15% ga oshirish tajribasini [Climadens Pro keysi](/uz/portfolio/climadens) misolida ko‘ring.",
+        text: " **•** Savdo kompaniyasida sotuvni +15% ga oshirish tajribasini [Climadens Pro keysi](/uz/portfolio/climadens) misolida koʻring.",
       },
       {
         type: "p",
-        text: " **•** Savdo jarayonlaringizni tahlil qilish uchun [Mutaxassislarimiz bilan bog‘laning.](/uz/contacts)",
+        text: " **•** Savdo jarayonlaringizni tahlil qilish uchun [Mutaxassislarimiz bilan bogʻlaning.](/uz/contacts)",
       },
     ],
   },
    {
     slug: "ombor-va-biznesni-avtomatlashtirish-1c-odoo-sap",
-    title: "Ombor va biznesni avtomatlashtirish: 1C, Odoo yoki SAP? Qaysi biri to‘g‘ri?",
+    title: "Ombor va biznesni avtomatlashtirish: 1C, Odoo yoki SAP? Qaysi biri toʻgʻri?",
     metaTitle: "Ombor avtomatlashtirish: 1C, Odoo yoki SAP",
     excerpt: "Ombor va biznes jarayonlarini avtomatlashtirish: 1C, Odoo va SAP Business One tizimlarining haqiqiy farqlari, afzalliklari va cheklovlari tahlili.",
     readingTime: "4 daqiqa",
@@ -2757,11 +2757,11 @@ export const importedPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "Kompaniyada tovar aylanmasi va filiallar soni oshgani sari qog‘oz daftarlar va Excel jadvallariga tayanib ishlash imkonsiz bo‘lib qoladi. Zamonaviy bozorda raqobatda qolish uchun to‘g‘ri va mustahkam ombor va biznesni avtomatlashtirish tizimi zarur.",
+        text: "Kompaniyada tovar aylanmasi va filiallar soni oshgani sari qogʻoz daftarlar va Excel jadvallariga tayanib ishlash imkonsiz boʻlib qoladi. Zamonaviy bozorda raqobatda qolish uchun toʻgʻri va mustahkam ombor va biznesni avtomatlashtirish tizimi zarur.",
       },
       {
         type: "p",
-        text: "O‘zbekistonda tadbirkorlar boshqaruv tizimini tanlashda asosan uchta yo‘nalishga to‘xtalishadi: 1C, Odoo va SAP Business One. Ushbu maqolada har bir tizimning afzalliklari, cheklovlari va korxona hajmiga mosligini tahlil qilamiz.",
+        text: "Oʻzbekistonda tadbirkorlar boshqaruv tizimini tanlashda asosan uchta yoʻnalishga toʻxtalishadi: 1C, Odoo va SAP Business One. Ushbu maqolada har bir tizimning afzalliklari, cheklovlari va korxona hajmiga mosligini tahlil qilamiz.",
       },
       {
         type: "h3",
@@ -2770,7 +2770,7 @@ export const importedPosts: BlogPost[] = [
      
       {
         type: "p",
-        text: "Ko‘p korxonalarda uchraydigan odatiy xato — faqat omborni qolgan bo‘limlardan ajratib avtomatlashtirishga urinishdir. Omborga yangi dastur o‘rnatiladi, lekin sotuv, xarid va moliya bo‘limlari boshqa dasturlarda qolib ketadi.",
+        text: "Koʻp korxonalarda uchraydigan odatiy xato — faqat omborni qolgan boʻlimlardan ajratib avtomatlashtirishga urinishdir. Omborga yangi dastur oʻrnatiladi, lekin sotuv, xarid va moliya boʻlimlari boshqa dasturlarda qolib ketadi.",
       },
        {
         type: "p",
@@ -2778,15 +2778,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** ** Qoldiqlar chalkashligi: ** omborchi qabul qilingan tovarni kiritguncha, sotuvchilar mavjud bo‘lmagan mahsulotga shartnoma tuzib qo‘yadi. ",
+        text: " **•** **Qoldiqlar chalkashligi:** omborchi qabul qilingan tovarni kiritguncha, sotuvchilar mavjud boʻlmagan mahsulotga shartnoma tuzib qoʻyadi. ",
       },
       {
         type: "p",
-        text: " **•** ** Mablag‘larning muzlashi: ** xarid bo‘limi talabni hisoblamasdan buyurtma beradi, oqibatda ombor harakatsiz tovarlarga to‘ladi, xaridorgir mahsulotlar esa tugab qoladi. ",
+        text: " **•** **Mablagʻlarning muzlashi:** xarid boʻlimi talabni hisoblamasdan buyurtma beradi, oqibatda ombor harakatsiz tovarlarga toʻladi, xaridorgir mahsulotlar esa tugab qoladi. ",
       },
       {
         type: "p",
-        text: " **•** ** Axborot uzilishi: ** moliya direktori ombordagi real holatni haftalab kutaveradi, bu esa to‘lov inqirozlariga (kassoviy razriv) sabab bo‘ladi.",
+        text: " **•** **Axborot uzilishi:** moliya direktori ombordagi real holatni haftalab kutaveradi, bu esa toʻlov inqirozlariga (kassoviy razriv) sabab boʻladi.",
       },
       {
         type: "p",
@@ -2798,15 +2798,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "1C — O‘zbekiston bozorida soliq va buxgalteriya hisobi uchun eng keng tarqalgan dastur.",
+        text: "1C — Oʻzbekiston bozorida soliq va buxgalteriya hisobi uchun eng keng tarqalgan dastur.",
       },
       {
         type: "p",
-        text: " **•** ** Afzalliklari: ** Mahalliy buxgalteriya qonunchiligiga to‘liq moslashtirilgan. Bozorida dasturni biladigan buxgalter va mutaxassislar ko‘p.",
+        text: " **•** **Afzalliklari:** Mahalliy buxgalteriya qonunchiligiga toʻliq moslashtirilgan. Bozorida dasturni biladigan buxgalter va mutaxassislar koʻp.",
       },
        {
         type: "p",
-        text: " **•** ** Cheklovlari: ** Tovar nomenklaturasi va filiallar soni ko‘paygan sari ma’lumotlar bazasi og‘irlashadi va tizim sekinlashadi. Cheksiz dasturiy o‘zgartirishlar (dorabotkalar) biznesni bitta dasturchiga qaram qilib qo‘yadi. Ishlab chiqarish va xalqaro boshqaruv hisobini real vaqt rejimida yuritish murakkab.",
+        text: " **•** **Cheklovlari:** Tovar nomenklaturasi va filiallar soni koʻpaygan sari ma’lumotlar bazasi ogʻirlashadi va tizim sekinlashadi. Cheksiz dasturiy oʻzgartirishlar (dorabotkalar) biznesni bitta dasturchiga qaram qilib qoʻyadi. Ishlab chiqarish va xalqaro boshqaruv hisobini real vaqt rejimida yuritish murakkab.",
       },
       {
         type: "p",
@@ -2818,40 +2818,40 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Odoo — xalqaro modulli platforma bo‘lib, qulay veb-interfeysi bilan ajralib turadi.",
+        text: "Odoo — xalqaro modulli platforma boʻlib, qulay veb-interfeysi bilan ajralib turadi.",
       },
       {
         type: "p",
-        text: " **•** ** Afzalliklari: ** Modulli tuzilish: biznes faqat o‘ziga kerakli bo‘limlarni (CRM, ombor yoki sotuv) bosqichma-bosqich ulashi mumkin. Zamonaviy dizayn va moslashuvchanlikka ega.",
+        text: " **•** **Afzalliklari:** Modulli tuzilish: biznes faqat oʻziga kerakli boʻlimlarni (CRM, ombor yoki sotuv) bosqichma-bosqich ulashi mumkin. Zamonaviy dizayn va moslashuvchanlikka ega.",
       },
        {
         type: "p",
-        text: " **•** ** Cheklovlari: ** Boshlang‘ich modullar bepul bo‘lsa-da, O‘zbekiston sharoitiga moslashtirish, fiskallashtirish va chuqur ishlab chiqarish modullarini yaratish uchun katta dasturlash xarajatlari talab etiladi. Mahalliy bozorda yirik va tajribali integratyorlarning kamligi loyiha xavfini oshiradi.",
+        text: " **•** **Cheklovlari:** Boshlangʻich modullar bepul boʻlsa-da, Oʻzbekiston sharoitiga moslashtirish, fiskallashtirish va chuqur ishlab chiqarish modullarini yaratish uchun katta dasturlash xarajatlari talab etiladi. Mahalliy bozorda yirik va tajribali integratyorlarning kamligi loyiha xavfini oshiradi.",
       },
       {
         type: "h3",
-        text: "SAP Business One: resurslar nazorati va barqaror o‘sish",
+        text: "SAP Business One: resurslar nazorati va barqaror oʻsish",
       },
       
       {
         type: "p",
-        text: "[SAP Business One tizimi](/uz/sap-business-one) xomashyo, tovar va moliyani aniq nazorat qilishni istagan o‘rta va rivojlanayotgan bizneslar uchun maxsus yaratilgan.",
+        text: "[SAP Business One tizimi](/uz/sap-business-one) xomashyo, tovar va moliyani aniq nazorat qilishni istagan oʻrta va rivojlanayotgan bizneslar uchun maxsus yaratilgan.",
       },
       {
         type: "p",
-        text: " **•** ** Yagona axborot maydoni: ** Buyurtma, xarid, ombor qoldig‘i va kassa balansi bir soniya ichida sinxronlashadi.",
+        text: " **•** **Yagona axborot maydoni:** Buyurtma, xarid, ombor qoldigʻi va kassa balansi bir soniya ichida sinxronlashadi.",
       },
       {
         type: "p",
-        text: " **•** ** Avtomatlashtirilgan MRP moduli: **  Tizim zaxiralarni tahlil qilib, qaysi xomashyo qachon tugashini oldindan ko‘rsatadi va xaridga buyurtma shakllantiradi.",
+        text: " **•** **Avtomatlashtirilgan MRP moduli:**  Tizim zaxiralarni tahlil qilib, qaysi xomashyo qachon tugashini oldindan koʻrsatadi va xaridga buyurtma shakllantiradi.",
       },
       {
         type: "p",
-        text: " **•** ** Manzilli ombor va partiyalar hisobi: ** Yaroqlilik muddati, seriya raqamlari va yacheykalarda saqlash qat’iy nazorat qilinadi, bu esa kamomad va o‘g‘irlikni bartaraf etadi.",
+        text: " **•** **Manzilli ombor va partiyalar hisobi:** Yaroqlilik muddati, seriya raqamlari va yacheykalarda saqlash qat’iy nazorat qilinadi, bu esa kamomad va oʻgʻirlikni bartaraf etadi.",
       },
       {
         type: "p",
-        text: " **•** ** Aniq boshqaruv hisobi: ** Rahbar har bir tovar birligining real tannarxini va har bir filialning sof foydasini o‘z vaqtida ko‘rib turadi.",
+        text: " **•** **Aniq boshqaruv hisobi:** Rahbar har bir tovar birligining real tannarxini va har bir filialning sof foydasini oʻz vaqtida koʻrib turadi.",
       },
       {
         type: "p",
@@ -2863,15 +2863,15 @@ export const importedPosts: BlogPost[] = [
       },
        {
         type: "p",
-        text: " **•** Agar asosiy maqsad soliq hisoboti va bitta do‘konning oddiy hisobi bo‘lsa — 1C yechimi yetarli.",
+        text: " **•** Agar asosiy maqsad soliq hisoboti va bitta doʻkonning oddiy hisobi boʻlsa — 1C yechimi yetarli.",
       },
       {
         type: "p",
-        text: " **•** Agar startap bo‘lib, ochiq kodli dasturlarni sinab ko‘rishga tayyor bo‘lsangiz — Odoo ko‘rib chiqilishi mumkin.",
+        text: " **•** Agar startap boʻlib, ochiq kodli dasturlarni sinab koʻrishga tayyor boʻlsangiz — Odoo koʻrib chiqilishi mumkin.",
       },
       {
         type: "p",
-        text: " **•** Agar kengayayotgan savdo zanjiri, yirik distribyutsiya yoki ishlab chiqarish korxonasi bo‘lib, ombor qoldiqlari, tannarx va aylanma kapitalni yo‘qotishlarsiz boshqarmoqchi bo‘lsangiz — SAP Business One eng ishonchli poydevor hisoblanadi.",
+        text: " **•** Agar kengayayotgan savdo zanjiri, yirik distribyutsiya yoki ishlab chiqarish korxonasi boʻlib, ombor qoldiqlari, tannarx va aylanma kapitalni yoʻqotishlarsiz boshqarmoqchi boʻlsangiz — SAP Business One eng ishonchli poydevor hisoblanadi.",
       },
       {
         type: "h3",
@@ -2879,15 +2879,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Omboringizda qancha aylanma mablag‘ muzlab yotganini [Aylanma kapital kalkulyatori](/uz/simulator) orqali hisoblang.",
+        text: " **•** Omboringizda qancha aylanma mablagʻ muzlab yotganini [Aylanma kapital kalkulyatori](/uz/simulator) orqali hisoblang.",
       },
       {
         type: "p",
-        text: " **•** Ombor va ishlab chiqarishni yagona tizimga bog‘lagan korxona keysini [BRAUF Wood tajribasi](/uz/portfolio/brauf) orqali o‘rganing.",
+        text: " **•** Ombor va ishlab chiqarishni yagona tizimga bogʻlagan korxona keysini [BRAUF Wood tajribasi](/uz/portfolio/brauf) orqali oʻrganing.",
       },
       {
         type: "p",
-        text: " **•** Katta assortimentli savdoda olingan natijalarni [Climadens Pro keysi](/uz/portfolio/climadens) misolida ko‘ring.",
+        text: " **•** Katta assortimentli savdoda olingan natijalarni [Climadens Pro keysi](/uz/portfolio/climadens) misolida koʻring.",
       },
       {
         type: "p",
@@ -2903,18 +2903,18 @@ export const importedPosts: BlogPost[] = [
     slug: "biznesda-pul-aylanish-sikli-cash-flow-boshqaruvi",
     title: "Oborot bor, lekin pul qani? Pul aylanish sikli (CCC) va kassadagi taqchillik sabablari",
     metaTitle: "Oborot bor, pul qani? Pul aylanish sikli (CCC)",
-    excerpt: "Savdo o‘syapti, lekin kassada pul yo‘qmi? CCC formulasi va ombor hamda debitorda muzlagan aylanma kapitalni bo‘shatish yo‘llari.",
+    excerpt: "Savdo oʻsyapti, lekin kassada pul yoʻqmi? CCC formulasi va ombor hamda debitorda muzlagan aylanma kapitalni boʻshatish yoʻllari.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
     image: "/design/blog/oborot-rastet-a-deneg-net-ccc.webp",
     body: [
       {
         type: "p",
-        text: "Ko‘plab savdo, distribyutsiya va ishlab chiqarish kompaniyalari rahbarlari har oy oxirida bitta og‘riqli savolga duch kelishadi: 'Hisobotlarda savdo o‘syapti, qog‘ozda foyda bor, lekin kassada nega pul yo‘q?'",
+        text: "Koʻplab savdo, distribyutsiya va ishlab chiqarish kompaniyalari rahbarlari har oy oxirida bitta ogʻriqli savolga duch kelishadi: 'Hisobotlarda savdo oʻsyapti, qogʻozda foyda bor, lekin kassada nega pul yoʻq?'",
       },
       {
         type: "p",
-        text: "Buning asosiy sababi — biznes faqat aylanma (oborot) va qog‘ozdagi foydaga tayanib boshqarilayotganida. Aslida kompaniyaning tirikligi aylanma bilan emas, balki real pul oqimi (Cash Flow) va kapitalning aylanish tezligi bilan belgilanadi. Agar pul oqimi nazoratsiz qolsa, korxona to‘lov inqiroziga (kassoviy razriv) tushib, aylanmasi katta bo‘lishiga qaramay to‘xtab qoladi.",
+        text: "Buning asosiy sababi — biznes faqat aylanma (oborot) va qogʻozdagi foydaga tayanib boshqarilayotganida. Aslida kompaniyaning tirikligi aylanma bilan emas, balki real pul oqimi (Cash Flow) va kapitalning aylanish tezligi bilan belgilanadi. Agar pul oqimi nazoratsiz qolsa, korxona toʻlov inqiroziga (kassoviy razriv) tushib, aylanmasi katta boʻlishiga qaramay toʻxtab qoladi.",
       },
       {
         type: "h3",
@@ -2923,27 +2923,27 @@ export const importedPosts: BlogPost[] = [
      
       {
         type: "p",
-        text: "Har qanday operatsion biznesda pul harakati klassik zanjir bo‘ylab harakatlanadi: Pul ➔ Tovar ➔ Debitorlik qarzi ➔ Qayta Pulga aylanish.",
+        text: "Har qanday operatsion biznesda pul harakati klassik zanjir boʻylab harakatlanadi: Pul ➔ Tovar ➔ Debitorlik qarzi ➔ Qayta Pulga aylanish.",
       },
        {
         type: "p",
-        text: "Ushbu zanjirda kapital ikki joyda eng ko‘p 'muzlaydi':",
+        text: "Ushbu zanjirda kapital ikki joyda eng koʻp 'muzlaydi':",
       },
       {
         type: "p",
-        text: " **•** ** Omborda : ** Yetkazib berish muddati va talab to‘g‘ri hisoblanmagani sababli sotilmay yotgan ortiqcha zaxiralar. ",
+        text: " **•** **Omborda :** Yetkazib berish muddati va talab toʻgʻri hisoblanmagani sababli sotilmay yotgan ortiqcha zaxiralar. ",
       },
       {
         type: "p",
-        text: " **•** ** Mablag‘larning muzlashi: ** xarid bo‘limi talabni hisoblamasdan buyurtma beradi, oqibatda ombor harakatsiz tovarlarga to‘ladi, xaridorgir mahsulotlar esa tugab qoladi. ",
+        text: " **•** **Mablagʻlarning muzlashi:** xarid boʻlimi talabni hisoblamasdan buyurtma beradi, oqibatda ombor harakatsiz tovarlarga toʻladi, xaridorgir mahsulotlar esa tugab qoladi. ",
       },
       {
         type: "p",
-        text: " **•** ** Debitorlikda: ** Xaridorlarga muddatli to‘lov (otstrochka) berilgan, lekin o‘z vaqtida yig‘ib olinmayotgan pullar.",
+        text: " **•** **Debitorlikda:** Xaridorlarga muddatli toʻlov (otstrochka) berilgan, lekin oʻz vaqtida yigʻib olinmayotgan pullar.",
       },
       {
         type: "p",
-        text: "Agar kapital tovardan debitorga o‘tgan bo‘lsa, bu tovar sotilganini bildiradi. Ammo debitorlik nazoratsiz shishib ketsa, biznes tovar sotishni to‘xtatib, o‘z hisobidan mijozlarini tekinga moliyalashtirishni boshlaydi.",
+        text: "Agar kapital tovardan debitorga oʻtgan boʻlsa, bu tovar sotilganini bildiradi. Ammo debitorlik nazoratsiz shishib ketsa, biznes tovar sotishni toʻxtatib, oʻz hisobidan mijozlarini tekinga moliyalashtirishni boshlaydi.",
       },
       {
         type: "h3",
@@ -2951,7 +2951,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Biznes o‘z sarmoyasini qanchalik tez qaytarayotganini aniqlash uchun moliya olamida CCC (Cash Conversion Cycle) ko‘rsatkichi ishlatiladi.",
+        text: "Biznes oʻz sarmoyasini qanchalik tez qaytarayotganini aniqlash uchun moliya olamida CCC (Cash Conversion Cycle) koʻrsatkichi ishlatiladi.",
       },
       {
         type: "p",
@@ -2963,7 +2963,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " Keling, yillik aylanmasi $12 mln bo‘lgan korxona misolida ko‘rib chiqamiz: ",
+        text: " Keling, yillik aylanmasi $12 mln boʻlgan korxona misolida koʻrib chiqamiz: ",
       },
        {
         type: "p",
@@ -2971,11 +2971,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Debitorlik qarzi: $500,000 bo‘lsa, debitor kunlari (DSO) = 15 kun. ",
+        text: " **•** Debitorlik qarzi: $500,000 boʻlsa, debitor kunlari (DSO) = 15 kun. ",
       },
        {
         type: "p",
-        text: " **•** Yetkazib beruvchilar oldidagi qarz (Kreditor): $700,000 bo‘lsa, kreditor kunlari (DPO) = 21 kun. ",
+        text: " **•** Yetkazib beruvchilar oldidagi qarz (Kreditor): $700,000 boʻlsa, kreditor kunlari (DPO) = 21 kun. ",
       },
       {
         type: "p",
@@ -2983,7 +2983,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Bu korxona o‘z puliga emas, asosan yetkazib beruvchining to‘lov muhlatiga (otstrochkasiga) tayanib, aylanma tezligi hisobiga ishlamoqda. Agar bu sikl cho‘zilib, 60–90 kunga chiqib ketsa, biznes tashqaridan doimiy kredit olishga majbur bo‘ladi.",
+        text: "Bu korxona oʻz puliga emas, asosan yetkazib beruvchining toʻlov muhlatiga (otstrochkasiga) tayanib, aylanma tezligi hisobiga ishlamoqda. Agar bu sikl choʻzilib, 60–90 kunga chiqib ketsa, biznes tashqaridan doimiy kredit olishga majbur boʻladi.",
       },
       {
         type: "h3",
@@ -2995,28 +2995,28 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " ** 1. ** ** Ombor aylanmasini tezlashtirish: **  Harakatsiz yotgan (slow-moving) tovarlarni chegirma bilan sotib yuborish va zaxiralarni me’yorga keltirish.",
+        text: " **1.** **Ombor aylanmasini tezlashtirish:**  Harakatsiz yotgan (slow-moving) tovarlarni chegirma bilan sotib yuborish va zaxiralarni me’yorga keltirish.",
       },
        {
         type: "p",
-        text: " **2.** ** Debitorlikni qat’iy limitlash: ** Har bir mijozga limit belgilash va to‘lov muddati o‘tgan zahoti yuk yuklashni avtomatik to‘xtatish (stop-ship).",
+        text: " **2.** **Debitorlikni qat’iy limitlash:** Har bir mijozga limit belgilash va toʻlov muddati oʻtgan zahoti yuk yuklashni avtomatik toʻxtatish (stop-ship).",
       },
       {
         type: "p",
-        text: " **3.** ** DYetkazib beruvchilar bilan to‘lov muddatini uzaytirish: **  Mahsulot yetkazib beruvchilar beradigan 30–60 kunlik muddat amalda foizsiz kredit liniyasidir.",
+        text: " **3.** **DYetkazib beruvchilar bilan toʻlov muddatini uzaytirish:**  Mahsulot yetkazib beruvchilar beradigan 30–60 kunlik muddat amalda foizsiz kredit liniyasidir.",
       },
       {
         type: "p",
-        text: "Agar kompaniya o‘z pul aylanish siklini bor-yo‘g‘i 10 kunga qisqartira olsa, kunlik savdosi $33,000 bo‘lgan biznesda kassaga qo‘shimcha $330,000 erkin naqd pul bo‘shaydi.",
+        text: "Agar kompaniya oʻz pul aylanish siklini bor-yoʻgʻi 10 kunga qisqartira olsa, kunlik savdosi $33,000 boʻlgan biznesda kassaga qoʻshimcha $330,000 erkin naqd pul boʻshaydi.",
       },
       {
         type: "h3",
-        text: "ERP tizimisiz buni nega nazorat qilib bo‘lmaydi?",
+        text: "ERP tizimisiz buni nega nazorat qilib boʻlmaydi?",
       },
 
       {
         type: "p",
-        text: "Excel yoki bir-biriga ulanmagan dasturlarda ishlayotgan korxonada kunlik qoldiq, muddati o‘tgan qarzdorlik va to‘lov jadvallari bir-biridan uzilgan bo‘ladi.",
+        text: "Excel yoki bir-biriga ulanmagan dasturlarda ishlayotgan korxonada kunlik qoldiq, muddati oʻtgan qarzdorlik va toʻlov jadvallari bir-biridan uzilgan boʻladi.",
       },
       
       {
@@ -3025,15 +3025,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Qaysi tovar necha kundan beri omborda yotganini (Inventory Aging) real vaqtda ko‘rsatadi;",
+        text: " **•** Qaysi tovar necha kundan beri omborda yotganini (Inventory Aging) real vaqtda koʻrsatadi;",
       },
       {
         type: "p",
-        text: " **•** To‘lov muddati o‘tgan mijozlarga sotuvchilar qayta tovar chiqara olmasligi uchun blok qo‘yadi;",
+        text: " **•** Toʻlov muddati oʻtgan mijozlarga sotuvchilar qayta tovar chiqara olmasligi uchun blok qoʻyadi;",
       },
       {
         type: "p",
-        text: " **•** Kassoviy razriv xavfini oldindan hisoblab, to‘lovlar kalendarini shakllantiradi.",
+        text: " **•** Kassoviy razriv xavfini oldindan hisoblab, toʻlovlar kalendarini shakllantiradi.",
       },
       {
         type: "h3",
@@ -3045,7 +3045,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ombor va sotuvni yagona tizimga ulab pul aylanmasini tezlashtirgan korxona tajribasini [Climadens Pro keysi](/uz/portfolio/climadens) misolida ko‘ring.",
+        text: "Ombor va sotuvni yagona tizimga ulab pul aylanmasini tezlashtirgan korxona tajribasini [Climadens Pro keysi](/uz/portfolio/climadens) misolida koʻring.",
       },
        {
         type: "p",
@@ -3053,7 +3053,7 @@ export const importedPosts: BlogPost[] = [
       },
         {
         type: "p",
-        text: "Biznesingizdagi pul oqimlarini professional audit qilish uchun [ Biz bilan bog‘laning](/uz/contacts)",
+        text: "Biznesingizdagi pul oqimlarini professional audit qilish uchun [ Biz bilan bogʻlaning](/uz/contacts)",
       },
     
     ],
@@ -3061,49 +3061,49 @@ export const importedPosts: BlogPost[] = [
 
   {
     slug: "ombor-zaxiralarini-boshqarish-soglom-ombor-formulasi",
-    title: "Ombor zaxiralarini boshqarish: korxonada «sog‘lom ombor» formulasi qanday ishlaydi?",
-    metaTitle: "Ombor zaxiralarini boshqarish: sog‘lom ombor",
-    excerpt: "Omborda qancha pul muzlab yotganini qanday hisoblash mumkin? Lead time, safety stock va ABC tahlil orqali sog‘lom ombor zaxirasini hisoblash qo‘llanmasi.",
+    title: "Ombor zaxiralarini boshqarish: korxonada «sogʻlom ombor» formulasi qanday ishlaydi?",
+    metaTitle: "Ombor zaxiralarini boshqarish: sogʻlom ombor",
+    excerpt: "Omborda qancha pul muzlab yotganini qanday hisoblash mumkin? Lead time, safety stock va ABC tahlil orqali sogʻlom ombor zaxirasini hisoblash qoʻllanmasi.",
     readingTime: "4 daqiqa",
     category: "Ombor",
     image: "/design/blog/ombor-zaxiralarini-boshqarish-soglom-ombor-formulasi.webp",
     body: [
       {
         type: "p",
-        text: "Savdo va ishlab chiqarish kompaniyalarida eng katta mablag‘ aynan omborga ko‘milgan bo‘ladi. Ko‘plab tadbirkorlar «Omborda tovar qancha ko‘p bo‘lsa, shuncha yaxshi, xaridor kelganda yo‘q demaymiz» degan qarash bilan ish yuritishadi.",
+        text: "Savdo va ishlab chiqarish kompaniyalarida eng katta mablagʻ aynan omborga koʻmilgan boʻladi. Koʻplab tadbirkorlar «Omborda tovar qancha koʻp boʻlsa, shuncha yaxshi, xaridor kelganda yoʻq demaymiz» degan qarash bilan ish yuritishadi.",
       },
       {
         type: "p",
-        text: "Biroq hisob-kitob qilinmagan ortiqcha zaxira — bu omborda shunchaki chang bosib yotgan qutilar emas, balki biznesdan sug‘urib olingan va uxlab yotgan jonli naqd puldir.",
+        text: "Biroq hisob-kitob qilinmagan ortiqcha zaxira — bu omborda shunchaki chang bosib yotgan qutilar emas, balki biznesdan sugʻurib olingan va uxlab yotgan jonli naqd puldir.",
       },
       {
         type: "h3",
-        text: "Tovar qoldig‘ining «sog‘lom miqdori» nimaga bog‘liq?",
+        text: "Tovar qoldigʻining «sogʻlom miqdori» nimaga bogʻliq?",
       },
      
       {
         type: "p",
-        text: "Ombordagi zaxiraning yetarliligi pul summasi bilan emas, balki ushbu qoldiq hozirgi savdo tezligida necha kunga yetishi bilan o‘lchanadi.",
+        text: "Ombordagi zaxiraning yetarliligi pul summasi bilan emas, balki ushbu qoldiq hozirgi savdo tezligida necha kunga yetishi bilan oʻlchanadi.",
       },
        {
         type: "p",
-        text: "Sog‘lom zaxira 3 ta asosiy omilga tayanadi:",
+        text: "Sogʻlom zaxira 3 ta asosiy omilga tayanadi:",
       },
       {
         type: "p",
-        text: " **1.** ** Yetkazib berish muddati (Lead Time): ** Xaridga buyurtma berilgan kundan tovar omborga kelib tushguncha necha kun o‘tadi? ",
+        text: " **1.** **Yetkazib berish muddati (Lead Time):** Xaridga buyurtma berilgan kundan tovar omborga kelib tushguncha necha kun oʻtadi? ",
       },
       {
         type: "p",
-        text: " **2.** ** Savdo barqarorligi: ** Mahsulot bir kunda o‘rtacha necha dona yoki necha dollarga sotilmoqda?  ",
+        text: " **2.** **Savdo barqarorligi:** Mahsulot bir kunda oʻrtacha necha dona yoki necha dollarga sotilmoqda?  ",
       },
       {
         type: "p",
-        text: " **3.** ** Xavfsizlik zaxirasi (Safety Stock):  ** Yo‘ldagi kutilmagan kechikishlar yoki talab sakrashini yopish uchun necha kunlik zaxira zarur?",
+        text: " **3.** **Xavfsizlik zaxirasi (Safety Stock):** Yoʻldagi kutilmagan kechikishlar yoki talab sakrashini yopish uchun necha kunlik zaxira zarur?",
       },
       {
         type: "p",
-        text: "Sog‘lom Ombor Zaxirasi = Yetkazib berish muddati (Lead Time) + Xavfsizlik zaxirasi (Safety Stock)",
+        text: "Sogʻlom Ombor Zaxirasi = Yetkazib berish muddati (Lead Time) + Xavfsizlik zaxirasi (Safety Stock)",
       },
       {
         type: "h3",
@@ -3131,7 +3131,7 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " Pul ko‘rinishida: 30 kun × $33,000 = $990,000 (taxminan $1 mln). ",
+        text: " Pul koʻrinishida: 30 kun × $33,000 = $990,000 (taxminan $1 mln). ",
       },
        {
         type: "p",
@@ -3139,15 +3139,15 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** **Agar omborda $1 mln lik tovar bo‘lsa: ** Bu ideal holat. Pul haddan tashqari muzlamagan, savdo uzluksiz ta’minlanadi.",
+        text: " **•** **Agar omborda $1 mln lik tovar boʻlsa:** Bu ideal holat. Pul haddan tashqari muzlamagan, savdo uzluksiz ta’minlanadi.",
       },
       {
         type: "p",
-        text: " **•** ** Agar omborda $2 mln lik tovar yotgan bo‘lsa: ** Bu 60 kunlik zaxira degani. Kompaniyaning $1,000,000 puli omborda keraksiz ravishda uxlab yotibdi. Bu mablag‘ni yangi filiallarga, marketingga tikish yoki bank kreditlaridan qutulish uchun ishlatish mumkin edi.",
+        text: " **•** **Agar omborda $2 mln lik tovar yotgan boʻlsa:** Bu 60 kunlik zaxira degani. Kompaniyaning $1,000,000 puli omborda keraksiz ravishda uxlab yotibdi. Bu mablagʻni yangi filiallarga, marketingga tikish yoki bank kreditlaridan qutulish uchun ishlatish mumkin edi.",
       },
       {
         type: "p",
-        text: " **•** ** Agar omborda $500,000 lik tovar bo‘lsa: ** Bu bor-yo‘g‘i 15 kunlik zaxira. Mahsulot kelishiga esa 20 kun kerak. Demak, 15 kundan keyin omborda tovar tugaydi (stockout), xaridor qaytib ketadi va biznes savdoni boy beradi.",
+        text: " **•** **Agar omborda $500,000 lik tovar boʻlsa:** Bu bor-yoʻgʻi 15 kunlik zaxira. Mahsulot kelishiga esa 20 kun kerak. Demak, 15 kundan keyin omborda tovar tugaydi (stockout), xaridor qaytib ketadi va biznes savdoni boy beradi.",
       },
       
       {
@@ -3156,19 +3156,19 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ko‘p rahbarlar umumiy ombor balansiga qarab xotirjam bo‘lishadi. Ammo ombor ichiga kirilganda xavfli nomutanosiblik ochiladi:",
+        text: "Koʻp rahbarlar umumiy ombor balansiga qarab xotirjam boʻlishadi. Ammo ombor ichiga kirilganda xavfli nomutanosiblik ochiladi:",
       },
       {
         type: "p",
-        text: " **•** ** TOP SKU (Lokomotiv tovarlar): **  Umumiy aylanmaning 80% qismini beradigan tovarlar zaxirasi atigi 10 kunga yetadi. Ular har doim tugab qolish arafasida turadi.",
+        text: " **•** **TOP SKU (Lokomotiv tovarlar):**  Umumiy aylanmaning 80% qismini beradigan tovarlar zaxirasi atigi 10 kunga yetadi. Ular har doim tugab qolish arafasida turadi.",
       },
       {
         type: "p",
-        text: " **•** ** Slow SKU (O‘lik tovarlar): **  Savdosi sust bo‘lgan, omborda 180 kundan beri yotgan mahsulotlar ombor maydonini va millionlab aylanma mablag‘ni egallab turadi.",
+        text: " **•** **Slow SKU (Oʻlik tovarlar):**  Savdosi sust boʻlgan, omborda 180 kundan beri yotgan mahsulotlar ombor maydonini va millionlab aylanma mablagʻni egallab turadi.",
       },
        {
         type: "p",
-        text: " Bunday hollarda sekin sotilayotgan tovarlarni zudlik bilan chegirma va aksiyalar orqali sotib, naqd pulni bo‘shatish, tushgan pulni esa lokomotiv mahsulotlar ta’minotiga yo‘naltirish kerak.",
+        text: " Bunday hollarda sekin sotilayotgan tovarlarni zudlik bilan chegirma va aksiyalar orqali sotib, naqd pulni boʻshatish, tushgan pulni esa lokomotiv mahsulotlar ta’minotiga yoʻnaltirish kerak.",
       },
      
       {
@@ -3178,7 +3178,7 @@ export const importedPosts: BlogPost[] = [
 
       {
         type: "p",
-        text: "Omborni Excel jadvallarida boshqarish tovarlar soni bir necha yuztadan oshganda samarasiz bo‘lib qoladi.",
+        text: "Omborni Excel jadvallarida boshqarish tovarlar soni bir necha yuztadan oshganda samarasiz boʻlib qoladi.",
       },
       
       {
@@ -3187,11 +3187,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: " **•** Har bir tovar birligi (SKU) bo‘yicha savdo tezligi va xarid muddatini hisoblab boradi;",
+        text: " **•** Har bir tovar birligi (SKU) boʻyicha savdo tezligi va xarid muddatini hisoblab boradi;",
       },
       {
         type: "p",
-        text: " **•** Qoldiq belgilangan xavfsizlik chegarasiga (Safety Stock) tushishi bilan ta’minot bo‘limiga avtomatik xarid talabnomasini chiqaradi; ",
+        text: " **•** Qoldiq belgilangan xavfsizlik chegarasiga (Safety Stock) tushishi bilan ta’minot boʻlimiga avtomatik xarid talabnomasini chiqaradi; ",
       },
       {
         type: "p",
@@ -3203,69 +3203,69 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Omboringizdagi muzlagan mablag‘ni aniqlash uchun Aylanma kapital [kalkulyatoridan foydalaning.](/uz/simulator)",
+        text: "Omboringizdagi muzlagan mablagʻni aniqlash uchun Aylanma kapital [kalkulyatoridan foydalaning.](/uz/simulator)",
       },
       {
         type: "p",
-        text: "Ishlab chiqarish va xomashyo omborini sinxronlashtirgan korxona keysini [BRAUF Wood](/uz/portfolio/brauf) tajribasi orqali o‘rganing.",
+        text: "Ishlab chiqarish va xomashyo omborini sinxronlashtirgan korxona keysini [BRAUF Wood](/uz/portfolio/brauf) tajribasi orqali oʻrganing.",
       },
        {
         type: "p",
-        text: "Ulgurji savdoda ombor nazorati bo‘yicha batafsil [Ulgurji savdo yechimlari](/uz/wholesale-trade) sahifasida tanishing.",
+        text: "Ulgurji savdoda ombor nazorati boʻyicha batafsil [Ulgurji savdo yechimlari](/uz/wholesale-trade) sahifasida tanishing.",
       },
         {
         type: "p",
-        text: "Ombor zaxiralarini to‘g‘ri audit qilish uchun [BIS-PRO mutaxassislariga murojaat qiling.](/uz/contacts)",
+        text: "Ombor zaxiralarini toʻgʻri audit qilish uchun [BIS-PRO mutaxassislariga murojaat qiling.](/uz/contacts)",
       },
     
     ],
   },
 
    {
-    slug: "ebitorlik-qarzdorligi-arzon-pul-leverlari",
-    title: "Debitorlik Qarzdorligi: Savdoni O‘stirish Yo‘limi Yoki Mijozni Bepul Moliyalashtirish?",
+    slug: "debitorlik-qarzdorligi-arzon-pul-leverlari",
+    title: "Debitorlik Qarzdorligi: Savdoni Oʻstirish Yoʻlimi Yoki Mijozni Bepul Moliyalashtirish?",
     metaTitle: "Debitorlik Qarzdorligi: Savdoni Oshirishmi Yoki Xatarlimi?",
-    excerpt: "Nega haddan tashqari katta debitorlik qarzdorligi biznesni bankrot qiladi? DSO hisoblash, sog‘lom debitor normasi va arzon pul leverlari tahlili.",
+    excerpt: "Nega haddan tashqari katta debitorlik qarzdorligi biznesni bankrot qiladi? DSO hisoblash, sogʻlom debitor normasi va arzon pul leverlari tahlili.",
     readingTime: "4 daqiqa",
-    category: "Ombor",
+    category: "Tizim tanlash",
     image: "/design/blog/debitorskaya-zadolzhennost-upravlenie-dso.webp",
     body: [
       {
         type: "p",
-        text: "Savdo hajmini oshirishning eng oson yo‘li — mahsulotni to‘lov muddatini kechiktirib (nasiyaga yoki otstrochkaga) berishdir. Sotuv bo‘limi o‘z rejasini bajarish maqsadida xaridorlarga osonlikcha qarz tarqatadi. Natijada hisobotlarda aylanma karrasiga o‘sadi, biroq korxona kassasida ishchilarga maosh to‘lash, ijara yoki soliq xarajatlarini qoplash uchun naqd pul yetishmay qoladi.",
+        text: "Savdo hajmini oshirishning eng oson yoʻli — mahsulotni toʻlov muddatini kechiktirib (nasiyaga yoki otstrochkaga) berishdir. Sotuv boʻlimi oʻz rejasini bajarish maqsadida xaridorlarga osonlikcha qarz tarqatadi. Natijada hisobotlarda aylanma karrasiga oʻsadi, biroq korxona kassasida ishchilarga maosh toʻlash, ijara yoki soliq xarajatlarini qoplash uchun naqd pul yetishmay qoladi.",
       },
       {
         type: "p",
-        text: "Bunday vaziyatda biznes tovar sotishdan to‘xtab, o‘z hisobidan mijozlarini tekinga moliyalashtirishni boshlaydi.",
+        text: "Bunday vaziyatda biznes tovar sotishdan toʻxtab, oʻz hisobidan mijozlarini tekinga moliyalashtirishni boshlaydi.",
       },
       {
         type: "h3",
-        text: "'Sog‘lom Debitor' Miqdori Qanday Belgilanadi?",
+        text: "«Sogʻlom Debitor» Miqdori Qanday Belgilanadi?",
       },
      
       {
         type: "p",
-        text: "Debitorlik qarzdorligining xavfsiz yoki xatarliligi uning umumiy summasi bilan emas, balki to‘lovning qaytish kunlari (DSO — Days Sales Outstanding) bilan o‘lchanadi.",
+        text: "Debitorlik qarzdorligining xavfsiz yoki xatarliligi uning umumiy summasi bilan emas, balki toʻlovning qaytish kunlari (DSO — Days Sales Outstanding) bilan oʻlchanadi.",
       },
        {
         type: "p",
-        text: "Sog‘lom Debitor Qarzdorligi = Kunlik savdo miqdori × Kelishilgan to‘lov muddati (kunlarda)",
+        text: "Sogʻlom Debitor Qarzdorligi = Kunlik savdo miqdori × Kelishilgan toʻlov muddati (kunlarda)",
       },
       {
         type: "p",
-        text: " Misol uchun, korxonaning yillik aylanmasi $12 mln, ya’ni kunlik savdosi $32,877 tashkil qilsin: ",
+        text: "Misol uchun, korxonaning yillik aylanmasi $12 mln, ya’ni kunlik savdosi $32,877 tashkil qilsin:",
       },
       {
         type: "p",
-        text: " **•** Agar mijozlar bilan rasman 15 kunlik to‘lov muddati kelishilgan bo‘lsa, tizimdagi sog‘lom debitorlik qarzi $500,000 atrofida ($32,877 × 15) bo‘lishi me’yor hisoblanadi. ",
+        text: "**•**Agar mijozlar bilan rasman 15 kunlik toʻlov muddati kelishilgan boʻlsa, tizimdagi sogʻlom debitorlik qarzi $500,000 atrofida ($32,877 × 15) boʻlishi me’yor hisoblanadi.",
       },
       {
         type: "p",
-        text: " **•** Agar to‘lov siyosati 30 kunga ruxsat bersa, sog‘lom chegara $1,000,000 gacha ($32,877 × 30) yetishi mumkin.",
+        text: "**•**Agar toʻlov siyosati 30 kunga ruxsat bersa, sogʻlom chegara $1,000,000 gacha ($32,877 × 30) yetishi mumkin.",
       },
       {
         type: "p",
-        text: "Agar 15 kunlik shartnoma mavjud bo‘lgan holda amaldagi debitorlik $1.5 mln ga chiqib ketgan bo‘lsa, kompaniyada to‘lov intizomi izdan chiqqan. Mijozlar tovar uchun pul to‘lamay, korxona resurslari hisobiga o‘z kassa kamomadlarini yopib yurgan bo‘ladi.",
+        text: "Agar 15 kunlik shartnoma mavjud boʻlgan holda amaldagi debitorlik $1.5 mln ga chiqib ketgan boʻlsa, kompaniyada toʻlov intizomi izdan chiqqan. Mijozlar tovar uchun pul toʻlamay, korxona resurslari hisobiga oʻz kassa kamomadlarini yopib yurgan boʻladi.",
       },
       {
         type: "h3",
@@ -3273,59 +3273,59 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Tovar bilan solishtirganda debitorlik naqd pulga yaqinroq aktiv hisoblanadi, biroq bu qarzning sifatiga bevosita bog‘liq:",
+        text: "Tovar bilan solishtirganda debitorlik naqd pulga yaqinroq aktiv hisoblanadi, biroq bu qarzning sifatiga bevosita bogʻliq:",
       },
       {
         type: "p",
-        text: " **•** **To‘lov muddati o‘tmagan qarzlar:** Bu korxonaning to‘liq likvid va real aylanma aktivlaridir.",
+        text: "**•** **Toʻlov muddati oʻtmagan qarzlar:** Bu korxonaning toʻliq likvid va real aylanma aktivlaridir.",
       },
       {
         type: "p",
-        text: " **•** ** Konsentratsiya xavfi: ** Agar umumiy debitorlikning 60–70% qismi faqat 2–3 ta yirik mijozga to‘g‘ri kelsa, ulardan birortasida to‘lov to‘xtashi butun tizimni moliyaviy bosim ostida qoldiradi.",
+        text: "**•** **Konsentratsiya xavfi:** Agar umumiy debitorlikning 60–70% qismi faqat 2–3 ta yirik mijozga toʻgʻri kelsa, ulardan birortasida toʻlov toʻxtashi butun tizimni moliyaviy bosim ostida qoldiradi.",
       },
       {
         type: "p",
-        text: " **•** ** Muddati 60–90 kundan oshgan qarzlar: ** Bu pullarning qaytmaslik ehtimoli yuqori bo‘lib, ular zudlik bilan maxsus choralar yoki yetkazib berishni to‘xtatish orqali tartibga solinishi shart.",
-      },
-      {
-        type: "h3",
-        text: "'Arzon Pul' Leverlari: Yetakchi Kompaniyalar Qanday O‘sadi?",
-      },
-      {
-        type: "p",
-        text: " Yirik chakana savdo tarmoqlari va xalqaro korporatsiyalar faqat o‘z shaxsiy mablag‘lari yoki qimmat bank kreditlari hisobiga ishlamaydi. Ular arzon aylanma manbalaridan foydalanadilar: ",
-      },
-       {
-        type: "p",
-        text: " **•** ** Yetkazib beruvchi krediti (Supplier Leverage): ** Ta’minotchidan $1 mln lik mahsulot 90 kunga to‘lovni kechiktirish bilan olinsa va bank stavkasi yillik 24% (oyiga 2%) bo‘lsa, bu mablag‘ uchun bankka 3 oyda $60,000 foiz to‘langan bo‘lardi. Yetkazib beruvchi narxni oshirmagan holda $1 mln kredit liniya ochib berishi hisobiga korxona $60,000 foiz xarajatini tejab qoladi. ",
-      },
-      {
-        type: "p",
-        text: " **•** ** Manfiy aylanma kapital (Negative Working Capital — Korzinka modeli):  ** Chakana tarmoq mijozdan pulni bugun naqd oladi, yetkazib beruvchiga esa 60–90 kundan keyin to‘laydi. Korxona o‘z kengayishini yetkazib beruvchilarning tekin aylanma mablag‘lari hisobiga amalga oshiradi. ",
-      },
-      {
-        type: "p",
-        text: " **•** ** Oldindan to‘lov (Predoplata): ** Buyurtmachilardan avans olish orqali ishlab chiqarish va xizmatlarni sarmoyalarsiz moliyalashtirish mexanizmi. ",
+        text: "**•** **Muddati 60–90 kundan oshgan qarzlar:** Bu pullarning qaytmaslik ehtimoli yuqori boʻlib, ular zudlik bilan maxsus choralar yoki yetkazib berishni toʻxtatish orqali tartibga solinishi shart.",
       },
       {
         type: "h3",
-        text: " SAP Business One Tizimida Debitorlik Nazorati ",
+        text: "«Arzon Pul» Leverlari: Yetakchi Kompaniyalar Qanday Oʻsadi?",
+      },
+      {
+        type: "p",
+        text: "Yirik chakana savdo tarmoqlari va xalqaro korporatsiyalar faqat oʻz shaxsiy mablagʻlari yoki qimmat bank kreditlari hisobiga ishlamaydi. Ular arzon aylanma manbalaridan foydalanadilar:",
       },
        {
         type: "p",
-        text: " Qarzlar nazoratini menejerlarning xohishiga qoldirib bo‘lmaydi [SAP Business One platformasi](/uz/sap-business-one)debitorlik risklarini quyidagicha avtomatlashtiradi: ",
+        text: "**•** **Yetkazib beruvchi krediti (Supplier Leverage):** Ta’minotchidan $1 mln lik mahsulot 90 kunga toʻlovni kechiktirish bilan olinsa va bank stavkasi yillik 24% (oyiga 2%) boʻlsa, bu mablagʻ uchun bankka 3 oyda $60,000 foiz toʻlangan boʻlardi. Yetkazib beruvchi narxni oshirmagan holda $1 mln kredit liniya ochib berishi hisobiga korxona $60,000 foiz xarajatini tejab qoladi.",
       },
       {
         type: "p",
-        text: " **•** ** Kredit limitlari va muddatlari: **  Har bir mijoz uchun to‘lov intizomidan kelib chiqib aniq qarz chegarasi biriktiriladi.",
+        text: "**•** **Manfiy aylanma kapital (Negative Working Capital — Korzinka modeli):** Chakana tarmoq mijozdan pulni bugun naqd oladi, yetkazib beruvchiga esa 60–90 kundan keyin toʻlaydi. Korxona oʻz kengayishini yetkazib beruvchilarning tekin aylanma mablagʻlari hisobiga amalga oshiradi.",
       },
       {
         type: "p",
-        text: " **•** ** Avtomatik taqiq (Stop-Shipment): ** Mijozda to‘lov muddati 1 kunga kechiksa ham, tizim uning nomiga yangi yuk chiqarish hujjatlarini bloklaydi.",
+        text: "**•** **Oldindan toʻlov (Predoplata):** Buyurtmachilardan avans olish orqali ishlab chiqarish va xizmatlarni sarmoyalarsiz moliyalashtirish mexanizmi.",
+      },
+      {
+        type: "h3",
+        text: "SAP Business One Tizimida Debitorlik Nazorati",
+      },
+       {
+        type: "p",
+        text: "Qarzlar nazoratini menejerlarning xohishiga qoldirib boʻlmaydi. [SAP Business One platformasi](/uz/sap-business-one) debitorlik risklarini quyidagicha avtomatlashtiradi:",
       },
       {
         type: "p",
-        text: " **•** ** Muddati o‘tgan qarzlar tahlili (Aging Report): ** Qarzlarning kechikish muddatlari (0–15, 16–30, 31–60, 60+ kun) bo‘yicha avtomatik tahliliy hisobot yuritiladi.",
+        text: "**•** **Kredit limitlari va muddatlari:** Har bir mijoz uchun toʻlov intizomidan kelib chiqib aniq qarz chegarasi biriktiriladi.",
+      },
+      {
+        type: "p",
+        text: "**•** **Avtomatik taqiq (Stop-Shipment):** Mijozda toʻlov muddati 1 kunga kechiksa ham, tizim uning nomiga yangi yuk chiqarish hujjatlarini bloklaydi.",
+      },
+      {
+        type: "p",
+        text: "**•** **Muddati oʻtgan qarzlar tahlili (Aging Report):** Qarzlarning kechikish muddatlari (0–15, 16–30, 31–60, 60+ kun) boʻyicha avtomatik tahliliy hisobot yuritiladi.",
       },
       
       {
@@ -3334,20 +3334,20 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Mijozlarga berilgan qarzlar aylanmangizni qanchaga sekinlashtirayotganini [Aylanma kapital kalkulyatori](/uz/simulator)",
+        text: "Mijozlarga berilgan qarzlar aylanmangizni qanchaga sekinlashtirayotganini [aylanma kapital kalkulyatori](/uz/simulator) orqali hisoblang.",
       },
       {
         type: "p",
-        text: "Distribyutsiya kompaniyalari uchun debitorlik nazorati bo‘yicha [ Distribyutsiya yechimlari](/uz/distribution) bilan tanishing.",
+        text: "Distribyutsiya kompaniyalari uchun debitorlik nazorati boʻyicha [Distribyutsiya yechimlari](/uz/distribution) bilan tanishing.",
       },
 
       {
         type: "p",
-        text: "Katta aylanmali savdo tarmoqlari tajribasini [Chakana savdo moduli](/uz/retail-trade) sahifasida o‘rganing.",
+        text: "Katta aylanmali savdo tarmoqlari tajribasini [chakana savdo moduli](/uz/retail-trade) sahifasida oʻrganing.",
       },
       {
         type: "p",
-        text: "Moliyaviy jarayonlarni avtomatlashtirish yuzasidan [Ekspert maslahatini oling ](/uz/contacts)",
+        text: "Moliyaviy jarayonlarni avtomatlashtirish boʻyicha [ekspert maslahatini oling](/uz/contacts).",
       },
     
     

@@ -28,6 +28,14 @@ const RU_TO_UZ: Record<string, string> = {
   "oborot-rastet-a-deneg-net-ccc": "biznesda-pul-aylanish-sikli-cash-flow-boshqaruvi",
   // Статья Бахтиёра о здоровом складе (PR #18).
   "upravlenie-zapasami-formula-zdorovogo-sklada": "ombor-zaxiralarini-boshqarish-soglom-ombor-formulasi",
+  // Статьи Бахтиёра из PR #16—#18: пары не были заведены, и узбекские версии
+  // уходили в hreflang под русским слагом — то есть на несуществующий адрес.
+  "raznica-mezhdu-crm-i-erp-sistemami": "crm-va-erp-tizimlarining-farqi",
+  "kak-vybrat-erp-sistemu-dlya-avtomatizatsii-biznesa": "erp-tizimini-tanlash-axborot-uzilishi",
+  "masshtabirovanie-roznichnoy-seti-avtomatizatsiya": "savdo-tarmogini-kengaytirish-avtomatlashtirish",
+  "avtomatizatsiya-skladov-i-biznesa-1c-odoo-sap": "ombor-va-biznesni-avtomatlashtirish-1c-odoo-sap",
+  // Статья Бахтиёра о дебиторской задолженности и DSO (PR #19).
+  "debitorskaya-zadolzhennost-upravlenie-dso": "debitorlik-qarzdorligi-arzon-pul-leverlari",
 };
 
 const UZ_TO_RU: Record<string, string> = Object.fromEntries(
