@@ -3220,4 +3220,137 @@ export const importedPosts: BlogPost[] = [
     
     ],
   },
+
+   {
+    slug: "ebitorlik-qarzdorligi-arzon-pul-leverlari",
+    title: "Debitorlik Qarzdorligi: Savdoni O‘stirish Yo‘limi Yoki Mijozni Bepul Moliyalashtirish?",
+    metaTitle: "Debitorlik Qarzdorligi: Savdoni Oshirishmi Yoki Xatarlimi?",
+    excerpt: "Nega haddan tashqari katta debitorlik qarzdorligi biznesni bankrot qiladi? DSO hisoblash, sog‘lom debitor normasi va arzon pul leverlari tahlili.",
+    readingTime: "4 daqiqa",
+    category: "Ombor",
+    image: "/design/blog/debitorskaya-zadolzhennost-upravlenie-dso.webp",
+    body: [
+      {
+        type: "p",
+        text: "Savdo hajmini oshirishning eng oson yo‘li — mahsulotni to‘lov muddatini kechiktirib (nasiyaga yoki otstrochkaga) berishdir. Sotuv bo‘limi o‘z rejasini bajarish maqsadida xaridorlarga osonlikcha qarz tarqatadi. Natijada hisobotlarda aylanma karrasiga o‘sadi, biroq korxona kassasida ishchilarga maosh to‘lash, ijara yoki soliq xarajatlarini qoplash uchun naqd pul yetishmay qoladi.",
+      },
+      {
+        type: "p",
+        text: "Bunday vaziyatda biznes tovar sotishdan to‘xtab, o‘z hisobidan mijozlarini tekinga moliyalashtirishni boshlaydi.",
+      },
+      {
+        type: "h3",
+        text: "'Sog‘lom Debitor' Miqdori Qanday Belgilanadi?",
+      },
+     
+      {
+        type: "p",
+        text: "Debitorlik qarzdorligining xavfsiz yoki xatarliligi uning umumiy summasi bilan emas, balki to‘lovning qaytish kunlari (DSO — Days Sales Outstanding) bilan o‘lchanadi.",
+      },
+       {
+        type: "p",
+        text: "Sog‘lom Debitor Qarzdorligi = Kunlik savdo miqdori × Kelishilgan to‘lov muddati (kunlarda)",
+      },
+      {
+        type: "p",
+        text: " Misol uchun, korxonaning yillik aylanmasi $12 mln, ya’ni kunlik savdosi $32,877 tashkil qilsin: ",
+      },
+      {
+        type: "p",
+        text: " **•** Agar mijozlar bilan rasman 15 kunlik to‘lov muddati kelishilgan bo‘lsa, tizimdagi sog‘lom debitorlik qarzi $500,000 atrofida ($32,877 × 15) bo‘lishi me’yor hisoblanadi. ",
+      },
+      {
+        type: "p",
+        text: " **•** Agar to‘lov siyosati 30 kunga ruxsat bersa, sog‘lom chegara $1,000,000 gacha ($32,877 × 30) yetishi mumkin.",
+      },
+      {
+        type: "p",
+        text: "Agar 15 kunlik shartnoma mavjud bo‘lgan holda amaldagi debitorlik $1.5 mln ga chiqib ketgan bo‘lsa, kompaniyada to‘lov intizomi izdan chiqqan. Mijozlar tovar uchun pul to‘lamay, korxona resurslari hisobiga o‘z kassa kamomadlarini yopib yurgan bo‘ladi.",
+      },
+      {
+        type: "h3",
+        text: "Debitorlik Qarzdorligi Sifatini Baholash",
+      },
+      {
+        type: "p",
+        text: "Tovar bilan solishtirganda debitorlik naqd pulga yaqinroq aktiv hisoblanadi, biroq bu qarzning sifatiga bevosita bog‘liq:",
+      },
+      {
+        type: "p",
+        text: " **•** **To‘lov muddati o‘tmagan qarzlar:** Bu korxonaning to‘liq likvid va real aylanma aktivlaridir.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Konsentratsiya xavfi: ** Agar umumiy debitorlikning 60–70% qismi faqat 2–3 ta yirik mijozga to‘g‘ri kelsa, ulardan birortasida to‘lov to‘xtashi butun tizimni moliyaviy bosim ostida qoldiradi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Muddati 60–90 kundan oshgan qarzlar: ** Bu pullarning qaytmaslik ehtimoli yuqori bo‘lib, ular zudlik bilan maxsus choralar yoki yetkazib berishni to‘xtatish orqali tartibga solinishi shart.",
+      },
+      {
+        type: "h3",
+        text: "'Arzon Pul' Leverlari: Yetakchi Kompaniyalar Qanday O‘sadi?",
+      },
+      {
+        type: "p",
+        text: " Yirik chakana savdo tarmoqlari va xalqaro korporatsiyalar faqat o‘z shaxsiy mablag‘lari yoki qimmat bank kreditlari hisobiga ishlamaydi. Ular arzon aylanma manbalaridan foydalanadilar: ",
+      },
+       {
+        type: "p",
+        text: " **•** ** Yetkazib beruvchi krediti (Supplier Leverage): ** Ta’minotchidan $1 mln lik mahsulot 90 kunga to‘lovni kechiktirish bilan olinsa va bank stavkasi yillik 24% (oyiga 2%) bo‘lsa, bu mablag‘ uchun bankka 3 oyda $60,000 foiz to‘langan bo‘lardi. Yetkazib beruvchi narxni oshirmagan holda $1 mln kredit liniya ochib berishi hisobiga korxona $60,000 foiz xarajatini tejab qoladi. ",
+      },
+      {
+        type: "p",
+        text: " **•** ** Manfiy aylanma kapital (Negative Working Capital — Korzinka modeli):  ** Chakana tarmoq mijozdan pulni bugun naqd oladi, yetkazib beruvchiga esa 60–90 kundan keyin to‘laydi. Korxona o‘z kengayishini yetkazib beruvchilarning tekin aylanma mablag‘lari hisobiga amalga oshiradi. ",
+      },
+      {
+        type: "p",
+        text: " **•** ** Oldindan to‘lov (Predoplata): ** Buyurtmachilardan avans olish orqali ishlab chiqarish va xizmatlarni sarmoyalarsiz moliyalashtirish mexanizmi. ",
+      },
+      {
+        type: "h3",
+        text: " SAP Business One Tizimida Debitorlik Nazorati ",
+      },
+       {
+        type: "p",
+        text: " Qarzlar nazoratini menejerlarning xohishiga qoldirib bo‘lmaydi [SAP Business One platformasi](/uz/sap-business-one)debitorlik risklarini quyidagicha avtomatlashtiradi: ",
+      },
+      {
+        type: "p",
+        text: " **•** ** Kredit limitlari va muddatlari: **  Har bir mijoz uchun to‘lov intizomidan kelib chiqib aniq qarz chegarasi biriktiriladi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Avtomatik taqiq (Stop-Shipment): ** Mijozda to‘lov muddati 1 kunga kechiksa ham, tizim uning nomiga yangi yuk chiqarish hujjatlarini bloklaydi.",
+      },
+      {
+        type: "p",
+        text: " **•** ** Muddati o‘tgan qarzlar tahlili (Aging Report): ** Qarzlarning kechikish muddatlari (0–15, 16–30, 31–60, 60+ kun) bo‘yicha avtomatik tahliliy hisobot yuritiladi.",
+      },
+      
+      {
+        type: "h3",
+        text: "Foydali Havolalar:",
+      },
+      {
+        type: "p",
+        text: "Mijozlarga berilgan qarzlar aylanmangizni qanchaga sekinlashtirayotganini [Aylanma kapital kalkulyatori](/uz/simulator)",
+      },
+      {
+        type: "p",
+        text: "Distribyutsiya kompaniyalari uchun debitorlik nazorati bo‘yicha [ Distribyutsiya yechimlari](/uz/distribution) bilan tanishing.",
+      },
+
+      {
+        type: "p",
+        text: "Katta aylanmali savdo tarmoqlari tajribasini [Chakana savdo moduli](/uz/retail-trade) sahifasida o‘rganing.",
+      },
+      {
+        type: "p",
+        text: "Moliyaviy jarayonlarni avtomatlashtirish yuzasidan [Ekspert maslahatini oling ](/uz/contacts)",
+      },
+    
+    
+    ],
+  },
 ];
