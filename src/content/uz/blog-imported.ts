@@ -3353,4 +3353,152 @@ export const importedPosts: BlogPost[] = [
     
     ],
   },
+
+  {
+    slug: "kapital-samaradorligi-roi-va-boshqaruv-hisobi",
+    title: "Kapital Samaradorligi: Kuchli Tadbirkorlar Foydani Emas, Qaysi Ko‘rsatkichni O‘lchaydi?",
+    metaTitle: "Kapital Samaradorligi: ROI va Rentabellik | BIS-PRO",
+    excerpt: "Nega savdo o‘sib, rentabellik tushadi? Operatsion ROI va Butun ROI farqlari, P&L, Balans hamda Cash Flow hisobotlarini to‘g‘ri o‘qish bo‘yicha qo‘llanma.",
+    readingTime: "4 daqiqa",
+    category: "Tizim tanlash",
+    image: "/design/blog/kapital-samaradorligi-roi-va-boshqaruv-hisobi.webp",
+    body: [
+      {
+        type: "p",
+        text: "Ko‘pchilik tadbirkorlar o‘z biznesining muvaffaqiyatini faqatgina topilayotgan umumiy foyda summasi bilan baholaydilar. Tizimli va tajribali rahbarlar esa boshqa asosiy ko‘rsatkichga — Kapital samaradorligiga (ROI — Return on Investment) qaraydilar.",
+      },
+      {
+        type: "p",
+        text: "Chunki quruq foyda raqami aldovchi bo‘lishi mumkin: yiliga $1,000,000 foyda ko‘rgan korxona tashqaridan juda jozibador ko‘rinadi, ammo bu natija $33,000,000 kapital evaziga olingan bo‘lsa, uning daromadlilik darajasi (ROI) bor-yo‘g‘i 3% ni tashkil etadi. Oddiy bank depoziti ham bunday mablag‘ga ko‘proq foyda keltirishi mumkin.",
+      },
+      {
+        type: "p",
+        text: "Haqiqiy boshqaruv san’ati — bu kam kapital jalb qilgan holda yuqori aylanma va rentabellik hosil qilishdir.",
+      },
+      {
+        type: "h3",
+        text: "Nega Aylanma O‘sadi, Lekin Rentabellik Pasayib Ketadi?",
+      },
+     
+      {
+        type: "p",
+        text: "Amaliyotda eng ko‘p uchraydigan holat: kompaniya o‘tgan yili $5 mln aylanma (oborot) qilib, $500,000 sof foyda ko‘rgan (Rentabellik — 10%). Keyingi yili savdo hajmini $7 mln ga yetkazadi, biroq sof foyda yana o‘sha $500,000 miqdorida qoladi (Rentabellik esa 7.1% ga tushadi).",
+      },
+       {
+        type: "p",
+        text: "Savdo ko‘paygani holda foydaning o‘smay qolishiga quyidagi 5 ta asosiy omil sabab bo‘ladi:",
+      },
+      
+      {
+        type: "p",
+        text: "**•** **Chegirmalar evaziga savdoni shishirish:**Savdo rejasini bajarish maqsadida narxlar haddan tashqari tushiriladi, tovar aylanmasi o‘sadi, lekin har bir birlikdan qoladigan sof marja yo‘qoladi.",
+      },
+      {
+        type: "p",
+        text: "**•** **Marketing xarajatlarining foydani yeb qo‘yishi:**Mijozlarni jalb qilish narxi (CAC) nazoratsiz o‘sib, olingan yalpi daromadning katta qismini qamrab oladi.",
+      },
+      {
+        type: "p",
+        text: "**•** **Sotuvchilarning agressiv va sifatsiz ishlashi:**Xodimlarning oylik bonusi marjaga emas, faqat aylanmaga bog‘langanda, ular mijozlarga o‘rinsiz chegirmalar tarqatadi va qaytuvlar hajmini oshiradi.",
+      },
+      {
+        type: "p",
+        text: "**•** **Debitorlik hisobiga o‘sish:**Mahsulot ommaviy ravishda nasiyaga beriladi, savdo qog‘ozda ko‘payadi, lekin kassa tushumi bo‘lmaydi.",
+      },
+      {
+        type: "p",
+        text: "**•** **Past marjali mahsulotlar ulushining oshishi:**Aylanma beradigan, lekin foyda marjasi 5–8% bo‘lgan arzon tovarlar sotuvi ko‘payib, 40% marjali asosiy tovarlar sotilmay qoladi.",
+      },
+      
+      {
+        type: "p",
+        text: "Natijada kompaniya foyda uchun emas, shunchaki quruq aylanma uchun ishlay boshlaydi.",
+      },
+      {
+        type: "h3",
+        text: "Operatsion ROI va Butun ROI Farqi",
+      },
+      {
+        type: "p",
+        text: "Kapitaldan foydalanish unumdorligini to‘g‘ri baholash uchun korxonada ROI turlarini aniq ajratib olish zarur:",
+      },
+      {
+        type: "p",
+        text: "**•** **Operatsion ROI (Operating Profit / Working Capital):**Bu ko‘rsatkich operatsion boshqaruv va ijrochi direktor (CEO) faoliyatining samaradorligini o‘lchaydi. Hisob-kitobda faqat aylanmadagi aktivlar (Debitorlik + Ombor qoldig‘i + Pul – Kreditorlik) olinadi. Binolar va uskunalar kabi 10–15 yil xizmat qiladigan uzoq muddatli aktivlar joriy operatsion KPIga qo‘shilmaydi.",
+      },
+      {
+        type: "p",
+        text: "**•** **Butun ROI (EBIT / Total Capital):**Bu ta’sischilar va investorlar uchun mo‘ljallangan ko‘rsatkich bo‘lib, biznesga kiritilgan barcha moddiy va nomoddiy aktivlarning umumiy daromad keltirish qobiliyatini baholaydi.",
+      },
+      
+      {
+        type: "h3",
+        text: "Boshqaruvning 3 Ta Asosiy Ustuni: Balans, P&L va Cash Flow",
+      },
+      {
+        type: "p",
+        text: "Rahbar moliyaviy hisobotlarni o‘qishda boshqalarga qaram bo‘lib qolmasligi uchun korxonaning 3 ta asosiy hisobotini o‘zaro bog‘liqlikda tahlil qila olishi shart:",
+      },
+       {
+        type: "p",
+        text: "**•** **P&L (Daromad va Xarajatlar hisoboti):**Korxona ma’lum davr ichida qog‘ozda qancha daromad topgani va operatsion rentabelligi qandayligini ko‘rsatadi.",
+      },
+      {
+        type: "p",
+        text: "**•** **Cash Flow (Pul oqimlari hisoboti):**Hisoblangan foydaning qancha qismi kassaga real naqd pul bo‘lib tushganini aks ettiradi.",
+      },
+      {
+        type: "p",
+        text: "**•** **Boshqaruv Balansi:**Kompaniya kapitali ayni paytda qayerda turganini ko‘rsatuvchi xaritadir: pul tovardami, debitorlikdami yoki asosiy vositalarga ko‘milganmi.",
+      },
+      {
+        type: "p",
+        text: "Agar ushbu 3 hisobot bitta avtomatlashtirilgan tizimda sinxronlashmagan bo‘lsa, kompaniya qog‘ozda millioner ko‘rinib, amalda doimiy naqd pul yetishmasligi va bankrotlik yoqasida yurishi mumkin.",
+      },
+      {
+        type: "h3",
+        text: "SAP Business One Boshqaruv Hisobini Qanday Yo‘lga Qo‘yadi?",
+      },
+       {
+        type: "p",
+        text: "[SAP Business One platformasi](/uz/sap-business-one) korxonadagi barcha birlamchi hujjatlarni avtomatik ravishda rahbar uchun sodda va tushunarli boshqaruv panellariga (Dashboard) jamlaydi:",
+      },
+      {
+        type: "p",
+        text: "**•** Har bir filial, tovar guruhi va sotuv menejeri bo‘yicha real rentabellikni hisoblab beradi;",
+      },
+      {
+        type: "p",
+        text: "**•** ABC/XYZ tahlili orqali asosiy foydani ta’minlovchi lokomotiv tovarlarni ajratib ko‘rsatadi;",
+      },
+      {
+        type: "p",
+        text: "**•** P&L, Cash Flow va Balans hisobotlarini oylik yopilishlarni kutmasdan, aynan bugungi kun holatida bir zumda shakllantiradi.",
+      },
+      
+      {
+        type: "h3",
+        text: "Foydali Havolalar:",
+      },
+      {
+        type: "p",
+        text: "**•** Kompaniyangiz kapital samaradorligini [Aylanma kapital kalkulyatori](/uz/simulator) orqali mustaqil hisoblang.",
+      },
+      {
+        type: "p",
+        text: "**•** Ishlab chiqarishda tannarx va operatsion rentabellikni to‘g‘rilagan [ Benefit zavodi keysini ](/uz/portfolio/benefit) o‘rganing",
+      },
+
+      {
+        type: "p",
+        text: " **•** ERP tizimlarining moliyaviy imkoniyatlari haqida [ SAP va 1C taqqoslovi ](/uz/post/sap-yoki-1c-erp-tizimlar-taqoslash-biznes-uchun) maqolasidan bilib oling.",
+      },
+      {
+        type: "p",
+        text: "**•** Korxonangiz moliyaviy boshqaruvini tizimlashtirish uchun [Konsultatsiyaga yoziling.](/uz/contacts).",
+      },
+    
+    
+    ],
+  },
 ];
