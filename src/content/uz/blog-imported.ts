@@ -3356,58 +3356,57 @@ export const importedPosts: BlogPost[] = [
 
   {
     slug: "kapital-samaradorligi-roi-va-boshqaruv-hisobi",
-    title: "Kapital Samaradorligi: Kuchli Tadbirkorlar Foydani Emas, Qaysi Ko‘rsatkichni O‘lchaydi?",
-    metaTitle: "Kapital Samaradorligi: ROI va Rentabellik | BIS-PRO",
-    excerpt: "Nega savdo o‘sib, rentabellik tushadi? Operatsion ROI va Butun ROI farqlari, P&L, Balans hamda Cash Flow hisobotlarini to‘g‘ri o‘qish bo‘yicha qo‘llanma.",
+    title: "Kapital samaradorligi: kuchli tadbirkorlar foydani emas, qaysi koʻrsatkichni oʻlchaydi?",
+    metaTitle: "Kapital samaradorligi: ROI va rentabellik",
+    excerpt: "Nega savdo oʻsib, rentabellik tushadi? Operatsion ROI va Butun ROI farqlari, P&L, Balans hamda Cash Flow hisobotlarini toʻgʻri oʻqish boʻyicha qoʻllanma.",
     readingTime: "4 daqiqa",
     category: "Tizim tanlash",
     image: "/design/blog/kapital-samaradorligi-roi-va-boshqaruv-hisobi.webp",
-    body: [
-      {
+    body: [{
         type: "p",
-        text: "Ko‘pchilik tadbirkorlar o‘z biznesining muvaffaqiyatini faqatgina topilayotgan umumiy foyda summasi bilan baholaydilar. Tizimli va tajribali rahbarlar esa boshqa asosiy ko‘rsatkichga — Kapital samaradorligiga (ROI — Return on Investment) qaraydilar.",
+        text: "Koʻpchilik tadbirkorlar oʻz biznesining muvaffaqiyatini faqatgina topilayotgan umumiy foyda summasi bilan baholaydilar. Tizimli va tajribali rahbarlar esa boshqa asosiy koʻrsatkichga — Kapital samaradorligiga (ROI — Return on Investment) qaraydilar.",
       },
       {
         type: "p",
-        text: "Chunki quruq foyda raqami aldovchi bo‘lishi mumkin: yiliga $1,000,000 foyda ko‘rgan korxona tashqaridan juda jozibador ko‘rinadi, ammo bu natija $33,000,000 kapital evaziga olingan bo‘lsa, uning daromadlilik darajasi (ROI) bor-yo‘g‘i 3% ni tashkil etadi. Oddiy bank depoziti ham bunday mablag‘ga ko‘proq foyda keltirishi mumkin.",
+        text: "Chunki quruq foyda raqami aldovchi boʻlishi mumkin: yiliga $1,000,000 foyda koʻrgan korxona tashqaridan juda jozibador koʻrinadi, ammo bu natija $33,000,000 kapital evaziga olingan boʻlsa, uning daromadlilik darajasi (ROI) bor-yoʻgʻi 3% ni tashkil etadi. Oddiy bank depoziti ham bunday mablagʻga koʻproq foyda keltirishi mumkin.",
       },
       {
         type: "p",
-        text: "Haqiqiy boshqaruv san’ati — bu kam kapital jalb qilgan holda yuqori aylanma va rentabellik hosil qilishdir.",
+        text: "Haqiqiy boshqaruv sanʼati — bu kam kapital jalb qilgan holda yuqori aylanma va rentabellik hosil qilishdir.",
       },
       {
         type: "h3",
-        text: "Nega Aylanma O‘sadi, Lekin Rentabellik Pasayib Ketadi?",
+        text: "Nega aylanma oʻsadi, lekin rentabellik pasayib ketadi",
       },
      
       {
         type: "p",
-        text: "Amaliyotda eng ko‘p uchraydigan holat: kompaniya o‘tgan yili $5 mln aylanma (oborot) qilib, $500,000 sof foyda ko‘rgan (Rentabellik — 10%). Keyingi yili savdo hajmini $7 mln ga yetkazadi, biroq sof foyda yana o‘sha $500,000 miqdorida qoladi (Rentabellik esa 7.1% ga tushadi).",
+        text: "Amaliyotda eng koʻp uchraydigan holat: kompaniya oʻtgan yili $5 mln aylanma (oborot) qilib, $500,000 sof foyda koʻrgan (rentabellik 10%). Keyingi yili savdo hajmini $7 mln ga yetkazadi, biroq sof foyda yana oʻsha $500,000 miqdorida qoladi (rentabellik esa 7,1% ga tushadi).",
       },
        {
         type: "p",
-        text: "Savdo ko‘paygani holda foydaning o‘smay qolishiga quyidagi 5 ta asosiy omil sabab bo‘ladi:",
+        text: "Savdo koʻpaygani holda foydaning oʻsmay qolishiga quyidagi 5 ta asosiy omil sabab boʻladi:",
       },
       
       {
         type: "p",
-        text: "**•** **Chegirmalar evaziga savdoni shishirish:**Savdo rejasini bajarish maqsadida narxlar haddan tashqari tushiriladi, tovar aylanmasi o‘sadi, lekin har bir birlikdan qoladigan sof marja yo‘qoladi.",
+        text: "**•** **Chegirmalar evaziga savdoni shishirish:** Savdo rejasini bajarish maqsadida narxlar haddan tashqari tushiriladi, tovar aylanmasi oʻsadi, lekin har bir birlikdan qoladigan sof marja yoʻqoladi.",
       },
       {
         type: "p",
-        text: "**•** **Marketing xarajatlarining foydani yeb qo‘yishi:**Mijozlarni jalb qilish narxi (CAC) nazoratsiz o‘sib, olingan yalpi daromadning katta qismini qamrab oladi.",
+        text: "**•** **Marketing xarajatlarining foydani yeb qoʻyishi:** Mijozlarni jalb qilish narxi (CAC) nazoratsiz oʻsib, olingan yalpi daromadning katta qismini qamrab oladi.",
       },
       {
         type: "p",
-        text: "**•** **Sotuvchilarning agressiv va sifatsiz ishlashi:**Xodimlarning oylik bonusi marjaga emas, faqat aylanmaga bog‘langanda, ular mijozlarga o‘rinsiz chegirmalar tarqatadi va qaytuvlar hajmini oshiradi.",
+        text: "**•** **Sotuvchilarning agressiv va sifatsiz ishlashi:** Xodimlarning oylik bonusi marjaga emas, faqat aylanmaga bogʻlanganda, ular mijozlarga oʻrinsiz chegirmalar tarqatadi va qaytuvlar hajmini oshiradi.",
       },
       {
         type: "p",
-        text: "**•** **Debitorlik hisobiga o‘sish:**Mahsulot ommaviy ravishda nasiyaga beriladi, savdo qog‘ozda ko‘payadi, lekin kassa tushumi bo‘lmaydi.",
+        text: "**•** **Debitorlik hisobiga oʻsish:** Mahsulot ommaviy ravishda nasiyaga beriladi, savdo qogʻozda koʻpayadi, lekin kassa tushumi boʻlmaydi.",
       },
       {
         type: "p",
-        text: "**•** **Past marjali mahsulotlar ulushining oshishi:**Aylanma beradigan, lekin foyda marjasi 5–8% bo‘lgan arzon tovarlar sotuvi ko‘payib, 40% marjali asosiy tovarlar sotilmay qoladi.",
+        text: "**•** **Past marjali mahsulotlar ulushining oshishi:** Aylanma beradigan, lekin foyda marjasi 5–8% boʻlgan arzon tovarlar sotuvi koʻpayib, 40% marjali asosiy tovarlar sotilmay qoladi.",
       },
       
       {
@@ -3416,48 +3415,48 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "h3",
-        text: "Operatsion ROI va Butun ROI Farqi",
+        text: "Operatsion ROI va butun ROI farqi",
       },
       {
         type: "p",
-        text: "Kapitaldan foydalanish unumdorligini to‘g‘ri baholash uchun korxonada ROI turlarini aniq ajratib olish zarur:",
+        text: "Kapitaldan foydalanish unumdorligini toʻgʻri baholash uchun korxonada ROI turlarini aniq ajratib olish zarur:",
       },
       {
         type: "p",
-        text: "**•** **Operatsion ROI (Operating Profit / Working Capital):**Bu ko‘rsatkich operatsion boshqaruv va ijrochi direktor (CEO) faoliyatining samaradorligini o‘lchaydi. Hisob-kitobda faqat aylanmadagi aktivlar (Debitorlik + Ombor qoldig‘i + Pul – Kreditorlik) olinadi. Binolar va uskunalar kabi 10–15 yil xizmat qiladigan uzoq muddatli aktivlar joriy operatsion KPIga qo‘shilmaydi.",
+        text: "**•** **Operatsion ROI (Operating Profit / Working Capital):** Bu koʻrsatkich operatsion boshqaruv va ijrochi direktor (CEO) faoliyatining samaradorligini oʻlchaydi. Hisob-kitobda faqat aylanmadagi aktivlar (Debitorlik + Ombor qoldigʻi + Pul – Kreditorlik) olinadi. Binolar va uskunalar kabi 10–15 yil xizmat qiladigan uzoq muddatli aktivlar joriy operatsion KPIga qoʻshilmaydi.",
       },
       {
         type: "p",
-        text: "**•** **Butun ROI (EBIT / Total Capital):**Bu ta’sischilar va investorlar uchun mo‘ljallangan ko‘rsatkich bo‘lib, biznesga kiritilgan barcha moddiy va nomoddiy aktivlarning umumiy daromad keltirish qobiliyatini baholaydi.",
+        text: "**•** **Butun ROI (EBIT / Total Capital):** Bu taʼsischilar va investorlar uchun moʻljallangan koʻrsatkich boʻlib, biznesga kiritilgan barcha moddiy va nomoddiy aktivlarning umumiy daromad keltirish qobiliyatini baholaydi.",
       },
       
       {
         type: "h3",
-        text: "Boshqaruvning 3 Ta Asosiy Ustuni: Balans, P&L va Cash Flow",
+        text: "Boshqaruvning 3 ta asosiy ustuni: balans, P&L va Cash Flow",
       },
       {
         type: "p",
-        text: "Rahbar moliyaviy hisobotlarni o‘qishda boshqalarga qaram bo‘lib qolmasligi uchun korxonaning 3 ta asosiy hisobotini o‘zaro bog‘liqlikda tahlil qila olishi shart:",
+        text: "Rahbar moliyaviy hisobotlarni oʻqishda boshqalarga qaram boʻlib qolmasligi uchun korxonaning 3 ta asosiy hisobotini oʻzaro bogʻliqlikda tahlil qila olishi shart:",
       },
        {
         type: "p",
-        text: "**•** **P&L (Daromad va Xarajatlar hisoboti):**Korxona ma’lum davr ichida qog‘ozda qancha daromad topgani va operatsion rentabelligi qandayligini ko‘rsatadi.",
+        text: "**•** **P&L (daromad va xarajatlar hisoboti):** Korxona maʼlum davr ichida qogʻozda qancha daromad topgani va operatsion rentabelligi qandayligini koʻrsatadi.",
       },
       {
         type: "p",
-        text: "**•** **Cash Flow (Pul oqimlari hisoboti):**Hisoblangan foydaning qancha qismi kassaga real naqd pul bo‘lib tushganini aks ettiradi.",
+        text: "**•** **Cash Flow (pul oqimlari hisoboti):** Hisoblangan foydaning qancha qismi kassaga real naqd pul boʻlib tushganini aks ettiradi.",
       },
       {
         type: "p",
-        text: "**•** **Boshqaruv Balansi:**Kompaniya kapitali ayni paytda qayerda turganini ko‘rsatuvchi xaritadir: pul tovardami, debitorlikdami yoki asosiy vositalarga ko‘milganmi.",
+        text: "**•** **Boshqaruv balansi:** Kompaniya kapitali ayni paytda qayerda turganini koʻrsatuvchi xaritadir: pul tovardami, debitorlikdami yoki asosiy vositalarga koʻmilganmi.",
       },
       {
         type: "p",
-        text: "Agar ushbu 3 hisobot bitta avtomatlashtirilgan tizimda sinxronlashmagan bo‘lsa, kompaniya qog‘ozda millioner ko‘rinib, amalda doimiy naqd pul yetishmasligi va bankrotlik yoqasida yurishi mumkin.",
+        text: "Agar ushbu 3 hisobot bitta avtomatlashtirilgan tizimda sinxronlashmagan boʻlsa, kompaniya qogʻozda millioner koʻrinib, amalda doimiy naqd pul yetishmasligi va bankrotlik yoqasida yurishi mumkin.",
       },
       {
         type: "h3",
-        text: "SAP Business One Boshqaruv Hisobini Qanday Yo‘lga Qo‘yadi?",
+        text: "SAP Business One boshqaruv hisobini qanday yoʻlga qoʻyadi",
       },
        {
         type: "p",
@@ -3465,11 +3464,11 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** Har bir filial, tovar guruhi va sotuv menejeri bo‘yicha real rentabellikni hisoblab beradi;",
+        text: "**•** Har bir filial, tovar guruhi va sotuv menejeri boʻyicha real rentabellikni hisoblab beradi;",
       },
       {
         type: "p",
-        text: "**•** ABC/XYZ tahlili orqali asosiy foydani ta’minlovchi lokomotiv tovarlarni ajratib ko‘rsatadi;",
+        text: "**•** ABC/XYZ tahlili orqali asosiy foydani taʼminlovchi lokomotiv tovarlarni ajratib koʻrsatadi;",
       },
       {
         type: "p",
@@ -3478,7 +3477,7 @@ export const importedPosts: BlogPost[] = [
       
       {
         type: "h3",
-        text: "Foydali Havolalar:",
+        text: "Foydali havolalar",
       },
       {
         type: "p",
@@ -3486,16 +3485,16 @@ export const importedPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "**•** Ishlab chiqarishda tannarx va operatsion rentabellikni to‘g‘rilagan [ Benefit zavodi keysini ](/uz/portfolio/benefit) o‘rganing",
+        text: "**•** Ishlab chiqarishda tannarx va operatsion rentabellikni toʻgʻrilagan [Benefit zavodi keysini](/uz/portfolio/benefit) oʻrganing.",
       },
 
       {
         type: "p",
-        text: " **•** ERP tizimlarining moliyaviy imkoniyatlari haqida [ SAP va 1C taqqoslovi ](/uz/post/sap-yoki-1c-erp-tizimlar-taqoslash-biznes-uchun) maqolasidan bilib oling.",
+        text: "**•** ERP tizimlarining moliyaviy imkoniyatlari haqida [«SAP va 1C taqqoslovi»](/uz/post/sap-yoki-1c-erp-tizimlar-taqoslash-biznes-uchun) maqolasidan bilib oling.",
       },
       {
         type: "p",
-        text: "**•** Korxonangiz moliyaviy boshqaruvini tizimlashtirish uchun [Konsultatsiyaga yoziling.](/uz/contacts).",
+        text: "**•** Korxonangiz moliyaviy boshqaruvini tizimlashtirish uchun [Konsultatsiyaga yoziling](/uz/contacts).",
       },
     
     

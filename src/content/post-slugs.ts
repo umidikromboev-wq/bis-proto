@@ -36,6 +36,8 @@ const RU_TO_UZ: Record<string, string> = {
   "avtomatizatsiya-skladov-i-biznesa-1c-odoo-sap": "ombor-va-biznesni-avtomatlashtirish-1c-odoo-sap",
   // Статья Бахтиёра о дебиторской задолженности и DSO (PR #19).
   "debitorskaya-zadolzhennost-upravlenie-dso": "debitorlik-qarzdorligi-arzon-pul-leverlari",
+  // Статья Бахтиёра об эффективности капитала и ROI (PR #20).
+  "effektivnost-kapitala-roi-upravlencheskiy-uchet": "kapital-samaradorligi-roi-va-boshqaruv-hisobi",
 };
 
 const UZ_TO_RU: Record<string, string> = Object.fromEntries(
